@@ -1,0 +1,221 @@
+.Productscard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 40px; */
+    gap: 48px;
+}
+
+.headline {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.headings {
+    margin-left: 20px;
+}
+
+/* .tagline {
+    font-size: 1.2rem;
+    color: #153F6D;
+    font-weight: bold;
+    margin-bottom: 10px;
+} */
+
+.card-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    flex-wrap: nowrap; /* Prevent wrapping to enable horizontal scroll */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.card-main::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    width: 32%;
+    height: 600px;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Prevent shrinking of cards */
+}
+
+/* .card-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 25% 100%;
+    transform: rotate(-90deg);
+}
+
+.card-container.card1::before {
+    background-image: url('./../../assets/productcard/card1.jpeg');
+}
+
+.card-container.card2::before {
+    background-image: url('./../../assets/productcard/card2.jpeg');
+}
+
+.card-container.card3::before {
+    background-image: url('./../../assets/productcard/card3.jpeg');
+} */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 14px;
+    gap: 10px;
+    color: black;
+    width: 139px;
+    height: 36px;
+    background: #FFFFFF;
+    border-radius: 500px;
+}
+
+.card-title {
+    font-size: 1.5rem !important;
+    margin: 15px 0;
+    padding: 10px 0px;
+    color: white !important;
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 16px;
+    color: white !important;
+}
+
+.card-icon-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.card-icon {
+    background-color: #fff;
+    color: #153F6D;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+    transform: rotate(-45deg);
+}
+
+.card-icon:hover {
+    background-color: #eee;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .card-container {
+        width: 45%;
+        height: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Productscard-container {
+        padding: 20px;
+    }
+
+    .card-main {
+        gap: 20px;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        flex-wrap: nowrap; /* Ensure cards are in a single row */
+    }
+
+    .card-container {
+        width: 60%;
+        height: 500px;
+    }
+
+    .card-tag {
+        font-size: 0.9rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-description {
+        font-size: 0.8rem;
+    }
+
+    .card-icon-container {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .card-icon {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-main {
+        gap: 15px; /* Smaller gap on small screens */
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+
+    .card-container {
+        width: 90%;
+    }
+
+    .card-tag {
+        width: 100px;
+        height: 30px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.7rem;
+    }
+
+    .card-icon {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}

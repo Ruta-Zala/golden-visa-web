@@ -1,0 +1,23 @@
+.golden-visa-landing-section2 {
+  background:
+    radial-gradient(50% 50% at 50% 50%, rgba(8, 18, 42, 0) 0%, #08122a 100%),
+    url("/public/images/goldenvisabackground2.png") no-repeat;
+  background-blend-mode: overlay, hue, normal, normal, normal;
+  background-position: bottom;
+}
+
+.golden-visa-landing-section1 {
+ background: 
+ radial-gradient(50% 50% at 50% 50%, rgba(8, 18, 42, 0) 0%, #08122a 100%),
+  url("/public/images/goldenvisabackground1.png");
+  background-blend-mode: overlay, hue, normal, normal, normal;
+  background-position: top;
+}
+
+.line-background{
+    background: 
+    radial-gradient( rgba(8, 18, 42, 0) 0%, #08122a 0%),
+     url("/public/images/goldenvisabackground1.png");
+     background-blend-mode: overlay, hue, normal, normal, normal;
+/* url("/public/images/Curveline.png") no-repeat; */
+}

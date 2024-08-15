@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[type="text"],
+input:where(:not([type])),
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  appearance: none;
+  background-color: transparent;
+  border-color: unset;
+  border-width: 0;
+  border-radius: unset;
+  padding: unset;
+  font-size: unset;
+  line-height: unset;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Outfit;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  margin-inline: unset !important;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  background-color: transparent;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker-wrapper input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding: 0px;
+}
+
+.react-datepicker-popper {
+  z-index: 100000 !important;
+}
+
+.indigo_100_dark_0_border {
+  border-image: radial-gradient(157deg, #c1cbe5, #08122a) 1;
+}
+
+/* Override default focus colors for tailwindcss-forms https://github.com/tailwindlabs/tailwindcss-forms */
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="search"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: transparent;
+  border-color: transparent;
+}
+[type="radio"]:focus,
+[type="checkbox"]:focus {
+  --tw-ring-color: transparent;
+}
+@layer components {
+  /*-------------------------------------
+  Container CSS
+--------------------------------------*/
+  .container-xs {
+    @apply w-full mx-auto max-w-[1500px];
+  }
+}
