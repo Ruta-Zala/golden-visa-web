@@ -54,10 +54,15 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     <button class="min-w-[268px] gap-4 font-medium capitalize flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black">
                       Enter the Draw now
                       <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
-                        <img class="h-[18px] w-[18px]" src="images/img_arrowleft_white_0.svg" alt="Arrow Left" loading="lazy" />
+                        <img
+                          class="h-[18px] w-[18px]"
+                          src="images/img_arrowleft_white_0.svg"
+                          alt="Arrow Left"
+                          loading="lazy"
+                        />
                       </div>
                     </button>
-                  </div>                  
+                  </div>
                 </div>
               </div>
             </div>
@@ -80,9 +85,8 @@ export default function GoldenVisaGenZTalentProgramPage() {
             <div className="relative h-[470px] w-full rounded-[20px] bg-light_base">
               <div className="mt-12 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 max-[1440px]:ml-0 max-[1050px]:left-0 max-[1050px]:ml-4">
                 <Button
-                  size="sm"
-                  color="undefined_undefined"
-                  className="flex rounded-[18px] border border-solid border-dark-0 p-1.5"
+                  size="xs"
+                  className="min-w-[134px] !text-slate-900 rounded-[18px] font-medium uppercase !border !border-slate-900 rounded-full !text-[16px]"
                 >
                   OPN token
                 </Button>
@@ -120,9 +124,19 @@ export default function GoldenVisaGenZTalentProgramPage() {
               </div>
               <div className="mb-1.5 flex flex-col gap-4 ">
                 <label class="gap-4 !rounded-[34px] !text-white-1 shadow-xl max-[550px]:text-[14px] bg-slate-600 flex items-center justify-center cursor-text border-blue-900_1e border border-solid  rounded-[36px] h-[68px] pl-[26px] pr-[12px] text-[20px]">
-                  <input type="text" name="Edit URL" placeholder="https://iopn.io/gkiyfujytdhtsrsytdr" value="https://iopn.io/gkiyfujytdhtsrsytdr" />
+                  <input
+                    type="text"
+                    name="Edit URL"
+                    placeholder="https://iopn.io/gkiyfujytdhtsrsytdr"
+                    value="https://iopn.io/gkiyfujytdhtsrsytdr"
+                  />
                   <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
-                    <img class="h-[28px] w-[18px]" src="images/img_arrowleft_white_0.svg" alt="Arrow Left" loading="lazy" />
+                    <img
+                      class="h-[28px] w-[18px]"
+                      src="images/img_arrowleft_white_0.svg"
+                      alt="Arrow Left"
+                      loading="lazy"
+                    />
                   </div>
                 </label>
                 <div className="flex flex-col gap-3">

@@ -15,6 +15,9 @@ const Herosections = () => {
   const toggleDropdown = () => {
     setIsDropDown((prev) => !prev);
   };
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -336,6 +339,7 @@ const Herosections = () => {
                 </div>
                 <Link
                   to="/golden-visa"
+                  onClick={handleLinkClick}
                   className="flex w-full justify-end items-center cursor-pointer"
                 >
                   <div className="flex justify-center items-center w-10 h-10 rounded-[50%] bg-white-0 text-3xl transform -rotate-45">
@@ -357,6 +361,7 @@ const Herosections = () => {
           </div>
           <Link
             to="/golden-visa"
+            onClick={handleLinkClick}
             className="flex w-full justify-end items-center cursor-pointer"
           >
             <div className="flex justify-center items-center w-10 h-10 rounded-[50%] bg-white-0 text-3xl transform -rotate-45">

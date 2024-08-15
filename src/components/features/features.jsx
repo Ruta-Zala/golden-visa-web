@@ -1,7 +1,9 @@
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
+import "swiper/css/navigation"; // Import navigation styles
+import { useRef } from "react"; // Import useRef from React
+import { Autoplay, Navigation } from "swiper/modules"; // Import Navigation module
 import { Swiper, SwiperSlide } from "swiper/react";
 import feature1 from "../../assets/feature1.png";
 import feature2 from "../../assets/feature2.png";
@@ -55,8 +57,12 @@ const cardsData = [
 ];
 
 const Features = () => {
+  // Refs for custom navigation buttons
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
-    <div className="px-4 max-w-screen-2xl mx-auto mt-28">
+    <div className="px-4 max-w-screen-2xl mx-auto mt-28 relative">
       <div className="headline mb-12">
         <div className="tagline">
           <p className="inline-block px-3 py-2 bg-[#070b0f] text-white-0 rounded-2xl text-sm mb-2.5 font-extralight">
@@ -77,61 +83,84 @@ const Features = () => {
           Empowering 1 billion users with digital freedom.
         </p>
       </div>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-        }}
-        autoplay={{
-        delay: 3000,
-        disableOnInteraction: false,
-        }}
-        loop={true}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        {cardsData.map((card, index) => (
-          <SwiperSlide key={index} className="flex items-stretch">
-            <div className="flex flex-col items-stretch p-3 gap-2.5 rounded-2xl features-card relative z-0 overflow-hidden flex-1">
-              <img
-                src={card.image}
-                alt=""
-                className="w-64 h-80 object-contain absolute -top-20 -right-24"
-              />
-              <div className="features-card-icon-container">
-                <div className="features-card-icon">→</div>
-              </div>
-              <div className="features-card-content flex flex-col justify-between h-full">
-                <div className="features-card-content-text">
-                  <img
-                    src={card.icon}
-                    alt=""
-                    className="w-12 h-12 object-contain mb-8"
-                  />
-                  <h2 className="features-card-title text-lg md:text-2xl font-bold">
-                    {card.title}
-                  </h2>
-                  <p className="features-card-description text-sm xl:text-base opacity-80">
-                    {card.description}
-                  </p>
+
+      {/* Swiper component */}
+      <div className="relative">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          modules={[Autoplay, Navigation]} // Add Navigation module
+          className="mySwiper"
+        >
+          {cardsData.map((card, index) => (
+            <SwiperSlide key={index} className="flex items-stretch">
+              <div className="flex flex-col items-stretch p-3 gap-2.5 rounded-2xl features-card relative z-0 overflow-hidden flex-1">
+                <img
+                  src={card.image}
+                  alt=""
+                  className="w-64 h-80 object-contain absolute -top-20 -right-24"
+                />
+                <div className="features-card-icon-container">
+                  <div className="features-card-icon">→</div>
+                </div>
+                <div className="features-card-content flex flex-col justify-between h-full">
+                  <div className="features-card-content-text">
+                    <img
+                      src={card.icon}
+                      alt=""
+                      className="w-12 h-12 object-contain mb-8"
+                    />
+                    <h2 className="features-card-title text-lg md:text-2xl font-bold">
+                      {card.title}
+                    </h2>
+                    <p className="features-card-description text-sm xl:text-base opacity-80">
+                      {card.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* Custom navigation buttons */}
+        <div className="absolute top-1/2 left-1/2 transform flex items-center justify-center -translate-y-1/2 -translate-x-1/2  z-30 h-[100px] w-[100px] rounded-full bg-[#fff]">
+          <button
+            ref={prevRef}
+            className="swiper-button-prev p-3 after:content-['prev'] after:text-[16px] after:text-slate-900 rounded-full"
+          />
+          <button
+            ref={nextRef}
+            className="swiper-button-next p-3 after:content-['next'] after:text-[16px] after:text-slate-900 rounded-full"
+          />
+        </div>
+      </div>
     </div>
   );
 };

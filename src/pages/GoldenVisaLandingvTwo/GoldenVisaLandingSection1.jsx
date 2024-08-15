@@ -41,7 +41,7 @@ const benefitsGrid = [
     ),
   },
   {
-    industryImage: "images/img_global_learning.svg",
+    industryImage: "images/bank2.svg",
     careerGrowthText: "Financial Freedom",
     accessTopTierText: "Access to UAE Banking IBAN",
   },

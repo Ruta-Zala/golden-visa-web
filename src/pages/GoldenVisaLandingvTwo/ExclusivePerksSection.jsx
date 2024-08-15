@@ -1,20 +1,21 @@
 import { Img } from "../../components/Img";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Navigation } from "swiper/modules"; // Import Navigation module
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Heading } from "../../components/Heading";
-import { Slider } from "../../components/Slider";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import PropTypes from "prop-types";
 
 // import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 export default function ExclusivePerksSection() {
-  const [sliderState, setSliderState] = useState(0);
-  const sliderRef = useRef();
-
-  const handleSlideChanged = (e) => {
-    setSliderState(e.item);
-  };
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   // const handlePrevSlide = () => {
   //   sliderRef.current.prev();
@@ -90,51 +91,72 @@ export default function ExclusivePerksSection() {
             </div>
           </div>
           <div className="relative h-[538px] self-stretch overflow-hidden">
-            <div className="absolute left-0 top-[17%] m-auto flex w-full justify-center px-14 md:px-5 sm:px-4">
-              <div className="flex justify-center lg:w-full md:w-full md:flex-col">
-                <div className="flex w-full justify-center gap-3.5 md:flex-col">
-                  <SliderContainer>
-                    <Slider
-                      autoPlay
-                      autoPlayInterval={2000}
-                      responsive={{
-                        0: { items: 1 },
-                        600: { items: 2 },
-                        768: { items: 2 },
-                        1024: { items: 4 },
-                        1440: { items: 4 },
-                      }}
-                      disableDotsControls
-                      activeIndex={sliderState}
-                      onSlideChanged={handleSlideChanged}
-                      ref={sliderRef}
-                      items={perksArray.map((perk, index) => (
-                        <Slide key={index} className="flex flex-col items-center">
-                          <Img
-                            src={perk.img}
-                            alt="Slider Car Image"
-                            className="h-20 w-20 object-cover"
-                          />
-                          <Heading
-                            size="visa_headers_h5"
-                            as="p"
-                            className="text-center mt-2 text-lg md:text-xl lg:text-2xl"
-                          >
-                            {perk.title}
-                          </Heading>
-                        </Slide>
-                      ))}
-                    />
-                    {/* <SliderControls>
-                      <button className="focus:outline-none" onClick={handlePrevSlide}>
-                        <Img src="images/img_arrow_left_white_0_1.svg" alt="Left Arrow" className="h-6" />
-                      </button>
-                      <button className="focus:outline-none" onClick={handleNextSlide}>
-                        <Img src="images/img_arrow_right.svg" alt="Right Arrow" className="h-6" />
-                      </button>
-                    </SliderControls> */}
-                  </SliderContainer>
-                </div>
+            <div className="mt-40 px-10">
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={10}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                  },
+                  1440: {
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                  },
+                }}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                loop={true}
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
+                onBeforeInit={(swiper) => {
+                  swiper.params.navigation.prevEl = prevRef.current;
+                  swiper.params.navigation.nextEl = nextRef.current;
+                }}
+                modules={[Autoplay, Navigation]} // Add Navigation module
+                className="mySwiper"
+              >
+                {perksArray.map((perk, index) => (
+                  <SwiperSlide key={index} className="flex items-stretch">
+                    <Slide key={index} className="flex flex-col items-center">
+                      <Img
+                        src={perk.img}
+                        alt="Slider Car Image"
+                        className="h-20 w-20 object-cover"
+                      />
+                      <Heading
+                        size="visa_headers_h5"
+                        as="p"
+                        className="text-center mt-2 text-lg md:text-xl lg:text-2xl"
+                      >
+                        {perk.title}
+                      </Heading>
+                    </Slide>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <div className="absolute top-1/2 left-[40%] md:left-[48%] transform flex items-center justify-center -translate-y-1/2  z-30 h-[100px] w-[100px] rounded-full bg-[#000]">
+                <button
+                  ref={prevRef}
+                  className="swiper-button-prev p-3 after:content-['prev'] after:text-[16px] after:text-[#fff] rounded-full"
+                />
+                <button
+                  ref={nextRef}
+                  className="swiper-button-next p-3 after:content-['next'] after:text-[16px] after:text-[#fff] rounded-full"
+                />
               </div>
             </div>
             <FeaturedImage>
@@ -173,7 +195,7 @@ SliderContainer.propTypes = {
 };
 
 const Slide = ({ children }) => (
-  <div className="px-2">
+  <div className="px-2 w-full">
     <div className="flex flex-col items-center gap-[60px] rounded-[24px] border border-solid border-gray-300 bg-white-2 p-[46px] shadow-sm md:p-5 sm:gap-[30px] sm:p-4">
       {children}
     </div>

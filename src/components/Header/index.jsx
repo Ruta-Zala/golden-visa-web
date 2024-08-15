@@ -85,35 +85,35 @@ export default function Header({ ...props }) {
           </div>
           <ul className="flex flex-col items-start gap-4 mt-4">
             <li>
-              <a href="#">
+              <a href="/">
                 <Text as="p" className="!text-accent-black">
                   Home
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <Text as="p" className="!text-accent-black">
                   Benefits
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <Text as="p" className="!text-accent-black">
                   How it works
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <Text as="p" className="!text-accent-black">
                   Purchase token
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a >
                 <Text as="p" className="!text-accent-black">
                   Monthly draw
                 </Text>

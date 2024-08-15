@@ -34,27 +34,27 @@ export default function HeaderVisa({ ...props }) {
       </button>
       <ul className="hidden lg:flex justify-center gap-10 pr-8">
         <li>
-          <a href="#">
+          <a href="/">
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Home</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Benefits</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">How it works</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/#/OPNTokenMint">
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint token</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Monthly draw</span>
           </a>
         </li>
@@ -90,35 +90,35 @@ export default function HeaderVisa({ ...props }) {
           </div>
           <ul className="flex flex-col items-start gap-4 mt-4 pr-8">
             <li>
-              <a href="#">
+              <a href="/">
                 <Text as="p" className="!text-accent-black">
                   Home
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <Text as="p" className="!text-accent-black">
                   Benefits
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <Text as="p" className="!text-accent-black">
                   How it works
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/#/OPNTokenMint">
                 <Text as="p" className="!text-accent-black">
                   Mint token
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a>
                 <Text as="p" className="!text-accent-black">
                   Monthly draw
                 </Text>

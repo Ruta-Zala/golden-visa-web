@@ -52,7 +52,8 @@ export default function GoldenVisaLandingvTwoPage() {
                       life-changing UAE Golden Visa! */}
                     </h5>
                   </div>
-                  <Link to="/GenzTalentProgram">
+                  <Link to="">
+                    {/* <Link to="/GenzTalentProgram"> */}
                     <Button
                       variant="fill"
                       shape="round"
@@ -127,126 +128,189 @@ export default function GoldenVisaLandingvTwoPage() {
           {/* golden visa landing section */}
           <GoldenVisaLandingSection1 />
 
-          <div className="mt-[122px] flex flex-col items-center relative">
+          <div className="md:mt-[122px] flex flex-col items-center relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
               <img src="/images/img_group_292.svg" alt="" />
             </div>
             {/* bg-[url('/public/images/img_group_292.svg')] */}
             <div className="flex flex-col items-center gap-6 relative z-20">
-              <div className="relative ml-[-100px]1 bg-cover bg-no-repeat p-14 lg:h-auto md:ml-0 md:h-auto md:self-stretch md:p-5 sm:p-4 filter">
-                {/* <div className="ml-[260px] flex rounded-[18px] border border-solid border-dark-0 p-1.5 md:ml-0">
+              <div className="flex flex-col items-center">
+                <div className="sm:hidden flex rounded-[18px] border border-solid border-dark-0 p-1.5 md:ml-0">
                   <Heading as="h4">How Does It Work?</Heading>
-                </div> */}
-                <Text
-                  size="visa_headers_h2"
-                  as="p"
-                  className="text-center lg:text-[48px] my-40"
-                >
-                  <>
-                    Learn the steps to
-                    <br />
-                    kickstart your journey
-                  </>
-                </Text>
+                </div>
+                <div className="relative bg-cover bg-no-repeat p-4 md:ml-0 md:self-stretch md:p-5 sm:p-4 filter">
+                  <Text
+                    size="visa_headers_h2"
+                    as="p"
+                    className="text-center 2xl:!text-[80px] xl:!text-[50px] sm:!text-[35px] !text-[30px] 2xl:my-20 md:my-10"
+                  >
+                    <>
+                      Learn the steps to
+                      <br />
+                      kickstart your journey
+                    </>
+                  </Text>
+                </div>
               </div>
             </div>
-            <div className="container-xs lg:px-5 md:px-5">
-              <div className="relative h-[800px] content-center mt-[200px]">
-                <div className="mx-auto flex flex-1 flex-col items-end px-[26px] sm:px-4">
-                  <div className="z-[4] flex items-center justify-end self-stretch md:flex-col">
-                    <div className="flex flex-1 items-center justify-end md:flex-col md:self-stretch">
-                      <div className="absolute -left-[112px] xl:left-[20px] top-[-130px] z-[5] flex max-w-[400px] flex-col items-end gap-1.5 w-[90%]">
-                        <Heading as="h2" className="!text-accent-blue">
-                          [ 01 ]
-                        </Heading>
-                        <Heading
-                          size="visa_headers_h4"
-                          as="h3"
-                          className="md:text-[26px] sm:text-[24px]"
-                        >
-                          Purchase OPN Coins
-                        </Heading>
-                        <Text
-                          size="visa_body_text_18"
-                          as="p"
-                          className="w-[75%] text-right leading-[140%] !text-dark-2 xl:w-full"
-                        >
-                          Kickstart your journey by purchasing 10,000 OPN coins
-                          from our program portal.
-                        </Text>
-                      </div>
-                    </div>
-                    <div className="absolute -top-[120px] -right-[22px] xl:right-[110px] flex w-[300px] flex-col items-start gap-1.5">
-                      <Heading as="h5" className="!text-accent-blue">
-                        [ 02 ]
-                      </Heading>
-                      <Heading
-                        size="visa_headers_h4"
-                        as="h6"
-                        className="md:text-[26px] sm:text-[24px]"
-                      >
-                        Stake Your Coins
-                      </Heading>
-                      <Text
-                        size="visa_body_text_18"
-                        as="p"
-                        className="w-[90%] leading-[140%] !text-dark-2 lg:w-full md:w-full"
-                      >
-                        Stake your OPN coins on our platform to secure
-                        eligibility for 12 monthly draws.
-                      </Text>
-                    </div>
+            <div className="container-xs lg:px-5 md:px-5 xl:mt-0 mt-10">
+              <div className="relative 2xl:h-[900px] xl:h-[670px] md:h-[510px] h-[390px] 2xl:max-w-[1500px] xl:max-w-[1250px] md:max-w-[800px] mx-auto max-w-[620px] content-center xl:my-[200px] my-[100px] md:block hidden">
+                <div className="absolute left-[20px] top-[-130px] z-[5] flex 2xl:max-w-[400px] xl:max-w-[380px] md:max-w-[220px] max-w-[180px] flex-col items-end gap-1.5 w-full">
+                  <Heading
+                    as="h2"
+                    className="!text-accent-blue md:!text-[16px] !text-[13px]"
+                  >
+                    [ 01 ]
+                  </Heading>
+                  <Heading
+                    size="visa_headers_h4"
+                    as="h3"
+                    className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                  >
+                    Purchase OPN Tokens
+                  </Heading>
+                  <Text
+                    size="visa_body_text_18"
+                    as="p"
+                    className="text-right leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                  >
+                    Kickstart your journey by purchasing 10,000 OPN tokens from
+                    our program portal.
+                  </Text>
+                </div>
+                <div className="absolute -top-[120px] xl:right-[110px] right-[10px] flex 2xl:max-w-[300px] xl:max-w-[280px] md:max-w-[220px] max-w-[180px] w-full flex-col items-start gap-1.5">
+                  <Heading
+                    as="h5"
+                    className="!text-accent-blue md:!text-[16px] !text-[13px]"
+                  >
+                    [ 02 ]
+                  </Heading>
+                  <Heading
+                    size="visa_headers_h4"
+                    as="h6"
+                    className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                  >
+                    Stake Your Tokens
+                  </Heading>
+                  <Text
+                    size="visa_body_text_18"
+                    as="p"
+                    className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                  >
+                    Stake your OPN tokens on our platform to secure eligibility
+                    for 12 monthly draws.
+                  </Text>
+                </div>
+                <div className="absolute  xl:right-[130px] right-[10px] 2xl:top-[320px] xl:top-[250px] md:top-[180px] top-[130px] 2xl:max-w-[280px] xl:max-w-[260px] md:max-w-[220px] max-w-[180px] flex flex-col items-start gap-1.5 md:w-full z-50">
+                  <Heading
+                    as="p"
+                    className="!text-grey md:!text-[16px] !text-[13px]"
+                  >
+                    [ 03 ]
+                  </Heading>
+                  <Heading
+                    size="visa_headers_h4"
+                    as="p"
+                    className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                  >
+                    Join the Draw
+                  </Heading>
+                  <Text
+                    size="visa_body_text_18"
+                    as="p"
+                    className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                  >
+                    Every month, enter a decentralized draw for a chance to win
+                    a UAE Golden Visa.
+                  </Text>
+                </div>
+                <div className="absolute 2xl:top-[310px] xl:top-[250px] md:top-[180px] top-[130px] xl:left-[140px] left-[10px] justify-between gap-5 flex md:flex-col 2xl:max-w-[280px] xl:max-w-[260px] md:max-w-[220px] max-w-[180px] z-50">
+                  <div className="flex w-full flex-col items-end gap-1.5">
+                    <Heading
+                      as="p"
+                      className="!text-grey md:!text-[16px] !text-[13px]"
+                    >
+                      [ 04 ]
+                    </Heading>
+                    <Heading
+                      size="visa_headers_h4"
+                      as="p"
+                      className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                    >
+                      Boost Your Chances
+                    </Heading>
+                    <Text
+                      size="visa_body_text_18"
+                      as="p"
+                      className="text-right leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                    >
+                      Increase your odds with exclusive boosters and referral
+                      rewards system.
+                    </Text>
                   </div>
                 </div>
-                {/* <div className="relative mr-[92px] mt-[-196px] flex h-[1096px] w-[80%] items-end justify-center bg-[url(/public/images/img_group_2.svg)] bg-cover bg-no-repeat px-14 py-[216px] lg:h-auto lg:w-full lg:py-8 md:mr-0 md:h-auto md:w-full md:p-5 sm:p-4">
-                    <div className="mt-[368px] flex w-[92%] flex-col items-start lg:w-full md:w-full">
-                      <Heading as="p" className="ml-[354px] !text-grey md:ml-0">
-                        [ 05 ]
-                      </Heading>
-                      <Text
-                        size="visa_headers_h2"
-                        as="p"
-                        className="mt-6 lg:text-[48px]"
-                      >
-                        Monthly Visa Allocation
-                      </Text>
-                      <Text
-                        size="visa_body_text_20"
-                        as="p"
-                        className="mt-2 self-stretch text-center leading-[140%] !text-dark-2"
-                      >
-                        <>
-                          Each draw allocates a specific number of Golden Visas
-                          <br />
-                          and benefits to participants.
-                        </>
-                      </Text>
-                      <Button
-                        color="dark_0"
-                        variant="fill"
-                        shape="round"
-                        rightIcon={
-                          <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
-                            <Img
-                              src="images/img_arrowleft.svg"
-                              alt="Arrow Left"
-                              className="h-[18px] w-[18px]"
-                            />
-                          </div>
-                        }
-                        className="ml-[238px] mt-[30px] min-w-[270px] gap-[26px] capitalize md:ml-0"
-                      >
-                        Enter the Draw now
-                      </Button>
-                    </div>
-                  </div> */}
-                {/* bg-[url(/public/images/img_group_4.png)] */}
-                <div className="absolute top-0 left-0 w-full z-10">
+                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 flex w-full flex-col items-center justify-center">
+                  <Heading
+                    as="p"
+                    className="!text-grey text-center md:!text-[16px] !text-[13px]"
+                  >
+                    [ 05 ]
+                  </Heading>
+                  <div className="2xl:my-0 xl:my-3 my-1">
+                    <Text
+                      size="visa_headers_h2"
+                      as="p"
+                      className="2xl:!text-[48px] xl:!text-[35px] md:!text-[30px] !text-[22px]"
+                    >
+                      Monthly Visa Allocation
+                    </Text>
+                  </div>
+                  <Text
+                    size="visa_body_text_20"
+                    as="p"
+                    className="2xl:mt-4 text-center leading-[140%] !text-dark-2 md:!text-[20px] !text-[16px]"
+                  >
+                    <>
+                      Each draw allocates a specific number of Golden Visas
+                      <br />
+                      and benefits to participants.
+                    </>
+                  </Text>
+                  {/* <Button
+                    color="dark_0"
+                    variant="fill"
+                    shape="round"
+                    rightIcon={
+                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
+                        <Img
+                          src="images/img_arrowleft.svg"
+                          alt="Arrow Left"
+                          className="h-[18px] w-[18px]"
+                        />
+                      </div>
+                    }
+                    className="ml-[238px] mt-[30px] min-w-[270px] gap-[26px] capitalize md:ml-0"
+                  >
+                    Enter the Draw now
+                  </Button> */}
+                </div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 2xl:w-full xl:w-[1074px] md:w-[800px] w-[600px] z-10">
                   <img src="/images/img_group_4.png" alt="" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 top-0 z-[6] m-auto h-[712px] flex-1 bg-cover bg-no-repeat px-[26px] py-[98px] lg:h-auto lg:py-8 md:h-auto md:py-5 sm:p-4">
+                <Img
+                  src="images/img_img.png"
+                  alt="Image One"
+                  className="absolute left-1/2 2xl:top-[-120px] xl:top-[-80px] top-[-50px] z-50 -translate-x-1/2 m-auto 2xl:max-w-[400px] xl:max-w-[270px] md:max-w-[200px] max-w-[160px] w-full rounded-[24px] object-contain"
+                />
+                {/* <div className="relative mr-[92px] mt-[-196px] flex h-[1096px] w-[80%] items-end justify-center bg-[url(/public/images/img_group_2.svg)] bg-cover bg-no-repeat px-14 py-[216px] lg:h-auto lg:w-full lg:py-8 md:mr-0 md:h-auto md:w-full md:p-5 sm:p-4">
+                    
+                  </div> */}
+                {/* bg-[url(/public/images/img_group_4.png)] */}
+                {/* <div className="absolute bottom-0 left-0 right-0 top-0 z-[6] m-auto flex-1 bg-cover bg-no-repeat px-[26px] py-[98px] lg:h-auto lg:py-8 md:h-auto md:py-5 sm:p-4">
                   <div className="mb-[134px] flex flex-col gap-[120px] lg:gap-[90px] md:gap-[90px] sm:gap-[60px]">
-                    {/*<div className="mx-[90px] flex items-end justify-center gap-2.5 md:mx-0 md:flex-col">
+                  </div>
+                </div> */}
+                {/*<div className="mx-[90px] flex items-end justify-center gap-2.5 md:mx-0 md:flex-col">
                       <div className="h-[68px] w-[4px] rounded-sm bg-dark-0 md:h-[4px] md:w-[68px]" />
                       <div className="h-[52px] w-[4px] rounded-sm bg-dark-0 md:h-[4px] md:w-[52px]" />
                       <div className="h-[52px] w-[4px] rounded-sm bg-dark-0 md:h-[4px] md:w-[52px]" />
@@ -326,55 +390,185 @@ export default function GoldenVisaLandingvTwoPage() {
                       <div className="h-[52px] w-[4px] rounded-sm bg-dark-0 md:h-[4px] md:w-[52px]" />
                       <div className="h-[56px] w-[4px] rounded-sm bg-dark-0 md:h-[4px] md:w-[56px]" />
                     </div> */}
-                    <div className="absolute top-[215px] xl:top-[310px] -left-[5px] xl:left-[140px] justify-between gap-5 flex md:flex-col max-w-[280px]">
-                      <div className="flex w-full flex-col items-end gap-1.5">
-                        <Heading as="p" className="!text-grey">
-                          [ 04 ]
-                        </Heading>
-                        <Heading
-                          size="visa_headers_h4"
-                          as="p"
-                          className="md:text-[26px] sm:text-[24px]"
-                        >
-                          Boost Your Chances
-                        </Heading>
-                        <Text
-                          size="visa_body_text_18"
-                          as="p"
-                          className="w-[85%] text-right leading-[140%] !text-dark-2 xl:w-full"
-                        >
-                          Increase your odds with exclusive boosters and
-                          referral rewards system.
-                        </Text>
-                      </div>
+              </div>
+              <div className="md:hidden block px-5">
+                <div className="h-[650px] mx-auto relative mb-[150px]">
+                  <div className="absolute h-full top-0 left-0">
+                    <img
+                      src="/images/learn-sec-side-img.png"
+                      className="h-full"
+                      alt=""
+                    />
+                  </div>
+                  <div className="pl-8">
+                    <div className="flex flex-col items-start gap-1.5 w-full h-[176px]">
+                      <Heading
+                        as="h2"
+                        className="!text-accent-blue md:!text-[16px] !text-[13px]"
+                      >
+                        [ 01 ]
+                      </Heading>
+                      <Heading
+                        size="visa_headers_h4"
+                        as="h3"
+                        className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                      >
+                        Purchase OPN Tokens
+                      </Heading>
+                      <Text
+                        size="visa_body_text_18"
+                        as="p"
+                        className="text-start leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                      >
+                        Kickstart your journey by purchasing 10,000 OPN tokens
+                        from our program portal.
+                      </Text>
                     </div>
-                    <div className="absolute -right-[6px] xl:right-[130px] top-[215px] xl:top-[320px] max-w-[280px] flex flex-col items-start gap-1.5 md:w-full">
-                      <Heading as="p" className="!text-grey">
+                    <div className="flex w-full flex-col items-start gap-1.5 h-[155px]">
+                      <Heading
+                        as="h5"
+                        className="!text-accent-blue md:!text-[16px] !text-[13px]"
+                      >
+                        [ 02 ]
+                      </Heading>
+                      <Heading
+                        size="visa_headers_h4"
+                        as="h6"
+                        className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                      >
+                        Stake Your Tokens
+                      </Heading>
+                      <Text
+                        size="visa_body_text_18"
+                        as="p"
+                        className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                      >
+                        Stake your OPN tokens on our platform to secure
+                        eligibility for 12 monthly draws.
+                      </Text>
+                    </div>
+                    <div className="flex flex-col items-start gap-1.5 w-full z-50 h-[155px]">
+                      <Heading
+                        as="p"
+                        className="!text-grey md:!text-[16px] !text-[13px]"
+                      >
                         [ 03 ]
                       </Heading>
                       <Heading
                         size="visa_headers_h4"
                         as="p"
-                        className="md:text-[26px] sm:text-[24px]"
+                        className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
                       >
                         Join the Draw
                       </Heading>
                       <Text
                         size="visa_body_text_18"
                         as="p"
-                        className="w-[90%] leading-[140%] !text-dark-2 lg:w-full md:w-full"
+                        className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
                       >
                         Every month, enter a decentralized draw for a chance to
                         win a UAE Golden Visa.
                       </Text>
                     </div>
+                    <div className="gap-5 flex md:flex-col h-[155px]">
+                      <div className="flex w-full flex-col items-start gap-1.5">
+                        <Heading
+                          as="p"
+                          className="!text-grey md:!text-[16px] !text-[13px]"
+                        >
+                          [ 04 ]
+                        </Heading>
+                        <Heading
+                          size="visa_headers_h4"
+                          as="p"
+                          className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
+                        >
+                          Boost Your Chances
+                        </Heading>
+                        <Text
+                          size="visa_body_text_18"
+                          as="p"
+                          className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
+                        >
+                          Increase your odds with exclusive boosters and
+                          referral rewards system.
+                        </Text>
+                      </div>
+                    </div>
+                    <div className="flex w-full flex-col items-start justify-center">
+                      <Heading
+                        as="p"
+                        className="!text-grey text-center md:!text-[16px] !text-[13px]"
+                      >
+                        [ 05 ]
+                      </Heading>
+                      <div className="2xl:my-0 xl:my-3 my-1">
+                        <Text
+                          size="visa_headers_h2"
+                          as="p"
+                          className="text-[30px]"
+                        >
+                          Monthly Visa Allocation
+                        </Text>
+                      </div>
+                      <Text
+                        size="visa_body_text_20"
+                        as="p"
+                        className="2xl:mt-4 text-start leading-[140%] !text-dark-2 md:!text-[20px] !text-[16px]"
+                      >
+                        <>
+                          Each draw allocates a specific number of Golden Visas
+                          <br />
+                          and benefits to participants.
+                        </>
+                      </Text>
+                      {/* <Button
+                    color="dark_0"
+                    variant="fill"
+                    shape="round"
+                    rightIcon={
+                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
+                        <Img
+                          src="images/img_arrowleft.svg"
+                          alt="Arrow Left"
+                          className="h-[18px] w-[18px]"
+                        />
+                      </div>
+                    }
+                    className="ml-[238px] mt-[30px] min-w-[270px] gap-[26px] capitalize md:ml-0"
+                  >
+                    Enter the Draw now
+                  </Button> */}
+                    </div>
                   </div>
                 </div>
-                <Img
-                  src="images/img_img.png"
-                  alt="Image One"
-                  className="absolute left-1/2 top-[-170px] z-50 -translate-x-1/2 m-auto h-[600px] xl:h-[674px] w-[32%] rounded-[24px] object-contain"
-                />
+                <div className="flex justify-center pt-10">
+                  <Link to="/GenzTalentProgram">
+                    <Button
+                      variant="fill"
+                      shape="round"
+                      rightIcon={
+                        <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-[white]">
+                          <Img
+                            src="images/img_arrowleft.svg"
+                            alt="Arrow Left"
+                            className="h-[18px] w-[18px]"
+                          />
+                        </div>
+                      }
+                      className="min-w-[258px] gap-4 !bg-dark-0 !text-[white] capitalize"
+                    >
+                      Enter the Draw now
+                    </Button>
+                  </Link>
+                </div>
+                <div className="mt-7">
+                  <Img
+                    src="images/img_img.png"
+                    alt="Image One"
+                    className="w-full rounded-[24px] object-cover h-[300px]"
+                  />
+                </div>
               </div>
             </div>
 
@@ -425,7 +619,8 @@ export default function GoldenVisaLandingvTwoPage() {
                       chance to win a UAE Golden Visa.
                     </Text>
                   </div>
-                  <Link to="/OPNTokenMint">
+                  <Link to="">
+                    {/* <Link to="/OPNTokenMint"> */}
                     <Button
                       variant="fill"
                       shape="round"

@@ -41,7 +41,7 @@
   font-weight: 900;
 }
 
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -72,7 +72,7 @@
   width: 250px; /* Adjust as needed */
   height: 100%;
   background-color: #ffffff;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   z-index: 50;
@@ -114,9 +114,9 @@
   color: #08122a;
 }
 /* Hero Section */
-.main-hero{
+.main-hero {
   background-image: url(../src/assets/heroimg.png);
-  background-position: center ;
+  background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   min-height: 800px;
@@ -124,7 +124,7 @@
 }
 @media (max-width: 767px) {
   .main-hero {
-    background-image: url('../src/assets/Herobgsm.png'); /* Replace with your smaller screen image */
+    background-image: url("../src/assets/Herobgsm.png"); /* Replace with your smaller screen image */
     background-size: cover;
     border-radius: 20px;
     min-height: 100%;
@@ -163,7 +163,14 @@
       rgba(41, 118, 199, 0.5) 99.95%
     ),
     linear-gradient(0deg, rgba(11, 57, 102, 0.4), rgba(11, 57, 102, 0.4)); */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #000000 73.33%), linear-gradient(266.02deg, rgba(0, 0, 0, 0) 55.54%, #000000 60.44%), linear-gradient(213.34deg, rgba(0, 0, 0, 0) 44.78%, #000000 55.82%), linear-gradient(210.76deg, rgba(41, 118, 199, 0) 42.69%, rgba(41, 118, 199, 0.5) 99.95%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #000000 73.33%),
+    linear-gradient(266.02deg, rgba(0, 0, 0, 0) 55.54%, #000000 60.44%),
+    linear-gradient(213.34deg, rgba(0, 0, 0, 0) 44.78%, #000000 55.82%),
+    linear-gradient(
+      210.76deg,
+      rgba(41, 118, 199, 0) 42.69%,
+      rgba(41, 118, 199, 0.5) 99.95%
+    );
   background-color: #000;
   background-blend-mode: lighten;
   z-index: 0;
@@ -265,15 +272,14 @@
 .features-card-icon:hover {
   background-color: #eee;
 }
-.partner-main {  
+.partner-main {
   background: linear-gradient(
       360deg,
       rgba(21, 64, 109, 0.8) 0%,
       rgba(21, 64, 109, 0.666876) 27.66%,
       rgba(21, 64, 109, 0) 69.14%
     ),
-    url("../src/assets/partnershipbg.jpeg") no-repeat
-      center/cover;
+    url("../src/assets/partnershipbg.jpeg") no-repeat center/cover;
 }
 .partner-content h2 {
   font-family: Arial, Helvetica, sans-serif;
@@ -301,13 +307,12 @@
 }
 /* RoadMap */
 .roadmap-card-cont {
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none; /* Firefox */
 }
 
 .roadmap-card-cont::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
-
 
 /* Footer */
 .social-item {
@@ -374,7 +379,6 @@
   align-items: flex-start;
   padding: 0px;
 }
-
 
 .brand {
   font-family: Arial, sans-serif;

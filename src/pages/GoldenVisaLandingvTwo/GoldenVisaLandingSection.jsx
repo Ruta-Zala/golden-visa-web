@@ -1,7 +1,7 @@
 import { Img } from "../../components/Img";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
-import './GoldenVisaLandingSection.css'
+import "./GoldenVisaLandingSection.css";
 
 export default function GoldenVisaLandingSection() {
   return (
@@ -25,7 +25,8 @@ export default function GoldenVisaLandingSection() {
               achievers, and transform your life.
             </p>
             <div className="flex flex-col md:flex-row gap-4">
-              <Link to="/GenzTalentProgram">
+              <Link to="">
+                {/* <Link to="/GenzTalentProgram"> */}
                 <Button
                   variant="fill"
                   shape="round"
