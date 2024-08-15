@@ -150,7 +150,7 @@ const Features = () => {
           ))}
         </Swiper>
         {/* Custom navigation buttons */}
-        <div className="absolute top-1/2 left-1/2 transform flex items-center justify-center -translate-y-1/2 -translate-x-1/2  z-30 h-[100px] w-[100px] rounded-full bg-[#fff]">
+        <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-30 h-[100px] w-[100px] rounded-full bg-[#fff] hidden md:flex items-center justify-center">
           <button
             ref={prevRef}
             className="swiper-button-prev p-3 after:content-['prev'] after:text-[16px] after:text-slate-900 rounded-full"

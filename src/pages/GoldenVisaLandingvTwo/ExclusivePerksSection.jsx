@@ -80,12 +80,12 @@ export default function ExclusivePerksSection() {
                   </>
                 </span>
                 <span className="bg-gradient3 bg-clip-text text-transparent text-2xl sm:text-3xl md:text-4xl lg:text-6xl">
-                  the IOPn Trailblazer’s Initiative!
+                  the IOPn Trailblazer's Initiative!
                 </span>
               </Text>
               {/* <p className="text-2xl text-dark-0 text-center">
-                As a participant in the IOPn GenZ Talent Program, you’re not
-                just entering a draw – you’re opening the door to a world of
+                As a participant in the IOPn GenZ Talent Program, you're not
+                just entering a draw – you're opening the door to a world of
                 exclusive benefits and prizes!
               </p> */}
             </div>
@@ -148,7 +148,7 @@ export default function ExclusivePerksSection() {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <div className="absolute top-1/2 left-[40%] md:left-[48%] transform flex items-center justify-center -translate-y-1/2  z-30 h-[100px] w-[100px] rounded-full bg-[#000]">
+              <div className="absolute top-1/2 left-[40%] md:left-[48%] transform flex items-center justify-center -translate-y-1/2 z-30 h-[100px] w-[100px] rounded-full bg-[#000] hidden md:flex">
                 <button
                   ref={prevRef}
                   className="swiper-button-prev p-3 after:content-['prev'] after:text-[16px] after:text-[#fff] rounded-full"
