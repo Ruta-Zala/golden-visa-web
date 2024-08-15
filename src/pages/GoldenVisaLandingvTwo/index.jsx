@@ -506,7 +506,7 @@ export default function GoldenVisaLandingvTwoPage() {
                         <Text
                           size="visa_headers_h2"
                           as="p"
-                          className="text-[30px]"
+                          className="2xl:!text-[48px] xl:!text-[35px] md:!text-[30px] !text-[28px]"
                         >
                           Monthly Visa Allocation
                         </Text>

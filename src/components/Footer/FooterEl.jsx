@@ -6,6 +6,11 @@ import linkedin from "../../assets/linkedin.png";
 import medium from "../../assets/icon-medium.svg";
 import logo from "../../assets/header-logo.png";
 const Footer = () => {
+  
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4">
       <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full ">
@@ -80,7 +85,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-2 flex-col lg:flex-row justify-end items-center gap-4 h-fit mt-2">
-            <a href="/#/golden-visa">
+            <a href="/#/golden-visa" onClick={handleLinkClick} >
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6] ">
                 UAE Golden Visa
               </span>

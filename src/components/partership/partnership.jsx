@@ -12,7 +12,7 @@ const Partnership = () => {
             Internet of People (IOPn) Partners with RAK DAO and Commits $100
             Million Investment to Boost Web3 Innovation in Ras al Khaimah
           </h2>
-          <p className="opacity-90 line-clamp-3">
+          <p className="opacity-90 line-clamp-5">
             Thanks to our unique partnership with RAK DAO, IOPn brings a
             life-changing opportunity to people all over the world. By simply
             joining the IOPn Community, you can take part in the monthly Golden
