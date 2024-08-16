@@ -25,17 +25,17 @@ export default function FAQSection() {
   return (
     <>
       {/* f a q section */}
-      <div className="mt-[180px] flex justify-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex justify-center self-stretch">
         <div className="container-xs flex justify-center gap-4 max-[1440px]:px-5 max-[1050px]:flex-col max-[1050px]:px-5">
           <div className="flex w-[42%] flex-col items-start gap-5 rounded-[20px] bg-light_base py-12 pl-16 pr-14 max-[1440px]:pl-8 max-[1050px]:w-full max-[1050px]:p-5 max-[550px]:p-4">
             <Button
               size="xs"
-              className="mt-3.5 min-w-[64px] rounded-[18px] font-medium uppercase"
+              className="mt-3.5 min-w-[64px] rounded-[18px] font-medium uppercase border border-dark-0"
             >
               FAQ
             </Button>
             <Text
-              size="visa_desktop_headers_h2"
+              size="visa_headers_h2"
               as="p"
               className="max-[1440px]:text-[48px]"
             >
@@ -48,14 +48,17 @@ export default function FAQSection() {
           >
             {accordionData.map((d, i) => (
               <AccordionItem uuid={i} key={`Questions Row${i}`}>
-                <div className="flex flex-1 flex-col gap-[30px] rounded-[20px] border border-solid border-gray-300 bg-white-0 p-5 shadow-md">
+                <div className="flex flex-1 flex-col gap-[30px] rounded-[20px] border border-solid border-gray-300 bg-white-0 p-5 shadow-lg">
                   <AccordionItemHeading className="w-full">
                     <AccordionItemButton>
                       <AccordionItemState>
                         {(props) => (
                           <>
                             <div className="flex items-center justify-between gap-5 py-2.5">
-                              <Heading size="visa_desktop_headers_h5" as="h2">
+                              <Heading
+                                size="visa_desktop_headers_h5_bold"
+                                as="h2"
+                              >
                                 {d.benefitQuestion}
                               </Heading>
                               {props?.expanded ? (

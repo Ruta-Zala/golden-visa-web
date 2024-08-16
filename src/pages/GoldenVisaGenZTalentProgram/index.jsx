@@ -80,9 +80,9 @@ export default function GoldenVisaGenZTalentProgramPage() {
 
         {/* token purchase section */}
         <TokenPurchaseSection />
-        <div className="container-xs mt-[118px] max-[1440px]:px-5 max-[1050px]:px-5">
-          <div className="flex gap-4 max-[1050px]:flex-col">
-            <div className="relative h-[470px] w-full rounded-[20px] bg-light_base">
+        <div className="container-xs mt-[80px] md:mt-[100px] xl:mt-[180px] max-[1440px]:px-5 max-[1050px]:px-5">
+          <div className="flex gap-4 flex-col md:flex-row">
+            <div className="relative h-[250px] md:h-auto w-full rounded-[20px] bg-light_base">
               <div className="mt-12 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 max-[1440px]:ml-0 max-[1050px]:left-0 max-[1050px]:ml-4">
                 <Button
                   size="xs"
@@ -101,7 +101,12 @@ export default function GoldenVisaGenZTalentProgramPage() {
               <Img
                 src="images/img_chain_link_2x_1.png"
                 alt="Chainlink Image"
-                className="absolute bottom-[-4px] left-0 m-auto h-[266px] w-[46%] object-contain opacity-70"
+                className="absolute hidden md:flex bottom-0 left-0 m-auto h-auto w-[40%] md:w-[66%] lg-[46%] object-contain opacity-70"
+              />
+              <Img
+                src="images/img_chain_link_2x_1.png"
+                alt="Chainlink Image"
+                className="absolute top-0 flex md:hidden right-0 m-0 rotate-[180deg] h-auto w-[50%] object-contain opacity-70"
               />
             </div>
             <div className="flex w-full flex-col gap-[60px] rounded-[20px] bg-dark-0 p-10 shadow-md max-[550px]:gap-[30px] max-[550px]:p-4">
@@ -122,29 +127,59 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   friend who joins through your link.
                 </Text>
               </div>
-              <div className="mb-1.5 flex flex-col gap-4 ">
-                <label class="gap-4 !rounded-[34px] !text-white-1 shadow-xl max-[550px]:text-[14px] bg-slate-600 flex items-center justify-center cursor-text border-blue-900_1e border border-solid  rounded-[36px] h-[68px] pl-[26px] pr-[12px] text-[20px]">
-                  <input
-                    type="text"
-                    name="Edit URL"
-                    placeholder="https://iopn.io/gkiyfujytdhtsrsytdr"
-                    value="https://iopn.io/gkiyfujytdhtsrsytdr"
-                  />
-                  <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
-                    <img
-                      class="h-[28px] w-[18px]"
-                      src="images/img_arrowleft_white_0.svg"
-                      alt="Arrow Left"
-                      loading="lazy"
-                    />
-                  </div>
-                </label>
+              <div className="mb-[70px] flex flex-col gap-4">
+                <Input
+                  color="white_0"
+                  size="xs"
+                  shape="round"
+                  name="Editable URL"
+                  placeholder={`https://iopn.io/gkiyfujytdhtsrsytdr`}
+                  value="https://iopn.io/gkiyfujytdhtsrsytdr"
+                  suffix={
+                    <Button
+                      color="dark_0"
+                      variant="fill"
+                      shape="round"
+                      rightIcon={
+                        <div className="copy-link-button hidden md:flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
+                          <Img
+                            src="images/img_arrowleft.svg"
+                            alt="Arrow Left"
+                            className="h-[18px] w-[18px]"
+                          />
+                        </div>
+                      }
+                      className="hidden md:flex rounded-[18px] border border-solid border-dark-0 p-1.5 gap-5"
+                    >
+                      Copy Link
+                    </Button>
+                  }
+                  className="!rounded-[34px] !rounded-[34px] !text-white-1 shadow-xl max-[550px]:text-[14px] bg-slate-600 flex items-center justify-center cursor-text border-blue-900_1e border border-solid  rounded-[36px] !text-[20px] !h-auto !p-[8px]"
+                />
+
                 <div className="flex flex-col gap-3">
                   <Button
+                    color="dark_0"
+                    variant="fill"
                     shape="round"
-                    color="undefined_undefined"
                     rightIcon={
-                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[10px]">
+                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-slate-900 absolute right-[5px] mr-1">
+                        <Img
+                          src="images/img_arrowleft_white_0.svg"
+                          alt="Arrow Left"
+                          className="h-[18px] w-[18px]"
+                        />
+                      </div>
+                    }
+                    className="gap-[34px] py-4 self-stretch rounded-[40px] font-small capitalize max-[550px]:h-[50px] bg-white-0 !text-slate-900 relative flex md:hidden"
+                  >
+                    Copy Link
+                  </Button>
+                  <Button
+                    color="white_0"
+                    shape="round"
+                    rightIcon={
+                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
                         <Img
                           src="images/img_arrowleft.svg"
                           alt="Arrow Left"
@@ -152,13 +187,14 @@ export default function GoldenVisaGenZTalentProgramPage() {
                         />
                       </div>
                     }
-                    className="gap-[34px] self-stretch font-medium capitalize text-white-0 border border-solid border-slate-100 relative"
+                    className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
                   >
                     Generate referral link
                   </Button>
                   <Text
+                    size="visa_desktop_body_text_16"
                     as="p"
-                    className="text-center leading-[130%] !text-white-4 max-[550px]:text-xs"
+                    className="text-center leading-[130%] !text-white-2"
                   >
                     *Copy this link and share it witch other people to nvite
                     your network to embark on this exciting journey with you and
@@ -175,13 +211,13 @@ export default function GoldenVisaGenZTalentProgramPage() {
 
         {/* f a q section */}
         <FAQSection />
-        <div className="mb-1 mt-[180px] flex flex-col items-center self-stretch">
+        <div className="mb-1 mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch">
           <div className="container-xs flex flex-col gap-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
-            <div className="flex gap-4 max-[1050px]:flex-col">
+            <div className="flex flex-col md:flex-row gap-4">
               <Img
                 src="images/img_rectangle_11_582x742.png"
                 alt="Promo Image"
-                className="h-[582px] w-[50%] rounded-[20px] object-contain max-[1050px]:w-full"
+                className="h-[340px] sm:h-[450px] md:h-[582px] w-full rounded-[20px] object-cover md:w-[50%]"
               />
               <div className="flex flex-1 flex-col items-start justify-center gap-20 rounded-[20px] border border-solid border-gray-300 bg-white-0 py-16 pl-16 pr-14 shadow-md max-[1440px]:gap-20 max-[1440px]:py-8 max-[1440px]:pl-8 max-[1050px]:gap-[60px] max-[1050px]:self-stretch max-[1050px]:p-5 max-[550px]:gap-10 max-[550px]:p-4">
                 <div className="flex flex-col gap-5 self-stretch">
@@ -216,23 +252,17 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     a UAE Golden Visa.
                   </Text>
                 </div>
-                <Button
-                  variant="gradient"
-                  shape="round"
-                  color="blue_700_blue_800_02"
-                  rightIcon={
-                    <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
-                      <Img
-                        src="images/img_arrowleft_blue_800_01.svg"
-                        alt="Arrow Left"
-                        className="h-[18px] w-[18px]"
-                      />
-                    </div>
-                  }
-                  className="min-w-[268px] gap-4 font-medium capitalize max-[550px]:text-lg max-[550px]:self-stretch"
-                >
-                  Mint OPN Tokens Now
-                </Button>
+                <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
+                  <div className="flex-1 text-center">Mint OPN Tokens Now</div>
+                  <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-white-0">
+                    <img
+                      class="h-[10px] w-[10px]"
+                      src="images/img_arrowleft_blue_800.svg"
+                      alt="Arrow Left"
+                      loading="lazy"
+                    />
+                  </div>
+                </button>
               </div>
             </div>
             <Footer />

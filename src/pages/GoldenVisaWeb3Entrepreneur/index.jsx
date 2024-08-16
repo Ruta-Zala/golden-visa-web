@@ -72,220 +72,189 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
               </div>
             </div>
           </div>
-          <div className="relative h-[1046px]">
-            <div className="absolute bottom-0 left-0 right-0 top-0 m-auto mt-0 h-max flex-1 py-[100px] max-[1440px]:py-8 max-[1050px]:py-5 max-[550px]:py-4">
-              {/* golden visa web3 entrepreneur section */}
-              <Goldenvisaweb3entrepreneursection />
-            </div>
-            <Img
-              src="images/img_icon_star_glossy_glass_style copy.png"
-              alt="Star Icon"
-              className="absolute bottom-[-10px] left-0 right-0 m-auto h-[820px] w-[60%] object-contain"
-            />
-          </div>
+          <Goldenvisaweb3entrepreneursection />
         </div>
         {/* how it works section */}
-        <HowItWorksSection />
-        {/* purchase section */}
-        <PurchaseSection />
-        {/* <div className="container-xs mt-[66px] max-[1440px]:px-5 max-[1050px]:px-5">
-          <div className="relative h-[1008px]">
-            <div className="absolute right-[18%] top-0 m-auto h-[790px] w-[64%] bg-[url(/public/images/img_group_4.svg)] bg-cover bg-no-repeat px-3 py-28 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:w-full max-[1050px]:right-0 max-[1050px]:py-5 max-[550px]:py-4">
-              <div className="mb-[402px] flex flex-col items-start gap-[26px] max-[1050px]:justify-center">
-                <div className="ml-48 flex rounded-[18px] border border-solid border-dark-0 p-1.5 max-[1050px]:m-auto">
-                  <Heading size="visa_desktop_headers_subheader" as="h2">
-                    How Does It Work?
-                  </Heading>
+        <div className="flex w-full flex-col items-center bg-white-0">
+          <HowItWorksSection />
+          {/* purchase section */}
+          <PurchaseSection />
+        </div>
+        <div className="container-xs mt-[66px] max-[1440px]:px-5 max-[1050px]:px-5 relative">
+          <div className="absolute sm:left-1/2 left-0 sm:-translate-x-[30%] top-0 blur-[15px] h-[500px] sm:w-[500px] w-full">
+            <img
+              src="/images/img_group_4.svg"
+              className="h-full sm:w-full w-[90%]"
+              alt=""
+            />
+          </div>
+          <div className="flex flex-col items-center xl:gap-[26px] gap-2 lg:pb-0 pb-20">
+            <div className="flex rounded-[18px] border border-solid border-dark-0 p-1.5 max-[1050px]:m-auto">
+              <Heading size="visa_desktop_headers_subheader" as="h2">
+                How Does It Work?
+              </Heading>
+            </div>
+            <Text
+              size="visa_headers_h2"
+              as="p"
+              className="xl:!text-[72px] md:!text-[55px] !text-[40px]"
+            >
+              Onboarding Steps
+            </Text>
+          </div>
+          <div className="relative 2xl:h-[420px] xl:h-[250px] h-[200px] lg:my-[200px] my-[100px] 2xl:max-w-[1450px] xl:max-w-[1150px] lg:max-w-[900px] max-w-[700px] w-full mx-auto md:block hidden">
+            <Img
+              src="images/img_lines.png"
+              alt="Lines Image"
+              className="absolute bottom-0 left-0 top-0 w-[calc(100%-100px)]"
+            />
+            <div className="absolute 2xl:left-[65px] 2xl:top-[-90px] xl:top-[-97px] lg:top-[-100px] top-[-91px] xl:left-[3px] left-[-19px] m-auto z-50">
+              <div className="relative flex flex-col items-end">
+                <div className="absolute -bottom-10">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g filter="url(#filter0_b_245_3600)">
+                      <rect
+                        width="24"
+                        height="24"
+                        rx="12"
+                        fill="#4DACFF"
+                        fill-opacity="0.1"
+                      />
+                      <rect
+                        x="0.5"
+                        y="0.5"
+                        width="23"
+                        height="23"
+                        rx="11.5"
+                        stroke="#2573C0"
+                        stroke-opacity="0.15"
+                      />
+                      <circle cx="12" cy="12" r="4" fill="#2573C0" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_b_245_3600"
+                        x="-5"
+                        y="-5"
+                        width="34"
+                        height="34"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB"
+                      >
+                        <feFlood
+                          flood-opacity="0"
+                          result="BackgroundImageFix"
+                        />
+                        <feGaussianBlur
+                          in="BackgroundImageFix"
+                          stdDeviation="2.5"
+                        />
+                        <feComposite
+                          in2="SourceAlpha"
+                          operator="in"
+                          result="effect1_backgroundBlur_245_3600"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="effect1_backgroundBlur_245_3600"
+                          result="shape"
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
                 </div>
-                <Text
-                  size="visa_desktop_headers_h2"
-                  as="p"
-                  className="max-[1440px]:text-[48px] max-[1050px]:self-center max-[1050px]:ml-10"
+                <Heading
+                  size="visa_desktop_headers_subheader"
+                  as="h5"
+                  className="!text-accent-blue"
                 >
-                  Onboarding Steps
+                  [ 01 ]
+                </Heading>
+                <Heading
+                  size="visa_desktop_headers_h4"
+                  as="h6"
+                  className="mt-2.5 lg:!text-[30px] !text-[20px]"
+                >
+                  Step 1
+                </Heading>
+                <Text
+                  size="visa_desktop_body_text_18"
+                  as="p"
+                  className="!text-dark-2 mt-2"
+                >
+                  Complete your profile setup
                 </Text>
               </div>
             </div>
-            <div className="absolute bottom-[18%] left-0 right-0 m-auto h-[318px] flex-1">
-              <Img
-                src="images/img_lines.png"
-                alt="Lines Image"
-                className="absolute bottom-0 left-0 right-0 top-0 m-auto h-[310px] flex-1 object-cover max-[1050px]:hidden"
-              />
-              <Img
-                src="images/img_dots.svg"
-                alt="Dots Image"
-                className="absolute bottom-0 left-0 right-0 top-0 m-auto h-[308px] w-[72%] object-contain max-[1050px]:hidden"
-              />
-              <div className="absolute w-[1px] bg-indigo-500 h-[74%] top-[-95%] left-3 max-[1440px]:hidden max-[1050px]:block"></div>
-              <div className="absolute top-[-95%] flex flex-col gap-[82px] max-[1440px]:hidden max-[1050px]:flex">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g filter="url(#filter0_b_245_3600)">
-                    <rect
-                      width="24"
-                      height="24"
-                      rx="12"
-                      fill="#4DACFF"
-                      fill-opacity="0.1"
-                    />
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="23"
-                      height="23"
-                      rx="11.5"
-                      stroke="#2573C0"
-                      stroke-opacity="0.15"
-                    />
-                    <circle cx="12" cy="12" r="4" fill="#2573C0" />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_245_3600"
-                      x="-5"
-                      y="-5"
-                      width="34"
-                      height="34"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="2.5"
+            <div className="absolute 2xl:top-[213px] xl:top-[170px] lg:top-[138px] top-[110px] right-[-22px] z-50">
+              <div className="relative flex flex-col items-start">
+                <div className="absolute -top-10">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g filter="url(#filter0_b_245_3600)">
+                      <rect
+                        width="24"
+                        height="24"
+                        rx="12"
+                        fill="#4DACFF"
+                        fill-opacity="0.1"
                       />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_245_3600"
+                      <rect
+                        x="0.5"
+                        y="0.5"
+                        width="23"
+                        height="23"
+                        rx="11.5"
+                        stroke="#2573C0"
+                        stroke-opacity="0.15"
                       />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_245_3600"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g filter="url(#filter0_b_245_3600)">
-                    <rect
-                      width="24"
-                      height="24"
-                      rx="12"
-                      fill="#4DACFF"
-                      fill-opacity="0.1"
-                    />
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="23"
-                      height="23"
-                      rx="11.5"
-                      stroke="#2573C0"
-                      stroke-opacity="0.15"
-                    />
-                    <circle cx="12" cy="12" r="4" fill="#2573C0" />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_245_3600"
-                      x="-5"
-                      y="-5"
-                      width="34"
-                      height="34"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="2.5"
-                      />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_245_3600"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_245_3600"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g filter="url(#filter0_b_245_3600)">
-                    <rect
-                      width="24"
-                      height="24"
-                      rx="12"
-                      fill="#4DACFF"
-                      fill-opacity="0.1"
-                    />
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="23"
-                      height="23"
-                      rx="11.5"
-                      stroke="#2573C0"
-                      stroke-opacity="0.15"
-                    />
-                    <circle cx="12" cy="12" r="4" fill="#2573C0" />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_245_3600"
-                      x="-5"
-                      y="-5"
-                      width="34"
-                      height="34"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="2.5"
-                      />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_245_3600"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_245_3600"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-              </div>
-              <div className="absolute bottom-[-0.50px] right-[27px] m-auto flex flex-col items-start max-[1050px]:top-[-60%] max-[1050px]:right-[71%] max-[550px]:right-[48vw]">
+                      <circle cx="12" cy="12" r="4" fill="#2573C0" />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_b_245_3600"
+                        x="-5"
+                        y="-5"
+                        width="34"
+                        height="34"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB"
+                      >
+                        <feFlood
+                          flood-opacity="0"
+                          result="BackgroundImageFix"
+                        />
+                        <feGaussianBlur
+                          in="BackgroundImageFix"
+                          stdDeviation="2.5"
+                        />
+                        <feComposite
+                          in2="SourceAlpha"
+                          operator="in"
+                          result="effect1_backgroundBlur_245_3600"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="effect1_backgroundBlur_245_3600"
+                          result="shape"
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
                 <Heading
                   size="visa_desktop_headers_subheader"
                   as="h3"
@@ -294,74 +263,138 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                   [ 02 ]
                 </Heading>
                 <Heading
+                  size="visa_desktop_headers_h4"
                   as="h4"
-                  className="mt-2.5 max-[1050px]:text-[26px] max-[550px]:text-[24px]"
+                  className="mt-2.5 lg:!text-[30px] !text-[20px]"
                 >
                   Step 2
                 </Heading>
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2"
+                  className="!text-dark-2 mt-2"
                 >
                   Verify your identity
                 </Text>
               </div>
             </div>
-            <div className="absolute left-0 top-[20%] m-auto flex flex-col items-end max-[1050px]:top-[20%] max-[1050px]:left-[12%] max-[1050px]:items-start">
-              <Heading
-                size="visa_desktop_headers_subheader"
-                as="h5"
-                className="!text-accent-blue"
-              >
-                [ 01 ]
-              </Heading>
-              <Heading
-                as="h6"
-                className="mt-2.5 max-[1050px]:text-[26px] max-[550px]:text-[24px]"
-              >
-                Step 1
-              </Heading>
-              <Text
-                size="visa_desktop_body_text_18"
-                as="p"
-                className="!text-dark-2"
-              >
-                Complete your profile setup
-              </Text>
-            </div>
-            <div className="absolute bottom-[5%] left-0 m-auto flex flex-col items-end max-[1050px]:items-start max-[1050px]:left-[12%] max-[1050px]:top-[42%]">
-              <Heading
-                size="visa_desktop_headers_subheader"
-                as="p"
-                className="!text-grey"
-              >
-                [ 03 ]
-              </Heading>
-              <Heading
-                as="p"
-                className="mt-2.5 max-[1050px]:text-[26px] max-[550px]:text-[24px]"
-              >
-                Step 3
-              </Heading>
-              <Text
-                size="visa_desktop_body_text_18"
-                as="p"
-                className="!text-dark-2"
-              >
-                Mint your tokens
-              </Text>
+            <div className="absolute 2xl:top-[350px] xl:top-[277px] lg:top-[217px] top-[168px] 2xl:left-[135px] xl:left-[84px] lg:left-[34px] text-0 m-auto z-50">
+              <div className="flex flex-col items-end relative">
+                <div className="absolute w-[6px] h-[6px] rounded-full bg-dark-0 -top-6 right-3"></div>
+                <Heading
+                  size="visa_desktop_headers_subheader"
+                  as="p"
+                  className="!text-grey"
+                >
+                  [ 03 ]
+                </Heading>
+                <Heading
+                  size="visa_desktop_headers_h4"
+                  as="p"
+                  className="mt-2.5 lg:!text-[30px] !text-[20px]"
+                >
+                  Step 3
+                </Heading>
+                <Text
+                  size="visa_desktop_body_text_18"
+                  as="p"
+                  className="!text-dark-2 mt-2"
+                >
+                  Mint your tokens
+                </Text>
+              </div>
             </div>
             <Img
               src="images/img_img_674x488.png"
               alt="Illustrative Image"
-              className="absolute bottom-[-0.26px] left-0 right-0 m-auto h-[674px] w-[32%] rounded-[24px] object-contain max-[1050px]:object-cover max-[1050px]:mb-[-140px] max-[1050px]:h-[576px] max-[1050px]:w-[90%] max-[550px]:object-contain max-[550px]:h-[674px] max-[550px]:mb-[-240px]"
+              className="absolute 2xl:top-[-100px] xl:top-[-50px] top-[-30px] left-1/2 -translate-x-1/2 z-50 2xl:max-w-[400px] xl:max-w-[250px] lg:max-w-[200px] max-w-[170px]"
             />
           </div>
-        </div> */}
+          <div className="relative block md:hidden h-[350px] mb-16">
+            <div className="absolute top-0 left-0">
+              <img src="/images/steps_onboarding.png" alt="" />
+            </div>
+            <div className="ml-10">
+              <div className="relative flex flex-col items-start h-[150px]">
+                <Heading
+                  size="visa_desktop_headers_subheader"
+                  as="h5"
+                  className="!text-accent-blue"
+                >
+                  [ 01 ]
+                </Heading>
+                <Heading
+                  size="visa_desktop_headers_h4"
+                  as="h6"
+                  className="mt-2.5 lg:!text-[30px] !text-[20px]"
+                >
+                  Step 1
+                </Heading>
+                <Text
+                  size="visa_desktop_body_text_18"
+                  as="p"
+                  className="!text-dark-2 mt-2"
+                >
+                  Complete your profile setup
+                </Text>
+              </div>
+              <div className="relative flex flex-col items-start h-[153px]">
+                <Heading
+                  size="visa_desktop_headers_subheader"
+                  as="h3"
+                  className="!text-accent-blue"
+                >
+                  [ 02 ]
+                </Heading>
+                <Heading
+                  size="visa_desktop_headers_h4"
+                  as="h4"
+                  className="mt-2.5 lg:!text-[30px] !text-[20px]"
+                >
+                  Step 2
+                </Heading>
+                <Text
+                  size="visa_desktop_body_text_18"
+                  as="p"
+                  className="!text-dark-2 mt-2"
+                >
+                  Verify your identity
+                </Text>
+              </div>
+              <div className="flex flex-col items-start relative">
+                <Heading
+                  size="visa_desktop_headers_subheader"
+                  as="p"
+                  className="!text-grey"
+                >
+                  [ 03 ]
+                </Heading>
+                <Heading
+                  size="visa_desktop_headers_h4"
+                  as="p"
+                  className="mt-2.5 lg:!text-[30px] !text-[20px]"
+                >
+                  Step 3
+                </Heading>
+                <Text
+                  size="visa_desktop_body_text_18"
+                  as="p"
+                  className="!text-dark-2 mt-2"
+                >
+                  Mint your tokens
+                </Text>
+              </div>
+            </div>
+          </div>
+          <Img
+            src="images/img_img_674x488.png"
+            alt="Illustrative Image"
+            className="w-full max-h-[300px] object-cover rounded-xl md:hidden"
+          />
+        </div>
         {/* f a q section */}
         <FAQSection />
-        <div className="mt-[180px] flex flex-col items-center gap-[50px] self-stretch">
+        <div className="md:mt-[180px] mt-[80px] flex flex-col items-center gap-[50px] self-stretch">
           {/* referral program section */}
           <ReferralProgramSection />
           <div className="container-xs mb-[50px] max-[1440px]:px-5 max-[1050px]:px-5">

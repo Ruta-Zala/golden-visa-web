@@ -9,21 +9,21 @@ export default function ReferralProgramSection() {
     <>
       {/* referral program section */}
       <div className="relative h-[1068px] content-center self-stretch max-[1440px]:h-auto max-[1050px]:h-auto">
-        <div className="container-xs flex flex-col gap-4 max-[1440px]:px-5 max-[1050px]:px-5">
-          <div className="flex gap-4 max-[1050px]:flex-col">
-            <div className="w-full rounded-[20px] bg-light_base">
-              <div className="relative mt-12 h-[422px]">
-                <div className="absolute right-0 top-0 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 max-[1440px]:ml-0 max-[1050px]:ml-0">
+        <div className="container-xs flex flex-col lg:gap-4 gap-14 max-[1440px]:px-5 max-[1050px]:px-5">
+          <div className="gap-4 grid lg:grid-cols-2">
+            <div className="w-full rounded-[20px] bg-light_base overflow-hidden">
+              <div className="relative mt-12 lg:h-[422px] h-[250px]">
+                <div className="absolute left-0 top-0 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 z-50">
                   <Button
                     size="xs"
-                    className="min-w-[122px] rounded-[18px] font-medium uppercase"
+                    className="min-w-[122px] rounded-[18px] font-medium uppercase border border-dark-0"
                   >
                     OPN token
                   </Button>
                   <Text
-                    size="visa_desktop_headers_h2"
+                    size="visa_headers_h2"
                     as="p"
-                    className="max-[1440px]:text-[48px]"
+                    className="lg:!text-[48px] !text-[35px]"
                   >
                     Referral Program
                   </Text>
@@ -31,16 +31,16 @@ export default function ReferralProgramSection() {
                 <Img
                   src="images/img_chain_link_2x_1.png"
                   alt="Chainlink Image"
-                  className="absolute bottom-px left-0 m-auto h-[266px] w-[46%] object-contain opacity-70"
+                  className="absolute lg:bottom-0 bottom-[unset] lg:left-0 left-[unset] lg:right-[unset] right-0 lg:top-[unset] top-[-50px] m-auto w-[46%] opacity-70 lg:rotate-[unset] rotate-180"
                 />
               </div>
             </div>
             <div className="flex w-full flex-col gap-[60px] rounded-[20px] bg-dark-0 p-10 shadow-sm max-[550px]:gap-[30px] max-[550px]:p-4">
               <div className="flex flex-col items-start gap-2.5">
                 <Text
-                  size="visa_desktop_headers_h3"
+                  size="visa_headers_h3"
                   as="p"
-                  className="!text-white-0 max-[1050px]:text-[28px] max-[550px]:text-[22px]"
+                  className="!text-white-0 lg:!text-[48px] !text-[35px]"
                 >
                   Generate Referral Link
                 </Text>
@@ -55,28 +55,58 @@ export default function ReferralProgramSection() {
               </div>
               <div className="mb-1.5 flex flex-col gap-4">
                 <Input
-                  color="white_A700_33"
+                  color="white_0"
                   size="xs"
                   shape="round"
-                  name="Edit URL"
-                  placeholder={`https://iopn.io/gkiyfujytdhtsrsytdr`}
+                  name="Editable URL"
+                  placeholder="https://iopn.io/gkiyfujytdhtsrsytdr"
+                  value="https://iopn.io/gkiyfujytdhtsrsytdr"
                   suffix={
-                    <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
-                      <Img
-                        src="images/img_arrowleft_white_0.svg"
-                        alt="Arrow Left"
-                        className="h-[26px] w-[18px]"
-                      />
-                    </div>
+                    <Button
+                      color="white_0"
+                      variant="fill"
+                      shape="round"
+                      rightIcon={
+                        <div className="copy-link-button hidden md:flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
+                          <Img
+                            src="images/img_arrowleft_white_0.svg"
+                            alt="Arrow Left"
+                            className="h-[18px] w-[18px]"
+                          />
+                        </div>
+                      }
+                      className="hidden md:flex rounded-[18px] p-1.5 gap-5 font-semibold !text-dark-0 !font-weight-[600]"
+                    >
+                      Copy Link
+                    </Button>
                   }
-                  className="gap-4 !rounded-[34px]"
+                  className="!rounded-[34px] max-[550px]:text-[18px] max-[550px]:h-[50px] !pr-1 bg-white-4"
                 />
+
                 <div className="flex flex-col gap-3">
+                  <Button
+                    color="white_0"
+                    variant="fill"
+                    shape="round"
+                    rightIcon={
+                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-dark-0 absolute right-[5px] mr-2">
+                        <Img
+                          src="images/img_arrowleft_white_0.svg"
+                          alt="Arrow Left"
+                          className="h-[18px] w-[18px]"
+                        />
+                      </div>
+                    }
+                    className="gap-[34px] py-4 rounded-[40px] !text-dark-0 font-semibold capitalize relative flex md:hidden"
+                  >
+                    Copy Link
+                  </Button>
+
                   <Button
                     color="white_0"
                     shape="round"
                     rightIcon={
-                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
+                      <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-2">
                         <Img
                           src="images/img_arrowleft.svg"
                           alt="Arrow Left"
@@ -84,16 +114,16 @@ export default function ReferralProgramSection() {
                         />
                       </div>
                     }
-                    className="gap-[34px] self-stretch font-medium capitalize"
+                    className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
                   >
                     Generate referral link
                   </Button>
                   <Text
                     size="visa_desktop_body_text_16"
                     as="p"
-                    className="text-center leading-[130%] !text-white-3"
+                    className="text-center leading-[130%] !text-white-2"
                   >
-                    *Copy this link and share it witch other people to nvite
+                    *Copy this link and share it witch other people to invite
                     your network to embark on this exciting journey with you and
                     watch your token balance grow.
                   </Text>
@@ -101,25 +131,25 @@ export default function ReferralProgramSection() {
               </div>
             </div>
           </div>
-          <div className="flex gap-4 max-[1050px]:flex-col">
+          <div className="gap-4 grid lg:grid-cols-2">
             <Img
               src="images/img_rectangle_11 copy 3.png"
               alt="Rectangle Image"
-              className="h-[582px] w-[50%] rounded-[20px] object-contain max-[1050px]:w-full"
+              className="h-full rounded-[20px] w-full"
             />
             <div className="flex flex-1 flex-col items-start justify-center gap-20 rounded-[20px] border border-solid border-gray-300 bg-white-0 py-16 pl-16 pr-14 shadow-sm max-[1440px]:gap-20 max-[1440px]:py-8 max-[1440px]:pl-8 max-[1050px]:gap-[60px] max-[1050px]:self-stretch max-[1050px]:p-5 max-[550px]:gap-10 max-[550px]:p-4">
               <div className="flex flex-col gap-5 self-stretch">
                 <div className="flex flex-col items-start gap-[30px]">
                   <Button
                     size="xs"
-                    className="min-w-[134px] rounded-[18px] font-medium uppercase"
+                    className="min-w-[134px] rounded-[18px] font-medium uppercase border border-dark-0"
                   >
                     Get started
                   </Button>
                   <Text
-                    size="visa_desktop_headers_h2"
+                    size="visa_headers_h2"
                     as="p"
-                    className="w-full leading-[105%] max-[1440px]:text-[48px]"
+                    className="w-full leading-[105%] lg:!text-[48px] !text-[35px]"
                   >
                     <>
                       Ready to Invest in
@@ -159,7 +189,7 @@ export default function ReferralProgramSection() {
             </div>
           </div>
         </div>
-        <div className="absolute left-0 right-0 top-[42%] m-auto h-[64px] w-[64px] rounded-br-[32px] rounded-tl-[32px] bg-gradient3" />
+        <div className="absolute left-0 right-0 top-[42%] m-auto h-[64px] w-[64px] rounded-br-[32px] hidden rounded-tl-[32px] bg-gradient3" />
       </div>
     </>
   );

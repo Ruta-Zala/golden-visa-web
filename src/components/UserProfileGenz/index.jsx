@@ -11,8 +11,8 @@ export default function UserProfile({
   return (
     <div
       {...props}
-      className={`${props.className} flex flex-col w-[32%] max-[1050px]:w-full gap-20 px-12 py-[46px] max-[1440px]:gap-20 max-[1050px]:gap-[60px] max-[1050px]:p-5 max-[550px]:gap-10 max-[550px]:p-4 border-blue-900_1e border border-solid bg-gradient shadow-xs rounded-[20px]`}
-      style={{background: "white"}}
+      className={`${props.className} flex flex-col w-full max-[1050px]:w-full gap-20 px-12 py-[46px] max-[1440px]:gap-20 max-[1050px]:gap-[60px] max-[1050px]:p-5 max-[550px]:gap-10 max-[550px]:p-4 border-blue-900_1e border border-solid bg-gradient shadow-xs rounded-[20px]`}
+      style={{ background: "#ffffff45", backdropFilter: "blur(10px)" }}
     >
       <Img
         src={userImage}
@@ -20,7 +20,7 @@ export default function UserProfile({
         className="h-[100px] w-[100px] max-[1050px]:h-[80px]"
       />
       <div className="flex flex-col items-start gap-4 self-stretch">
-        <Heading as="p" className="!text-dark-1">
+        <Heading size="" as="p" className="!text-dark-0">
           {visaDurationLabel}
         </Heading>
         <Heading

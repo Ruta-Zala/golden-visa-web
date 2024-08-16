@@ -16,7 +16,7 @@ export default function Footer({ ...props }) {
               alt="Footer Logo"
               className="h-[52px] w-[248px] object-contain"
             />
-            <div className="flex w-[34%] justify-between gap-5 max-[1050px]:w-full max-[550px]:flex-col max-[550px]:items-center">
+            <div className="flex w-[40%] justify-between gap-5 max-[1050px]:w-full max-[550px]:flex-col max-[550px]:items-center">
               <div className="flex flex-wrap gap-3">
                 <Text
                   size="iopn_desktop_navigation_menu_link"

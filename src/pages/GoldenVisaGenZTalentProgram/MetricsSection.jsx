@@ -33,7 +33,7 @@ export default function MetricsSection() {
   return (
     <>
       {/* metrics section */}
-      <div className="mt-[180px] flex flex-col items-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch">
         <div className="container-xs flex flex-col gap-[58px] max-[1440px]:px-5 max-[1050px]:px-5 max-[550px]:gap-[29px]">
           <div className="mx-[126px] flex flex-col items-center gap-6 px-14 max-[1050px]:mx-0 max-[1050px]:px-5 max-[550px]:px-4">
             <div className="flex rounded-[18px] border border-solid border-dark-0 p-1.5">
@@ -54,16 +54,16 @@ export default function MetricsSection() {
             </Text>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex gap-4 max-[1050px]:flex-col">
+            <div className="grid gap-4 sm:grid-cols-3">
               <Suspense fallback={<div>Loading feed...</div>}>
                 {entryStatsList.map((d, index) => (
                   <UserProfile1 {...d} key={"statsList" + index} />
                 ))}
               </Suspense>
             </div>
-            <div className="h-[522px] bg-[url(/public/images/img_group_4533.svg)] bg-cover bg-no-repeat max-[1440px]:h-auto max-[1050px]:h-auto">
-              <div className="flex flex-col gap-[54px] rounded-[24px] max-[550px]:gap-[27px]">
-                <div className="ml-16 flex items-start justify-center max-[1050px]:ml-0 max-[1050px]:flex-col">
+            <div className="h-[522px] bg-[url(/public/images/img_group_4533.svg)] rounded-[24px] bg-right-top bg-no-repeat max-[1440px]:h-auto max-[1050px]:h-auto">
+              <div className="flex flex-col gap-[54px] rounded-[24px] max-[550px]:gap-[27px] md:bg-[unset] bg-[#f1f5f9]">
+                <div className="ml-16 flex items-start justify-between max-[1050px]:ml-0 flex-col md:flex-row">
                   <Heading
                     size="visa_desktop_headers_h4"
                     as="h3"
@@ -71,23 +71,23 @@ export default function MetricsSection() {
                   >
                     Monthly Draw Analytics
                   </Heading>
-                  <div className="mb-10 flex flex-1 justify-end gap-[17px] max-[1050px]:self-stretch max-[1050px]:justify-between max-[1050px]:px-4 max-[550px]:justify-between max-[550px]:px-4">
-                    <div className="flex w-fit items-center justify-center gap-3 rounded-[20px] bg-light_base p-3.5">
+                  <div className="hidden md:inline-flex justify-end gap-[17px]">
+                    <div className="flex w-fit items-center justify-center gap-3 rounded-[20px] bg-light_base py-3.5 px-5">
                       <div className="h-[12px] w-[12px] rounded-md border-[6px] border-solid border-gray-900 bg-light_base" />
                       <Heading
                         size="visa_desktop_headers_h6"
                         as="h4"
-                        className="!text-dark-0"
+                        className="!text-dark-0 !text-[20px]"
                       >
                         Participants
                       </Heading>
                     </div>
-                    <div className="flex w-fit items-center justify-center gap-3 rounded-[20px] bg-light_base p-3.5">
+                    <div className="flex w-fit items-center justify-center gap-3 rounded-[20px] bg-light_base py-3.5 px-5">
                       <div className="h-[12px] w-[12px] rounded-md border-[6px] border-solid border-blue-800 bg-light_base" />
                       <Heading
                         size="visa_desktop_headers_h6"
                         as="h5"
-                        className="!text-dark-0"
+                        className="!text-dark-0 !text-[20px]"
                       >
                         Winners
                       </Heading>
@@ -108,12 +108,12 @@ export default function MetricsSection() {
                       0
                     </Text>
                   </div>
-                  <div className="flex flex-1 items-end justify-center px-5 max-[1050px]:px-0 max-[550px]:px-0">
+                  <div className="flex flex-1 items-end justify-start px-5 max-[1050px]:px-0 max-[550px]:px-0 overflow-x-auto">
                     <div className="flex flex-col items-center justify-center gap-3">
                       <Img
                         src="images/img_frame_8.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Aug</Text>
                     </div>
@@ -121,7 +121,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_9.png"
                         alt="September Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Sep</Text>
                     </div>
@@ -129,7 +129,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_9.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Oct</Text>
                     </div>
@@ -137,7 +137,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_12.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Nov</Text>
                     </div>
@@ -145,7 +145,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_11.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Dec</Text>
                     </div>
@@ -153,7 +153,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_12.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Jan</Text>
                     </div>
@@ -161,7 +161,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_8.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Feb</Text>
                     </div>
@@ -169,7 +169,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_10.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Mar</Text>
                     </div>
@@ -177,7 +177,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_12.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Apr</Text>
                     </div>
@@ -185,7 +185,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_8.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">May</Text>
                     </div>
@@ -193,7 +193,7 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_9.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Jun</Text>
                     </div>
@@ -201,12 +201,34 @@ export default function MetricsSection() {
                       <Img
                         src="images/img_frame_6.png"
                         alt="August Image"
-                        className="h-[258px] object-contain"
+                        className="h-[258px] object-contain object-bottom"
                       />
                       <Text as="p">Jul</Text>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="mb-6 flex flex-col md:hidden gap-[10px]">
+              <div className="flex w-full items-center gap-3 rounded-[20px] bg-light_base p-3.5">
+                <div className="h-[12px] w-[12px] rounded-md border-[6px] border-solid border-gray-900 bg-light_base" />
+                <Heading
+                  size="visa_desktop_headers_h6"
+                  as="h4"
+                  className="!text-dark-0"
+                >
+                  Participants
+                </Heading>
+              </div>
+              <div className="flex w-full items-center gap-3 rounded-[20px] bg-light_base p-3.5">
+                <div className="h-[12px] w-[12px] rounded-md border-[6px] border-solid border-blue-800 bg-light_base" />
+                <Heading
+                  size="visa_desktop_headers_h6"
+                  as="h5"
+                  className="!text-dark-0"
+                >
+                  Winners
+                </Heading>
               </div>
             </div>
             <div className="h-[280px] rounded-[24px] bg-[url(/public/images/img_timer.png)] bg-cover bg-no-repeat px-14 py-16 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4">
@@ -216,10 +238,11 @@ export default function MetricsSection() {
                   as="p"
                   className="w-[52%] leading-[105%] !text-white-0 max-[1440px]:w-[52%] max-[1440px]:text-[48px] max-[1050px]:w-full max-[550px]:text-[38px]"
                 >
-                  Stay Tuned For 1st<br/>
+                  Stay Tuned For 1st
+                  <br />
                   Monthly Draw
                 </Text>
-                <div className="ml-4 flex w-[48%] gap-4 max-[1050px]:ml-0 max-[1050px]:w-full max-[1050px]:flex-col">
+                <div className="ml-4 flex w-[48%] gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row">
                   <Suspense fallback={<div>Loading feed...</div>}>
                     {timeCounterList.map((d, index) => (
                       <DaysCounter {...d} key={"daysList" + index} />

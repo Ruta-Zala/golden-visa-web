@@ -10,9 +10,9 @@ export default function GoldenVisaGenZTalentProgramSection() {
   return (
     <>
       {/* golden visa gen z talent program section */}
-      <div className="mt-[180px] flex flex-col items-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch">
         <div className="container-xs flex flex-col gap-[180px] max-[1440px]:gap-[135px] max-[1440px]:px-5 max-[1050px]:gap-[135px] max-[1050px]:px-5 max-[550px]:gap-[90px]">
-          <div className="flex items-start max-[1050px]:flex-col max-[550px]:gap-[30px]">
+          <div className="flex items-start flex-col md:flex-row gap-[20px] max-[550px]:gap-[30px]">
             <div className="flex w-full flex-col gap-5">
               <div className="flex flex-col items-start gap-[30px]">
                 <Button
@@ -45,14 +45,14 @@ export default function GoldenVisaGenZTalentProgramSection() {
                 as="p"
                 className="w-[80%] leading-[140%] !text-dark-0 max-[1440px]:w-full max-[1050px]:w-full max-[1050px]:mb-4"
               >
-                <span>Act fast! Only&nbsp;</span>
+                <span className="font-medium">Act fast! Only&nbsp;</span>
                 <span className="font-medium">
                   120.75K OPN tokens remain for today&#39;s mint. Don&#39;t miss
                   out on this opportunity. Daily cap enforced for fairness.
                 </span>
               </Text>
             </div>
-            <div className="relative h-[756px] w-full self-center rounded-[20px] bg-light_base">
+            <div className="relative h-[630px] xl:h-[756px] w-full self-center rounded-[20px] bg-light_base">
               <Img
                 src="images/img_icon_star_glossy_glass_style.png"
                 alt="Star Image"
@@ -84,7 +84,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                       <Heading as="h4">OPN amount to stake</Heading>
                       <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                         <input type="text" name="Token Input" placeholder="OPN 1250" />
-                        <div className="flex gap-4 border border-solid bg-white pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px]">
+                        <div className="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px]">
                           <img className="h-[25px] w-[25px]" src="images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
                           OPN
                         </div>
@@ -129,7 +129,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                       <Heading as="h5">Current usd Value</Heading>
                       <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                         <input type="text" name="Payment Input" placeholder="$ 100" />
-                        <div className="flex gap-4 border border-solid bg-white pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px]">
+                        <div className="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px]">
                           <img className="h-[25px] w-[25px]" src="images/img_ellipse_362.png" alt="Ellipse 362" loading="lazy" />
                           USD
                         </div>
@@ -141,7 +141,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
               </div>
             </div>
           </div>
-          <div className="flex gap-4 max-[1050px]:flex-col">
+          <div className="flex gap-4 flex-col md:flex-row">
             <div className="flex w-full flex-col gap-[58px] rounded-[20px] bg-dark-0 p-10 max-[550px]:gap-[29px] max-[550px]:p-4">
               <div className="flex flex-col items-start gap-3.5">
                 <Text
@@ -167,7 +167,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                   </Heading>
                   <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                     <input type="text" name="Token Input" placeholder="OPN 12.780" value={'OPN 12.780'} />
-                    <div class="flex gap-4 border border-solid bg-white pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px] bg-slate-100" >
+                    <div class="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px] bg-slate-100" >
                       <img class="h-[25px] w-[25px]" src="images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
                       OPN
                     </div>
@@ -232,8 +232,8 @@ export default function GoldenVisaGenZTalentProgramSection() {
                   <span>OPN network.&nbsp;</span>
                 </Text>
               </div>
-              <div className="flex h-[152px] items-start justify-center rounded-[20px] bg-[url(/public/images/boost-1k.png)] bg-cover bg-no-repeat p-[18px] max-[1440px]:h-auto max-[1050px]:h-auto max-[550px]:flex-col">
-                <div className="mb-2 flex flex-1 flex-col items-start gap-1 self-center max-[550px]:self-stretch">
+              <div className="flex h-[220px] md:h-auto items-start justify-center rounded-[20px] bg-[url(/public/images/boost-1k.png)] bg-cover bg-no-repeat bg-[75%] md:bg-center p-[18px]">
+                <div className="mb-2 flex flex-1 flex-col items-start gap-1 self-end md:self-center ">
                   <Heading
                     size="visa_desktop_headers_h4"
                     as="p"

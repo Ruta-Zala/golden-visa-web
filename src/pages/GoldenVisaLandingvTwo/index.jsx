@@ -119,7 +119,7 @@ export default function GoldenVisaLandingvTwoPage() {
 
           <div className="h-[300px] md:h-[600px] w-full line-background overflow-hidden">
             <Img
-              src="/public/images/Curveline.png"
+              src="/images/Curveline.png"
               alt="Featured Image"
               className="h-full w-full object-left-top -rotate-[10deg] bg-[#4b4d5300]"
             />

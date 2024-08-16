@@ -239,7 +239,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           className="text-center leading-[130%] !text-white-2"
                         >
                           *Copy this link and share it witch other people to
-                          nvite your network to embark on this exciting journey
+                          invite your network to embark on this exciting journey
                           with you and watch your token balance grow.
                         </Text>
                       </div>

@@ -141,14 +141,14 @@ const Herosections = () => {
                       >
                         <div className="py-1" role="none">
                           <a
-                            href="#"
+                            href="/#/GenzTalentProgram"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
                             GenZ Talent Program
                           </a>
                           <a
-                            href="#"
+                            href="/#/Web3Entrepreneur"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -264,14 +264,14 @@ const Herosections = () => {
                   OPN Token
                 </a>
                 <a
-                  href="#"
+                  href="/#/GenzTalentProgram"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
                   GenZ Talent Program
                 </a>
                 <a
-                  href="#"
+                  href="/#/Web3Entrepreneur"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >

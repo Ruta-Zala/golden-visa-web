@@ -10,7 +10,7 @@ const sizes = {
   iopn_desktop_navigation_button:
     "capitalize text-[18px] font-medium max-[1440px]:text-[15px]",
   visa_desktop_headers_h5:
-    "text-[24px] font-medium max-[1440px]:text-[20px] max-[1050px]:text-[22px]",
+    "text-[24px] font-bold max-[1440px]:text-[20px] max-[1050px]:text-[22px]",
   visa_desktop_headers_h6: "text-[20px] font-medium max-[1440px]:text-[17px]",
 };
 

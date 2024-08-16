@@ -34,9 +34,9 @@ export default function FAQSection() {
   return (
     <>
       {/* f a q section */}
-      <div className="mt-[180px] flex justify-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex justify-center self-stretch">
         <div className="container-xs flex items-start justify-center gap-4 max-[1440px]:px-5 max-[1050px]:flex-col max-[1050px]:px-5">
-          <div className="flex w-[42%] flex-col gap-[130px] self-center rounded-[20px] bg-light_base px-14 py-16 max-[1440px]:gap-[97px] max-[1440px]:py-8 max-[1050px]:w-full max-[1050px]:gap-[97px] max-[1050px]:p-5 max-[550px]:gap-[65px] max-[550px]:p-4">
+          <div className="flex w-[42%] flex-col gap-[130px] self-stretch rounded-[20px] bg-light_base px-14 py-16 max-[1440px]:gap-[97px] max-[1440px]:py-8 max-[1050px]:w-full max-[1050px]:gap-[97px] max-[1050px]:p-5 max-[550px]:gap-[65px] max-[550px]:p-4">
             <div className="flex flex-col items-start gap-[30px]">
               <Button
                 size="sm"
@@ -111,7 +111,7 @@ export default function FAQSection() {
                     </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
-                    <div className="flex">
+                    <div className="flex mb-[15px]">
                       <Text
                         size="visa_desktop_body_text_20"
                         as="p"
