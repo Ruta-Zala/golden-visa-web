@@ -8,14 +8,14 @@ export default function HowItWorksSection() {
   return (
     <>
       {/* how it works section */}
-      <div className="mt-[40px] flex justify-center self-stretch">
+      <div className="mt-[40px] flex justify-center self-stretch" id="howItWroks">
         <div className="mt-[10px] container-xs flex justify-center gap-4 max-[1440px]:px-5 flex-col md:flex-row max-[1050px]:px-5">
           <Img
             src="images/img_img copy.png"
             alt="Main Image"
             className="h-[340px] sm:h-[450px] md:h-[auto] rounded-[20px] object-cover w-full md:w-[50%]"
           />
-          <div className="flex flex-1 flex-col gap-11 rounded-[20px] border-0 md:border md:border-solid md:border-gray-300 bg-[#F1F5F9] md:bg-white-0 lg:p-[46px] p-[20px] shadow-md max-[1050px]:self-stretch">
+          <div className="flex flex-1 flex-col gap-11 rounded-[20px] border-0 md:border md:border-solid md:border-gray-300 bg-[#f9fcff] md:bg-white-0 lg:p-[46px] p-[20px] shadow-md max-[1050px]:self-stretch">
             <div className="flex flex-col items-start gap-[18px]">
               <Button
                 size="sm"

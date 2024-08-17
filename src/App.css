@@ -426,3 +426,24 @@
 .bg-earth {
   background: url(./assets/earth.svg);
 }
+
+/* Icongnative Page Style */
+
+/* Hero Section */
+.opn-chain-main-hero {
+  background-image: url(../src/assets/herosection/Icongnative.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 800px;
+  /* padding: 0px 10px; */
+}
+@media (max-width: 767px) {
+  .opn-chain-main-hero {
+    background-image: url("../src/assets/herosection/Icongnative.png"); /* Replace with your smaller screen image */
+    background-size: cover;
+    border-radius: 20px;
+    min-height: 100%;
+    /* Ensure the image covers the container */
+  }
+}

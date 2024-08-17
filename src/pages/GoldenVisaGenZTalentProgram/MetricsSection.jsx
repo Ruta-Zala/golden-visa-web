@@ -7,17 +7,17 @@ import React, { Suspense } from "react";
 
 const entryStatsList = [
   {
-    userImage: "images/img_upload.svg",
+    userImage: "images/wallet.svg",
     entryText: "Entry",
     opnCounterText: "50,000 OPN",
   },
   {
-    userImage: "images/img_startup_streamline_core.svg",
+    userImage: "images/smartphone_1.svg",
     entryText: "Multiplier",
     opnCounterText: "Pay OPN",
   },
   {
-    userImage: "images/img_ticket.svg",
+    userImage: "images/money_new.svg",
     entryText: "Additional Benefits",
     opnCounterText: "Exciting Prizes",
   },
@@ -33,7 +33,7 @@ export default function MetricsSection() {
   return (
     <>
       {/* metrics section */}
-      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch" id="goldenDraw">
         <div className="container-xs flex flex-col gap-[58px] max-[1440px]:px-5 max-[1050px]:px-5 max-[550px]:gap-[29px]">
           <div className="mx-[126px] flex flex-col items-center gap-6 px-14 max-[1050px]:mx-0 max-[1050px]:px-5 max-[550px]:px-4">
             <div className="flex rounded-[18px] border border-solid border-dark-0 p-1.5">
@@ -50,7 +50,7 @@ export default function MetricsSection() {
               as="p"
               className="text-3xl md:text-5xl"
             >
-              Monthly Draw{" "}
+              Golden Draw{" "}
             </Text>
           </div>
           <div className="flex flex-col gap-4">
@@ -61,7 +61,7 @@ export default function MetricsSection() {
                 ))}
               </Suspense>
             </div>
-            <div className="h-[522px] bg-[url(/public/images/img_group_4533.svg)] rounded-[24px] bg-right-top bg-no-repeat max-[1440px]:h-auto max-[1050px]:h-auto">
+            {/* <div className="h-[522px] bg-[url(/public/images/img_group_4533.svg)] rounded-[24px] bg-right-top bg-no-repeat max-[1440px]:h-auto max-[1050px]:h-auto">
               <div className="flex flex-col gap-[54px] rounded-[24px] max-[550px]:gap-[27px] md:bg-[unset] bg-[#f1f5f9]">
                 <div className="ml-16 flex items-start justify-between max-[1050px]:ml-0 flex-col md:flex-row">
                   <Heading
@@ -69,7 +69,7 @@ export default function MetricsSection() {
                     as="h3"
                     className="self-end !text-dark-0 max-[1050px]:self-auto max-[1050px]:text-[26px] max-[550px]:text-[24px] max-[1050px]:ml-7 max-[1050px]:mt-4"
                   >
-                    Monthly Draw Analytics
+                    Golden Draw Analytics
                   </Heading>
                   <div className="hidden md:inline-flex justify-end gap-[17px]">
                     <div className="flex w-fit items-center justify-center gap-3 rounded-[20px] bg-light_base py-3.5 px-5">
@@ -230,7 +230,7 @@ export default function MetricsSection() {
                   Winners
                 </Heading>
               </div>
-            </div>
+            </div> */}
             <div className="h-[280px] rounded-[24px] bg-[url(/public/images/img_timer.png)] bg-cover bg-no-repeat px-14 py-16 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4">
               <div className="flex gap-4 max-[1050px]:flex-col">
                 <Text
@@ -240,15 +240,15 @@ export default function MetricsSection() {
                 >
                   Stay Tuned For 1st
                   <br />
-                  Monthly Draw
+                  Golden Draw
                 </Text>
-                <div className="ml-4 flex w-[48%] gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row">
+                {/* <div className="ml-4 flex w-[48%] gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row">
                   <Suspense fallback={<div>Loading feed...</div>}>
                     {timeCounterList.map((d, index) => (
                       <DaysCounter {...d} key={"daysList" + index} />
                     ))}
                   </Suspense>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

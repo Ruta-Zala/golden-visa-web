@@ -5,9 +5,7 @@ export default function RewardInfo({
   rewardPercentage = "5%",
   rewardDescription = (
     <>
-      reward for referrals buying between
-      <br />
-      $500 and $99,999
+      For up to $1,000 worth of referrals.
     </>
   ),
   ...props

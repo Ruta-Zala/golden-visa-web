@@ -10,7 +10,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
   return (
     <>
       {/* golden visa gen z talent program section */}
-      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch" id="participate">
         <div className="container-xs flex flex-col gap-[180px] max-[1440px]:gap-[135px] max-[1440px]:px-5 max-[1050px]:gap-[135px] max-[1050px]:px-5 max-[550px]:gap-[90px]">
           <div className="flex items-start flex-col md:flex-row gap-[20px] max-[550px]:gap-[30px]">
             <div className="flex w-full flex-col gap-5">
@@ -40,7 +40,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                 approach helps maintain price stability and prevents market
                 manipulation.
               </Text>
-              <Text
+              {/* <Text
                 size="visa_desktop_body_text_20"
                 as="p"
                 className="w-[80%] leading-[140%] !text-dark-0 max-[1440px]:w-full max-[1050px]:w-full max-[1050px]:mb-4"
@@ -50,7 +50,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                   120.75K OPN tokens remain for today&#39;s mint. Don&#39;t miss
                   out on this opportunity. Daily cap enforced for fairness.
                 </span>
-              </Text>
+              </Text> */}
             </div>
             <div className="relative h-[630px] xl:h-[756px] w-full self-center rounded-[20px] bg-light_base">
               <Img
@@ -106,9 +106,9 @@ export default function GoldenVisaGenZTalentProgramSection() {
                         }
                         className="gap-[34px] self-stretch font-medium capitalize relative"
                       >
-                        Stake tokens
+                        Participate
                       </Button>
-                      <Button
+                      {/* <Button
                         shape="round"
                         color="undefined_undefined"
                         rightIcon={
@@ -123,7 +123,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                         className="gap-[34px] self-stretch font-medium capitalize border border-solid border-slate-950 relative"
                       >
                         Buy Boost
-                      </Button>
+                      </Button> */}
                     </div>
                     <div className="flex flex-col items-start gap-2 mt-10">
                       <Heading as="h5">Current usd Value</Heading>

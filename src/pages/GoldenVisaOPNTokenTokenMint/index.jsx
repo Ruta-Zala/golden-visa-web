@@ -4,31 +4,28 @@ import { Img } from "../../components/ImgMint/index";
 import { Text } from "../../components/Text/index";
 import { Input } from "../../components/Input/index";
 import { Heading } from "../../components/HeadingMint/index";
-import Footer from "../../components/FooterMint";
 import Header from "../../components/Header";
 import RewardInfo from "../../components/RewardInfo";
 import OPNTokenOverviewSection from "./OPNTokenOverviewSection";
 import TokenMintSection from "./TokenMintSection";
 import React, { Suspense } from "react";
+import { handleScrollToSection } from "../../utils/helper";
+import Footer from "../../components/Footer/FooterEl";
 
 const referralRewardsList = [
   {
     rewardPercentage: "5%",
     rewardDescription: (
       <>
-        reward for referrals buying between
-        <br />
-        $500 and $99,999
+        For up to $1,000 worth of referrals.
       </>
     ),
   },
   {
-    rewardPercentage: "7%",
+    rewardPercentage: "7.5%",
     rewardDescription: (
       <>
-        reward for referrals buying between
-        <br />
-        $100,000 and $249,999
+        For referrals from $1,001 to $9,999.
       </>
     ),
   },
@@ -36,9 +33,7 @@ const referralRewardsList = [
     rewardPercentage: "10%",
     rewardDescription: (
       <>
-        reward for referrals buying
-        <br />
-        over $250,000
+        For referrals from $10,000 onwards.
       </>
     ),
   },
@@ -55,6 +50,11 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
           name="description"
           content="Join the IOPn ecosystem and mint OPN tokens for a chance to win a UAE Golden Visa. Invest in your future with exclusive access and global recognition. Act now and be part of the GenZ Talent Program."
         />
+        <meta
+          name="description"
+          content="Unlock endless opportunities with a UAE Golden Visa"
+        />
+        <meta name="keywords" content="IOPn, OPN Token, Minting, Fair Minting" />
       </Helmet>
       <div className="w-full bg-white-0">
         <div className="flex h-[1000px] items-start justify-center bg-[url(/public/images/img_hero_mint.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto">
@@ -105,6 +105,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                     </div>
                   }
                   className="min-w-[268px] gap-4 font-medium capitalize"
+                  onClick={(event) => handleScrollToSection(event, "mintToken")}
                 >
                   Mint OPN Tokens Now
                 </Button>
@@ -165,8 +166,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         as="p"
                         className="w-[86%] leading-[140%] !text-white-1 max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[14px] lg:text-[20px]"
                       >
-                        Share your unique referral link and earn IOPn tokens for
-                        every friend who joins through your link.
+                        Copy this link and share it with your network to invite others to join you on this exciting journey and earn rewards along the way.
                       </Text>
                     </div>
                     <div className="mb-[70px] flex flex-col gap-4">
@@ -238,9 +238,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           as="p"
                           className="text-center leading-[130%] !text-white-2"
                         >
-                          *Copy this link and share it witch other people to
-                          invite your network to embark on this exciting journey
-                          with you and watch your token balance grow.
+                          Don’t wait! Mint your OPN Tokens, join the IOPn Web3 Ecosystem today, and take the first step towards a brighter future.
                         </Text>
                       </div>
                     </div>
@@ -264,7 +262,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         <Text
                           size="visa_desktop_headers_h2"
                           as="p"
-                          className="w-full leading-[105%] text-3xl md:text-5xl"
+                          className="w-full leading-[105%]  lg:!text-[48px] !text-[35px]"
                         >
                           <>
                             Ready to Invest in
@@ -284,7 +282,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         to win a UAE Golden Visa.
                       </Text>
                     </div>
-                    <button class="self-stretch capitalize w-full md:w-fit bg-[#2573C0] white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
+                    <button class="self-stretch capitalize w-full md:w-fit bg-[#2573C0] white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]" onClick={(event) => handleScrollToSection(event, "mintToken")}>
                       <div className="flex-1 text-center">
                         Mint OPN Tokens Now
                       </div>

@@ -5,12 +5,8 @@ import x from "../../assets/icons8-twitterx-32.svg";
 import linkedin from "../../assets/linkedin.png";
 import medium from "../../assets/icon-medium.svg";
 import logo from "../../assets/header-logo.png";
+import { handleScrollToTop } from "../../utils/helper";
 const Footer = () => {
-  
-  const handleLinkClick = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <div className="flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4">
       <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full ">
@@ -85,7 +81,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-2 flex-col lg:flex-row justify-end items-center gap-4 h-fit mt-2">
-            <a href="/#/golden-visa" onClick={handleLinkClick} >
+            <a href="/#/golden-visa" onClick={handleScrollToTop}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6] ">
                 UAE Golden Visa
               </span>
@@ -93,9 +89,11 @@ const Footer = () => {
             <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
               OPNChain
             </span>
-            <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
-              OPN Token
-            </span>
+            <a href="/#/OPNTokenMint" onClick={handleScrollToTop}>
+              <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
+                OPN Token
+              </span>
+            </a>
             {/* <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
               GenZ Talent Program
             </span> */}

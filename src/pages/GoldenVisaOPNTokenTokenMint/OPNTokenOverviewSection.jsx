@@ -9,11 +9,11 @@ import React, { Suspense } from "react";
 
 const featureList = [
   {
-    investmentImage: "images/img_investment_sele.svg",
+    investmentImage: "images/investment.svg",
     investmentText: "Investment Potential",
   },
   {
-    investmentImage: "images/img_user_profile_fo.svg",
+    investmentImage: "images/crown.svg",
     investmentText: (
       <>
         Exclusive
@@ -23,7 +23,7 @@ const featureList = [
     ),
   },
   {
-    investmentImage: "images/img_ai_network_spar.svg",
+    investmentImage: "images/planet.svg",
     investmentText: (
       <>
         Global
@@ -42,14 +42,14 @@ const chartLegendList = [
   { publicSaleText: "Public Sale", percentageText: "70%", color: '#0056B8' },
   { publicSaleText: "Team", percentageText: "15%", color: "#46CEE9" },
   { publicSaleText: "Ecosystem", percentageText: "10%", color: "#65C1AD" },
-  { publicSaleText: "Public Sale", percentageText: "5%", color: "#B69BED" },
+  { publicSaleText: "Liquidity", percentageText: "5%", color: "#B69BED" },
 ];
 
 export default function OPNTokenOverviewSection() {
   return (
     <>
       {/* o p n token overview section */}
-      <div className="mt-[100px] flex flex-col items-center">
+      <div className="mt-[100px] flex flex-col items-center" id="benefits">
         <div className="container-xs flex flex-col gap-20 max-[1440px]:gap-20 max-[1440px]:px-5 max-[1050px]:gap-[60px] max-[1050px]:px-5 max-[550px]:gap-10">
           <div className="mx-[126px] flex flex-col items-center gap-[30px] max-[1050px]:mx-0">
             <button
@@ -82,12 +82,7 @@ export default function OPNTokenOverviewSection() {
                     as="p"
                     className="w-full text-[16px] lg:text-[20px] leading-[140%] !text-dark-1 max-[550px]:text-[14px]"
                   >
-                    By purchasing IOPn tokens, you enter an exciting
-                    lottery-style system with the extraordinary chance to win a
-                    coveted UAE Golden Visa. This prestigious visa offers
-                    unparalleled residency benefits, including tax advantages,
-                    business ownership opportunities, and access to world-class
-                    healthcare and education.
+                   By minting IOPn tokens, you not only become part of an exciting Web3 ecosystem but also get the chance to win a coveted UAE Golden Visa. This prestigious visa offers unparalleled residency benefits, including tax advantages, business ownership opportunities, and access to world-class healthcare and education.
                   </Text>
                 </div>
                 <div>
@@ -140,7 +135,7 @@ export default function OPNTokenOverviewSection() {
                 <div className="flex flex-col gap-4">
                   <ChainProfile />
                   <ChainProfile
-                    chainImage="images/img_coin_share_streamline_core.svg"
+                    chainImage="images/money.svg"
                     chainLabel="Total Supply"
                     chainName="50 Billion"
                   />

@@ -3,6 +3,7 @@ import { Button } from "../Button/index";
 import { Img } from "../ImgMint/index";
 import { Text } from "../Text/index";
 import React, { useState } from "react";
+import { handleScrollToSection } from "../../utils/helper";
 
 export default function Header({ ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,11 +31,11 @@ export default function Header({ ...props }) {
           </a>
         </li>
         <li>
-          <a>
+          <a onClick={(event) => handleScrollToSection(event, "benefits")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Benefits</span>
           </a>
         </li>
-        <li>
+        <li onClick={(event) => handleScrollToSection(event, "howItWroks")}>
           <a>            
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">How it works</span>
           </a>
@@ -92,7 +93,7 @@ export default function Header({ ...props }) {
               </a>
             </li>
             <li>
-              <a>
+              <a onClick={(event) => handleScrollToSection(event, "benefits")}>
                 <Text as="p" className="!text-accent-black">
                   Benefits
                 </Text>

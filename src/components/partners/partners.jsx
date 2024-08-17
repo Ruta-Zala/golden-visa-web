@@ -1,10 +1,10 @@
 import partner7 from "/src/assets/parternes/apex.png";
-import partner6 from "/src/assets/parternes/chainlink.png";
-import partner5 from "/src/assets/parternes/dubai-wtc.png";
+import partner6 from "/src/assets/parternes/chainLink.png";
+import partner5 from "/src/assets/parternes/dubaiWorld.png";
 import partner4 from "/src/assets/parternes/dmcc.png";
-import partner3 from "/src/assets/parternes/rak-tda.png";
+import partner3 from "/src/assets/parternes/development.png";
 import partner2 from "/src/assets/parternes/phoenix.png";
-import partner1 from "/src/assets/parternes/rak-dao.png";
+import partner1 from "/src/assets/parternes/digitalAssets.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -58,7 +58,7 @@ const Partners = () => {
           <img
             src={partner}
             alt={`Partner ${index + 1}`}
-            className="w-20 h-14 object-contain"
+            className="w-40 h-14 object-contain"
           />
         </SwiperSlide>
       ))}

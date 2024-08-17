@@ -8,14 +8,17 @@ export default function StepByStepProcessSection() {
   return (
     <>
       {/* step by step process section */}
-      <div className="mt-[70px] flex justify-center self-stretch">
+      <div
+        className="mt-[70px] flex justify-center self-stretch"
+        id="howItWroks"
+      >
         <div className="mt-[10px] container-xs flex justify-center gap-4 max-[1440px]:px-5 flex-col md:flex-row max-[1050px]:px-5">
           <Img
             src="images/img_rectangle_11 copy 2.png"
             alt="Main Image"
             className="h-[340px] sm:h-[450px] md:h-[auto] rounded-[20px] object-cover w-full md:w-[50%]"
           />
-          <div className="flex flex-1 flex-col gap-11 rounded-[20px] border-0 md:border md:border-solid md:border-gray-300 bg-[#F1F5F9] md:bg-white-0 lg:p-[46px] p-[20px] shadow-md max-[1050px]:self-stretch">
+          <div className="flex flex-1 flex-col gap-11 rounded-[20px] border-0 md:border md:border-solid md:border-gray-300 bg-[#f9fcff] md:bg-white-0 lg:p-[46px] p-[20px] shadow-md max-[1050px]:self-stretch">
             <div className="flex flex-col items-start gap-[18px]">
               <Button
                 size="sm"
@@ -49,34 +52,35 @@ export default function StepByStepProcessSection() {
                         as="h2"
                         className="!text-dark-0 lg:!text-[30px] !text-[26px]"
                       >
-                        1. Buy OPN Tokens
+                        1. Mint OPN Tokens
                       </Heading>
                       <Text
                         size="visa_desktop_body_text_20"
                         as="p"
                         className="w-full leading-[140%] !text-dark-1 line-clamp-5"
                       >
-                        These tokens are your key to participating in the
-                        monthly draws. Purchase OPN tokens through our secure
-                        platform (details on purchase options will be provided).
+                        These tokens are your key to participating in the IOPn
+                        Web3 Ecosystem.
                       </Text>
                     </div>
-                    <Button
-                      shape="round"
-                      color="undefined_undefined"
-                      rightIcon={
-                        <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-accent-dark_blue">
-                          <Img
-                            src="images/img_arrowleft_white_0.svg"
-                            alt="Arrow Left"
-                            className="h-[18px] w-[18px]"
-                          />
-                        </div>
-                      }
-                      className="flex rounded-[18px] border border-solid border-dark-0 p-1.5 gap-5"
-                    >
-                      View details
-                    </Button>
+                    <a href="/#/OPNTokenMint">
+                      <Button
+                        shape="round"
+                        color="undefined_undefined"
+                        rightIcon={
+                          <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-accent-dark_blue">
+                            <Img
+                              src="images/img_arrowleft_white_0.svg"
+                              alt="Arrow Left"
+                              className="h-[18px] w-[18px]"
+                            />
+                          </div>
+                        }
+                        className="flex rounded-[18px] border border-solid border-dark-0 p-1.5 gap-5"
+                      >
+                        View details
+                      </Button>
+                    </a>
                   </div>
                   <Heading
                     size="visa_desktop_headers_h4"
@@ -90,7 +94,7 @@ export default function StepByStepProcessSection() {
                     as="h4"
                     className="lg:!text-[30px] !text-[26px] md:mt-[15px] mt-0 !text-[#94A3B8] font-medium"
                   >
-                    3. Monthly Draw
+                    3. Golden Draw
                   </Heading>
                 </div>
               </div>

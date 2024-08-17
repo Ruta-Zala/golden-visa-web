@@ -2,7 +2,17 @@ import { Button } from "../../components/ButtonGenz";
 import { Img } from "../../components/ImgMint";
 import { Text } from "../../components/Text";
 import { Input } from "../../components/InputGenz";
-import React from "react";
+import React, { Suspense } from "react";
+import RewardInfo from "../../components/RewardInfo";
+import { handleScrollToSection } from "../../utils/helper";
+
+
+const referralRewardsList = [
+  {
+    rewardPercentage: "10%",
+    rewardDescription: <>Earn a 10% referral reward!</>,
+  },
+];
 
 export default function ReferralProgramSection() {
   return (
@@ -13,7 +23,7 @@ export default function ReferralProgramSection() {
           <div className="gap-4 grid lg:grid-cols-2">
             <div className="w-full rounded-[20px] bg-light_base overflow-hidden">
               <div className="relative mt-12 lg:h-[422px] h-[250px]">
-                <div className="absolute left-0 top-0 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 z-50">
+                <div className="absolute left-0 top-0 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 z-50 w-full">
                   <Button
                     size="xs"
                     className="min-w-[122px] rounded-[18px] font-medium uppercase border border-dark-0"
@@ -27,6 +37,14 @@ export default function ReferralProgramSection() {
                   >
                     Referral Program
                   </Text>
+
+                <div className="flex flex-col gap-4 w-[80%] z-10">
+                  <Suspense fallback={<div>Loading feed...</div>}>
+                    {referralRewardsList.map((d, index) => (
+                      <RewardInfo {...d} key={"featuresList" + index} />
+                    ))}
+                  </Suspense>
+                </div>
                 </div>
                 <Img
                   src="images/img_chain_link_2x_1.png"
@@ -49,8 +67,7 @@ export default function ReferralProgramSection() {
                   as="p"
                   className="w-[86%] leading-[140%] !text-white-1 max-[1440px]:w-full max-[1050px]:w-full"
                 >
-                  Share your unique referral link and earn IOPn tokens for every
-                  friend who joins through your link.
+                  Copy this link and share it with your network to invite others to join you on this exciting journey and earn rewards along the way.
                 </Text>
               </div>
               <div className="mb-1.5 flex flex-col gap-4">
@@ -123,9 +140,7 @@ export default function ReferralProgramSection() {
                     as="p"
                     className="text-center leading-[130%] !text-white-2"
                   >
-                    *Copy this link and share it witch other people to invite
-                    your network to embark on this exciting journey with you and
-                    watch your token balance grow.
+                    Don’t wait! Mint your OPN Tokens, join the IOPn Web3 Ecosystem today, and take the first step towards a brighter future.
                   </Text>
                 </div>
               </div>
@@ -183,6 +198,7 @@ export default function ReferralProgramSection() {
                   </div>
                 }
                 className="min-w-[268px] gap-4 font-medium capitalize bg-gradient5 text-white-0"
+                onClick={(event) => handleScrollToSection(event, "participate")}
               >
                 Mint OPN Tokens Now
               </Button>

@@ -3,7 +3,6 @@ import { Img } from "../../components/ImgMint";
 import { Text } from "../../components/Text";
 import { Heading } from "../../components/HeadingMint";
 import { Button } from "../../components/ButtonGenz";
-import Footer from "../../components/FooterGenz";
 import Header from "../../components/HeaderVisa";
 import FAQSection from "./FAQSection";
 import Goldenvisaweb3entrepreneursection from "./Goldenvisaweb3entrepreneursection";
@@ -11,6 +10,9 @@ import HowItWorksSection from "./HowItWorksSection";
 import PurchaseSection from "./PurchaseSection";
 import ReferralProgramSection from "./ReferralProgramSection";
 import React from "react";
+import HeaderGenz from "../../components/HeaderGenz";
+import Footer from "../../components/Footer/FooterEl";
+import { handleScrollToSection } from "../../utils/helper";
 export default function GoldenVisaWeb3EntrepreneurPage() {
   return (
     <>
@@ -22,13 +24,18 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
           name="description"
           content="Join the Web3 Entrepreneur Program and explore the benefits of the UAE Golden Visa. Mint OPN Tokens for investment opportunities and a chance to win a 10-year visa."
         />
+        <meta
+          name="description"
+          content="Unlock endless opportunities with a UAE Golden Visa"
+        />
+        <meta name="keywords" content="IOPn, RAKDAO, Web3 Entrepreneur Program" />
       </Helmet>
       <div className="flex w-full flex-col items-center bg-white-0">
         <div className="self-stretch">
           <div className="flex h-[1000px] items-start justify-center bg-[url(/public/images/img_hero_web.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[1050px]:bg-center">
             <div className="container-xs mb-[248px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[220px] max-[1440px]:w-full max-[1440px]:gap-[165px] max-[1050px]:w-full max-[1050px]:gap-[165px] max-[550px]:gap-[110px]">
-                <Header />
+                <HeaderGenz hideTabs={['Golden draw']}/>
                 <div className="mx-52 flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button
@@ -57,7 +64,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                   >
                     Explore the benefits of our Web3 Entrepreneur Program
                   </Text>
-                  <button class="min-w-[268px] gap-4 font-medium capitalize text-black flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black">
+                  <button class="min-w-[268px] gap-4 font-medium capitalize text-black flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black" onClick={(event) => handleScrollToSection(event, "participate")}>
                     Mint OPN Tokens Now
                     <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                       <img

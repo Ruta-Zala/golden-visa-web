@@ -3,6 +3,7 @@ import Partners from "../partners/partners";
 import arrowDown from "../../assets/img_arrow_down.svg";
 import headerLogo from "../../assets/header-logo.jpeg";
 import { Link } from "react-router-dom";
+import { handleScrollToTop } from "../../utils/helper";
 const Herosections = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,9 +15,6 @@ const Herosections = () => {
 
   const toggleDropdown = () => {
     setIsDropDown((prev) => !prev);
-  };
-  const handleLinkClick = () => {
-    window.scrollTo(0, 0);
   };
 
   const handleClickOutside = (event) => {
@@ -114,9 +112,11 @@ const Herosections = () => {
                 <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                   OPNChain
                 </span>
-                <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-                  OPN Token
-                </span>
+                <a href="/#/OPNTokenMint" onClick={handleScrollToTop}>
+                  <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                    OPN Token
+                  </span>
+                </a>
                 <span
                   className="text-lg tracking-wide text-[#08122a] cursor-pointer"
                   ref={dropdownRef}
@@ -162,7 +162,7 @@ const Herosections = () => {
                             OPNVerse
                           </a>
                           <a
-                            href="#"
+                            href="/#/Icognative"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -257,9 +257,12 @@ const Herosections = () => {
                   OPNChain
                 </a>
                 <a
-                  href="#"
+                  href="/#/OPNTokenMint"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
-                  onClick={closeMenu}
+                  onClick={() => {
+                    closeMenu();
+                    handleScrollToTop();
+                  }}
                 >
                   OPN Token
                 </a>
@@ -285,7 +288,7 @@ const Herosections = () => {
                   OPNVerse
                 </a>
                 <a
-                  href="#"
+                  href="/#/Icognative"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
@@ -339,7 +342,7 @@ const Herosections = () => {
                 </div>
                 <Link
                   to="/golden-visa"
-                  onClick={handleLinkClick}
+                  onClick={handleScrollToTop}
                   className="flex w-full justify-end items-center cursor-pointer"
                 >
                   <div className="flex justify-center items-center w-10 h-10 rounded-[50%] bg-white-0 text-3xl transform -rotate-45">
@@ -361,7 +364,7 @@ const Herosections = () => {
           </div>
           <Link
             to="/golden-visa"
-            onClick={handleLinkClick}
+            onClick={handleScrollToTop}
             className="flex w-full justify-end items-center cursor-pointer"
           >
             <div className="flex justify-center items-center w-10 h-10 rounded-[50%] bg-white-0 text-3xl transform -rotate-45">

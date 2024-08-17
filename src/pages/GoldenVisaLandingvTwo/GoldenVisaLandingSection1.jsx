@@ -5,32 +5,32 @@ import { Suspense } from "react";
 
 const benefitsGrid = [
   {
-    industryImage: "images/img_industry_innova.svg",
+    industryImage: "images/img_promotion.svg",
     careerGrowthText: "Life Changing",
     accessTopTierText:
       "10-Year automatically renewable Golden Visa with right to live in any of the seven emirates in the UAE",
   },
   {
-    industryImage: "images/img_health_care_2.svg",
+    industryImage: "images/img_airplanes.svg",
     careerGrowthText: "Family Inclusion",
     accessTopTierText:
       "Bring your immediate family members and obtain work authorization for your spouse and children",
   },
   {
-    industryImage: "images/img_clock.svg",
+    industryImage: "images/img_Group.svg",
     careerGrowthText: "Entrepreneurial Opportunities",
     accessTopTierText:
       "Establish your business in the UAE with 3-Year Free Business License.",
   },
   {
-    industryImage: "images/img_earth_airplane.svg",
+    industryImage: "images/img_Opportunities.svg",
     careerGrowthText: "Global Mobility",
     accessTopTierText: (
       <>Enjoy easier travel within the region and explore new cultures.</>
     ),
   },
   {
-    industryImage: "images/img_signal_full_streamline_core.svg",
+    industryImage: "images/img_salary.svg",
     careerGrowthText: "Competitive Salaries",
     accessTopTierText: (
       <>
@@ -41,7 +41,7 @@ const benefitsGrid = [
     ),
   },
   {
-    industryImage: "images/bank2.svg",
+    industryImage: "images/img_graduation.svg",
     careerGrowthText: "Financial Freedom",
     accessTopTierText: "Access to UAE Banking IBAN",
   },
@@ -51,7 +51,7 @@ export default function GoldenVisaLandingSection1() {
   return (
     <>
       {/* golden visa landing section */}
-      <div>
+      <div id="benefits">
         <div className="flex flex-col items-center bg-gradient2 w-full">
           <div className="max-w-screen-2xl mx-auto w-full px-4">
             <div className="flex flex-col gap-5 py-20">

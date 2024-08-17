@@ -6,7 +6,7 @@ const sizes = {
   visa_headers_h1:
     "capitalize text-[100px] font-normal not-italic lg:text-[100px] md:text-[48px]",
   visa_headers_h2:
-    "capitalize text-[72px] font-normal not-italic lg:text-[72px] md:text-[48px]",
+    "capitalize md:text-[72px] font-normal not-italic lg:text-[72px] text-[48px]",
   visa_body_text_20: "text-[20px] font-normal not-italic lg:text-[17px]",
   visa_headers_h3:
     "text-[44px] font-normal not-italic lg:text-[37px] md:text-[40px] sm:text-[34px]",

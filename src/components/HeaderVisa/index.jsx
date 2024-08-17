@@ -5,6 +5,7 @@ import { Img } from "../Img";
 import { Text } from "../Text";
 import { Button } from "../Button";
 import headerLogo from "../../assets/header-logo.jpeg";
+import { handleScrollToSection } from "../../utils/helper";
 
 export default function HeaderVisa({ ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +40,12 @@ export default function HeaderVisa({ ...props }) {
           </a>
         </li>
         <li>
-          <a>
+          <a onClick={(event) => handleScrollToSection(event, "benefits")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Benefits</span>
           </a>
         </li>
         <li>
-          <a>
+          <a onClick={(event) => handleScrollToSection(event, "howItWorks")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">How it works</span>
           </a>
         </li>
@@ -53,11 +54,11 @@ export default function HeaderVisa({ ...props }) {
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint token</span>
           </a>
         </li>
-        <li>
+        {/* <li>
           <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Monthly draw</span>
           </a>
-        </li>
+        </li> */}
       </ul>
       {/* <Button
         color="dark_0"
@@ -97,14 +98,14 @@ export default function HeaderVisa({ ...props }) {
               </a>
             </li>
             <li>
-              <a>
+              <a onClick={(event) => handleScrollToSection(event, "benefits")}>
                 <Text as="p" className="!text-accent-black">
                   Benefits
                 </Text>
               </a>
             </li>
             <li>
-              <a>
+              <a onClick={(event) => handleScrollToSection(event, "howItWorks")}>
                 <Text as="p" className="!text-accent-black">
                   How it works
                 </Text>
@@ -117,13 +118,13 @@ export default function HeaderVisa({ ...props }) {
                 </Text>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a>
                 <Text as="p" className="!text-accent-black">
                   Monthly draw
                 </Text>
               </a>
-            </li>
+            </li> */}
             {/* <Button
               color="dark_0"
               variant="fill"

@@ -9,7 +9,7 @@ export default function TokenMintSection() {
   return (
     <>
       {/* token mint section */}
-      <div className="relative mt-[118px] h-[604px]">
+      <div className="relative mt-[118px] h-[604px]" id="mintToken">
         <Img
           src="images/img_background_copy.png"
           alt="Background Copy"
@@ -41,7 +41,7 @@ export default function TokenMintSection() {
               and controlled release into the market. This gradual approach
               helps maintain price stability and prevents market manipulation.
             </Text>
-            <Text
+            {/* <Text
               size="visa_desktop_body_text_20"
               as="p"
               className="mt-5 w-[90%] leading-[140%] max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[15px] text-[20px] max-[550px]:mb-6"
@@ -51,7 +51,7 @@ export default function TokenMintSection() {
                 120.75K OPN tokens remain for today&#39;s mint. Don&#39;t miss
                 out on this opportunity. Daily cap enforced for fairness.
               </span>
-            </Text>
+            </Text> */}
           </div>
           <div className="flex flex-1 flex-col gap-[60px] self-center max-[1050px]:self-stretch max-[550px]:gap-[30px]">
             <div className="flex flex-col items-end gap-6">

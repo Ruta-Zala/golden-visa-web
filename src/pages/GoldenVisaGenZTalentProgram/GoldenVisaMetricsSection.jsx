@@ -6,17 +6,17 @@ import React, { Suspense } from "react";
 
 const visaOptionsList = [
   {
-    userImage: "images/img_passport_streamline_core.svg",
+    userImage: "images/passport.svg",
     visaDurationLabel: "Visa Duration",
     visaDurationText: "Flexible options: 10 years UAE Golden VISA",
   },
   {
-    userImage: "images/img_building_2_streamline_core copy.svg",
+    userImage: "images/signboard.svg",
     visaDurationLabel: "Residency Status",
-    visaDurationText: "Stable living: Join an inno-vative Web3 Community",
+    visaDurationText: "Stable living: Join an innovative Web3 Community",
   },
   {
-    userImage: "images/img_gold_streamline_core.svg",
+    userImage: "images/investment_new.svg",
     visaDurationLabel: "Investment Opportunities",
     visaDurationText: "Financial growth: Life-Changing Oppurtunity",
   },
@@ -26,7 +26,7 @@ export default function GoldenVisaMetricsSection() {
   return (
     <>
       {/* golden visa metrics section */}
-      <div className="relative h-fit">
+      <div className="relative h-fit" id="benefits">
         <div className="m-auto h-fit flex flex-1 flex-col items-center max-[1440px]:py-8 max-[1050px]:py-5 max-[550px]:py-4" style={{
           background: 'linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(210, 40%, 96%, 1) 100%)'
         }}>

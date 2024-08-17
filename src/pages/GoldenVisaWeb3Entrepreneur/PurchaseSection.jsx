@@ -9,7 +9,7 @@ export default function PurchaseSection() {
   return (
     <>
       {/* purchase section */}
-      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex justify-center self-stretch">
+      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex justify-center self-stretch" id="participate">
         <div className="container-xs flex gap-[30px] items-start justify-center max-[1440px]:px-5 flex-col md:flex-row max-[1050px]:px-5">
           <div className="flex w-full flex-col">
             <div className="flex flex-col items-start gap-[18px]">
@@ -17,7 +17,7 @@ export default function PurchaseSection() {
                 size="xs"
                 className="min-w-[170px] rounded-[18px] font-medium uppercase border border-dark-0"
               >
-                Purchase token
+                Participate
               </Button>
               <Text
                 size="visa_desktop_headers_h2"
@@ -36,7 +36,7 @@ export default function PurchaseSection() {
               and controlled release into the market. This gradual approach
               helps maintain price stability and prevents market manipulation.
             </Text>
-            <Text
+            {/* <Text
               size="visa_desktop_body_text_20"
               as="p"
               className="mt-5 w-[80%] leading-[140%] max-[1440px]:w-full max-[1050px]:w-full"
@@ -46,7 +46,7 @@ export default function PurchaseSection() {
                 120.75K OPN tokens remain for today&#39;s mint. Don&#39;t miss
                 out on this opportunity. Daily cap enforced for fairness.
               </span>
-            </Text>
+            </Text> */}
           </div>
           <div className="relative h-[650px] w-full self-center rounded-[20px] bg-light_base">
             <Img

@@ -11,6 +11,7 @@ import HeaderVisa from "../../components/HeaderVisa";
 import logoWhite from "../../assets/logo-white.png";
 import Footer from "../../components/Footer/FooterEl";
 import { Link } from "react-router-dom";
+import { handleScrollToTop } from "../../utils/helper";
 
 export default function GoldenVisaLandingvTwoPage() {
   return (
@@ -21,6 +22,11 @@ export default function GoldenVisaLandingvTwoPage() {
           name="description"
           content="Join the GenZ Talent Program for a chance to win a UAE Golden Visa. Secure your future with career growth, global mobility, and entrepreneurial opportunities. Enter our monthly draw now!"
         />
+        <meta
+          name="description"
+          content="Unlock endless opportunities with a UAE Golden Visa"
+        />
+        <meta name="keywords" content="IOPn, RAKDAO, Golden Visa" />
       </Helmet>
       <div className="w-full bg-white-0">
         <div className="w-full">
@@ -52,7 +58,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       life-changing UAE Golden Visa! */}
                     </h5>
                   </div>
-                  <Link to="">
+                  <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
                     {/* <Link to="/GenzTalentProgram"> */}
                     <Button
                       variant="fill"
@@ -128,7 +134,7 @@ export default function GoldenVisaLandingvTwoPage() {
           {/* golden visa landing section */}
           <GoldenVisaLandingSection1 />
 
-          <div className="md:mt-[122px] flex flex-col items-center relative">
+          <div className="md:mt-[122px] flex flex-col items-center relative" id="howItWorks">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
               <img src="/images/img_group_292.svg" alt="" />
             </div>
@@ -543,7 +549,7 @@ export default function GoldenVisaLandingvTwoPage() {
                   </div>
                 </div>
                 <div className="flex justify-center pt-10">
-                  <Link to="/GenzTalentProgram">
+                  <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
                     <Button
                       variant="fill"
                       shape="round"
@@ -598,7 +604,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       <Text
                         size="visa_headers_h2"
                         as="p"
-                        className="w-full leading-[105%] text-white-0 text-2xl lg:text-[48px] break-words"
+                        className="w-full text-white-0 leading-[105%] lg:!text-[48px] !text-[35px]"
                       >
                         <>
                           Ready to Participate in a Life-Changing Opportunity

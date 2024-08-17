@@ -3,7 +3,7 @@ import { Button } from "../../components/ButtonGenz/index";
 import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
 import { Input } from "../../components/InputGenz/index";
-import Footer from "../../components/FooterGenz/index";
+// import Footer from "../../components/FooterGenz/index";
 import Header from "../../components/Header/index";
 import FAQSection from "./FAQSection";
 import GoldenVisaGenZTalentProgramSection from "./GoldenVisaGenZTalentProgramSection";
@@ -11,7 +11,26 @@ import GoldenVisaMetricsSection from "./GoldenVisaMetricsSection";
 import MetricsSection from "./MetricsSection";
 import StepByStepProcessSection from "./StepByStepProcessSection";
 import TokenPurchaseSection from "./TokenPurchaseSection";
-import React from "react";
+import React, { Suspense } from "react";
+import HeaderGenz from "../../components/HeaderGenz";
+import { handleScrollToSection } from "../../utils/helper";
+import Footer from "../../components/Footer/FooterEl";
+import RewardInfo from "../../components/RewardInfo";
+
+const referralRewardsList = [
+  {
+    rewardPercentage: "10%",
+    rewardDescription: <>For 1 to 199 entries referred.</>,
+  },
+  {
+    rewardPercentage: "15%",
+    rewardDescription: <>For 200 to 999 entries referred.</>,
+  },
+  {
+    rewardPercentage: "20%",
+    rewardDescription: <>For 1,000 entries onwards.</>,
+  },
+];
 
 export default function GoldenVisaGenZTalentProgramPage() {
   return (
@@ -22,15 +41,20 @@ export default function GoldenVisaGenZTalentProgramPage() {
         </title>
         <meta
           name="description"
-          content="Discover the UAE Golden Visa benefits, including a 10-year residency, investment growth, and a vibrant Web3 community. Join the GenZ Talent Program and enter the monthly draw for a chance to secure your future with OPN tokens."
+          content="Discover the UAE Golden Visa benefits, including a 10-year residency, investment growth, and a vibrant Web3 community. Join the GenZ Talent Program and enter the golden draw for a chance to secure your future with OPN tokens."
         />
+        <meta
+          name="description"
+          content="Unlock endless opportunities with a UAE Golden Visa"
+        />
+        <meta name="keywords" content="IOPn, RAKDAO, GenZ Talent Program" />
       </Helmet>
       <div className="flex w-full flex-col items-center bg-white-0">
         <div className="self-stretch">
           <div className="flex h-[870px] items-start justify-center bg-[url(/public/images/img_hero_genz.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[550px]:bg-[length:250%_100%] max-[550px]:bg-center max-[1050px]:bg-center">
             <div className="container-xs mb-[306px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[238px] max-[1440px]:w-full max-[1440px]:gap-[178px] max-[1050px]:w-full max-[1050px]:gap-[178px] max-[550px]:gap-[119px] max-[550px]:items-center">
-                <Header />
+                <HeaderGenz />
                 <div className="mx-[152px] flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button
@@ -51,7 +75,12 @@ export default function GoldenVisaGenZTalentProgramPage() {
                         GoldenVisa Portal
                       </>
                     </Text>
-                    <button class="min-w-[268px] gap-4 font-medium capitalize flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black">
+                    <button
+                      class="min-w-[268px] gap-4 font-medium capitalize flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black"
+                      onClick={(event) =>
+                        handleScrollToSection(event, "participate")
+                      }
+                    >
                       Enter the Draw now
                       <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                         <img
@@ -82,7 +111,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
         <TokenPurchaseSection />
         <div className="container-xs mt-[80px] md:mt-[100px] xl:mt-[180px] max-[1440px]:px-5 max-[1050px]:px-5">
           <div className="flex gap-4 flex-col md:flex-row">
-            <div className="relative h-[250px] md:h-auto w-full rounded-[20px] bg-light_base">
+            <div className="relative h-[430px] md:h-auto w-full rounded-[20px] bg-light_base">
               <div className="mt-12 my-auto ml-12 mr-auto flex flex-1 flex-col items-start gap-6 max-[1440px]:ml-0 max-[1050px]:left-0 max-[1050px]:ml-4">
                 <Button
                   size="xs"
@@ -97,6 +126,13 @@ export default function GoldenVisaGenZTalentProgramPage() {
                 >
                   Referral Program
                 </Text>
+                <div className="flex flex-col gap-4 w-[80%] z-10">
+                  <Suspense fallback={<div>Loading feed...</div>}>
+                    {referralRewardsList.map((d, index) => (
+                      <RewardInfo {...d} key={"featuresList" + index} />
+                    ))}
+                  </Suspense>
+                </div>
               </div>
               <Img
                 src="images/img_chain_link_2x_1.png"
@@ -123,8 +159,9 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   as="p"
                   className="w-[86%] leading-[140%] !text-white-3 max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-sm"
                 >
-                  Share your unique referral link and earn IOPn tokens for every
-                  friend who joins through your link.
+                  Copy this link and share it with your network to invite others
+                  to join you on this exciting journey and earn rewards along
+                  the way.
                 </Text>
               </div>
               <div className="mb-[70px] flex flex-col gap-4">
@@ -196,9 +233,9 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     as="p"
                     className="text-center leading-[130%] !text-white-2"
                   >
-                    *Copy this link and share it witch other people to nvite
-                    your network to embark on this exciting journey with you and
-                    watch your token balance grow.
+                    Don’t wait! Mint your OPN Tokens, join the IOPn Web3
+                    Ecosystem today, and take the first step towards a brighter
+                    future.
                   </Text>
                 </div>
               </div>
@@ -232,7 +269,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     <Text
                       size="visa_desktop_headers_h3"
                       as="p"
-                      className="w-full leading-[105%] !text-dark-0 max-[1440px]:text-[48px] max-[550px]:text-[40px]"
+                      className="w-full leading-[105%] !text-dark-0 lg:!text-[48px] !text-[35px]"
                     >
                       <>
                         Ready to Invest In
@@ -248,8 +285,8 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   >
                     Don’t wait! Join the GenZ Talent Program today and take the
                     first step towards a brighter future. Purchase your OPN
-                    Coins now and enter the monthly draw for your chance to win
-                    a UAE Golden Visa.
+                    Coins now and enter the golden draw for your chance to win a
+                    UAE Golden Visa.
                   </Text>
                 </div>
                 <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">

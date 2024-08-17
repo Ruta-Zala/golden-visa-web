@@ -27,32 +27,28 @@ export default function ExclusivePerksSection() {
 
   const perksArray = [
     {
-      img: "images/img_car.svg",
+      img: "images/img_ecar.svg",
       title: "Luxury Electric Cars",
     },
     {
-      img: "images/img_home.svg",
+      img: "images/img_hotel.svg",
       title: "Premium Accommodation",
     },
     {
-      img: "images/img_car.svg",
+      img: "images/img_tickets.svg",
       title: "Paid Utilities",
     },
     {
-      img: "images/img_insurance.svg",
+      img: "images/img_Insurances.svg",
       title: "Comprehensive Insurance",
     },
     {
-      img: "images/img_utility.svg",
+      img: "images/img_ecar.svg",
       title: "Exclusive Discounts and Benefits",
     },
     {
-      img: "images/img_airticket.svg",
+      img: "images/img_hotel.svg",
       title: "UAE Air Ticket",
-    },
-    {
-      img: "images/img_education.svg",
-      title: "Education Opportunities",
     },
   ];
 
