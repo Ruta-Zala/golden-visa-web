@@ -42,7 +42,7 @@ export default function Header({ ...props }) {
         </li>
         <li>
           <a>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Purchase token</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint token</span>
           </a>
         </li>
         <li>
@@ -109,7 +109,7 @@ export default function Header({ ...props }) {
             <li>
               <a>
                 <Text as="p" className="!text-accent-black">
-                  Purchase token
+                  Mint token
                 </Text>
               </a>
             </li>

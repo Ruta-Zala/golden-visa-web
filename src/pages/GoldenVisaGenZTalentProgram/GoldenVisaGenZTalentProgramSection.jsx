@@ -20,14 +20,14 @@ export default function GoldenVisaGenZTalentProgramSection() {
                   color="undefined_undefined"
                   className="flex rounded-[18px] border border-solid border-dark-0 p-1.5"
                 >
-                  Purchase token
+                  Mint token
                 </Button>
                 <Text
                   size="visa_desktop_headers_h4"
                   as="p"
                   className="w-[80%] leading-[105%] !text-dark-0 max-[1440px]:w-full text-3xl md:text-5xl"
                 >
-                  Secure Purchase Form
+                  Secure Mint Form
                 </Text>
               </div>
               <Text
@@ -149,7 +149,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                   as="p"
                   className="!text-white-0 max-[1050px]:text-[28px] max-[550px]:text-[22px]"
                 >
-                  Boost Purchase 
+                  Boost Mint 
                 </Text>
                 <Text
                   size="visa_desktop_body_text_20"
@@ -210,7 +210,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                     color="undefined_undefined"
                     className="flex rounded-[18px] border border-solid border-dark-0 p-1.5"
                   >
-                    Purchase token
+                    Mint token
                   </Button>
                   <Text
                     size="visa_desktop_headers_h3"

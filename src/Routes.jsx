@@ -11,11 +11,11 @@ const Routes = () => {
   let element = useRoutes([
     { path: "/", element: <Home /> },
     {
-      path: "/golden-visa",
+      path: "/goldenvisa",
       element: <GoldenVisaLandingvTwoPage />,
     },
     {
-      path: "/OPNTokenMint",
+      path: "/opntoken",
       element: <GoldenVisaOPNTokenTokenMintPage />,
     },
     {

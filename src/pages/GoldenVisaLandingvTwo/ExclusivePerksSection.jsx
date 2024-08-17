@@ -76,7 +76,7 @@ export default function ExclusivePerksSection() {
                   </>
                 </span>
                 <span className="bg-gradient3 bg-clip-text text-transparent text-2xl sm:text-3xl md:text-4xl lg:text-6xl">
-                  the IOPn Trailblazer’s Initiative!
+                  Web3 Talent Program!
                 </span>
               </Text>
               {/* <p className="text-2xl text-dark-0 text-center">

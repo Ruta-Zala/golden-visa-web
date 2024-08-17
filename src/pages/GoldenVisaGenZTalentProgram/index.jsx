@@ -272,7 +272,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       className="w-full leading-[105%] !text-dark-0 lg:!text-[48px] !text-[35px]"
                     >
                       <>
-                        Ready to Invest In
+                        Ready to Mint In
                         <br />
                         Your Future?
                       </>

@@ -81,7 +81,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-2 flex-col lg:flex-row justify-end items-center gap-4 h-fit mt-2">
-            <a href="/#/golden-visa" onClick={handleScrollToTop}>
+            <a href="/#/goldenvisa" onClick={handleScrollToTop}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6] ">
                 UAE Golden Visa
               </span>
@@ -89,7 +89,7 @@ const Footer = () => {
             <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
               OPNChain
             </span>
-            <a href="/#/OPNTokenMint" onClick={handleScrollToTop}>
+            <a href="/#/opntoken" onClick={handleScrollToTop}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
                 OPN Token
               </span>

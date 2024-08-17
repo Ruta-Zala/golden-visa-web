@@ -63,7 +63,7 @@ export default function StepByStepProcessSection() {
                         Web3 Ecosystem.
                       </Text>
                     </div>
-                    <a href="/#/OPNTokenMint">
+                    <a href="/#/opntoken">
                       <Button
                         shape="round"
                         color="undefined_undefined"

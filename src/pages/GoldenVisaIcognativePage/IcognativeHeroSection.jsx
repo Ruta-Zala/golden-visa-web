@@ -3,7 +3,7 @@ import arrowDown from '../../assets/img_arrow_down.svg';
 import headerLogo from '../../assets/header-logo.jpeg';
 
 const menuItems = [
-  { href: '/#/golden-visa', label: 'UAE Golden Visa' },
+  { href: '/#/goldenvisa', label: 'UAE Golden Visa' },
   { href: '/#/OPNChain', label: 'OPNChain' },
   { href: '#', label: 'OPN Token' },
   { href: '/#/GenzTalentProgram', label: 'GenZ Talent Program' },
@@ -112,7 +112,7 @@ const IcognativeHeroSection = () => {
                             Web3 Entrepreneur Program
                           </a>
                           <a
-                            href="/#/golden-visa"
+                            href="/#/goldenvisa"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem">
                             UAE Golden Visa
@@ -130,7 +130,7 @@ const IcognativeHeroSection = () => {
                   )}
                 </span>
               </div>
-              <a href="/#/OPNTokenMint">
+              <a href="/#/opntoken">
                 <span>
                   <button className="flex flex-row justify-center items-center ps-8 py-2 pr-2 gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
                     Mint OPN{' '}

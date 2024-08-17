@@ -50,7 +50,7 @@ export default function HeaderVisa({ ...props }) {
           </a>
         </li>
         <li>
-          <a href="/#/OPNTokenMint">
+          <a href="/#/opntoken">
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint token</span>
           </a>
         </li>
@@ -112,7 +112,7 @@ export default function HeaderVisa({ ...props }) {
               </a>
             </li>
             <li>
-              <a href="/#/OPNTokenMint">
+              <a href="/#/opntoken">
                 <Text as="p" className="!text-accent-black">
                   Mint token
                 </Text>

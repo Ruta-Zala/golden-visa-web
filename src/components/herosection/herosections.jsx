@@ -104,7 +104,7 @@ const Herosections = () => {
             </div>
             <div className="hidden lg:flex items-center justify-between gap-4">
               <div className="flex flex-row items-center px-3 xl:px-6 gap-3 xl:gap-12 bg-[#f1f5f9] rounded-full py-3">
-                <a href="/#/golden-visa">
+                <a href="/#/goldenvisa">
                   <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                     UAE Golden Visa
                   </span>
@@ -112,7 +112,7 @@ const Herosections = () => {
                 <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                   OPNChain
                 </span>
-                <a href="/#/OPNTokenMint" onClick={handleScrollToTop}>
+                <a href="/#/opntoken" onClick={handleScrollToTop}>
                   <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                     OPN Token
                   </span>
@@ -174,7 +174,7 @@ const Herosections = () => {
                   )}
                 </span>
               </div>
-              <a href="/#/OPNTokenMint">
+              <a href="/#/opntoken">
                 <span>
                   <button className="flex flex-row justify-center items-center ps-8 py-2 pr-2 gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
                     Mint OPN{" "}
@@ -257,7 +257,7 @@ const Herosections = () => {
                   OPNChain
                 </a>
                 <a
-                  href="/#/OPNTokenMint"
+                  href="/#/opntoken"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={() => {
                     closeMenu();
@@ -341,7 +341,7 @@ const Herosections = () => {
                   </h1>
                 </div>
                 <Link
-                  to="/golden-visa"
+                  to="/goldenvisa"
                   onClick={handleScrollToTop}
                   className="flex w-full justify-end items-center cursor-pointer"
                 >
@@ -363,7 +363,7 @@ const Herosections = () => {
             </h1>
           </div>
           <Link
-            to="/golden-visa"
+            to="/goldenvisa"
             onClick={handleScrollToTop}
             className="flex w-full justify-end items-center cursor-pointer"
           >

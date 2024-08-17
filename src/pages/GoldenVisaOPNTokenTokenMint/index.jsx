@@ -48,7 +48,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
         </title>
         <meta
           name="description"
-          content="Join the IOPn ecosystem and mint OPN tokens for a chance to win a UAE Golden Visa. Invest in your future with exclusive access and global recognition. Act now and be part of the GenZ Talent Program."
+          content="Join the IOPn ecosystem and mint OPN tokens for a chance to win a UAE Golden Visa. Mint in your future with exclusive access and global recognition. Act now and be part of the GenZ Talent Program."
         />
         <meta
           name="description"
@@ -88,7 +88,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                   className="text-shadow-ts text-center !text-white-0"
                 >
                   Join the IOPn ecosystem and power the GenZ Talent Program.
-                  Purchase OPN
+                  Mint OPN
                   <br /> tokens for your chance at a UAE Golden Visa!
                 </Text>
                 <Button
@@ -265,7 +265,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           className="w-full leading-[105%]  lg:!text-[48px] !text-[35px]"
                         >
                           <>
-                            Ready to Invest in
+                            Ready to Mint in
                             <br />
                             Your Future?
                           </>
@@ -277,7 +277,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         className="leading-[140%] !text-dark-1 max-[550px]:text-[14px]"
                       >
                         Don’t wait! Join the GenZ Talent Program today and take
-                        the first step towards a brighter future. Purchase your
+                        the first step towards a brighter future. Mint your
                         OPN Coins now and enter the monthly draw for your chance
                         to win a UAE Golden Visa.
                       </Text>

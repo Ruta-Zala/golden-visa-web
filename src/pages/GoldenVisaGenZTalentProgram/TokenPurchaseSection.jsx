@@ -18,7 +18,7 @@ export default function TokenPurchaseSection() {
                 color="undefined_undefined"
                 className="flex rounded-[18px] border border-solid border-dark-0 p-1.5"
               >
-                Token purchase
+                Token Mint
               </Button>
               <Text
                 size="visa_desktop_headers_h3"
@@ -26,7 +26,7 @@ export default function TokenPurchaseSection() {
                 className="w-[90%] leading-[105%] !text-dark-0 max-[1440px]:w-full max-[1440px]:text-[48px] max-[1050px]:w-full"
               >
                 <>
-                  Purchase
+                  Mint
                   <br />
                   OPN Tokens
                 </>

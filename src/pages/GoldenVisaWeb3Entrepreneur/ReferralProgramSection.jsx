@@ -167,7 +167,7 @@ export default function ReferralProgramSection() {
                     className="w-full leading-[105%] lg:!text-[48px] !text-[35px]"
                   >
                     <>
-                      Ready to Invest in
+                      Ready to Mint in
                       <br />
                       Your Future?
                     </>
@@ -179,7 +179,7 @@ export default function ReferralProgramSection() {
                   className="leading-[140%] !text-dark-2"
                 >
                   Don’t wait! Join the GenZ Talent Program today and take the
-                  first step towards a brighter future. Purchase your OPN Coins
+                  first step towards a brighter future. Mint your OPN Coins
                   now and enter the monthly draw for your chance to win a UAE
                   Golden Visa.
                 </Text>

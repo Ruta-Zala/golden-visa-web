@@ -40,7 +40,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       size="xs"
                       className="min-w-80 rounded-2xl uppercase"
                     >
-                      JOIN THE IOPn TRAILBLAZER’S INITIATIVE
+                      JOIN THE WEB3 TALENT PROGRAM
                     </Button>
                     <h1 className="text-shadow-ts !text-white-0 text-3xl md:text-6xl w-full text-center">
                       Shape Your Future <br /> with the IOPn <br />
@@ -50,7 +50,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       UAE Golden Visa! */}
                     </h1>
                     <h5 className="text-white-0">
-                      Join the IOPn Trailblazer’s Initiative and turn your
+                      Join The  Web3 Talent Program and turn your
                       dreams into reality. Secure your spot in the innovative
                       draw for a life-changing UAE Golden Visa!
                       {/* Join the IOPn GenZ Talent Program and turn your dreams
@@ -90,13 +90,13 @@ export default function GoldenVisaLandingvTwoPage() {
               <div className="z-10 flex items-start relative md:flex-col">
                 <div className="relative flex flex-col items-center gap-5 py-10 md:py-20 text-center mx-auto">
                   <Button size="xs" className="min-w-80 uppercase">
-                    ABOUT THE IOPn TRAILBLAZER’S INITIATIVE
+                    ABOUT Web3 Talent Program
                   </Button>
                   <h2 className="text-shadow-ts !text-white-0 !text-center md:text-left text-4xl md:text-6xl">
                     <span className="text-white-0">What is</span>
                     <br />
                     <span className="text-blue-400">
-                      IOPn Trailblazer’s Initiative
+                      Web3 Talent Program
                     </span>{" "}
                     ?
                   </h2>
@@ -173,7 +173,7 @@ export default function GoldenVisaLandingvTwoPage() {
                     as="h3"
                     className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
                   >
-                    Purchase OPN Tokens
+                    Mint OPN Tokens
                   </Heading>
                   <Text
                     size="visa_body_text_18"
@@ -419,7 +419,7 @@ export default function GoldenVisaLandingvTwoPage() {
                         as="h3"
                         className="2xl:!text-[26px] md:!text-[20px] !text-[18px]"
                       >
-                        Purchase OPN Tokens
+                        Mint OPN Tokens
                       </Heading>
                       <Text
                         size="visa_body_text_18"
@@ -619,14 +619,14 @@ export default function GoldenVisaLandingvTwoPage() {
                       as="p"
                       className="leading-[140%] text-white-1 break-words"
                     >
-                      Don’t wait! Join the IOPn Trailblazer’s Initiative today
+                      Don’t wait! Join The  Web3 Talent Program today
                       and take the first step towards a brighter future. Mint
                       your OPN Tokens now and enter the monthly draw for your
                       chance to win a UAE Golden Visa.
                     </Text>
                   </div>
                   <Link to="">
-                    {/* <Link to="/OPNTokenMint"> */}
+                    {/* <Link to="/opntoken"> */}
                     <Button
                       variant="fill"
                       shape="round"
