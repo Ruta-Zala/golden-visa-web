@@ -119,7 +119,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
 
         {/* token mint section */}
         <TokenMintSection />
-        <div className="mb-1 mt-[118px] flex flex-col items-center">
+        <div id="refferralProgram" className="mb-1 mt-[118px] flex flex-col items-center">
           <div className="container-xs flex flex-col gap-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
             <div className="relative h-[1186px] content-center max-[1440px]:h-auto max-[1050px]:h-auto">
               <div className="mx-auto flex flex-1 flex-col gap-4 relative">

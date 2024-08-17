@@ -40,14 +40,14 @@ export default function Header({ ...props }) {
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">How it works</span>
           </a>
         </li>
-        <li>
+        <li onClick={(event) => handleScrollToSection(event, "refferralProgram")}>
           <a>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint token</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Perks</span>
           </a>
         </li>
-        <li>
+        <li onClick={(event) => handleScrollToSection(event, "mintToken")}>
           <a>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Monthly draw</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint Token</span>
           </a>
         </li>
       </ul>
@@ -109,14 +109,14 @@ export default function Header({ ...props }) {
             <li>
               <a>
                 <Text as="p" className="!text-accent-black">
-                  Mint token
+                  Perks
                 </Text>
               </a>
             </li>
             <li>
               <a >
                 <Text as="p" className="!text-accent-black">
-                  Monthly draw
+                  Mint Token
                 </Text>
               </a>
             </li>
