@@ -56,7 +56,7 @@ export default function HowItWorksSection() {
                         as="p"
                         className="w-full leading-[140%] !text-dark-1 line-clamp-5"
                       >
-                        Start by minting and staking OPO tokens.
+                        Start by minting and staking OPN tokens.
                       </Text>
                     </div>
                     <Button

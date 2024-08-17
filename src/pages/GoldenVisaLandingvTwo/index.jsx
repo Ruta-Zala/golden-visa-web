@@ -34,29 +34,17 @@ export default function GoldenVisaLandingvTwoPage() {
             <div className="max-w-screen-xl w-full px-4 mx-auto relative">
               <div className="flex w-full flex-col justify-between items-center gap-32">
                 <HeaderVisa />
-                <div className="flex flex-col items-center gap-5 w-full">
-                  <div className="flex flex-col items-center gap-5 self-stretch w-[32vw] text-center mx-auto">
+                <div className="flex flex-col items-center gap-9 w-full">
+                  <div className="flex flex-col items-center gap-9 self-stretch text-center mx-auto">
                     <Button
                       size="xs"
-                      className="min-w-80 rounded-2xl uppercase"
+                      className="min-w-80 rounded-2xl uppercase  w-[32vw]"
                     >
                       JOIN THE WEB3 TALENT PROGRAM
                     </Button>
-                    <h1 className="text-shadow-ts !text-white-0 text-3xl md:text-6xl w-full text-center">
-                      Shape Your Future <br /> with the IOPn <br />
-                      Trailblazer’s Initiative!!
-                      {/* Unlock Your <br />
-                      Future With A <br />
-                      UAE Golden Visa! */}
+                    <h1 className="text-shadow-ts !text-white-0 text-3xl sm:text-4xl md:text-6xl w-full text-center">
+                        Unlock Your<br/>Future With an<br/>UAE Golden Visa!
                     </h1>
-                    <h5 className="text-white-0">
-                      Join The  Web3 Talent Program and turn your
-                      dreams into reality. Secure your spot in the innovative
-                      draw for a life-changing UAE Golden Visa!
-                      {/* Join the IOPn GenZ Talent Program and turn your dreams
-                      into reality. Secure your spot in the monthly draw for a
-                      life-changing UAE Golden Visa! */}
-                    </h5>
                   </div>
                   <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
                     {/* <Link to="/GenzTalentProgram"> */}

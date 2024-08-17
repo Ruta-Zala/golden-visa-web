@@ -141,7 +141,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
               </div>
             </div>
           </div>
-          <div className="flex gap-4 flex-col md:flex-row">
+          {/* <div className="flex gap-4 flex-col md:flex-row">
             <div className="flex w-full flex-col gap-[58px] rounded-[20px] bg-dark-0 p-10 max-[550px]:gap-[29px] max-[550px]:p-4">
               <div className="flex flex-col items-start gap-3.5">
                 <Text
@@ -260,7 +260,7 @@ export default function GoldenVisaGenZTalentProgramSection() {
                 </Button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
