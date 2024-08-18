@@ -4,6 +4,7 @@ import { Img } from "../ImgMint/index";
 import { Text } from "../Text/index";
 import React, { useState } from "react";
 import { handleScrollToSection } from "../../utils/helper";
+import headerLogo from "../../assets/header-logo.jpeg";
 
 export default function HeaderGenz({ hideTabs = [], ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
       className={`${props.className} flex justify-between items-center gap-5 p-2 bg-light_base rounded-[34px] bg-white-0`}
     >
       <Img
-        src="/src/assets/header-logo.jpeg"
+        src={headerLogo}
         alt="Logo Container"
         className="h-[32px] w-[18%] object-contain"
       />
@@ -27,29 +28,41 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
       <ul className="flex justify-center gap-10 max-[1050px]:hidden max-[550px]:hidden pr-8">
         <li>
           <a href="/">
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Home</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Home
+            </span>
           </a>
         </li>
         <li>
           <a onClick={(event) => handleScrollToSection(event, "benefits")}>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Benefits</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Benefits
+            </span>
           </a>
         </li>
         <li onClick={(event) => handleScrollToSection(event, "howItWroks")}>
-          <a>            
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">How it works</span>
+          <a>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              How it works
+            </span>
           </a>
         </li>
         <li>
           <a onClick={(event) => handleScrollToSection(event, "participate")}>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Participate</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Participate
+            </span>
           </a>
         </li>
-        {!hideTabs?.includes('Golden draw') && <li>
-          <a onClick={(event) => handleScrollToSection(event, "goldenDraw")}>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Golden draw</span>
-          </a>
-        </li>}
+        {!hideTabs?.includes("Golden draw") && (
+          <li>
+            <a onClick={(event) => handleScrollToSection(event, "goldenDraw")}>
+              <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                Golden draw
+              </span>
+            </a>
+          </li>
+        )}
       </ul>
       {/* <Button
         variant="fill"
@@ -76,7 +89,7 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
               className="h-12 w-48 object-contain"
             /> */}
             <Img
-              src="/src/assets/header-logo.jpeg"
+              src={headerLogo}
               alt="Logo Container"
               className="h-[32px] w-[18%] object-contain"
             />
@@ -100,26 +113,36 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
               </a>
             </li>
             <li>
-              <a onClick={(event) => handleScrollToSection(event, "howItWroks")}>
+              <a
+                onClick={(event) => handleScrollToSection(event, "howItWroks")}
+              >
                 <Text as="p" className="!text-accent-black">
                   How it works
                 </Text>
               </a>
             </li>
             <li>
-              <a onClick={(event) => handleScrollToSection(event, "participate")}>
+              <a
+                onClick={(event) => handleScrollToSection(event, "participate")}
+              >
                 <Text as="p" className="!text-accent-black">
                   Participate
                 </Text>
               </a>
             </li>
-            {!hideTabs?.includes('Golden draw') && <li>
-              <a onClick={(event) => handleScrollToSection(event, "goldenDraw")}>
-                <Text as="p" className="!text-accent-black">
-                  Golden draw
-                </Text>
-              </a>
-            </li>}
+            {!hideTabs?.includes("Golden draw") && (
+              <li>
+                <a
+                  onClick={(event) =>
+                    handleScrollToSection(event, "goldenDraw")
+                  }
+                >
+                  <Text as="p" className="!text-accent-black">
+                    Golden draw
+                  </Text>
+                </a>
+              </li>
+            )}
             {/* <Button
               color="dark_0"
               variant="fill"

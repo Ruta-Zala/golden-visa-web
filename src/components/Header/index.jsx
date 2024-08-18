@@ -4,6 +4,7 @@ import { Img } from "../ImgMint/index";
 import { Text } from "../Text/index";
 import React, { useState } from "react";
 import { handleScrollToSection } from "../../utils/helper";
+import headerLogo from "../../assets/header-logo.jpeg";
 
 export default function Header({ ...props }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function Header({ ...props }) {
       className={`${props.className} flex justify-between items-center gap-5 p-2 bg-light_base rounded-[34px] bg-white-0`}
     >
       <Img
-        src="/src/assets/header-logo.jpeg"
+        src={headerLogo}
         alt="Logo Container"
         className="h-[32px] w-[18%] object-contain"
       />
@@ -27,27 +28,39 @@ export default function Header({ ...props }) {
       <ul className="flex justify-center gap-10 max-[1050px]:hidden max-[550px]:hidden pr-8">
         <li>
           <a href="/">
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Home</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Home
+            </span>
           </a>
         </li>
         <li>
           <a onClick={(event) => handleScrollToSection(event, "benefits")}>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Benefits</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Benefits
+            </span>
           </a>
         </li>
         <li onClick={(event) => handleScrollToSection(event, "howItWroks")}>
-          <a>            
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">How it works</span>
+          <a>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              How it works
+            </span>
           </a>
         </li>
-        <li onClick={(event) => handleScrollToSection(event, "refferralProgram")}>
+        <li
+          onClick={(event) => handleScrollToSection(event, "refferralProgram")}
+        >
           <a>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Perks</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Perks
+            </span>
           </a>
         </li>
         <li onClick={(event) => handleScrollToSection(event, "mintToken")}>
           <a>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">Mint Token</span>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+              Mint Token
+            </span>
           </a>
         </li>
       </ul>
@@ -76,7 +89,7 @@ export default function Header({ ...props }) {
               className="h-12 w-48 object-contain"
             /> */}
             <Img
-              src="/src/assets/header-logo.jpeg"
+              src={headerLogo}
               alt="Logo Container"
               className="h-[32px] w-[18%] object-contain"
             />
@@ -114,7 +127,7 @@ export default function Header({ ...props }) {
               </a>
             </li>
             <li>
-              <a >
+              <a>
                 <Text as="p" className="!text-accent-black">
                   Mint Token
                 </Text>

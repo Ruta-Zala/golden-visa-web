@@ -115,7 +115,7 @@
 }
 /* Hero Section */
 .main-hero {
-  background-image: url(../src/assets/heroimg.png);
+  background-image: url("./assets/heroimg.png");
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -124,7 +124,7 @@
 }
 @media (max-width: 767px) {
   .main-hero {
-    background-image: url("../src/assets/Herobgsm.png"); /* Replace with your smaller screen image */
+    background-image: url("./assets/Herobgsm.png"); /* Replace with your smaller screen image */
     background-size: cover;
     border-radius: 20px;
     min-height: 100%;
@@ -279,7 +279,7 @@
       rgba(21, 64, 109, 0.666876) 27.66%,
       rgba(21, 64, 109, 0) 69.14%
     ),
-    url("../src/assets/partnershipbg.jpeg") no-repeat center/cover;
+    url("./assets/partnershipbg.jpeg") no-repeat center/cover;
 }
 .partner-content h2 {
   font-family: Arial, Helvetica, sans-serif;
@@ -424,14 +424,14 @@
 }
 
 .bg-earth {
-  background: url(./assets/earth.svg);
+  background: url("./assets/earth.svg");
 }
 
 /* Icongnative Page Style */
 
 /* Hero Section */
 .opn-chain-main-hero {
-  background-image: url(../src/assets/herosection/Icongnative.png);
+  background-image: url("./assets/herosection/Icongnative.png");
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -440,7 +440,7 @@
 }
 @media (max-width: 767px) {
   .opn-chain-main-hero {
-    background-image: url("../src/assets/herosection/Icongnative.png"); /* Replace with your smaller screen image */
+    background-image: url("./assets/herosection/Icongnative.png"); /* Replace with your smaller screen image */
     background-size: cover;
     border-radius: 20px;
     min-height: 100%;

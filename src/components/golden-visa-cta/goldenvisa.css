@@ -27,71 +27,74 @@
 }
 
 .goldenvisacard1 {
-    background: #E2E8F0;
-    padding: 40px;
-    gap: 24px;
+  background: #e2e8f0;
+  padding: 40px;
+  gap: 24px;
 }
 
 /* Image block */
 .goldenvisaimg {
-    background: url("/src/assets/goldenvisa/6b1f976bd2d2d9d218e72e807196f04a.jpeg") no-repeat center center;
-    background-size: cover;
-    transform: scaleX(-1); 
-    min-height: 340px;
+  background: url("./assets/goldenvisa/6b1f976bd2d2d9d218e72e807196f04a.jpeg")
+    no-repeat center center;
+  background-size: cover;
+  transform: scaleX(-1);
+  min-height: 340px;
 }
 
 /* Text styles */
 .golden-visa-p {
-    /* color: gray !important; */
-    font-size: 1em;
-    margin: 0;
+  /* color: gray !important; */
+  font-size: 1em;
+  margin: 0;
 }
 
 /* Responsive styles */
 @media (max-width: 1200px) {
-    .goldenvisacard1, .goldenvisaimg {
-        width: 100%;
-    }
+  .goldenvisacard1,
+  .goldenvisaimg {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-      .goldenvisa-main {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
+  .goldenvisa-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
 
-    .goldenvisacard1, .goldenvisaimg {
-        width: 100%;
-        height: auto;
-    }
-    .goldenvisacard1 {
-        padding: 20px;
-        gap: 16px;
-    }
+  .goldenvisacard1,
+  .goldenvisaimg {
+    width: 100%;
+    height: auto;
+  }
+  .goldenvisacard1 {
+    padding: 20px;
+    gap: 16px;
+  }
 
-    .goldenvisaimg {
-        height: 340px;
-    }
+  .goldenvisaimg {
+    height: 340px;
+  }
 
-    .goldenvisa-main {
-        gap: 16px;
-    }
+  .goldenvisa-main {
+    gap: 16px;
+  }
 }
 
 @media (max-width: 480px) {
-    .goldenvisacard1 {
-        padding: 20px;
-        width: 100%;
-    }
+  .goldenvisacard1 {
+    padding: 20px;
+    width: 100%;
+  }
 
-    .goldenvisaimg {
-        height: 340px;
-        width: 100%;
-    }
+  .goldenvisaimg {
+    height: 340px;
+    width: 100%;
+  }
 
-    .golden-visa-p {
-        font-size: 0.9em;
-        line-height: 1.4;
-    }
+  .golden-visa-p {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
 }

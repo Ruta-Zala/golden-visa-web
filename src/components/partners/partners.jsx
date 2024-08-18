@@ -1,10 +1,10 @@
-import partner7 from "/src/assets/parternes/apex.png";
-import partner6 from "/src/assets/parternes/chainLink.png";
-import partner5 from "/src/assets/parternes/dubaiWorld.png";
-import partner4 from "/src/assets/parternes/dmcc.png";
-import partner3 from "/src/assets/parternes/development.png";
-import partner2 from "/src/assets/parternes/phoenix.png";
-import partner1 from "/src/assets/parternes/digitalAssets.png";
+import partner7 from "../../assets/parternes/apex.png";
+import partner6 from "../../assets/parternes/chainLink.png";
+import partner5 from "../../assets/parternes/dubaiWorld.png";
+import partner4 from "../../assets/parternes/dmcc.png";
+import partner3 from "../../assets/parternes/development.png";
+import partner2 from "../../assets/parternes/phoenix.png";
+import partner1 from "../../assets/parternes/digitalAssets.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

@@ -108,7 +108,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
         <GoldenVisaGenZTalentProgramSection />
 
         {/* token purchase section */}
-        <TokenPurchaseSection />
+        {/* <TokenPurchaseSection /> */}
         <div id="refferralProgram" className="container-xs mt-[80px] md:mt-[100px] xl:mt-[180px] max-[1440px]:px-5 max-[1050px]:px-5">
           <div className="flex gap-4 flex-col md:flex-row">
             <div className="relative h-[430px] md:h-auto w-full rounded-[20px] bg-light_base">

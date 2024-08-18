@@ -1,13 +1,13 @@
 import React from "react";
 import "./team.css";
 
-import person1 from "/src/assets/team/2a079a739ab81665ffaf8d6bf79c6123.jpeg";
-import person2 from "/src/assets/team/2cc9039a9719fa58d5312e73a492470f.jpeg";
-import person3 from "/src/assets/team/19ee7af70bc413396a70596a9f78e414.jpeg";
-import person4 from "/src/assets/team/27c93aa27a8665956627ed9981c5a296.jpeg";
-import person5 from "/src/assets/team/b2afa92a5cc56a99731036b4a1a9744c.jpeg";
-import person6 from "/src/assets/team/d11675305a77a342074db068f63469e0.jpeg";
-import person7 from "/src/assets/team/57f8d7ea70bda5136d1f454b3b60be49.jpeg";
+import person1 from "../../assets/team/2a079a739ab81665ffaf8d6bf79c6123.jpeg";
+import person2 from "../../assets/team/2cc9039a9719fa58d5312e73a492470f.jpeg";
+import person3 from "../../assets/team/19ee7af70bc413396a70596a9f78e414.jpeg";
+import person4 from "../../assets/team/27c93aa27a8665956627ed9981c5a296.jpeg";
+import person5 from "../../assets/team/b2afa92a5cc56a99731036b4a1a9744c.jpeg";
+import person6 from "../../assets/team/d11675305a77a342074db068f63469e0.jpeg";
+import person7 from "../../assets/team/57f8d7ea70bda5136d1f454b3b60be49.jpeg";
 
 const teamMembers = [
   { name: "John Doe", title: "CEO & Co-founder", image: person1 },

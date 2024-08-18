@@ -1,11 +1,11 @@
 import "./productscard.css";
-// import cardimg1 from "/src/assets/productcard/card1.jpeg";
-// import cardimg2 from "/src/assets/productcard/card2.jpeg";
-// import cardimg3 from "/src/assets/productcard/card3.jpeg";
+// import cardimg1 from "../../assets/productcard/card1.jpeg";
+// import cardimg2 from "../../assets/productcard/card2.jpeg";
+// import cardimg3 from "../../assets/productcard/card3.jpeg";
 
-import cardimg1 from "/src/assets/productcard/card-1.png";
-import cardimg2 from "/src/assets/productcard/card-2.png";
-import cardimg3 from "/src/assets/productcard/card-3.png";
+import cardimg1 from "../../assets/productcard/card-1.png";
+import cardimg2 from "../../assets/productcard/card-2.png";
+import cardimg3 from "../../assets/productcard/card-3.png";
 
 const Productscard = () => {
   const cardData = [
