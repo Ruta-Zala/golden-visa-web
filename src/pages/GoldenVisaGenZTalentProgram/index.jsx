@@ -11,11 +11,15 @@ import GoldenVisaMetricsSection from "./GoldenVisaMetricsSection";
 import MetricsSection from "./MetricsSection";
 import StepByStepProcessSection from "./StepByStepProcessSection";
 import TokenPurchaseSection from "./TokenPurchaseSection";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import HeaderGenz from "../../components/HeaderGenz";
 import { handleScrollToSection } from "../../utils/helper";
 import Footer from "../../components/Footer/FooterEl";
 import RewardInfo from "../../components/RewardInfo";
+import { useAccount } from "wagmi";
+import { useLocation } from 'react-router-dom';
+import { ethers } from "ethers";
+import ConnectWallet from "../../components/wallet/ConnectWallet";
 
 const referralRewardsList = [
   {
@@ -33,6 +37,49 @@ const referralRewardsList = [
 ];
 
 export default function GoldenVisaGenZTalentProgramPage() {
+
+  const location = useLocation();
+  const { isConnected } = useAccount();
+
+  const [referalUrl, setReferalUrl] = useState('');
+  const [referalId, setReferalId] = useState(null);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const ref = queryParams.get('ref');
+    setReferalId(ref)
+  }, [location])
+
+  const handleGenerateReferal = async () => {
+
+    const currentQuery = location.search;
+    const params = new URLSearchParams(currentQuery);
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const walletAddress = await signer.getAddress();
+    params.set('ref', walletAddress);
+
+    const newQueryString = params.toString();
+    const newUrl = `${import.meta.env.VITE_REACT_APP_FRONTNED_BASE_URL}${location.pathname}?${newQueryString}${location.hash}`;
+
+    setReferalUrl(newUrl);
+
+  };
+
+
+
+  const handleCopyLink = () => {
+    console.log("FDfddf")
+    navigator.clipboard.writeText(referalUrl)
+      .then(() => {
+        console.log('Link copied to clipboard!');
+      })
+      .catch(err => {
+        console.error('Failed to copy the link: ', err);
+      });
+  };
+
   return (
     <>
       <Helmet>
@@ -105,10 +152,10 @@ export default function GoldenVisaGenZTalentProgramPage() {
         <StepByStepProcessSection />
 
         {/* golden visa gen z talent program section */}
-        <GoldenVisaGenZTalentProgramSection />
+        <GoldenVisaGenZTalentProgramSection referralAddress={referalId} />
 
         {/* token purchase section */}
-        <TokenPurchaseSection />
+        <TokenPurchaseSection referralAddress={referalId} />
         <div id="refferralProgram" className="container-xs mt-[80px] md:mt-[100px] xl:mt-[180px] max-[1440px]:px-5 max-[1050px]:px-5">
           <div className="flex gap-4 flex-col md:flex-row">
             <div className="relative h-[430px] md:h-auto w-full rounded-[20px] bg-light_base">
@@ -171,9 +218,10 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   shape="round"
                   name="Editable URL"
                   placeholder={`https://iopn.io/gkiyfujytdhtsrsytdr`}
-                  value="https://iopn.io/gkiyfujytdhtsrsytdr"
+                  value={referalUrl}
                   suffix={
                     <Button
+                      onClick={handleCopyLink}
                       color="dark_0"
                       variant="fill"
                       shape="round"
@@ -196,6 +244,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
 
                 <div className="flex flex-col gap-3">
                   <Button
+                    onClick={handleCopyLink}
                     color="dark_0"
                     variant="fill"
                     shape="round"
@@ -212,7 +261,30 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   >
                     Copy Link
                   </Button>
-                  <Button
+                  {
+                    isConnected ? <>
+                      <Button
+                        onClick={handleGenerateReferal}
+                        color="white_0"
+                        shape="round"
+                        rightIcon={
+                          <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
+                            <Img
+                              src="images/img_arrowleft_blue_800.svg"
+                              alt="Arrow Left"
+                              className="h-[18px] w-[18px]"
+                            />
+                          </div>
+                        }
+                        className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
+                      >
+                        Generate referral link
+                      </Button>
+                    </> : <p className="text-red-600 font-semibold">
+                      <ConnectWallet />
+                    </p>
+                  }
+                  {/* <Button
                     color="white_0"
                     shape="round"
                     rightIcon={
@@ -227,7 +299,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
                   >
                     Generate referral link
-                  </Button>
+                  </Button> */}
                   <Text
                     size="visa_desktop_body_text_16"
                     as="p"

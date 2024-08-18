@@ -9,11 +9,22 @@ import Goldenvisaweb3entrepreneursection from "./Goldenvisaweb3entrepreneursecti
 import HowItWorksSection from "./HowItWorksSection";
 import PurchaseSection from "./PurchaseSection";
 import ReferralProgramSection from "./ReferralProgramSection";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeaderGenz from "../../components/HeaderGenz";
 import Footer from "../../components/Footer/FooterEl";
 import { handleScrollToSection } from "../../utils/helper";
+import { useLocation } from 'react-router-dom';
+
 export default function GoldenVisaWeb3EntrepreneurPage() {
+  const location = useLocation();
+  const [referalId, setReferalId] = useState(null);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const ref = queryParams.get('ref');
+    setReferalId(ref)
+  }, [location])
+
   return (
     <>
       <Helmet>
@@ -35,7 +46,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
           <div className="flex h-[1000px] items-start justify-center bg-[url(/public/images/img_hero_web.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[1050px]:bg-center">
             <div className="container-xs mb-[248px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[220px] max-[1440px]:w-full max-[1440px]:gap-[165px] max-[1050px]:w-full max-[1050px]:gap-[165px] max-[550px]:gap-[110px]">
-                <HeaderGenz hideTabs={['Golden draw']}/>
+                <HeaderGenz hideTabs={['Golden draw']} />
                 <div className="mx-52 flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button
@@ -85,7 +96,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
         <div className="flex w-full flex-col items-center bg-white-0">
           <HowItWorksSection />
           {/* purchase section */}
-          <PurchaseSection />
+          <PurchaseSection referralAddress={referalId } />
         </div>
         <div className="container-xs mt-[66px] max-[1440px]:px-5 max-[1050px]:px-5 relative">
           <div className="absolute sm:left-1/2 left-0 sm:-translate-x-[30%] top-0 blur-[15px] h-[500px] sm:w-[500px] w-full">
