@@ -26,7 +26,7 @@ export default function GoldenVisaLandingSection() {
             </p>
             <div className="flex flex-col md:flex-row gap-4">
               <Link to="">
-                {/* <Link to="/GenzTalentProgram"> */}
+                {/* <Link to="/Talent"> */}
                 <Button
                   variant="fill"
                   shape="round"
