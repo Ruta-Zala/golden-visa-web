@@ -11,11 +11,15 @@ import GoldenVisaMetricsSection from "./GoldenVisaMetricsSection";
 import MetricsSection from "./MetricsSection";
 import StepByStepProcessSection from "./StepByStepProcessSection";
 import TokenPurchaseSection from "./TokenPurchaseSection";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import HeaderGenz from "../../components/HeaderGenz";
 import { handleScrollToSection } from "../../utils/helper";
 import Footer from "../../components/Footer/FooterEl";
 import RewardInfo from "../../components/RewardInfo";
+import { useAccount } from "wagmi";
+import { useLocation } from 'react-router-dom';
+import { ethers } from "ethers";
+import ConnectWallet from "../../components/wallet/ConnectWallet";
 
 const referralRewardsList = [
   {
@@ -33,6 +37,46 @@ const referralRewardsList = [
 ];
 
 export default function GoldenVisaGenZTalentProgramPage() {
+
+  const location = useLocation();
+  const { isConnected } = useAccount();
+
+  const [referalUrl, setReferalUrl] = useState('');
+  const [referalId, setReferalId] = useState(null);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const ref = queryParams.get('ref');
+    setReferalId(ref)
+  }, [location])
+
+  const handleGenerateReferal = async () => {
+
+    const currentQuery = location.search;
+    const params = new URLSearchParams(currentQuery);
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const walletAddress = await signer.getAddress();
+    params.set('ref', walletAddress);
+
+    const newQueryString = params.toString();
+    const newUrl = `${import.meta.env.VITE_REACT_APP_FRONTNED_BASE_URL}${location.pathname}?${newQueryString}${location.hash}`;
+
+    setReferalUrl(newUrl);
+
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(referalUrl)
+      .then(() => {
+        console.log('Link copied to clipboard!');
+      })
+      .catch(err => {
+        console.error('Failed to copy the link: ', err);
+      });
+  };
+
   return (
     <>
       <Helmet>
@@ -105,7 +149,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
         <StepByStepProcessSection />
 
         {/* golden visa gen z talent program section */}
-        <GoldenVisaGenZTalentProgramSection />
+        <GoldenVisaGenZTalentProgramSection referralAddress={referalId} />
 
         {/* token purchase section */}
         {/* <TokenPurchaseSection /> */}
@@ -171,9 +215,10 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   shape="round"
                   name="Editable URL"
                   placeholder={`https://iopn.io/gkiyfujytdhtsrsytdr`}
-                  value="https://iopn.io/gkiyfujytdhtsrsytdr"
+                  value={referalUrl}
                   suffix={
                     <Button
+                      onClick={handleCopyLink}
                       color="dark_0"
                       variant="fill"
                       shape="round"
@@ -196,6 +241,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
 
                 <div className="flex flex-col gap-3">
                   <Button
+                    onClick={handleCopyLink}
                     color="dark_0"
                     variant="fill"
                     shape="round"
@@ -212,7 +258,31 @@ export default function GoldenVisaGenZTalentProgramPage() {
                   >
                     Copy Link
                   </Button>
-                  <Button
+                  {
+                    isConnected ? <>
+                      <Button
+                        onClick={handleGenerateReferal}
+                        color="white_0"
+                        shape="round"
+                        rightIcon={
+                          <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
+                            <Img
+                              src="images/img_arrowleft_blue_800.svg"
+                              alt="Arrow Left"
+                              className="h-[18px] w-[18px]"
+                            />
+                          </div>
+                        }
+                        className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
+                      >
+                        Generate referral link
+                      </Button>
+                    </> :
+                      <p className="text-red-600 font-semibold">
+                        <ConnectWallet />
+                      </p>
+                  }
+                  {/* <Button
                     color="white_0"
                     shape="round"
                     rightIcon={
@@ -227,16 +297,16 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
                   >
                     Generate referral link
-                  </Button>
+                  </Button> */}
                   <Text
                     size="visa_desktop_body_text_16"
                     as="p"
                     className="text-center leading-[130%] !text-white-2"
                   >
-                    Don’t wait! Join The Web3 Talent Program today and take 
-                    the first step towards a brighter future. Mint your OPN 
+                    Don’t wait! Join The Web3 Talent Program today and take
+                    the first step towards a brighter future. Mint your OPN
                     Tokens now and enter the monthly draw for your chance to
-                     win a UAE Golden Visa.
+                    win a UAE Golden Visa.
                   </Text>
                 </div>
               </div>
@@ -273,9 +343,9 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       className="w-full leading-[105%] !text-dark-0 lg:!text-[48px] !text-[35px]"
                     >
                       <>
-                        Ready to Participate in a 
-                        <br/>
-                        Life Changing Opportunity 
+                        Ready to Participate in a
+                        <br />
+                        Life Changing Opportunity
                         <br />
                         for Your Future?
                       </>
@@ -286,8 +356,8 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     as="p"
                     className="leading-[140%] !text-dark-2 max-[550px]:text-[16px]"
                   >
-                    Don’t wait! Join The Web3 Talent Program today and take the 
-                    first step towards a brighter future. Mint your OPN Tokens now 
+                    Don’t wait! Join The Web3 Talent Program today and take the
+                    first step towards a brighter future. Mint your OPN Tokens now
                     and enter the monthly draw for your chance to win a UAE Golden Visa.
                   </Text>
                 </div>

@@ -1,12 +1,237 @@
+import React, { useState, useEffect } from "react";
+import { ethers } from "ethers";
+import { useAccount } from "wagmi";
 import { Button } from "../../components/ButtonGenz/index";
 import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
 import { Heading } from "../../components/HeadingGenz/index";
 import { Input } from "../../components/InputGenz/index";
 import { DatePicker } from "../../components/DatePicker/index";
-import React from "react";
+import ConnectWallet from "../../components/wallet/ConnectWallet";
+import {
+  paymentTokens,
+  vaultContractAddress,
+  vaultContractABI,
+  getLocalStorage,
+  setLocalStorage,
+  nullAddress,
+} from "../../utils/helper";
+import Loader from "../../components/Loader";
 
-export default function GoldenVisaGenZTalentProgramSection() {
+export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) {
+
+  const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
+  const [count, setCount] = useState("");
+  const [referral, setReferral] = useState(null);
+  const [requiredAmount, setRequiredAmount] = useState(null);
+  const [adjustedAmount, setAdjustedAmount] = useState(null);
+  const { isConnected } = useAccount();
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const isButtonDisabled = !name || !email || !count;
+
+  const handleTokenChange = (event) => {
+    const selected = paymentTokens.find(
+      (token) => token.id === event.target.value
+    );
+    setSelectedToken(selected);
+    setRequiredAmount(null);
+  };
+
+  const handleCountChange = (event) => {
+    setCount(event.target.value);
+    setRequiredAmount(null);
+  };
+
+  useEffect(() => {
+    if (referralAddress) {
+      setLocalStorage('refAddress', referralAddress)
+      setReferral(referralAddress)
+    } else {
+      const data = getLocalStorage("refAddress")
+      data && setReferral(data)
+    }
+  }, [referralAddress]);
+
+  const handleReferralChange = (event) => {
+    setReferral(event.target.value);
+  };
+
+  const fetchRequiredAmount = async () => {
+    if (!count || count <= 0) return;
+    setLoading(true);
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const contract = new ethers.Contract(
+        vaultContractAddress,
+        vaultContractABI,
+        provider
+      );
+      // Calculate the total OPN amount to stake (count * 10,000)
+      const totalOPN = ethers.utils.parseUnits((count * 10000).toString(), 18);
+
+      let requiredAmount;
+      if (selectedToken.symbol === "DAI") {
+        requiredAmount = await contract.calculateTotalDAIRequired(totalOPN);
+      } else if (selectedToken.symbol === "USDC") {
+        requiredAmount = await contract.calculateTotalUSDCRequired(totalOPN);
+      } else if (selectedToken.symbol === "USDT") {
+        requiredAmount = await contract.calculateTotalUSDTRequired(totalOPN);
+      }
+
+      // setRequiredAmount(ethers.utils.formatUnits(requiredAmount, selectedToken.decimals));
+      const calculatedAmount = ethers.utils.formatUnits(
+        requiredAmount,
+        selectedToken.decimals
+      );
+      const tenPercent = parseFloat(calculatedAmount) * 0.1;
+      const adjustedAmount = (
+        parseFloat(calculatedAmount) + tenPercent
+      ).toString();
+      setRequiredAmount(calculatedAmount);
+      setAdjustedAmount(adjustedAmount);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.error("Error fetching required amount:", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log({ requiredAmount });
+  }, [requiredAmount]);
+
+  const handleStakeGenz = async () => {
+    if (!count || count <= 0 || !requiredAmount) return;
+    setLoading(true);
+    const contractABI = [
+      "function approve(address spender, uint256 amount) public returns (bool)",
+      "function buyTokens(uint256 amount, address paymentToken, address _referral) external returns (uint256)",
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "paymentToken",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "_count",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "_referral",
+            type: "address",
+          },
+        ],
+        name: "stakeGenz",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+    ];
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const walletAddress = await signer.getAddress();
+
+      // Convert the required amount to Wei based on the selected token's decimals
+      const amountInWei = ethers.utils.parseUnits(
+        adjustedAmount,
+        selectedToken.decimals
+      );
+
+      // Create a contract instance for the selected token to approve the transaction
+      const tokenContract = new ethers.Contract(
+        selectedToken.address,
+        [
+          "function approve(address spender, uint256 amount) public returns (bool)",
+          "function allowance(address owner, address spender) public view returns (uint256)",
+        ],
+        signer
+      );
+
+      // Check existing allowance
+      const currentAllowance = await tokenContract.allowance(
+        signer.getAddress(),
+        vaultContractAddress
+      );
+
+      // If the current allowance is not zero, reset it to zero first
+      if (!currentAllowance.isZero()) {
+        const resetApprovalTx = await tokenContract.approve(
+          vaultContractAddress,
+          0
+        );
+        await resetApprovalTx.wait();
+      }
+
+      // Now approve the new amount
+      const approvalTx = await tokenContract.approve(
+        vaultContractAddress,
+        amountInWei
+      );
+      await approvalTx.wait();
+
+      const contract = new ethers.Contract(
+        vaultContractAddress,
+        vaultContractABI,
+        signer
+      );
+
+      const refAddr = referral || nullAddress;
+
+      console.log(refAddr);
+      const stakeTx = await contract.stakeGenz(
+        selectedToken.address,
+        refAddr,
+        count
+      );
+      const receipt = await stakeTx.wait();
+
+      console.log(receipt);
+
+      // post email & name & walletAddress, txHash on the api
+      if (receipt) {
+        // const url = 'http://localhost:5000/api/users';
+        const url = `${import.meta.env.VITE_BACKEND_BASE_URL}/api/users`;
+
+        const userData = {
+          name: String(name),
+          email: String(email),
+          walletAddress: String(walletAddress),
+          transactionHash: String(receipt.transactionHash),
+          stackingType: String("Stake GenZ"),
+        };
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log("User created successfully:", data);
+          } else {
+            const errorData = await response.json();
+            console.error("Error creating user:", errorData.message);
+          }
+        } catch (error) {
+          setLoading(false);
+          console.error("Error:", error);
+        }
+      }
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.error("Error during staking:", error);
+    }
+  };
+
+
   return (
     <>
       {/* golden visa gen z talent program section */}
@@ -65,6 +290,8 @@ export default function GoldenVisaGenZTalentProgramSection() {
                     <Input
                       shape="round"
                       name="Name Input"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       placeholder={`John Doe`}
                       className="self-stretch max-[1050px]:text-[20px]"
                     />
@@ -72,6 +299,8 @@ export default function GoldenVisaGenZTalentProgramSection() {
                   <div className="flex flex-col items-start gap-2">
                     <Heading as="h3">You email</Heading>
                     <Input
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       shape="round"
                       type="email"
                       name="Email Input"
@@ -79,8 +308,75 @@ export default function GoldenVisaGenZTalentProgramSection() {
                       className="self-stretch max-[1050px]:text-[20px]"
                     />
                   </div>
+
+                  <div className="w-full mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Select Payment Token
+                    </label>
+                    <div className="flex items-center justify-between bg-gray-100 rounded-full p-4">
+                      <div className="relative inline-block w-full">
+                        <select
+                          className="appearance-none bg-transparent text-gray-700 font-medium p-4 rounded-full w-full"
+                          value={selectedToken.id}
+                          onChange={handleTokenChange}
+                        >
+                          {paymentTokens.map((token) => (
+                            <option key={token.id} value={token.id}>
+                              {token.symbol}
+                            </option>
+                          ))}
+                        </select>
+                        <img
+                          src={selectedToken.logoURI}
+                          alt={selectedToken.symbol}
+                          className="absolute w-6 h-6 top-1/2 right-2 transform -translate-y-1/2 pointer-events-none"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-full mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Enter Count of 10,000 OPN Units
+                    </label>
+                    <input
+                      type="number"
+                      value={count}
+                      onChange={handleCountChange}
+                      placeholder="Enter count (e.g., 1 for 10,000 OPN)"
+                      className="bg-transparent text-xl font-semibold outline-none w-full p-4 bg-gray-100 rounded-full"
+                      min="1"
+                    />
+                  </div>
+
+                  <div className="w-full mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Referral Address (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={referral}
+                      onChange={handleReferralChange}
+                      placeholder="Enter referral address"
+                      className="bg-transparent text-xl font-semibold outline-none w-full p-4 bg-gray-100 rounded-full"
+                    />
+                  </div>
+
+                  <div className="w-full mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Required {selectedToken.symbol} Amount
+                    </label>
+                    <div className="bg-gray-100 rounded-full p-4">
+                      <span className="text-xl font-semibold">
+                        {requiredAmount !== null
+                          ? `${requiredAmount} ${selectedToken.symbol}`
+                          : "Calculate amount"}
+                      </span>
+                    </div>
+                  </div>
+
                   <div className="flex flex-col gap-6">
-                    <div className="flex flex-col items-start gap-2">
+                    {/* <div className="flex flex-col items-start gap-2">
                       <Heading as="h4">OPN amount to stake</Heading>
                       <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                         <input type="text" name="Token Input" placeholder="OPN 1250" />
@@ -89,8 +385,52 @@ export default function GoldenVisaGenZTalentProgramSection() {
                           OPN
                         </div>
                       </label>
-                    </div>                    
-                    <div className="flex flex-col gap-4">
+                    </div> */}
+                    {isConnected ? (
+                      <div className="flex flex-col gap-4">
+                        <Button
+                          disabled={isButtonDisabled}
+                          onClick={fetchRequiredAmount}
+                          variant="gradient"
+                          shape="round"
+                          color="blue_700_blue_800_02"
+                          rightIcon={
+                            <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[10px]">
+                              <Img
+                                src="images/img_arrowleft_blue_800_01.svg"
+                                alt="Arrow Left"
+                                className="h-[18px] w-[18px]"
+                              />
+                            </div>
+                          }
+                          className={`gap-[34px] self-stretch font-medium capitalize relative
+                          ${isButtonDisabled
+                              ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                              : "bg-blue-600 text-white hover:bg-blue-700"
+                            }
+                          `}
+                        >
+                          Calculate
+                        </Button>
+                        <button
+                          onClick={handleStakeGenz}
+                          disabled={isButtonDisabled}
+                          class={`font-bold py-3 px-8 rounded-full transition duration-200 ${isButtonDisabled
+                            ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                            : "bg-blue-600 text-white hover:bg-blue-700"
+                            }`}
+                        >
+                          {loading ? <Loader /> : "Stake Genz"}
+                        </button>
+                      </div>
+                    ) : (
+                      <>
+                        <p className="text-red-600 font-semibold">
+                          <ConnectWallet />
+                        </p>
+                      </>
+                    )}
+                    {/* <div className="flex flex-col gap-4">
                       <Button
                         variant="gradient"
                         shape="round"
@@ -107,8 +447,8 @@ export default function GoldenVisaGenZTalentProgramSection() {
                         className="gap-[34px] self-stretch font-medium capitalize relative"
                       >
                         Participate
-                      </Button>
-                      {/* <Button
+                      </Button> */}
+                    {/* <Button
                         shape="round"
                         color="undefined_undefined"
                         rightIcon={
@@ -124,8 +464,8 @@ export default function GoldenVisaGenZTalentProgramSection() {
                       >
                         Buy Boost
                       </Button> */}
-                    </div>
-                    <div className="flex flex-col items-start gap-2 mt-10">
+                    {/* </div> */}
+                    {/* <div className="flex flex-col items-start gap-2 mt-10">
                       <Heading as="h5">Current usd Value</Heading>
                       <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                         <input type="text" name="Payment Input" placeholder="$ 100" />
@@ -134,10 +474,10 @@ export default function GoldenVisaGenZTalentProgramSection() {
                           USD
                         </div>
                       </label>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
