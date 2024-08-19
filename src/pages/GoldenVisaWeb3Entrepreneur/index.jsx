@@ -65,7 +65,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                     Explore the benefits of our Web3 Entrepreneur Program
                   </Text>
                   <button class="min-w-[268px] gap-4 font-medium capitalize text-black flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black" onClick={(event) => handleScrollToSection(event, "participate")}>
-                    Mint OPN Tokens Now
+                    Participate Now
                     <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                       <img
                         class="h-[18px] w-[18px]"

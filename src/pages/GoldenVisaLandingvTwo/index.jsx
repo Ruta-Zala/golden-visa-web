@@ -20,7 +20,7 @@ export default function GoldenVisaLandingvTwoPage() {
         <title>UAE Golden Visa Program - Unlock Your Future</title>
         <meta
           name="description"
-          content="Join the GenZ Talent Program for a chance to win a UAE Golden Visa. Secure your future with career growth, global mobility, and entrepreneurial opportunities. Enter our monthly draw now!"
+          content="Join the Web3 Talent Program for a chance to win a UAE Golden Visa. Secure your future with career growth, global mobility, and entrepreneurial opportunities. Enter our monthly draw now!"
         />
         <meta
           name="description"

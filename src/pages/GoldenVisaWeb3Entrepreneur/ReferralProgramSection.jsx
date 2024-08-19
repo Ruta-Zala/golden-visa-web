@@ -140,7 +140,9 @@ export default function ReferralProgramSection() {
                     as="p"
                     className="text-center leading-[130%] !text-white-2"
                   >
-                    Don’t wait! Mint your OPN Tokens, join the IOPn Web3 Ecosystem today, and take the first step towards a brighter future.
+                    Don’t wait! Join The Web3 Talent Program today and take the 
+                    first step towards a brighter future. Mint your OPN Tokens now
+                     and enter the monthly draw for your chance to win a UAE Golden Visa.
                   </Text>
                 </div>
               </div>
@@ -167,9 +169,8 @@ export default function ReferralProgramSection() {
                     className="w-full leading-[105%] lg:!text-[48px] !text-[35px]"
                   >
                     <>
-                      Ready to Mint in
-                      <br />
-                      Your Future?
+                      Ready to Participate in a Life
+                      Changing Opportunity for Your Future?
                     </>
                   </Text>
                 </div>
@@ -178,7 +179,7 @@ export default function ReferralProgramSection() {
                   as="p"
                   className="leading-[140%] !text-dark-2"
                 >
-                  Don’t wait! Join the GenZ Talent Program today and take the
+                  Don’t wait! Join the Web3 Talent Program today and take the
                   first step towards a brighter future. Mint your OPN Coins
                   now and enter the monthly draw for your chance to win a UAE
                   Golden Visa.
@@ -200,7 +201,7 @@ export default function ReferralProgramSection() {
                 className="min-w-[268px] gap-4 font-medium capitalize bg-gradient5 text-white-0"
                 onClick={(event) => handleScrollToSection(event, "participate")}
               >
-                Mint OPN Tokens Now
+                Participate Now
               </Button>
             </div>
           </div>

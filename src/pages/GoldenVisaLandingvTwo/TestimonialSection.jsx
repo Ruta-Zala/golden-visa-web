@@ -20,7 +20,7 @@ export default function TestimonialSection() {
             </h1>
             <p className="text-2xl text-dark-0 text-center">
               Be inspired by the stories of those who have already transformed
-              their lives through the GenZ Talent Program.
+              their lives through the Web3 Talent Program.
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-start my-4 w-full gap-3">
