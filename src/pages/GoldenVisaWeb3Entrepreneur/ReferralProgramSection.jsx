@@ -2,7 +2,7 @@ import { Button } from "../../components/ButtonGenz";
 import { Img } from "../../components/ImgMint";
 import { Text } from "../../components/Text";
 import { Input } from "../../components/InputGenz";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import RewardInfo from "../../components/RewardInfo";
 import { handleScrollToSection } from "../../utils/helper";
 import { useAccount } from "wagmi";

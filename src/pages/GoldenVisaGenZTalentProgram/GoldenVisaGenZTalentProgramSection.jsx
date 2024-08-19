@@ -160,7 +160,7 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
       );
 
       // If the current allowance is not zero, reset it to zero first
-      if (!currentAllowance.isZero()) {
+      if (!(currentAllowance.isZero() || selectedToken.symbol === "DAI")) {
         const resetApprovalTx = await tokenContract.approve(
           vaultContractAddress,
           0
@@ -183,7 +183,7 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
 
       const refAddr = referral || nullAddress;
 
-      console.log(refAddr);
+      console.log(refAddr, "this is the referral address");
       const stakeTx = await contract.stakeGenz(
         selectedToken.address,
         refAddr,

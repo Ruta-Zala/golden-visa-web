@@ -143,7 +143,7 @@ export default function TokenMintSection({ referralAddress }) {
       );
 
       // If the current allowance is not zero, reset it to zero first
-      if (!currentAllowance.isZero()) {
+      if (!(currentAllowance.isZero() || selectedToken.symbol === "DAI")) {
         const resetApprovalTx = await tokenContract.approve(
           vaultContractAddress,
           0

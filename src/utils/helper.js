@@ -17,8 +17,8 @@ export const handleScrollToTop = () => {
 };
 
 
-const vaultContractAddress = "0xe457c9a88F47B166a196eC9EC4271227a1E2F1b1";
-const web3StakeContractAddress = "0x6808aad97C9EE212b47668Dc54859AD83eE78c4a";
+const vaultContractAddress = "0x385aA9fc7f1375ADb37b2407CbDf15682BeDa955";
+const web3StakeContractAddress = "0x976311Be51f476f1468Dd41125f325f405B60e99";
 const paymentTokens = [
   {
     id: "1",

@@ -109,8 +109,7 @@ export default function PurchaseSection({ referralAddress }) {
         walletAddress,
         vaultContractAddress
       );
-
-      if (!currentAllowance.isZero()) {
+      if (!(currentAllowance.isZero() || selectedToken.symbol === "DAI")) {
         const resetApprovalTx = await tokenContract.approve(vaultContractAddress, 0);
         await resetApprovalTx.wait();
       }
