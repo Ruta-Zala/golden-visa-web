@@ -19,11 +19,11 @@ const Routes = () => {
       element: <GoldenVisaOPNTokenTokenMintPage />,
     },
     {
-      path: "/GenzTalentProgram",
+      path: "/Talent",
       element: <GoldenVisaGenZTalentProgramPage />,
     },
     {
-      path: "/Web3Entrepreneur",
+      path: "/Entrepreneur",
       element: <GoldenVisaWeb3EntrepreneurPage />,
     },
     {

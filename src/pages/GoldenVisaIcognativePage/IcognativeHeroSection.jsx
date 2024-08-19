@@ -6,8 +6,8 @@ const menuItems = [
   { href: '/#/goldenvisa', label: 'UAE Golden Visa' },
   { href: '/#/OPNChain', label: 'OPNChain' },
   { href: '#', label: 'OPN Token' },
-  { href: '/#/GenzTalentProgram', label: 'Web3 Talent Program' },
-  { href: '/#/Web3Entrepreneur', label: 'Web3 Entrepreneur Program' },
+  { href: '/#/Talent', label: 'Web3 Talent Program' },
+  { href: '/#/Entrepreneur', label: 'Web3 Entrepreneur Program' },
   { href: '#', label: 'OPNVerse' },
   { href: '/#/icongative', label: 'iCognative' },
 ];
@@ -100,13 +100,13 @@ const IcognativeHeroSection = () => {
                         style={{ backgroundColor: 'white' }}>
                         <div className="py-1" role="none">
                           <a
-                            href="/#/GenzTalentProgram"
+                            href="/#/Talent"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem">
                             Web3 Talent Program
                           </a>
                           <a
-                            href="/#/Web3Entrepreneur"
+                            href="/#/Entrepreneur"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem">
                             Web3 Entrepreneur Program

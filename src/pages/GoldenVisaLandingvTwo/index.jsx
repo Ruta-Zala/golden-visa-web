@@ -46,8 +46,8 @@ export default function GoldenVisaLandingvTwoPage() {
                         Unlock Your<br/>Future With a<br/>UAE Golden Visa!
                     </h1>
                   </div>
-                  <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
-                    {/* <Link to="/GenzTalentProgram"> */}
+                  <Link to="#/Talent" onClick={handleScrollToTop}>
+                    {/* <Link to="/Talent"> */}
                     <Button
                       variant="fill"
                       shape="round"
@@ -537,7 +537,7 @@ export default function GoldenVisaLandingvTwoPage() {
                   </div>
                 </div>
                 <div className="flex justify-center pt-10">
-                  <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
+                  <Link to="#/Talent" onClick={handleScrollToTop}>
                     <Button
                       variant="fill"
                       shape="round"
