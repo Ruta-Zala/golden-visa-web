@@ -62,7 +62,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       size="sm"
                       className="min-w-[220px] rounded-[25px] font-medium uppercase text-sm"
                     >
-                      GenZ Talent Program
+                      THE WEB3 TALENT PROGRAM
                     </Button>
                     <Text
                       size="visa_desktop_headers_h1"
@@ -233,9 +233,10 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     as="p"
                     className="text-center leading-[130%] !text-white-2"
                   >
-                    Don’t wait! Mint your OPN Tokens, join the IOPn Web3
-                    Ecosystem today, and take the first step towards a brighter
-                    future.
+                    Don’t wait! Join The Web3 Talent Program today and take 
+                    the first step towards a brighter future. Mint your OPN 
+                    Tokens now and enter the monthly draw for your chance to
+                     win a UAE Golden Visa.
                   </Text>
                 </div>
               </div>
@@ -272,9 +273,11 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       className="w-full leading-[105%] !text-dark-0 lg:!text-[48px] !text-[35px]"
                     >
                       <>
-                        Ready to Mint In
+                        Ready to Participate in a 
+                        <br/>
+                        Life Changing Opportunity 
                         <br />
-                        Your Future?
+                        for Your Future?
                       </>
                     </Text>
                   </div>
@@ -283,10 +286,9 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     as="p"
                     className="leading-[140%] !text-dark-2 max-[550px]:text-[16px]"
                   >
-                    Don’t wait! Join the GenZ Talent Program today and take the
-                    first step towards a brighter future. Purchase your OPN
-                    Coins now and enter the golden draw for your chance to win a
-                    UAE Golden Visa.
+                    Don’t wait! Join The Web3 Talent Program today and take the 
+                    first step towards a brighter future. Mint your OPN Tokens now 
+                    and enter the monthly draw for your chance to win a UAE Golden Visa.
                   </Text>
                 </div>
                 <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">

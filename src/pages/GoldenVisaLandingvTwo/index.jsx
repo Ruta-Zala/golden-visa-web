@@ -40,13 +40,13 @@ export default function GoldenVisaLandingvTwoPage() {
                       size="xs"
                       className="min-w-80 rounded-2xl uppercase  w-[32vw]"
                     >
-                      JOIN THE WEB3 TALENT PROGRAM
+                      JOIN THE Web3 TALENT PROGRAM
                     </Button>
                     <h1 className="text-shadow-ts !text-white-0 text-3xl sm:text-4xl md:text-6xl w-full text-center">
-                      Unlock Your<br />Future With a<br />UAE Golden Visa!
+                        Unlock Your<br/>Future With a<br/>UAE Golden Visa!
                     </h1>
                   </div>
-                  <Link to="/#/GenzTalentProgram">
+                  <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
                     {/* <Link to="/GenzTalentProgram"> */}
                     <Button
                       variant="fill"
@@ -60,7 +60,6 @@ export default function GoldenVisaLandingvTwoPage() {
                           />
                         </div>
                       }
-                      onClick={handleScrollToTop}
                       className="min-w-[258px] gap-4 capitalize"
                     >
                       Enter the Draw now
@@ -79,19 +78,19 @@ export default function GoldenVisaLandingvTwoPage() {
               <div className="z-10 flex items-start relative md:flex-col">
                 <div className="relative flex flex-col items-center gap-5 py-10 md:py-20 text-center mx-auto">
                   <Button size="xs" className="min-w-80 uppercase">
-                    ABOUT THE WEB3 TALENT PROGRAM
+                    ABOUT Web3 Talent Program
                   </Button>
                   <h2 className="text-shadow-ts !text-white-0 !text-center md:text-left text-4xl md:text-6xl">
                     <span className="text-white-0">What is</span>
                     <br />
                     <span className="text-blue-400">
-                      The Web3 Talent Program
+                      Web3 Talent Program
                     </span>{" "}
                     ?
                   </h2>
                   <p className="w-full !text-center md:text-left !text-white-0 text-lg md:text-xl">
-                    Imagine a future where the only limit is your ambition.
-                    The Web3 Talent Program is a pioneering program designed to
+                    Imagine a future where the only limit is your ambition. IOPn
+                    Trailblazer’s Initiative is a pioneering program designed to
                     empower exceptional talents from around the world. In
                     partnership with the visionary RAK Government this
                     initiative offers a unique pathway to the UAE’s Golden Visa.
@@ -538,7 +537,7 @@ export default function GoldenVisaLandingvTwoPage() {
                   </div>
                 </div>
                 <div className="flex justify-center pt-10">
-                  <Link to="/#/GenzTalentProgram">
+                  <Link to="#/GenzTalentProgram"  onClick={handleScrollToTop}>
                     <Button
                       variant="fill"
                       shape="round"
