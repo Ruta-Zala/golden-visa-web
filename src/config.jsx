@@ -5,9 +5,10 @@ import { injected, metaMask, safe, walletConnect } from "wagmi/connectors";
 
 
 export const config = createConfig({
-  chains: [mainnet, base],
+  chains: [mainnet, base, sepolia],
   connectors: [metaMask()],
   transports: {
-    [sepolia.id]: http(),
+    [mainnet.id]: http(),
+    [sepolia.id]: http()
   },
 });
