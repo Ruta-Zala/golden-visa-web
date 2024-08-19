@@ -21,7 +21,7 @@ import Loader from "../../components/Loader";
 
 export default function PurchaseSection({ referralAddress }) {
   const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
-  const [count, setCount] = useState("");
+  const count = 1;
   const [referral, setReferral] = useState(null);
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
@@ -47,17 +47,13 @@ export default function PurchaseSection({ referralAddress }) {
     setSelectedToken(selected);
   };
 
-  const handleCountChange = (event) => {
-    setCount(event.target.value);
-  };
 
   const handleReferralChange = (event) => {
     setReferral(event.target.value);
   };
 
   const handleStakeWeb3 = async () => {
-    console.log("355")
-    if (!count || count <= 0) return;
+
     setLoading(true);
 
     try {
@@ -274,20 +270,7 @@ export default function PurchaseSection({ referralAddress }) {
                   </div>
                 </div>
               </div>
-
-              <div className="w-full mb-6">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                  Enter Count of $100,000 Units
-                </label>
-                <input
-                  type="number"
-                  value={count}
-                  onChange={handleCountChange}
-                  placeholder="Enter count (e.g., 1 for $100,000)"
-                  className="bg-transparent text-xl font-semibold outline-none w-full p-4 bg-gray-100 rounded-full"
-                  min="1"
-                />
-              </div>
+ 
 
               <div className="w-full mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2">

@@ -58,6 +58,16 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
     setReferral(event.target.value);
   };
 
+  useEffect(() => {
+    const debounceTimeout = setTimeout(() => {
+      if (count) {
+        fetchRequiredAmount();
+      }
+    }, 500);
+
+    return () => clearTimeout(debounceTimeout);
+  }, [count,selectedToken]);
+
   const fetchRequiredAmount = async () => {
     if (!count || count <= 0) return;
     setLoading(true);
@@ -80,7 +90,6 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
         requiredAmount = await contract.calculateTotalUSDTRequired(totalOPN);
       }
 
-      // setRequiredAmount(ethers.utils.formatUnits(requiredAmount, selectedToken.decimals));
       const calculatedAmount = ethers.utils.formatUnits(
         requiredAmount,
         selectedToken.decimals
@@ -89,18 +98,15 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
       const adjustedAmount = (
         parseFloat(calculatedAmount) + tenPercent
       ).toString();
+      setLoading(false);
       setRequiredAmount(calculatedAmount);
       setAdjustedAmount(adjustedAmount);
-      setLoading(false);
+      return { requiredAmount: calculatedAmount || null, adjustedAmount: adjustedAmount || null }
     } catch (error) {
       setLoading(false);
       console.error("Error fetching required amount:", error);
     }
   };
-
-  useEffect(() => {
-    console.log({ requiredAmount });
-  }, [requiredAmount]);
 
   const handleStakeGenz = async () => {
     if (!count || count <= 0 || !requiredAmount) return;
@@ -183,19 +189,16 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
 
       const refAddr = referral || nullAddress;
 
-      console.log(refAddr, "this is the referral address");
+      console.log(refAddr);
       const stakeTx = await contract.stakeGenz(
         selectedToken.address,
         refAddr,
         count
       );
       const receipt = await stakeTx.wait();
-
-      console.log(receipt);
-
+      
       // post email & name & walletAddress, txHash on the api
       if (receipt) {
-        // const url = 'http://localhost:5000/api/users';
         const url = `${import.meta.env.VITE_BACKEND_BASE_URL}/api/users`;
 
         const userData = {
@@ -388,7 +391,7 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
                     </div> */}
                     {isConnected ? (
                       <div className="flex flex-col gap-4">
-                        <Button
+                        {/* <Button
                           disabled={isButtonDisabled}
                           onClick={fetchRequiredAmount}
                           variant="gradient"
@@ -411,7 +414,7 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
                           `}
                         >
                           Calculate
-                        </Button>
+                        </Button> */}
                         <button
                           onClick={handleStakeGenz}
                           disabled={isButtonDisabled}

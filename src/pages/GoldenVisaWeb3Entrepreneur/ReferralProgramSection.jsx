@@ -162,6 +162,7 @@ export default function ReferralProgramSection() {
                   </Button>
                   {
                     isConnected ? <Button
+                    onClick ={handleGenerateReferal}
                       color="white_0"
                       shape="round"
                       rightIcon={
