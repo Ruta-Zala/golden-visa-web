@@ -145,7 +145,7 @@ const Herosections = () => {
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            GenZ Talent Program
+                            Web3 Talent Program
                           </a>
                           <a
                             href="/#/Web3Entrepreneur"
@@ -162,7 +162,6 @@ const Herosections = () => {
                             OPNVerse
                           </a>
                           <a
-                            href="/#/Icognative"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -271,7 +270,7 @@ const Herosections = () => {
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  GenZ Talent Program
+                  Web3 Talent Program
                 </a>
                 <a
                   href="/#/Web3Entrepreneur"

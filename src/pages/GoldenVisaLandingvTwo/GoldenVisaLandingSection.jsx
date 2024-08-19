@@ -13,7 +13,7 @@ export default function GoldenVisaLandingSection() {
             <h1 className="text-shadow-ts text-[#FFFFFF] text-3xl md:text-4xl font-normal  text-center">
               Traditionally, securing a UAE Golden Visa
               <br />
-              requires a significant investment, but the GenZ
+              requires a significant investment, but the Web3
               <br />
               Talent Program is changing the game
             </h1>
