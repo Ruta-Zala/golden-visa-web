@@ -6,6 +6,7 @@ import GoldenVisaGenZTalentProgramPage from "./pages/GoldenVisaGenZTalentProgram
 import GoldenVisaWeb3EntrepreneurPage from "./pages/GoldenVisaWeb3Entrepreneur";
 import NotFound from "./pages/NotFound";
 import GoldenVisaIcognativePage from "./pages/GoldenVisaIcognativePage";
+import GoldenVisaOPNChainPage from "./pages/GoldenVisaOPNChain";
 
 const Routes = () => {
   let element = useRoutes([
@@ -29,6 +30,10 @@ const Routes = () => {
     {
       path: "/Icognative",
       element: <GoldenVisaIcognativePage />,
+    },
+    {
+      path: "/OPNChain",
+      element: <GoldenVisaOPNChainPage />,
     },
     { path: "*", element: <NotFound /> },
   ]);

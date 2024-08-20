@@ -1,11 +1,11 @@
-import earth from "../../assets/earth.svg";
-import telegram from "../../assets/icons8-telegram-96.svg";
-import insta from "../../assets/icons8-instagram-26.svg";
-import x from "../../assets/icons8-twitterx-32.svg";
-import linkedin from "../../assets/linkedin.png";
-import medium from "../../assets/icon-medium.svg";
-import logo from "../../assets/header-logo.png";
-import { handleScrollToTop } from "../../utils/helper";
+import earth from '../../assets/earth.svg';
+import telegram from '../../assets/icons8-telegram-96.svg';
+import insta from '../../assets/icons8-instagram-26.svg';
+import x from '../../assets/icons8-twitterx-32.svg';
+import linkedin from '../../assets/linkedin.png';
+import medium from '../../assets/icon-medium.svg';
+import logo from '../../assets/header-logo.png';
+import { handleScrollToTop } from '../../utils/helper';
 
 const IcognativeFooterSection = () => {
   return (
@@ -41,22 +41,19 @@ const IcognativeFooterSection = () => {
             <a
               href="https://www.linkedin.com/company/iopn"
               target="_blank"
-              className="linkedin social-item"
-            >
+              className="linkedin social-item">
               <img src={linkedin} alt="Discord" className="w-32 h-32" />
             </a>
             <a
               href="https://x.com/IOPn_io"
               target="_blank"
-              className="X social-item"
-            >
+              className="X social-item">
               <img src={x} alt="Twitter" />
             </a>
             <a
               href="https://www.instagram.com/internet_of_people_"
               target="_blank"
-              className="insta social-item"
-            >
+              className="insta social-item">
               <img src={insta} alt="Instagram" />
             </a>
             <a className="telegram social-item">
@@ -95,18 +92,9 @@ const IcognativeFooterSection = () => {
                 OPN Token
               </span>
             </a>
-            {/* <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
-              GenZ Talent Program
-            </span> */}
-            {/* <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
-              OPNVerse
-            </span> */}
-            {/* <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
-              iCognative
-            </span> */}
             <span>
               <button className="font-medium flex flex-row justify-center items-center gap-4 border border-[#08122a] rounded-3xl transition-all ease-linear duration-100 px-1 ps-5 py-1 group hover:bg-[#003366] hover:text-white-0">
-                Join Now{" "}
+                Join Now
                 <div className="flex flex-row justify-center items-center rotate-[-45deg] text-white-0 bg-[#08122a] rounded-[50%] p-0 w-8 h-8 group-hover:bg-white-0 group-hover:text-[#08122a]">
                   →
                 </div>

@@ -109,9 +109,11 @@ const Herosections = () => {
                     UAE Golden Visa
                   </span>
                 </a>
+                <a href="/#/OPNChain">
                 <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                   OPNChain
                 </span>
+                </a>
                 <a href="/#/opntoken" onClick={handleScrollToTop}>
                   <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                     OPN Token
@@ -250,7 +252,7 @@ const Herosections = () => {
                   UAE Golden Visa
                 </a>
                 <a
-                  href="#"
+                  href="/#/OPNChain"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
