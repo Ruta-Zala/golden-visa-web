@@ -8,6 +8,7 @@ import { Input } from "../../components/Input/index";
 import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
+import ERC20balanceOf from "../../abis/ERC20balanceOf.json"
 
 import { getLocalStorage, nullAddress, paymentTokens, setLocalStorage, vaultContractAddress } from "../../utils/helper";
 
@@ -100,6 +101,36 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     fetchOPNReturns();
   }, [selectedToken, inputAmount]);
+
+  useEffect(() => {
+    console.log("calling");
+    getBalance(selectedToken?.address);
+  }, [selectedToken?.address]);
+
+  const getBalance = async (address) => {
+    console.log(address, "address");
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const walletAddress = await signer.getAddress();
+
+
+    try {
+      console.log("here")
+      const tokenContract = new ethers.Contract(
+        address,
+        ERC20balanceOf,
+        signer
+      );
+      console.log("object....")
+
+
+      const balance = await tokenContract.balanceOf(walletAddress);
+      const formatedBalance = balance.toNumber()
+      console.log(formatedBalance)
+
+      console.log(balance, "balance");
+    } catch (error) {}
+  };
 
   // Function to handle the mint process
   const handleMint = async () => {
