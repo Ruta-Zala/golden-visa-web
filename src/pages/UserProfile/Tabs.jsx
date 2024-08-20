@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Referrals from './Referrals';
+import Dashboard from './Dashboard';
 
 function Tabs() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -34,8 +35,7 @@ function Tabs() {
       <div className="mt-[50px]">
         {activeTab === 'dashboard' && (
           <div>
-            <h2 className="text-xl font-bold">Dashboard Content</h2>
-            {/* Dashboard content goes here */}
+            <Dashboard />
           </div>
         )}
         {activeTab === 'referrals' && (

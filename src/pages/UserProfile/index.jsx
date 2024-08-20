@@ -1,8 +1,10 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import HeaderGenz from "../../components/HeaderGenz";
-import Sidebar from "./Sidebar";
-import Tabs from "./Tabs";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import HeaderGenz from '../../components/HeaderGenz';
+import Sidebar from './Sidebar';
+import Tabs from './Tabs';
+import Headerprofile from './Headerprofile';
+import Footer from '../../components/FooterMint';
 
 function UserProfile() {
   return (
@@ -21,25 +23,14 @@ function UserProfile() {
         />
         <meta name="keywords" content="IOPn, RAKDAO, GenZ Talent Program" />
       </Helmet>
-      <div className="flex w-full flex-col items-center bg-white-0">
-        <div className="self-stretch">
-          <div className="flexitems-start justify-center bg-slate-300 py-4">
-            <div className="container-xs flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5 ">
-              <div className="flex w-[90%] flex-col gap-[238px] max-[1440px]:w-full max-[1440px]:gap-[178px] max-[1050px]:w-full max-[1050px]:gap-[178px] max-[550px]:gap-[119px] max-[550px]:items-center">
-                <HeaderGenz />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex min-h-screen bg-gray-100 p-10 space-x-8">
+      <Headerprofile />
+      <div className="flex min-h-screen  p-10 space-x-8">
         <Sidebar />
-        <div className="flex-1">
-          <Tabs/>
-          {/* <Header />
-        <MainContent /> */}
+        <div className="flex-row w-full">
+          <Tabs />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
