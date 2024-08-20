@@ -18,8 +18,9 @@ import {
 } from "../../utils/helper";
 import Loader from "../../components/Loader";
 
-export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) {
-
+export default function GoldenVisaGenZTalentProgramSection({
+  referralAddress,
+}) {
   const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
   const [count, setCount] = useState("");
   const [referral, setReferral] = useState(null);
@@ -46,11 +47,11 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
 
   useEffect(() => {
     if (referralAddress) {
-      setLocalStorage('refAddress', referralAddress)
-      setReferral(referralAddress)
+      setLocalStorage("refAddress", referralAddress);
+      setReferral(referralAddress);
     } else {
-      const data = getLocalStorage("refAddress")
-      data && setReferral(data)
+      const data = getLocalStorage("refAddress");
+      data && setReferral(data);
     }
   }, [referralAddress]);
 
@@ -66,7 +67,7 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
     }, 500);
 
     return () => clearTimeout(debounceTimeout);
-  }, [count,selectedToken]);
+  }, [count, selectedToken]);
 
   const fetchRequiredAmount = async () => {
     if (!count || count <= 0) return;
@@ -101,7 +102,10 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
       setLoading(false);
       setRequiredAmount(calculatedAmount);
       setAdjustedAmount(adjustedAmount);
-      return { requiredAmount: calculatedAmount || null, adjustedAmount: adjustedAmount || null }
+      return {
+        requiredAmount: calculatedAmount || null,
+        adjustedAmount: adjustedAmount || null,
+      };
     } catch (error) {
       setLoading(false);
       console.error("Error fetching required amount:", error);
@@ -196,7 +200,7 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
         count
       );
       const receipt = await stakeTx.wait();
-      
+
       // post email & name & walletAddress, txHash on the api
       if (receipt) {
         const url = `${import.meta.env.VITE_BACKEND_BASE_URL}/api/users`;
@@ -234,11 +238,13 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
     }
   };
 
-
   return (
     <>
       {/* golden visa gen z talent program section */}
-      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch" id="participate">
+      <div
+        className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch"
+        id="participate"
+      >
         <div className="container-xs flex flex-col gap-[180px] max-[1440px]:gap-[135px] max-[1440px]:px-5 max-[1050px]:gap-[135px] max-[1050px]:px-5 max-[550px]:gap-[90px]">
           <div className="flex items-start flex-col md:flex-row gap-[20px] max-[550px]:gap-[30px]">
             <div className="flex w-full flex-col gap-5">
@@ -312,14 +318,12 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
                     />
                   </div>
 
-                  <div className="w-full mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Select Payment Token
-                    </label>
-                    <div className="flex items-center justify-between bg-gray-100 rounded-full p-4">
-                      <div className="relative inline-block w-full">
+                  <div className="w-full flex flex-col gap-2">
+                    <Heading as="h2">Select Payment Token</Heading>
+                    <div className="flex items-center justify-between border border-solid border-blue-900_1e bg-transparent rounded-full p-[0.75rem]">
+                      <div className="relative flex w-full gap-2 items-center justify-between">
                         <select
-                          className="appearance-none bg-transparent text-gray-700 font-medium p-4 rounded-full w-full"
+                          className="appearance-none bg-transparent text-gray-700 font-medium px-2 rounded-full w-full focus:outline-none"
                           value={selectedToken.id}
                           onChange={handleTokenChange}
                         >
@@ -332,44 +336,43 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
                         <img
                           src={selectedToken.logoURI}
                           alt={selectedToken.symbol}
-                          className="absolute w-6 h-6 top-1/2 right-2 transform -translate-y-1/2 pointer-events-none"
+                          className="h-[25px] w-[25px] pointer-events-none"
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div className="w-full mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Enter Count of 10,000 OPN Units
-                    </label>
-                    <input
-                      type="number"
-                      value={count}
-                      onChange={handleCountChange}
-                      placeholder="Enter count (e.g., 1 for 10,000 OPN)"
-                      className="bg-transparent text-xl font-semibold outline-none w-full p-4 bg-gray-100 rounded-full"
-                      min="1"
-                    />
+                  <div className="w-full flex flex-col gap-2">
+                    <Heading as="h2">Enter Count of 10,000 OPN Units</Heading>
+                    <div className="self-stretch max-[1050px]:text-[20px] flex items-center justify-center cursor-text border-blue-900_1e border border-solid  rounded-[36px] h-[50px] px-[26px] text-[16px]">
+                      <input
+                        type="number"
+                        value={count}
+                        onChange={handleCountChange}
+                        placeholder="Enter count (e.g., 1 for 10,000 OPN)"
+                        min="1"
+                      />
+                    </div>
                   </div>
 
-                  <div className="w-full mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                      Referral Address (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      value={referral}
-                      onChange={handleReferralChange}
-                      placeholder="Enter referral address"
-                      className="bg-transparent text-xl font-semibold outline-none w-full p-4 bg-gray-100 rounded-full"
-                    />
+                  <div className="w-full flex flex-col gap-2">
+                    <Heading as="h2"> Referral Address (Optional)</Heading>
+                    <div className="self-stretch max-[1050px]:text-[20px] flex items-center justify-center cursor-text border-blue-900_1e border border-solid  rounded-[36px] h-[50px] px-[26px] text-[16px]">
+                      <input
+                        type="text"
+                        value={referral}
+                        onChange={handleReferralChange}
+                        placeholder="Enter referral address"
+                      />
+                    </div>
                   </div>
 
-                  <div className="w-full mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                  <div className="w-full flex flex-col gap-2">
+                    <Heading as="h2">
+                      {" "}
                       Required {selectedToken.symbol} Amount
-                    </label>
-                    <div className="bg-gray-100 rounded-full p-4">
+                    </Heading>
+                    <div className="self-stretch max-[1050px]:text-[20px] flex items-center justify-center cursor-text border-blue-900_1e border border-solid  rounded-[36px] h-[50px] px-[26px] text-[16px]">
                       <span className="text-xl font-semibold">
                         {requiredAmount !== null
                           ? `${requiredAmount} ${selectedToken.symbol}`
@@ -418,20 +421,34 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
                         <button
                           onClick={handleStakeGenz}
                           disabled={isButtonDisabled}
-                          class={`font-bold py-3 px-8 rounded-full transition duration-200 ${isButtonDisabled
-                            ? "bg-gray-400 text-gray-200 cursor-not-allowed"
-                            : "bg-blue-600 text-white hover:bg-blue-700"
-                            }`}
+                          class={`font-bold py-3 px-8 rounded-full transition duration-200 ${
+                            isButtonDisabled
+                              ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                              : "bg-blue-600 text-white hover:bg-blue-700"
+                          }`}
                         >
                           {loading ? <Loader /> : "Stake Genz"}
                         </button>
                       </div>
                     ) : (
-                      <>
-                        <p className="text-red-600 font-semibold">
+                      <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1">
+                        <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
                           <ConnectWallet />
-                        </p>
-                      </>
+                        </h5>
+                        <button
+                          class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                          style={{
+                            backgroundColor: "black",
+                            padding: "12px",
+                          }}
+                        >
+                          <img
+                            src="images/img_arrowleft_white_0.svg"
+                            alt="testImg"
+                            loading="lazy"
+                          />
+                        </button>
+                      </div>
                     )}
                     {/* <div className="flex flex-col gap-4">
                       <Button
@@ -480,7 +497,6 @@ export default function GoldenVisaGenZTalentProgramSection({ referralAddress }) 
                     </div> */}
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

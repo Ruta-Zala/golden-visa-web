@@ -138,7 +138,8 @@ export default function ReferralProgramSection() {
                       Copy Link
                     </Button>
                   }
-                  className="!rounded-[34px] max-[550px]:text-[18px] max-[550px]:h-[50px] !pr-1 bg-white-4"
+                  className="!rounded-[34px] max-[550px]:text-[18px] max-[550px]:h-[50px] !pr-1 bg-white-4 "
+                  inputClassName="placeholder:text-black-0"
                 />
 
                 <div className="flex flex-col gap-3">
@@ -177,9 +178,24 @@ export default function ReferralProgramSection() {
                       className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
                     >
                       Generate referral link
-                    </Button> : <p className="text-red-600 font-semibold">
-                      <ConnectWallet />
-                    </p>
+                    </Button> :<div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1 md:p-3 bg-white-0">
+                        <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
+                          <ConnectWallet />
+                        </h5>
+                        <button
+                          class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                          style={{
+                            backgroundColor: "black",
+                            padding: "12px",
+                          }}
+                        >
+                          <img
+                            src="images/img_arrowleft_white_0.svg"
+                            alt="testImg"
+                            loading="lazy"
+                          />
+                        </button>
+                      </div>
                   }
                   <Text
                     size="visa_desktop_body_text_16"

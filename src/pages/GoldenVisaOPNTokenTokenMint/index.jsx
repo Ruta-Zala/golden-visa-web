@@ -283,9 +283,24 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                             >
                               Generate referral link
                             </Button>
-                          </> : <p className="text-red-600 font-semibold">
-                            <ConnectWallet />
-                          </p>
+                          </> : <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1 md:p-3 bg-white-0">
+                        <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
+                          <ConnectWallet />
+                        </h5>
+                        <button
+                          class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                          style={{
+                            backgroundColor: "black",
+                            padding: "12px",
+                          }}
+                        >
+                          <img
+                            src="images/img_arrowleft_white_0.svg"
+                            alt="testImg"
+                            loading="lazy"
+                          />
+                        </button>
+                      </div>
                         }
                         {/* <Button
                           color="white_0"

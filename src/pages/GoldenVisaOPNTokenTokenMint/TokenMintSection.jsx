@@ -9,10 +9,15 @@ import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
 
-import { getLocalStorage, nullAddress, paymentTokens, setLocalStorage, vaultContractAddress } from "../../utils/helper";
+import {
+  getLocalStorage,
+  nullAddress,
+  paymentTokens,
+  setLocalStorage,
+  vaultContractAddress,
+} from "../../utils/helper";
 
 export default function TokenMintSection({ referralAddress }) {
-
   const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
   const [inputAmount, setInputAmount] = useState("");
   const [updatedInputAmount, setUpdatedInputAmount] = useState("");
@@ -22,11 +27,11 @@ export default function TokenMintSection({ referralAddress }) {
 
   useEffect(() => {
     if (referralAddress) {
-      setLocalStorage('refAddress', referralAddress)
-      setReferral(referralAddress)
+      setLocalStorage("refAddress", referralAddress);
+      setReferral(referralAddress);
     } else {
-      const data = getLocalStorage("refAddress")
-      data && setReferral(data)
+      const data = getLocalStorage("refAddress");
+      data && setReferral(data);
     }
   }, [referralAddress]);
 
@@ -262,7 +267,7 @@ export default function TokenMintSection({ referralAddress }) {
                     />
                     USD */}
                     <select
-                      className="appearance-none bg-transparent text-gray-700 font-medium p-4 rounded-full"
+                      className="appearance-none bg-transparent text-gray-700 font-medium px-2 rounded-full focus:outline-none"
                       value={selectedToken.id}
                       onChange={handleTokenChange}
                     >
@@ -272,12 +277,12 @@ export default function TokenMintSection({ referralAddress }) {
                         </option>
                       ))}
                     </select>
+
                     <img
                       src={selectedToken.logoURI}
                       alt={selectedToken.symbol}
-                      className="absolute w-6 h-6 top-1/2 right-2 transform -translate-y-1/2 pointer-events-none"
-                    />
-                  </div>
+                      className="h-[32px] w-[32px] pointer-events-none"
+                    />                  </div>
                 </label>
               </div>
               <div className="flex w-[90%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
@@ -311,8 +316,8 @@ export default function TokenMintSection({ referralAddress }) {
               </div>
             </div>
             <div className="flex flex-col items-end gap-6">
-              {
-                isConnected ? <button
+              {isConnected ? (
+                <button
                   disabled={isButtonDisabled}
                   onClick={handleMint}
                   class="gap-[34px] font-medium white capitalize w-[90%] max-[1440px]:w-full max-[1050px]:w-full bg-[#2573C0] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium rounded-[26px] px-3 py-3 text-xl relative border border-slate-900"
@@ -328,24 +333,23 @@ export default function TokenMintSection({ referralAddress }) {
                     />
                   </div>
                 </button>
-                  :
-                  <div className="flex justify-center w-[90%] max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5">
-                    <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
-                      <ConnectWallet />
-                    </h5>
-                    <button
-                      class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
-                      style={{ backgroundColor: "black", padding: "12px" }}
-                    >
-                      <img
-                        src="images/img_arrowleft_white_0.svg"
-                        alt="testImg"
-                        loading="lazy"
-                      />
-                    </button>
-                  </div>
-              }
-
+              ) : (
+                <div className="flex justify-center w-[90%] max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5">
+                  <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
+                    <ConnectWallet />
+                  </h5>
+                  <button
+                    class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                    style={{ backgroundColor: "black", padding: "12px" }}
+                  >
+                    <img
+                      src="images/img_arrowleft_white_0.svg"
+                      alt="testImg"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

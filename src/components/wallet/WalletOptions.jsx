@@ -3,6 +3,7 @@ import { useConnect } from 'wagmi'
 
 export function WalletOptions() {
   const { connectors, connect } = useConnect()
+console.log('connectorsconnectors', connectors);
 
   return connectors.map((connector) => (
     <WalletOption
@@ -26,9 +27,9 @@ function WalletOption({
     })()
   }, [connector])
 
-  return (
+  return ready ? (
     <button disabled={!ready} onClick={onClick}>
       {`Connect ${connector.name}`}
     </button>
-  )
+  ) : null
 }

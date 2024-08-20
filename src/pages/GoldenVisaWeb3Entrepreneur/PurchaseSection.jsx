@@ -14,7 +14,7 @@ import {
   getLocalStorage,
   nullAddress,
   web3StakeContractAddress,
-  web3StakeContractABI
+  web3StakeContractABI,
 } from "../../utils/helper";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
@@ -29,11 +29,11 @@ export default function PurchaseSection({ referralAddress }) {
 
   useEffect(() => {
     if (referralAddress) {
-      setLocalStorage('refAddress', referralAddress)
-      setReferral(referralAddress)
+      setLocalStorage("refAddress", referralAddress);
+      setReferral(referralAddress);
     } else {
-      const data = getLocalStorage("refAddress")
-      data && setReferral(data)
+      const data = getLocalStorage("refAddress");
+      data && setReferral(data);
     }
   }, [referralAddress]);
 
@@ -47,13 +47,11 @@ export default function PurchaseSection({ referralAddress }) {
     setSelectedToken(selected);
   };
 
-
   const handleReferralChange = (event) => {
     setReferral(event.target.value);
   };
 
   const handleStakeWeb3 = async () => {
-
     setLoading(true);
 
     try {
@@ -98,7 +96,9 @@ export default function PurchaseSection({ referralAddress }) {
       console.log(stakedUserData.baseAmount.toNumber(), "userData");
 
       if (stakedUserData.baseAmount.toNumber() !== 0) {
-        throw new Error("User already has a staked amount. Cannot stake again.");
+        throw new Error(
+          "User already has a staked amount. Cannot stake again."
+        );
       }
 
       const currentAllowance = await tokenContract.allowance(
@@ -106,11 +106,17 @@ export default function PurchaseSection({ referralAddress }) {
         vaultContractAddress
       );
       if (!(currentAllowance.isZero() || selectedToken.symbol === "DAI")) {
-        const resetApprovalTx = await tokenContract.approve(vaultContractAddress, 0);
+        const resetApprovalTx = await tokenContract.approve(
+          vaultContractAddress,
+          0
+        );
         await resetApprovalTx.wait();
       }
 
-      const approvalTx = await tokenContract.approve(vaultContractAddress, adjustedAmount);
+      const approvalTx = await tokenContract.approve(
+        vaultContractAddress,
+        adjustedAmount
+      );
       await approvalTx.wait();
 
       const vaultContract = new ethers.Contract(
@@ -120,7 +126,10 @@ export default function PurchaseSection({ referralAddress }) {
       );
 
       const refAddr = referral || nullAddress;
-      const stakeTx = await vaultContract.stakeWeb3(selectedToken.address, refAddr);
+      const stakeTx = await vaultContract.stakeWeb3(
+        selectedToken.address,
+        refAddr
+      );
       const receipt = await stakeTx.wait();
 
       if (receipt) {
@@ -157,11 +166,13 @@ export default function PurchaseSection({ referralAddress }) {
     }
   };
 
-
   return (
     <>
       {/* purchase section */}
-      <div className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex justify-center self-stretch" id="participate">
+      <div
+        className="mt-[80px] md:mt-[100px] xl:mt-[180px] flex justify-center self-stretch"
+        id="participate"
+      >
         <div className="container-xs flex gap-[30px] items-start justify-center max-[1440px]:px-5 flex-col md:flex-row max-[1050px]:px-5">
           <div className="flex w-full flex-col">
             <div className="flex flex-col items-start gap-[18px]">
@@ -245,14 +256,18 @@ export default function PurchaseSection({ referralAddress }) {
                   />
                 </label>
               </div>
-              <div className="w-full mb-6">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+              <div className="w-full flex flex-col gap-2">
+                <Heading
+                  size="visa_desktop_body_label_16"
+                  as="h3"
+                  className="!text-grey max-[550px]:text-[14px]"
+                >
                   Select Payment Token
-                </label>
-                <div className="flex items-center justify-between bg-gray-100 rounded-full p-4">
-                  <div className="relative inline-block w-full">
+                </Heading>
+                <div className="flex items-center justify-between border border-solid border-blue-900_1e bg-white-0 rounded-full p-4 text-[25px]">
+                  <div className="relative flex w-full gap-2 items-center justify-between">
                     <select
-                      className="appearance-none bg-transparent text-gray-700 font-medium p-4 rounded-full w-full"
+                      className="appearance-none bg-transparent text-gray-700 font-medium px-2 rounded-full w-full focus:outline-none"
                       value={selectedToken.id}
                       onChange={handleTokenChange}
                     >
@@ -265,25 +280,28 @@ export default function PurchaseSection({ referralAddress }) {
                     <img
                       src={selectedToken.logoURI}
                       alt={selectedToken.symbol}
-                      className="absolute w-6 h-6 top-1/2 right-2 transform -translate-y-1/2 pointer-events-none"
+                      className="h-[30px] w-[30px] pointer-events-none"
                     />
                   </div>
                 </div>
               </div>
- 
-
-              <div className="w-full mb-6">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+              <div className="w-full flex flex-col gap-2">
+                <Heading
+                  size="visa_desktop_body_label_16"
+                  as="h3"
+                  className="!text-grey max-[550px]:text-[14px]"
+                >
                   Referral Address (Optional)
-                </label>
-                <input
-                  type="text"
-                  value={referral}
-                  onChange={handleReferralChange}
-                  placeholder="Enter referral address"
-                  className="bg-transparent text-xl font-semibold outline-none w-full p-4 bg-gray-100 rounded-full"
-                />
+                </Heading>
+                <div className="flex items-center justify-between border border-solid border-blue-900_1e bg-white-0 rounded-full p-4 text-[25px]">
+                  <input
+                    type="text"
+                    value={referral}
+                    onChange={handleReferralChange}
+                    placeholder="Enter referral address"/>
+                </div>
               </div>
+
               {/* <div className="flex w-[100%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
                 <Heading
                   size="visa_desktop_body_label_16"
@@ -336,8 +354,8 @@ export default function PurchaseSection({ referralAddress }) {
                   </div>
                 </label>
               </div> */}
-              {
-                isConnected ? <div className="flex flex-col gap-4">
+              {isConnected ? (
+                <div className="flex flex-col gap-4">
                   <Button
                     disabled={isButtonDisabled}
                     onClick={handleStakeWeb3}
@@ -346,9 +364,7 @@ export default function PurchaseSection({ referralAddress }) {
                     color="white_0"
                   >
                     <span class="absolute left-1/2 transform -translate-x-1/2">
-                      {
-                        loading ? <Loader /> : "Participate"
-                      }
+                      {loading ? <Loader /> : "Participate"}
                     </span>
                     <div class="ml-auto flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
                       <img
@@ -359,10 +375,27 @@ export default function PurchaseSection({ referralAddress }) {
                       />
                     </div>
                   </Button>
-                </div> : <p className="text-red-600 font-semibold">
+                </div>
+              ) : (
+                <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-4 bg-white-0">
+                <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
                   <ConnectWallet />
-                </p>
-              }
+                </h5>
+                <button
+                  class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                  style={{
+                    backgroundColor: "black",
+                    padding: "12px",
+                  }}
+                >
+                  <img
+                    src="images/img_arrowleft_white_0.svg"
+                    alt="testImg"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+              )}
             </div>
           </div>
         </div>
