@@ -4,7 +4,7 @@ import icon2 from '../../assets/Brain_Icon.png';
 import icon3 from '../../assets/Cognitive_Icon.png';
 import icon4 from '../../assets/Enabling_Icon.png';
 
-const IcongnativeAboutSection2 = () => {
+const IcognativeAboutSection2 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleAccordion = (index) => {
@@ -91,4 +91,4 @@ const IcongnativeAboutSection2 = () => {
   );
 };
 
-export default IcongnativeAboutSection2;
+export default IcognativeAboutSection2;

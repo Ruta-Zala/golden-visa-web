@@ -162,6 +162,7 @@ const Herosections = () => {
                             OPNVerse
                           </a>
                           <a
+                           href="/#/iCognative"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >

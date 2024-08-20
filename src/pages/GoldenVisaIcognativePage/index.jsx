@@ -4,9 +4,11 @@ import Footer from "../../components/FooterMint";
 import IcognativeAboutSection from "./IcognativeAboutSection";
 import IcognativeHeroSection from "./IcognativeHeroSection";
 import IcognativeProductsCard from "./IcognativeProductsCard";
-import IcongnativeAboutSection2 from "./IcongnativeAboutSection2";
+import IcognativeAboutSection2 from "./IcognativeAboutSection2";
 import IcognativeCardsSection from "./IcognativeCardsSection";
 import IcognativeFeatureSection from "./IcognativeFeatureSection";
+import IcognativeUsecaseSection from "./IcognativeUsecaseSection";
+import IcognativeSupportSection from "./IcognativeSupportSection";
 
 const GoldenVisaIcognativePage = () => {
   return (
@@ -22,8 +24,10 @@ const GoldenVisaIcognativePage = () => {
       <IcognativeAboutSection />
       <IcognativeCardsSection />
       <IcognativeProductsCard />
-      <IcongnativeAboutSection2 />
+      <IcognativeAboutSection2 />
       <IcognativeFeatureSection />
+      <IcognativeUsecaseSection />
+      <IcognativeSupportSection />
       {/* <Footer />  */}
     </>
   );
