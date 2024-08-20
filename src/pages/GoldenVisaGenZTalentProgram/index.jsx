@@ -363,9 +363,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       <>
                         Ready to Participate in a
                         <br />
-                        Life Changing Opportunity
-                        <br />
-                        for?
+                        Life Changing Opportunity?
                       </>
                     </Text>
                   </div>

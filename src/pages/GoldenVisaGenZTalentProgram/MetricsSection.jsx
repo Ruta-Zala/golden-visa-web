@@ -9,7 +9,7 @@ const entryStatsList = [
   {
     userImage: "images/wallet.svg",
     entryText: "Entry",
-    opnCounterText: "50,000 OPN",
+    opnCounterText: "10,000 OPN",
   },
   {
     userImage: "images/smartphone_1.svg",

@@ -350,7 +350,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           className="w-full leading-[105%]  lg:!text-[48px] !text-[35px]"
                         >
                           <>
-                            Ready to Participate in a Life Changing Opportunity for?
+                            Ready to Participate in a Life Changing Opportunity?
                           </>
                         </Text>
                       </div>

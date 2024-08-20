@@ -5,7 +5,7 @@ import React from "react";
 export default function UserProfile1({
   userImage = "images/img_upload.svg",
   entryText = "Entry",
-  opnCounterText = "50,000 OPN",
+  opnCounterText = "10,000 OPN",
   ...props
 }) {
   return (
