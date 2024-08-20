@@ -304,6 +304,31 @@ export default function GoldenVisaGenZTalentProgramSection({
     }
   };
 
+  const [TokenBalance, setIsTokenBalance] = useState(0);
+  useEffect(() => {
+    console.log("calling");
+    getBalance(selectedToken?.address);
+  }, [selectedToken?.address]);
+
+  const getBalance = async (address) => {
+    console.log(address, "address");
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const walletAddress = await signer.getAddress();
+
+    try {
+      const tokenContract = new ethers.Contract(
+        address,
+        ERC20balanceOf,
+        signer
+      );
+
+      const balance = await tokenContract.balanceOf(walletAddress);
+      const formatedBalance = balance.toNumber();
+      setIsTokenBalance(formatedBalance);
+      return formatedBalance;
+    } catch (error) {}
+  };
   return (
     <>
       {/* golden visa gen z talent program section */}
@@ -408,6 +433,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                         />
                       </div>
                     </div>
+                    <h4> Balance:{TokenBalance}</h4>
                   </div>
 
                   <div className="w-full flex flex-col gap-2">
@@ -418,7 +444,6 @@ export default function GoldenVisaGenZTalentProgramSection({
                         value={count}
                         onChange={(e) => handleCountChange(e)}
                         onKeyPress={(e) => handleCountKeyPress(e)}
-
                         placeholder="Enter Count (e.g., 1 for 10,000 OPN)"
                         min="1"
                       />

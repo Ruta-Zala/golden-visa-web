@@ -114,7 +114,7 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     fetchOPNReturns();
   }, [selectedToken, inputAmount]);
-
+  const [TokenBalance, setIsTokenBalance] = useState(0);
   useEffect(() => {
     console.log("calling");
     getBalance(selectedToken?.address);
@@ -134,12 +134,12 @@ export default function TokenMintSection({ referralAddress }) {
       );
 
       const balance = await tokenContract.balanceOf(walletAddress);
-      const formatedBalance = balance.toNumber()
-      console.log(formatedBalance)
-
-      console.log(balance, "balance");
+      const formatedBalance = balance.toNumber();
+      setIsTokenBalance(formatedBalance);
+      return formatedBalance;
     } catch (error) {}
   };
+  console.log(TokenBalance, "TokenBalance");
   // Function to handle the mint process
   const handleMint = async () => {
     if (!inputAmount) return;
@@ -318,6 +318,7 @@ export default function TokenMintSection({ referralAddress }) {
                     />{" "}
                   </div>
                 </label>
+                <h4> Balance:{TokenBalance}</h4>
               </div>
               <div className="flex w-[90%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
                 <Heading
