@@ -232,7 +232,7 @@ export default function ReferralProgramSection() {
                   >
                     <>
                       Ready to Participate in a Life
-                      Changing Opportunity for Your Future?
+                      Changing Opportunity for?
                     </>
                   </Text>
                 </div>

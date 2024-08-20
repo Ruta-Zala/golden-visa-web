@@ -1,4 +1,5 @@
 import "./goldenvisa.css";
+import goldenimg from '../../../src/assets/img_aboutus.png'
 const Goldernvisa = () => {
   return (
     <div className="goldenvisa-main max-w-screen-2xl mx-auto px-4 mt-28">
@@ -13,7 +14,7 @@ const Goldernvisa = () => {
             <h1 className="w-full text-4xl font-medium text-[#08122A] ">
               An Integrated Web3 Ecosystem
             </h1>
-            <p className="opnchain-pb-text-p golden-visa-p opacity-50 text-lg pt-4">
+            <p className="opnchain-pb-text-p golden-visa-p opacity-50 text-lg pt-4 max-w-[490px]">
               We are pioneering a decentralized, cognitive, and spatial web3
               ecosystem. Our blockchain-based platform empowers users with
               digital sovereignty and data ownership. Leveraging AI, we offer
@@ -30,7 +31,7 @@ const Goldernvisa = () => {
       </div>
 
       <div className="goldenvisaimg">
-        {/* <img src={goldenimg} alt="" /> */}
+        <img src={goldenimg} alt="" />
       </div>
     </div>
   );

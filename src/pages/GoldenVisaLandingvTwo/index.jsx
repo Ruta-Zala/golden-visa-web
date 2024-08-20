@@ -46,7 +46,7 @@ export default function GoldenVisaLandingvTwoPage() {
                         Unlock Your<br/>Future With a<br/>UAE Golden Visa!
                     </h1>
                   </div>
-                  <Link to="#/Talent" onClick={handleScrollToTop}>
+                  <Link to="/Talent" onClick={handleScrollToTop}>
                     {/* <Link to="/Talent"> */}
                     <Button
                       variant="fill"
@@ -78,19 +78,19 @@ export default function GoldenVisaLandingvTwoPage() {
               <div className="z-10 flex items-start relative md:flex-col">
                 <div className="relative flex flex-col items-center gap-5 py-10 md:py-20 text-center mx-auto">
                   <Button size="xs" className="min-w-80 uppercase">
-                    ABOUT Web3 Talent Program
+                    ABOUT The Web3 Talent Program
                   </Button>
                   <h2 className="text-shadow-ts !text-white-0 !text-center md:text-left text-4xl md:text-6xl">
                     <span className="text-white-0">What is</span>
                     <br />
                     <span className="text-blue-400">
-                      Web3 Talent Program
-                    </span>{" "}
+                      The Web3 Talent Program
+                    </span>{' '}
                     ?
                   </h2>
                   <p className="w-full !text-center md:text-left !text-white-0 text-lg md:text-xl">
-                    Imagine a future where the only limit is your ambition. IOPn
-                    Trailblazer’s Initiative is a pioneering program designed to
+                    Imagine a future where the only limit is your ambition. The
+                    Web3 Talent Program is a pioneering program designed to
                     empower exceptional talents from around the world. In
                     partnership with the visionary RAK Government this
                     initiative offers a unique pathway to the UAE’s Golden Visa.
@@ -537,7 +537,7 @@ export default function GoldenVisaLandingvTwoPage() {
                   </div>
                 </div>
                 <div className="flex justify-center pt-10">
-                  <Link to="#/Talent" onClick={handleScrollToTop}>
+                  <Link to="/Talent" onClick={handleScrollToTop}>
                     <Button
                       variant="fill"
                       shape="round"
@@ -595,10 +595,7 @@ export default function GoldenVisaLandingvTwoPage() {
                         className="w-full text-white-0 leading-[105%] lg:!text-[48px] !text-[35px]"
                       >
                         <>
-                          Ready to Participate in a Life-Changing Opportunity
-                          for
-                          <br />
-                          Your Future?
+                          Ready to Participate in a Life-Changing Opportunity for?
                         </>
                       </Text>
                     </div>

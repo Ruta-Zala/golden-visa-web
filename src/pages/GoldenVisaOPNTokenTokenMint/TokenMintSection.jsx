@@ -306,7 +306,7 @@ export default function TokenMintSection({ referralAddress }) {
                   <div className="flex gap-4 border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
                     <img
                       className="h-[32px] w-[32px]"
-                      src="images/img_ellipse_362_26x32.png"
+                      src="images/icon_avatar.png"
                       alt="Ellipse 362"
                       loading="lazy"
                     />

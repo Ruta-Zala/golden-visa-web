@@ -39,7 +39,7 @@ const statList = [
   { userName: "Decimal", userIOPn: "18" },
 ];
 const chartLegendList = [
-  { publicSaleText: "Public Sale", percentageText: "70%", color: '#0056B8' },
+  { publicSaleText: "Fair Mint", percentageText: "70%", color: '#0056B8' },
   { publicSaleText: "Team", percentageText: "15%", color: "#46CEE9" },
   { publicSaleText: "Ecosystem", percentageText: "10%", color: "#65C1AD" },
   { publicSaleText: "Liquidity", percentageText: "5%", color: "#B69BED" },
@@ -61,9 +61,9 @@ export default function OPNTokenOverviewSection() {
             <Text
               size="visa_desktop_headers_h2"
               as="p"
-              className="self-stretch text-center leading-[105%] text-3xl md:text-5xl"
-            >
-              Learn about the OPN Token and its<br/> role in the IOPn ecosystem
+              className="self-stretch text-center leading-[105%] text-3xl md:text-5xl">
+              Learn about the OPN Token and its
+              <br /> role in the IOPn ecosystem
             </Text>
           </div>
           <div className="flex flex-col gap-4">
@@ -157,7 +157,7 @@ export default function OPNTokenOverviewSection() {
                         as="p"
                         className="relative mt-[-2px] !text-dark-2"
                       >
-                        Public Sale
+                        Fair Mint
                       </Text>
                     </div>
                   </div>

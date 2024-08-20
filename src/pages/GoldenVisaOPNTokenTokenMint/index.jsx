@@ -113,7 +113,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                     size="sm"
                     className="min-w-[220px] rounded-[25px] font-medium uppercase text-sm"
                   >
-                    OPN Token & Mint
+                    OPN TOKEN in OPN Token
                   </Button>
                   <Text
                     size="visa_desktop_headers_h1"
@@ -350,7 +350,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           className="w-full leading-[105%]  lg:!text-[48px] !text-[35px]"
                         >
                           <>
-                            Ready to Participate in a Life Changing Opportunity for Your Future?
+                            Ready to Participate in a Life Changing Opportunity for?
                           </>
                         </Text>
                       </div>

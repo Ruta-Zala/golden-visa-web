@@ -2,7 +2,6 @@
 .goldenvisa-main {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
     padding: 0;
     gap: 15px;
@@ -19,7 +18,7 @@
     justify-content: center;
     align-items: flex-start;
     width: 50%;
-    height:  500px;
+    /* height:  500px; */
     border-radius: 20px;
     box-sizing: border-box;
     overflow-wrap: break-word;
@@ -38,7 +37,11 @@
     no-repeat center center;
   background-size: cover;
   transform: scaleX(-1);
-  min-height: 340px;
+}
+
+.goldenvisaimg img{
+  height: 100%;
+  width: 100%;
 }
 
 /* Text styles */

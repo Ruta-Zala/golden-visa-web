@@ -205,9 +205,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2"
-                >
-                  Complete your profile setup
+                  className="!text-dark-2 mt-2">
+                  Register, mint and stake OPN Tokens
                 </Text>
               </div>
             </div>
@@ -290,9 +289,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2"
-                >
-                  Verify your identity
+                  className="!text-dark-2 mt-2">
+                  Upload required documentation
                 </Text>
               </div>
             </div>
@@ -316,9 +314,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2"
-                >
-                  Mint your tokens
+                  className="!text-dark-2 mt-2">
+                  Initiate and complete the visa process
                 </Text>
               </div>
             </div>
@@ -351,9 +348,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2"
-                >
-                  Complete your profile setup
+                  className="!text-dark-2 mt-2">
+                  Register, mint and stake OPN Tokens
                 </Text>
               </div>
               <div className="relative flex flex-col items-start h-[153px]">
@@ -374,9 +370,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2"
-                >
-                  Verify your identity
+                  className="!text-dark-2 mt-2">
+                  Upload required documentation
                 </Text>
               </div>
               <div className="flex flex-col items-start relative">
@@ -397,9 +392,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2"
-                >
-                  Mint your tokens
+                  className="!text-dark-2 mt-2">
+                  Initiate and complete the visa process
                 </Text>
               </div>
             </div>

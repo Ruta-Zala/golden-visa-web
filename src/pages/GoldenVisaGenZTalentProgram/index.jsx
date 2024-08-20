@@ -114,9 +114,9 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       className="text-shadow-ts1 text-center !text-white-0 text-3xl md:text-6xl"
                     >
                       <>
-                        Welcome to the UAE
+                        Welcome to the IOPn
                         <br />
-                        GoldenVisa Portal
+                        Web 3 Talent Program
                       </>
                     </Text>
                     <button
@@ -197,8 +197,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                 <Text
                   size="visa_desktop_headers_h3"
                   as="p"
-                  className="!text-white-0 max-[1050px]:text-[28px] max-[550px]:text-[22px] "
-                >
+                  className="!text-white-0 max-[1050px]:text-[28px] max-[550px]:text-[22px] ">
                   Generate Referral Link
                 </Text>
                 <Text
@@ -366,7 +365,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                         <br />
                         Life Changing Opportunity
                         <br />
-                        for Your Future?
+                        for?
                       </>
                     </Text>
                   </div>

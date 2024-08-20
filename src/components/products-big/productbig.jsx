@@ -40,7 +40,7 @@ const Productbig = () => {
               <h1 className="openchanh1 w-full text-4xl font-medium">
                 iCognative
               </h1>
-              <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4">
+              <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] md:min-h-[200px]">
                 Ignite your creativity with iCognative, where anyone can build
                 astonishing applications using no-code tools and modular
                 compo-nents. Enriched with AI, iCognative is where your ideas
@@ -67,7 +67,7 @@ const Productbig = () => {
               <h1 className="openchanh1 w-full text-4xl font-medium">
                 OPNVerse
               </h1>
-              <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4">
+              <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] md:min-h-[200px]">
                 Step into an immersive experience with OPNVerse, where the
                 boundaries between digital and physical blur, offering dynamic,
                 interconnected spaces for play, work, and exploration.
