@@ -8,9 +8,13 @@ import Header from "../../components/Header";
 import RewardInfo from "../../components/RewardInfo";
 import OPNTokenOverviewSection from "./OPNTokenOverviewSection";
 import TokenMintSection from "./TokenMintSection";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { handleScrollToSection } from "../../utils/helper";
 import Footer from "../../components/Footer/FooterEl";
+import { useAccount } from "wagmi";
+import { useLocation } from 'react-router-dom';
+import { ethers } from "ethers";
+import ConnectWallet from "../../components/wallet/ConnectWallet";
 
 const referralRewardsList = [
   {
@@ -40,6 +44,47 @@ const referralRewardsList = [
 ];
 
 export default function GoldenVisaOPNTokenTokenMintPage() {
+
+  const location = useLocation();
+  const { isConnected } = useAccount();
+
+  const [referalUrl, setReferalUrl] = useState('');
+  const [referalId, setReferalId] = useState(null);
+
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const ref = queryParams.get('ref');
+    setReferalId(ref)
+  }, [location])
+
+  const handleGenerateReferal = async () => {
+
+    const currentQuery = location.search;
+    const params = new URLSearchParams(currentQuery);
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const walletAddress = await signer.getAddress();
+    params.set('ref', walletAddress);
+
+    const newQueryString = params.toString();
+    const newUrl = `${import.meta.env.VITE_REACT_APP_FRONTNED_BASE_URL}${location.pathname}?${newQueryString}${location.hash}`;
+
+    setReferalUrl(newUrl);
+
+  };
+
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(referalUrl)
+      .then(() => {
+        console.log('Link copied to clipboard!');
+      })
+      .catch(err => {
+        console.error('Failed to copy the link: ', err);
+      });
+  };
   return (
     <>
       <Helmet>
@@ -118,7 +163,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
         <OPNTokenOverviewSection />
 
         {/* token mint section */}
-        <TokenMintSection />
+        <TokenMintSection referralAddress={referalId} />
         <div id="refferralProgram" className="mb-1 mt-[118px] flex flex-col items-center">
           <div className="container-xs flex flex-col gap-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
             <div className="relative h-[1186px] content-center max-[1440px]:h-auto max-[1050px]:h-auto">
@@ -176,9 +221,10 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         shape="round"
                         name="Editable URL"
                         placeholder={`https://iopn.io/gkiyfujytdhtsrsytdr`}
-                        value="https://iopn.io/gkiyfujytdhtsrsytdr"
+                        value={referalUrl}
                         suffix={
                           <Button
+                            onClick={handleCopyLink}
                             color="dark_0"
                             variant="fill"
                             shape="round"
@@ -201,6 +247,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
 
                       <div className="flex flex-col gap-3">
                         <Button
+                          onClick={handleCopyLink}
                           color="dark_0"
                           variant="fill"
                           shape="round"
@@ -217,7 +264,30 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         >
                           Copy Link
                         </Button>
-                        <Button
+                        {
+                          isConnected ? <>
+                            <Button
+                              onClick={handleGenerateReferal}
+                              color="white_0"
+                              shape="round"
+                              rightIcon={
+                                <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
+                                  <Img
+                                    src="images/img_arrowleft_blue_800.svg"
+                                    alt="Arrow Left"
+                                    className="h-[18px] w-[18px]"
+                                  />
+                                </div>
+                              }
+                              className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
+                            >
+                              Generate referral link
+                            </Button>
+                          </> : <p className="text-red-600 font-semibold">
+                            <ConnectWallet />
+                          </p>
+                        }
+                        {/* <Button
                           color="white_0"
                           shape="round"
                           rightIcon={
@@ -232,7 +302,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           className="gap-[34px] py-4 rounded-[40px] self-stretch font-small capitalize max-[550px]:h-[50px] relative"
                         >
                           Generate referral link
-                        </Button>
+                        </Button> */}
                         <Text
                           size="visa_desktop_body_text_16"
                           as="p"
@@ -274,8 +344,8 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         as="p"
                         className="leading-[140%] !text-dark-1 max-[550px]:text-[14px]"
                       >
-                        Don’t wait! Join The Web3 Talent Program today and take the 
-                        first step towards a brighter future. Mint your OPN Tokens 
+                        Don’t wait! Join The Web3 Talent Program today and take the
+                        first step towards a brighter future. Mint your OPN Tokens
                         now and enter the monthly draw for your chance to win a UAE Golden Visa.
                       </Text>
                     </div>
