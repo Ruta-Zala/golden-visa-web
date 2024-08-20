@@ -3,10 +3,10 @@ const IcognativeUsecaseSection = () => {
   return (
     <>
       <div className="px-4 max-w-screen-2xl mx-auto relative mt-16">
-        <div className="flex gap-4 flex-wrap md:flex-nowrap">
-          <div className="bg-[#F1F5F9] p-10 rounded-2xl w-full md:w-1/3 flex flex-col">
+        <div className="flex gap-4 flex-wrap lg:flex-nowrap">
+          <div className="bg-[#F1F5F9] p-10 rounded-2xl w-full lg:w-1/3 flex flex-col">
             <h2 className="text-4xl mb-4">Use Cases</h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg mb-3">
               See how OPNChain can benefit your case.
             </p>
             <div className="mt-auto md:flex space-x-2 mx-auto hidden">
@@ -18,7 +18,7 @@ const IcognativeUsecaseSection = () => {
             </div>
           </div>
 
-          <div className="relative w-full md:w-2/3 h-[600px] rounded-2xl overflow-hidden shadow-lg text-white-0">
+          <div className="relative w-full lg:w-2/3 h-[600px] rounded-2xl overflow-hidden shadow-lg text-white-0">
             <img
               src={image}
               alt="Use Case"

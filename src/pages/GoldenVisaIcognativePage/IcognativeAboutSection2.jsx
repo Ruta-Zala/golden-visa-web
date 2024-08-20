@@ -84,7 +84,7 @@ const IcognativeAboutSection2 = () => {
               </div>
             </div>
             <div
-              className={`accordion-content mt-2 p-4 bg-gray-50 rounded-lg ${
+              className={`accordion-content mt-2 p-4 rounded-lg ${
                 activeIndex === index ? 'block' : 'hidden'
               }`}>
               <p className="text-gray-700 text-sm">{item.description}</p>

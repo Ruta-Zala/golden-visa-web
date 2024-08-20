@@ -15,11 +15,11 @@ const IcognativeFooterSection = () => {
           <img
             src={footer}
             alt="Footer"
-            className="w-full object-cover h-[340px] md:h-[470px] rounded-xl"
+            className="w-full object-cover h-[340px] lg:h-[470px] rounded-xl"
           />
         </div>
         <div className="w-full md:w-2/4">
-          <div className="flex flex-col items-start p-[24px] md:p-12 w-full bg-[#E2E8F0] rounded-2xl">
+          <div className="flex flex-col items-start p-[24px] md:p-[10px] lg:p-12 w-full bg-[#E2E8F0] rounded-2xl">
             <div className="flex flex-col items-start p-0 gap-4 w-full">
               <h1 className="w-full text-4xl font-medium text-[#08122A] ">
                 Get Started with iCognative

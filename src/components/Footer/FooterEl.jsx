@@ -86,9 +86,11 @@ const Footer = () => {
                 UAE Golden Visa
               </span>
             </a>
-            <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
-              OPNChain
-            </span>
+            <a href="/#/OPNChain">
+              <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
+                OPNChain
+              </span>
+            </a>
             <a href="/#/opntoken" onClick={handleScrollToTop}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
                 OPN Token
