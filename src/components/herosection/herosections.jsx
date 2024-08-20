@@ -109,7 +109,7 @@ const Herosections = () => {
                     UAE Golden Visa
                   </span>
                 </a>
-                <a href="/#/OPNChain">
+                <a href="/#">
                 <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
                   OPNChain
                 </span>
@@ -164,7 +164,7 @@ const Herosections = () => {
                             OPNVerse
                           </a>
                           <a
-                           href="/#/iCognative"
+                           href="/#"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -252,7 +252,7 @@ const Herosections = () => {
                   UAE Golden Visa
                 </a>
                 <a
-                  href="/#/OPNChain"
+                  href="/#"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
@@ -290,7 +290,7 @@ const Herosections = () => {
                   OPNVerse
                 </a>
                 <a
-                  href="/#/Icognative"
+                  href="/#"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
