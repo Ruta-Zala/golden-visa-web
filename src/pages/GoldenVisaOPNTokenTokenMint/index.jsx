@@ -113,7 +113,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                     size="sm"
                     className="min-w-[220px] rounded-[25px] font-medium uppercase text-sm"
                   >
-                    OPN TOKEN in OPN Token
+                    OPN TOKEN
                   </Button>
                   <Text
                     size="visa_desktop_headers_h1"

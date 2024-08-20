@@ -304,13 +304,14 @@ export default function TokenMintSection({ referralAddress }) {
                     }
                   />
                   <div className="flex gap-4 border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
+                    OPN
                     <img
-                      className="h-[32px] w-[32px]"
+                      className="h-[32px] w-[32px] ml-4"
                       src="images/icon_avatar.png"
                       alt="Ellipse 362"
                       loading="lazy"
                     />
-                    OPN
+                    
                   </div>
                 </label>
               </div>

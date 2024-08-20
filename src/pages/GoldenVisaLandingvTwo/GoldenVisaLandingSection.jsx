@@ -2,6 +2,7 @@ import { Img } from "../../components/Img";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import "./GoldenVisaLandingSection.css";
+import { handleScrollToTop } from "../../utils/helper";
 
 export default function GoldenVisaLandingSection() {
   return (
@@ -25,7 +26,7 @@ export default function GoldenVisaLandingSection() {
               achievers, and transform your life.
             </p>
             <div className="flex flex-col md:flex-row gap-4">
-                <Link to="/Talent">
+            <Link to="/Talent" onClick={handleScrollToTop}>
                 <Button
                   variant="fill"
                   shape="round"

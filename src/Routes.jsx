@@ -35,6 +35,10 @@ const Routes = () => {
       path: "/OPNChain",
       element: <GoldenVisaOPNChainPage />,
     },
+    {
+      path: "/profile",
+      element: <GoldenVisaOPNChainPage />,
+    },
     { path: "*", element: <NotFound /> },
   ]);
 

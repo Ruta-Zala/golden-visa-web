@@ -230,7 +230,7 @@ export default function PurchaseSection({ referralAddress }) {
                   <input
                     type="text"
                     name="Name Input"
-                    placeholder="Enter name"
+                    placeholder="Enter Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -248,7 +248,7 @@ export default function PurchaseSection({ referralAddress }) {
                   <input
                     type="text"
                     name="Email Input"
-                    placeholder="Enter email"
+                    placeholder="Enter Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -296,7 +296,7 @@ export default function PurchaseSection({ referralAddress }) {
                     type="text"
                     value={referral}
                     onChange={handleReferralChange}
-                    placeholder="Enter referral address"/>
+                    placeholder="Enter Referral Address"/>
                 </div>
               </div>
 

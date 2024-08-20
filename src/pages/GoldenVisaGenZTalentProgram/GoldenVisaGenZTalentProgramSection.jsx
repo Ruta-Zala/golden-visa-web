@@ -210,7 +210,7 @@ export default function GoldenVisaGenZTalentProgramSection({
           email: String(email),
           walletAddress: String(walletAddress),
           transactionHash: String(receipt.transactionHash),
-          stackingType: String("Stake GenZ"),
+          stackingType: String("Participate"),
         };
         try {
           const response = await fetch(url, {
@@ -301,7 +301,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                       name="Name Input"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder={`John Doe`}
+                      placeholder={`Enter Name`}
                       className="self-stretch max-[1050px]:text-[20px]"
                     />
                   </div>
@@ -313,7 +313,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                       shape="round"
                       type="email"
                       name="Email Input"
-                      placeholder={`johndoe@gmail.com`}
+                      placeholder={`Enter Email`}
                       className="self-stretch max-[1050px]:text-[20px]"
                     />
                   </div>
@@ -349,7 +349,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                         type="number"
                         value={count}
                         onChange={handleCountChange}
-                        placeholder="Enter count (e.g., 1 for 10,000 OPN)"
+                        placeholder="Enter Count (e.g., 1 for 10,000 OPN)"
                         min="1"
                       />
                     </div>
@@ -362,7 +362,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                         type="text"
                         value={referral}
                         onChange={handleReferralChange}
-                        placeholder="Enter referral address"
+                        placeholder="Enter Referral Address"
                       />
                     </div>
                   </div>
@@ -427,7 +427,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                               : "bg-blue-600 text-white hover:bg-blue-700"
                           }`}
                         >
-                          {loading ? <Loader /> : "Stake Genz"}
+                          {loading ? <Loader /> : "Participate"}
                         </button>
                       </div>
                     ) : (
