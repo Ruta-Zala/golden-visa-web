@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ethers } from "ethers";
-import { useAccount } from "wagmi";
+import { Signer, ethers } from "ethers";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import { Button } from "../../components/Button/index";
 import { Img } from "../../components/ImgMint/index";
 import { Heading } from "../../components/HeadingMint/index";
@@ -8,6 +8,7 @@ import { Input } from "../../components/Input/index";
 import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
+import ERC20balanceOf from "../../abis/ERC20balanceOf.json";
 
 import {
   getLocalStorage,
@@ -24,6 +25,8 @@ export default function TokenMintSection({ referralAddress }) {
   const [loading, setLoading] = useState(false);
   const [OpnAmountInWei, setOpnAmountInWei] = useState(null);
   const [referral, setReferral] = useState(null);
+  const chain = useChainId();
+  const { switchChain } = useSwitchChain();
 
   useEffect(() => {
     if (referralAddress) {
@@ -49,6 +52,12 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     console.log(isConnected);
   }, [isConnected]);
+
+  useEffect(() => {
+    if (isConnected && chain !== 1) {
+      switchChain({ chainId: 1 });
+    }
+  }, [isConnected, chain, switchChain]);
 
   const handleAmountChange = (event) => {
     const inputValue = event.target.value;
@@ -106,6 +115,31 @@ export default function TokenMintSection({ referralAddress }) {
     fetchOPNReturns();
   }, [selectedToken, inputAmount]);
 
+  useEffect(() => {
+    console.log("calling");
+    getBalance(selectedToken?.address);
+  }, [selectedToken?.address]);
+
+  const getBalance = async (address) => {
+    console.log(address, "address");
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const walletAddress = await signer.getAddress();
+
+    try {
+      const tokenContract = new ethers.Contract(
+        address,
+        ERC20balanceOf,
+        signer
+      );
+
+      const balance = await tokenContract.balanceOf(walletAddress);
+      const formatedBalance = balance.toNumber()
+      console.log(formatedBalance)
+
+      console.log(balance, "balance");
+    } catch (error) {}
+  };
   // Function to handle the mint process
   const handleMint = async () => {
     if (!inputAmount) return;
@@ -277,12 +311,12 @@ export default function TokenMintSection({ referralAddress }) {
                         </option>
                       ))}
                     </select>
-
                     <img
                       src={selectedToken.logoURI}
                       alt={selectedToken.symbol}
                       className="h-[32px] w-[32px] pointer-events-none"
-                    />                  </div>
+                    />{" "}
+                  </div>
                 </label>
               </div>
               <div className="flex w-[90%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
@@ -311,7 +345,6 @@ export default function TokenMintSection({ referralAddress }) {
                       alt="Ellipse 362"
                       loading="lazy"
                     />
-                    
                   </div>
                 </label>
               </div>

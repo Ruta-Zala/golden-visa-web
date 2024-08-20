@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import { Button } from "../../components/ButtonGenz/index";
 import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
@@ -30,7 +30,19 @@ export default function GoldenVisaGenZTalentProgramSection({
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const isButtonDisabled = !name || !email || !count;
+  const chain = useChainId();
+  const { switchChain } = useSwitchChain();
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [countError, setCountError] = useState("");
+
+  const isButtonDisabled =
+    !name ||
+    !email ||
+    !count ||
+    nameError != "" ||
+    emailError != "" ||
+    countError != "";
 
   const handleTokenChange = (event) => {
     const selected = paymentTokens.find(
@@ -40,10 +52,11 @@ export default function GoldenVisaGenZTalentProgramSection({
     setRequiredAmount(null);
   };
 
-  const handleCountChange = (event) => {
-    setCount(event.target.value);
-    setRequiredAmount(null);
-  };
+  useEffect(() => {
+    if (isConnected && chain !== 1) {
+      switchChain({ chainId: 1 });
+    }
+  }, [isConnected, chain, switchChain]);
 
   useEffect(() => {
     if (referralAddress) {
@@ -112,7 +125,60 @@ export default function GoldenVisaGenZTalentProgramSection({
     }
   };
 
+  const validateName = (name) => {
+    const regex = /^[A-Za-z]+$/;
+    return regex.test(name);
+  };
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validateCount = (count) => {
+    return Number.isInteger(Number(count));
+  };
+
+  const handleNameChange = (e) => {
+    const name = e.target.value;
+    setName(name);
+    if (!validateName(name)) {
+      setNameError("Name can only contain letters (A-Z, a-z).");
+    } else {
+      setNameError("");
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address.");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const handleCountChange = (e) => {
+    const count = e.target.value;
+    setCount(count);
+    setRequiredAmount(null);
+
+    if (!validateCount(count) || count <= 0) {
+      setCountError("Please enter a valid whole number greater than 0.");
+    } else {
+      setCountError("");
+    }
+  };
+  const handleCountKeyPress = (e) => {
+    // Only allow numbers between 1 and 9
+    if (!/[1-9]/.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const handleStakeGenz = async () => {
+    if (nameError == "" || emailError == "" || countError == "") return;
     if (!count || count <= 0 || !requiredAmount) return;
     setLoading(true);
     const contractABI = [
@@ -300,22 +366,24 @@ export default function GoldenVisaGenZTalentProgramSection({
                       shape="round"
                       name="Name Input"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => handleNameChange(e)}
                       placeholder={`Enter Name`}
                       className="self-stretch max-[1050px]:text-[20px]"
                     />
+                    {nameError && <p style={{ color: "red" }}>{nameError}</p>}
                   </div>
                   <div className="flex flex-col items-start gap-2">
                     <Heading as="h3">You email</Heading>
                     <Input
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => handleEmailChange(e)}
                       shape="round"
                       type="email"
                       name="Email Input"
                       placeholder={`Enter Email`}
                       className="self-stretch max-[1050px]:text-[20px]"
                     />
+                    {emailError && <p style={{ color: "red" }}>{emailError}</p>}
                   </div>
 
                   <div className="w-full flex flex-col gap-2">
@@ -348,11 +416,14 @@ export default function GoldenVisaGenZTalentProgramSection({
                       <input
                         type="number"
                         value={count}
-                        onChange={handleCountChange}
+                        onChange={(e) => handleCountChange(e)}
+                        onKeyPress={(e) => handleCountKeyPress(e)}
+
                         placeholder="Enter Count (e.g., 1 for 10,000 OPN)"
                         min="1"
                       />
                     </div>
+                    {countError && <p style={{ color: "red" }}>{countError}</p>}
                   </div>
 
                   <div className="w-full flex flex-col gap-2">

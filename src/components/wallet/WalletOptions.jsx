@@ -4,8 +4,11 @@ import { useConnect } from 'wagmi'
 export function WalletOptions() {
   const { connectors, connect } = useConnect()
 console.log('connectorsconnectors', connectors);
+const filteredConnectors = connectors.filter(
+  (connector) => connector.name === 'MetaMask'
+);
 
-  return connectors.map((connector) => (
+  return filteredConnectors.map((connector) => (
     <WalletOption
       key={connector.uid}
       connector={connector}

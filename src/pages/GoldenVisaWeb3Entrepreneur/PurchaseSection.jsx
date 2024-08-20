@@ -5,7 +5,7 @@ import { Text } from "../../components/Text";
 import { Input } from "../../components/InputGenz";
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import {
   paymentTokens,
   vaultContractAddress,
@@ -26,6 +26,8 @@ export default function PurchaseSection({ referralAddress }) {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const chain = useChainId();
+  const {switchChain} = useSwitchChain();
 
   useEffect(() => {
     if (referralAddress) {
@@ -39,6 +41,12 @@ export default function PurchaseSection({ referralAddress }) {
 
   const isButtonDisabled = !name || !email || !count;
   const { isConnected } = useAccount();
+
+  useEffect(()=>{
+    if (isConnected && chain !==1){
+      switchChain({chainId: 1})
+    }
+  },[isConnected,chain,switchChain])
 
   const handleTokenChange = (event) => {
     const selected = paymentTokens.find(
