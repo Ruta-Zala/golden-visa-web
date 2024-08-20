@@ -303,10 +303,10 @@ export default function TokenMintSection({ referralAddress }) {
                       inputAmount === "" || !opnAmount ? "0" : ` ${opnAmount}`
                     }
                   />
-                  <div className="flex gap-4 border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
+                  <div className="flex gap-10 border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
                     OPN
                     <img
-                      className="h-[32px] w-[32px] ml-4"
+                      className="h-[32px] w-[32px]"
                       src="images/icon_avatar.png"
                       alt="Ellipse 362"
                       loading="lazy"
