@@ -1,6 +1,5 @@
 
 import { Helmet } from "react-helmet";
-import Footer from "../../components/FooterMint";
 import IcognativeAboutSection from "./IcognativeAboutSection";
 import IcognativeHeroSection from "./IcognativeHeroSection";
 import IcognativeProductsCard from "./IcognativeProductsCard";
@@ -9,6 +8,7 @@ import IcognativeCardsSection from "./IcognativeCardsSection";
 import IcognativeFeatureSection from "./IcognativeFeatureSection";
 import IcognativeUsecaseSection from "./IcognativeUsecaseSection";
 import IcognativeSupportSection from "./IcognativeSupportSection";
+import IcognativeFooterSection from "./IcognativeFooterSection";
 
 const GoldenVisaIcognativePage = () => {
   return (
@@ -28,7 +28,7 @@ const GoldenVisaIcognativePage = () => {
       <IcognativeFeatureSection />
       <IcognativeUsecaseSection />
       <IcognativeSupportSection />
-      {/* <Footer />  */}
+      <IcognativeFooterSection />
     </>
   );
 };

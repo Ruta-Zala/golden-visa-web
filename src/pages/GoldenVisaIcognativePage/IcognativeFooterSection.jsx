@@ -1,10 +1,10 @@
-import earth from '../../assets/earth.svg';
+import footer from '../../assets/icognative_footer.png';
 import telegram from '../../assets/icons8-telegram-96.svg';
 import insta from '../../assets/icons8-instagram-26.svg';
 import x from '../../assets/icons8-twitterx-32.svg';
 import linkedin from '../../assets/linkedin.png';
 import medium from '../../assets/icon-medium.svg';
-import logo from '../../assets/header-logo.png';
+import logo from '../../assets/logo.png';
 import { handleScrollToTop } from '../../utils/helper';
 
 const IcognativeFooterSection = () => {
@@ -13,21 +13,16 @@ const IcognativeFooterSection = () => {
       <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full ">
         <div className="w-full md:w-2/4">
           <img
-            src={earth}
-            alt="Earth"
+            src={footer}
+            alt="Footer"
             className="w-full object-cover h-[340px] md:h-[470px] rounded-xl"
           />
         </div>
         <div className="w-full md:w-2/4">
           <div className="flex flex-col items-start p-[24px] md:p-12 w-full bg-[#E2E8F0] rounded-2xl">
-            <div className="tagline">
-              <p className="inline-block px-3 py-2 bg-[#070b0f] text-white-0 rounded-2xl text-sm mb-2.5 font-extralight">
-                Get in touch with us
-              </p>
-            </div>
             <div className="flex flex-col items-start p-0 gap-4 w-full">
               <h1 className="w-full text-4xl font-medium text-[#08122A] ">
-                Let&apos;s Connect On-Chain
+                Get Started with iCognative
               </h1>
               <p className="w-full max-w-2xl text-lg opacity-50 text-[#08122A]">
                 Building the future of Web3 together. We&apos;d love to hear
@@ -35,14 +30,30 @@ const IcognativeFooterSection = () => {
                 open internet. Feel free to reach out with any questions,
                 feedback, or collaboration ideas.
               </p>
+              <button class="self-stretch capitalize w-full md:w-fit bg-[#2573C0] white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
+                <div className="flex-1 text-center">
+                  Join the AI-Powered Web3 Revolution
+                </div>
+                <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-white-0">
+                  <img
+                    class="h-[10px] w-[10px]"
+                    src="images/img_arrowleft_blue_800.svg"
+                    alt="Arrow Left"
+                    loading="lazy"
+                  />
+                </div>
+              </button>
             </div>
           </div>
           <div className="grid grid-cols-5 md:grid-cols-5 items-center gap-4 w-full mt-6">
+            <a className="telegram social-item">
+              <img src={telegram} alt="Telegram" />
+            </a>
             <a
               href="https://www.linkedin.com/company/iopn"
               target="_blank"
-              className="linkedin social-item">
-              <img src={linkedin} alt="Discord" className="w-32 h-32" />
+              className="insta social-item">
+              <img src={insta} alt="Instagram" />
             </a>
             <a
               href="https://x.com/IOPn_io"
@@ -53,12 +64,10 @@ const IcognativeFooterSection = () => {
             <a
               href="https://www.instagram.com/internet_of_people_"
               target="_blank"
-              className="insta social-item">
-              <img src={insta} alt="Instagram" />
+              className="linkedin social-item">
+              <img src={linkedin} alt="Discord" className="w-32 h-32" />
             </a>
-            <a className="telegram social-item">
-              <img src={telegram} alt="Telegram" />
-            </a>
+
             <a className="medium social-item">
               <img src={medium} alt="Medium" />
             </a>
@@ -69,7 +78,7 @@ const IcognativeFooterSection = () => {
         <div className="flex flex-col md:flex-row justify-between p-9 w-full border-b border-[#08122A26]">
           <div className="flex flex-1 flex-col items-start p-0">
             <div className="logoimg mb-6">
-              <img src={logo} alt="" />
+              <img src={logo} alt="" className="w-[128px] h-[32px]"/>
             </div>
             <p className="max-w-2xl w-full text-base font-normal opacity-50 text-[#08122a]">
               Embrace the future of Web3 with IOPn. Whether you&apos;re looking

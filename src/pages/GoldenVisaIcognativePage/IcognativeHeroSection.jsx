@@ -40,7 +40,7 @@ const IcognativeHeroSection = () => {
 
   return (
     <div className="px-4 py-2.5 max-w-screen-2xl mx-auto">
-      <div className="w-full opn-chain-main-hero relative z-0">
+      <div className="w-full icognative-main-hero relative z-0">
         <div className="flex flex-col justify-between items-center w-full h-[785px] relative">
           <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0">
             <div className="flex justify-start lg:justify-start xl:justify-center items-center w-48">
@@ -235,8 +235,7 @@ const IcognativeHeroSection = () => {
                   for Web3
                 </h1>
                 <span className="text-xl font-medium text-[#08122a] opacity-40 sm:w-[600px]">
-                  Leveraging the Best of Three Worlds: Fortifying Blockchain
-                  Security with Cosmos SDK, EVM, and Bitcoin
+                Unlock the Power of GenAI in the IOPn Ecosystem.
                 </span>
                 <button className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto">
                   Join Now
