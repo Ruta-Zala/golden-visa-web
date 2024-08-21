@@ -1,15 +1,19 @@
-import Referral2 from '../../../assets/profile/referrals/referral2.svg';
-import Referral3 from '../../../assets/profile/referrals/referral3.svg';
-
 import React from 'react';
 import { Text } from '../../../components/TextGenz';
+import Icon1 from '../../../assets/profile/referrals/referral2.svg';
+import Icon2 from '../../../assets/profile/referrals/referral3.svg';
 
 function BalanceInfoSection() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex gap-4 max-[1050px]:flex-col">
-        <div className="flex w-full flex-col gap-[60px] rounded-[20px] bg-light_base p-10 max-[550px]:gap-[30px] max-[550px]:p-4">
-          <div className="flex flex-col items-start gap-3.5">
+        <div className="relative flex w-full flex-col gap-[60px] rounded-[20px] bg-light_base max-[550px]:gap-[30px] min-[765px]:p-10 p-5">
+          <img
+            src={Icon1}
+            alt="Icon1"
+            className="absolute md:top-[-80px] top-[-40px] md:right-[-40px] right-[-20px] md:w-[250px] w-[150px] md:h-[250px] h-[150px] "
+          />
+          <div className="flex flex-col items-start gap-3.5 relative z-50">
             <Text
               size="visa_desktop_headers_h3"
               as="p"
@@ -25,8 +29,8 @@ function BalanceInfoSection() {
               balance
             </Text>
           </div>
-          <hr />
-          <div className="flex justify-between w-full">
+          <hr className="my-[-20px]" />
+          <div className="flex justify-between w-full min-[1040]:px-10 md:px-5">
             <div>
               <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
                 My stakes
@@ -37,16 +41,19 @@ function BalanceInfoSection() {
             </div>
             <div>
               <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
-                My stakes
+                Unstake date
               </h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl text-[#2573C0]">
-                2 750 OPN
-              </h1>
+              <h1 className="text-xl md:text-2xl lg:text-3xl">25 August</h1>
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col gap-[60px] rounded-[20px] bg-light_base p-10 max-[550px]:gap-[30px] max-[550px]:p-4">
-          <div className="flex flex-col items-start gap-3.5">
+        <div className="relative flex w-full flex-col gap-[60px] rounded-[20px] bg-light_base max-[550px]:gap-[30px] min-[765px]:p-10 p-5">
+          <img
+            src={Icon2}
+            alt="Icon1"
+            className="absolute lg:top-[-50px] top-[-20px] lg:right-[-40px] right-[-20px] lg:w-[180px] lg:h-[180px] md:h-[150px] h-[120px] md:w-[150px] w-[120px]"
+          />
+          <div className="flex flex-col items-start gap-3.5 relative z-50">
             <Text
               size="visa_desktop_headers_h3"
               as="p"
@@ -61,7 +68,23 @@ function BalanceInfoSection() {
               balance
             </Text>
           </div>
-          <hr />
+          <hr className="my-[-20px]" />
+          <div className="flex justify-between w-full min-[1040]:px-10 md:px-5">
+            <div>
+              <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
+                Unstake date
+              </h3>
+              <h1 className="text-xl md:text-2xl lg:text-3xl text-[#2573C0]">
+                2 750 OPN
+              </h1>
+            </div>
+            <div>
+              <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
+                My stakes
+              </h3>
+              <h1 className="text-xl md:text-2xl lg:text-3xl">25 August</h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>

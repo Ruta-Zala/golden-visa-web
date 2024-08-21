@@ -3,7 +3,7 @@ import TransactionIcon from '../../../../public/images/transaction_icon.svg';
 
 const TransactionSection = () => {
   return (
-    <div className="px-4 py-4 w-full md:px-6 md:py-16">
+    <div className="px-4 py-4 w-full md:px-6 md:py-16" id="History">
       {/* Header */}
       <div className="mb-4 md:mb-6">
         <h1 className="text-2xl md:text-3xl font-medium text-[#08122A]">

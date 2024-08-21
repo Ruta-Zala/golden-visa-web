@@ -21,36 +21,38 @@ function Tabs() {
   return (
     <div className="w-full">
       {/* Tab Navigation */}
-      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 border-b">
-        <button
-          className={`py-2 px-4 text-lg sm:text-2xl font-medium ${
-            activeTab === 'dashboard'
-              ? 'border-b-2 border-blue-500 text-gray-900'
-              : 'text-gray-500'
-          }`}
-          onClick={() => setActiveTab('dashboard')}>
-          Dashboard
-        </button>
-        <button
-          className={`py-2 px-4 text-lg sm:text-2xl font-medium ${
-            activeTab === 'referrals'
-              ? 'border-b-2 border-blue-500 text-gray-900'
-              : 'text-gray-500'
-          }`}
-          onClick={() => setActiveTab('referrals')}>
-          Referrals
-        </button>
-        {isMobileOrTablet && (
+      <div className="relative">
+        <div className="flex flex-nowrap border-b overflow-x-auto whitespace-nowrap">
           <button
             className={`py-2 px-4 text-lg sm:text-2xl font-medium ${
-              activeTab === 'profileDetails'
+              activeTab === 'dashboard'
                 ? 'border-b-2 border-blue-500 text-gray-900'
                 : 'text-gray-500'
             }`}
-            onClick={() => setActiveTab('profileDetails')}>
-            Profile Details
+            onClick={() => setActiveTab('dashboard')}>
+            Dashboard
           </button>
-        )}
+          <button
+            className={`py-2 px-4 text-lg sm:text-2xl font-medium ${
+              activeTab === 'referrals'
+                ? 'border-b-2 border-blue-500 text-gray-900'
+                : 'text-gray-500'
+            }`}
+            onClick={() => setActiveTab('referrals')}>
+            Referrals
+          </button>
+          {isMobileOrTablet && (
+            <button
+              className={`py-2 px-4 text-lg sm:text-2xl font-medium ${
+                activeTab === 'profileDetails'
+                  ? 'border-b-2 border-blue-500 text-gray-900'
+                  : 'text-gray-500'
+              }`}
+              onClick={() => setActiveTab('profileDetails')}>
+              Profile Details
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Tab Content */}

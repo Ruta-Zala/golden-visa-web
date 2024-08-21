@@ -58,7 +58,7 @@ const SocialMedia = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" id='IOPn Socials'>
       <div className="mb-10">
         <h1 className="text-3xl font-medium text-[#08122A]">Join IOPn Socials</h1>
         <p className="opacity-50 text-lg mt-2">
@@ -80,7 +80,7 @@ const SocialMedia = () => {
         </div>
       </div>
 
-      <div className="bg-gray-100 rounded-2xl min-[765px]:p-6 p-3">
+      <div className="bg-gray-100 rounded-2xl min-[765px]:p-6 p-3" id="Social Media Posting">
         <div className="mb-6">
           <h1 className="text-3xl font-medium text-[#08122A]">Social Media Posting</h1>
           <p className="opacity-50 text-lg mt-2">
