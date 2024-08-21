@@ -427,10 +427,10 @@
   background: url("./assets/earth.svg");
 }
 
-/* Icongnative Page Style */
+/* Icognative Page Style */
 
 /* Hero Section */
-.opn-chain-main-hero {
+.icognative-main-hero {
   background-image: url("./assets/herosection/Icongnative.png");
   background-position: center;
   background-size: 100% 100%;
@@ -439,7 +439,7 @@
   /* padding: 0px 10px; */
 }
 @media (max-width: 767px) {
-  .opn-chain-main-hero {
+  .icognative-main-hero  {
     background-image: url("./assets/herosection/Icongnative.png"); /* Replace with your smaller screen image */
     background-size: cover;
     border-radius: 20px;
@@ -458,6 +458,22 @@
   background-repeat: no-repeat;
   min-height: 800px;
 }
+/* Hero Section */
+.icongnitive-main-hero {
+  background-image: url(../src/assets/herosection/Icongnative.png);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 800px;
+}
+@media (max-width: 767px) {
+  .icongnitive-main-hero {
+    background-size: cover;
+    border-radius: 20px;
+    min-height: 100%;
+  }
+}
+
 @media (max-width: 767px) {
   .opn-chain-main-hero {
     background-image: url("../src/assets/OPNChain/hero-banner-sm.png");

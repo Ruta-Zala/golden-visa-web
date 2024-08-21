@@ -1,6 +1,6 @@
-import cardimg1 from '../../assets/productcard/card-1.png';
-import cardimg2 from '../../assets/productcard/card-2.png';
-import cardimg3 from '../../assets/productcard/card-3.png';
+import cardimg1 from '../../assets/productcard/productcard1.png';
+import cardimg2 from '../../assets/productcard/productcard2.png';
+import cardimg3 from '../../assets/productcard/productcard3.png';
 
 const IcognativeProductsCard = () => {
   const cardData = [
@@ -47,12 +47,20 @@ const IcognativeProductsCard = () => {
             style={{
               backgroundImage: `url(${card.image})`,
             }}>
-            <div className="card-content">
-              <h1 className="w-full text-4xl font-medium]">{card.title}</h1>
-              <p className="card-description opacity-90 mt-6">
+            <div
+              className={`card-content ${
+                index === 0 || index === 2 ? 'text-[#08122A]' : 'text-[#FFFFFF]'
+              }`}>
+              <h1 className="w-full text-4xl font-medium">{card.title}</h1>
+              <p
+                className={` opacity-90 mt-6 ${
+                  index === 0 || index === 2
+                    ? 'text-[#08122A]'
+                    : 'text-[#FFFFFF]'
+                }`}>
                 <ul>
-                  {card.description.map((element, index) => (
-                    <li key={index} className="py-1 text-[20px]">
+                  {card.description.map((element, descIndex) => (
+                    <li key={descIndex} className="py-1 text-[20px]">
                       {element}
                     </li>
                   ))}

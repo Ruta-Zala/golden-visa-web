@@ -5,7 +5,7 @@ import React from 'react';
 export default function IcognativeAboutSection() {
   return (
     <>
-      <div className="mb-1 mt-[118px] flex flex-col items-center">
+      <div className="mb-1 mt-[118px] flex flex-col items-center" id="iCognative">
         <div className="container-xs flex flex-col gap-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
           <div className="mx-auto flex flex-1 flex-col gap-4 relative">
             <div className="flex gap-4 max-[1050px]:flex-col">

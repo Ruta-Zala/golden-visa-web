@@ -31,11 +31,11 @@ const Herosections = () => {
   }, []);
 
   return (
-    <div className="px-4 py-2.5 max-w-screen-2xl mx-auto">
+    <div className="px-4 pt-0 pb-2.5 lg:pt-2.5 max-w-screen-2xl mx-auto">
       <div className="w-full main-hero relative z-0">
         <div className="flex flex-col justify-between items-center w-full h-[785px] relative">
-          <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0">
-            <div className="flex justify-start lg:justify-start xl:justify-center items-center w-48">
+          <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0 bg-white-0 lg:bg-transparent h-[70px] lg:h-[50px]">
+            <div className="flex justify-start lg:justify-start xl:justify-center items-center w-[25%] lg:w-[15%]">
               <img src={headerLogo} />
               {/* <svg
                 className="w-24 lg:w-48 h-10"
@@ -102,25 +102,25 @@ const Herosections = () => {
                 </svg>
               </button>
             </div>
-            <div className="hidden lg:flex items-center justify-between gap-4">
-              <div className="flex flex-row items-center px-3 xl:px-6 gap-3 xl:gap-12 bg-[#f1f5f9] rounded-full py-3">
+            <div className="hidden lg:flex items-center justify-between gap-3 w-[49%]">
+              <div className="flex flex-row items-center px-3 xl:px-6 justify-around bg-[#f1f5f9] rounded-full py-3 flex-1">
                 <a href="/#/goldenvisa">
-                  <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                  <span className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
                     UAE Golden Visa
                   </span>
                 </a>
-                <a href="/#">
-                <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-                  OPNChain
-                </span>
+                <a href="/#/OPNChain">
+                  <span className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
+                    OPNChain
+                  </span>
                 </a>
                 <a href="/#/opntoken" onClick={handleScrollToTop}>
-                  <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                  <span className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
                     OPN Token
                   </span>
                 </a>
                 <span
-                  className="text-lg tracking-wide text-[#08122a] cursor-pointer"
+                  className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer"
                   ref={dropdownRef}
                 >
                   <img
@@ -164,7 +164,7 @@ const Herosections = () => {
                             OPNVerse
                           </a>
                           <a
-                           href="/#"
+                            href="/#"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -178,7 +178,7 @@ const Herosections = () => {
               </div>
               <a href="/#/opntoken">
                 <span>
-                  <button className="flex flex-row justify-center items-center ps-8 py-2 pr-2 gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
+                  <button className="flex flex-row justify-center items-center ps-4 py-2 pr-2 gap-2 xl:gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
                     Mint OPN{" "}
                     <div className="flex flex-row justify-center items-center rotate-[-45deg] p-0 gap-2 w-8 h-8 text-[#2573C0] bg-[#ffffff] rounded-full">
                       →
@@ -252,7 +252,7 @@ const Herosections = () => {
                   UAE Golden Visa
                 </a>
                 <a
-                  href="/#"
+                  href="/#/OPNChain"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >

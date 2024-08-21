@@ -1,4 +1,4 @@
-import logo from '../../assets/header-logo.png';
+import logo from '../../assets/logo.png';
 const OPNChainFooterSection = () => {
   const handleLinkClick = () => {
     window.scrollTo(0, 0);
@@ -10,7 +10,7 @@ const OPNChainFooterSection = () => {
         <div className="flex flex-col md:flex-row justify-between p-9 w-full border-b border-[#08122A26]">
           <div className="flex flex-1 flex-col items-start p-0">
             <div className="logoimg mb-6">
-              <img src={logo} alt="" />
+              <img src={logo} alt="" className="w-[128px] h-[32px]" />
             </div>
             <p className="max-w-2xl w-full text-base font-normal opacity-50 text-[#08122a]">
               Embrace the future of Web3 with IOPn. Whether you&apos;re looking
@@ -20,11 +20,6 @@ const OPNChainFooterSection = () => {
             </p>
           </div>
           <div className="flex flex-2 flex-col lg:flex-row justify-end items-center gap-4 h-fit mt-2">
-            {/* <a href="/#/golden-visa" onClick={handleLinkClick} >
-                                <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6] ">
-                                    UAE Golden Visa
-                                </span>
-                            </a> */}
             <a href="/#/OPNChain" onClick={handleLinkClick}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
                 OPNChain

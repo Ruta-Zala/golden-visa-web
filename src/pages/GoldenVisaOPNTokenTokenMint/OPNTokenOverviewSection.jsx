@@ -95,7 +95,7 @@ export default function OPNTokenOverviewSection() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full flex-col gap-12 rounded-[20px] border border-solid border-gray-200 bg-white-0 p-10 shadow-lg max-[550px]:p-4">
+              <div className="flex w-full flex-col gap-12 rounded-[20px] border border-solid border-gray-200 bg-white-0 p-10 shadow-lg max-[550px]:p-4" id="howItWroks">
                 <div className="flex flex-col items-start gap-3.5">
                   <Text
                     size="visa_desktop_headers_h3"
@@ -141,7 +141,7 @@ export default function OPNTokenOverviewSection() {
                   />
                 </div>
               </div>
-              <div className="h-[616px] flex-1 bg-[url(/public/images/img_chart_legend.svg)] bg-cover bg-no-repeat max-[1440px]:h-auto max-[1050px]:h-auto max-[1050px]:self-stretch">
+              <div className="h-full flex-1 bg-[url(/public/images/img_chart_legend.svg)] bg-cover bg-no-repeat max-[1440px]:h-auto max-[1050px]:h-auto max-[1050px]:self-stretch">
                 <div className="mt-12 flex items-start justify-between gap-5 max-[1050px]:flex-col">
                   <div className="ml-[62px] mt-3.5 flex h-[488px] w-[52%] flex-col items-center justify-center bg-[url(/public/images/img_chart_mint.png)] bg-contain bg-no-repeat px-14 py-52 max-[1440px]:bg-[length:100%_100%] max-[1440px]:py-8 max-[1050px]:ml-0 max-[1050px]:h-[800px] max-[1050px]:bg-[length:100%_100%] max-[1050px]:w-full max-[1050px]:p-5 max-[550px]:p-4 max-[550px]:h-[390px]">
                     <div className="flex flex-col items-center mr-[30px]">

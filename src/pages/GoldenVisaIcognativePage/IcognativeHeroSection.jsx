@@ -1,15 +1,19 @@
-import { useState, useRef, useEffect } from 'react';
-import arrowDown from '../../assets/img_arrow_down.svg';
-import headerLogo from '../../assets/header-logo.jpeg';
+import { useState, useRef, useEffect } from "react";
+import arrowDown from "../../assets/img_arrow_down.svg";
+import headerLogo from "../../assets/header-logo.jpeg";
+import { handleScrollToSection } from "../../utils/helper";
 
 const menuItems = [
-  { href: '/#/goldenvisa', label: 'UAE Golden Visa' },
-  { href: '/#/OPNChain', label: 'OPNChain' },
-  { href: '#', label: 'OPN Token' },
-  { href: '/#/Talent', label: 'Web3 Talent Program' },
-  { href: '/#/Entrepreneur', label: 'Web3 Entrepreneur Program' },
-  { href: '#', label: 'OPNVerse' },
-  { href: '/#/icongative', label: 'iCognative' },
+  { href: "/#/OPNChain", label: "OPNChain" },
+  { href: "#", label: "OPNVerse" },
+  {
+    label: "iCognative",
+    onClick: (event) => handleScrollToSection(event, "iCognative"),
+  },
+  { href: "/#/Talent", label: "Web3 Talent Program" },
+  { href: "/#/Entrepreneur", label: "Web3 Entrepreneur Program" },
+  { href: "/#/goldenvisa", label: "UAE Golden Visa" },
+  { href: "#", label: "OPN Token" },
 ];
 
 const IcognativeHeroSection = () => {
@@ -32,55 +36,64 @@ const IcognativeHeroSection = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <div className="px-4 py-2.5 max-w-screen-2xl mx-auto">
-      <div className="w-full opn-chain-main-hero relative z-0">
+    <div className="px-4 pt-0 pb-2.5 lg:pt-2.5 max-w-screen-2xl mx-auto">
+      <div className="w-full icongnitive-main-hero relative z-0">
         <div className="flex flex-col justify-between items-center w-full h-[785px] relative">
-          <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0">
-            <div className="flex justify-start lg:justify-start xl:justify-center items-center w-48">
+          <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0 bg-white-0 lg:bg-transparent h-[70px] lg:h-[60px]">
+            <div className="flex justify-start lg:justify-start xl:justify-center items-center w-[25%] lg:w-[15%]">
               <img src={headerLogo} />
             </div>
             <div className="lg:hidden flex items-center">
               <button
                 onClick={toggleMenu}
-                className="text-black-0 focus:outline-none">
+                className="text-black-0 focus:outline-none"
+              >
                 <svg
                   className="w-6 h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
                 </svg>
               </button>
             </div>
-            <div className="hidden lg:flex items-center justify-between gap-4">
-              <div className="flex flex-row items-center px-3 xl:px-6 gap-3 xl:gap-12 bg-[#f1f5f9] rounded-full py-3">
+            <div className="hidden lg:flex items-center justify-between gap-3 w-[49%] lg:w-[48%]">
+              <div className="flex flex-row items-center px-3 xl:px-6 justify-around bg-[#f1f5f9] rounded-full py-3 flex-1">
                 <a href="/#/OPNChain">
-                  <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                  <span className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer">
                     OPNChain
                   </span>
                 </a>
 
-                <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                <span
+                  className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer"
+                  onClick={(event) =>
+                    handleScrollToSection(event, "iCognative")
+                  }
+                >
                   iCognative
                 </span>
-                <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+                <span className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer">
                   OPNVerse
                 </span>
                 <span
-                  className="text-lg tracking-wide text-[#08122a] cursor-pointer"
-                  ref={dropdownRef}>
+                  className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer"
+                  ref={dropdownRef}
+                >
                   <img
                     src={arrowDown}
                     alt="Arrow Down Image"
@@ -97,31 +110,36 @@ const IcognativeHeroSection = () => {
                         aria-orientation="vertical"
                         aria-labelledby="menu-button"
                         tabindex="-1"
-                        style={{ backgroundColor: 'white' }}>
+                        style={{ backgroundColor: "white" }}
+                      >
                         <div className="py-1" role="none">
                           <a
                             href="/#/Talent"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem">
+                            role="menuitem"
+                          >
                             Web3 Talent Program
                           </a>
                           <a
                             href="/#/Entrepreneur"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem">
+                            role="menuitem"
+                          >
                             Web3 Entrepreneur Program
                           </a>
                           <a
                             href="/#/goldenvisa"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem">
+                            role="menuitem"
+                          >
                             UAE Golden Visa
                           </a>
 
                           <a
                             href="#"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem">
+                            role="menuitem"
+                          >
                             OPN Token
                           </a>
                         </div>
@@ -130,10 +148,10 @@ const IcognativeHeroSection = () => {
                   )}
                 </span>
               </div>
-              <a href="/#/opntoken">
+              <a onClick={(event) => handleScrollToSection(event, "joinNow")}>
                 <span>
-                  <button className="flex flex-row justify-center items-center ps-8 py-2 pr-2 gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
-                    Mint OPN{' '}
+                  <button className="flex flex-row justify-center items-center ps-4 py-2 pr-2 gap-2 xl:gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
+                    Join Now{" "}
                     <div className="flex flex-row justify-center items-center rotate-[-45deg] p-0 gap-2 w-8 h-8 text-[#2573C0] bg-[#ffffff] rounded-full">
                       →
                     </div>
@@ -144,16 +162,18 @@ const IcognativeHeroSection = () => {
 
             <div
               className={`${
-                isOpen ? 'off-canvas-menu open' : 'off-canvas-menu'
+                isOpen ? "off-canvas-menu open" : "off-canvas-menu"
               } lg:flex lg:flex-col lg:items-center lg:w-auto`}
-              id="menu">
+              id="menu"
+            >
               <div className="off-canvas-header">
                 {/* Update path to your logo */}
                 <svg
                   className="w-32 h-10"
                   viewBox="0 0 192 32"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M2.86102e-05 3.99905L11.9961 3.99905V2.36034e-05L2.86102e-05 2.36034e-05V3.99905Z"
                     fill="#08122A"
@@ -200,15 +220,22 @@ const IcognativeHeroSection = () => {
                   <a
                     key={index}
                     href={item.href}
-                    className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
-                    onClick={closeMenu}>
+                    className="block px-4 py-2 lg:px-5 lg:py-3 text-lg  text-[#08122a] hover:text-blue-500"
+                    onClick={(event) => {
+                      closeMenu();
+                      item?.onClick(event);
+                    }}
+                  >
                     {item.label}
                   </a>
                 ))}
               </div>
-              <div className="flex justify-center lg:justify-end">
+              <div
+                className="flex justify-center lg:justify-end"
+                onClick={(event) => handleScrollToSection(event, "joinNow")}
+              >
                 <button className="flex items-center px-4 py-2 lg:py-3 gap-2.5 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
-                  Mint OPN
+                  Join Now
                   <div className="flex justify-center items-center p-0 gap-2 w-8 h-8 text-black-0 bg-[#ffffff] rounded-full">
                     →
                   </div>
@@ -216,8 +243,9 @@ const IcognativeHeroSection = () => {
               </div>
             </div>
             <div
-              className={`${isOpen ? 'overlay show' : 'overlay'}`}
-              onClick={closeMenu}></div>
+              className={`${isOpen ? "overlay show" : "overlay"}`}
+              onClick={closeMenu}
+            ></div>
           </nav>
           <div className="w-full flex flex-col md:flex-row justify-between items-center relative">
             <div className="flex flex-col justify-end items-start bg-white-0 rounded-2xl mb-3 md:mb-0 mx-2 md:ms-4">
@@ -235,10 +263,12 @@ const IcognativeHeroSection = () => {
                   for Web3
                 </h1>
                 <span className="text-xl font-medium text-[#08122a] opacity-40 sm:w-[600px]">
-                  Leveraging the Best of Three Worlds: Fortifying Blockchain
-                  Security with Cosmos SDK, EVM, and Bitcoin
+                Unlock the Power of GenAI in the IOPn Ecosystem.
                 </span>
-                <button className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto">
+                <button
+                  className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto"
+                  onClick={(event) => handleScrollToSection(event, "joinNow")}
+                >
                   Join Now
                   <div className="flex flex-row justify-center items-center p-0 gap-2.5 w-8 h-8 text-white-0 bg-[#08122a] rounded-full rotate-[-45deg]">
                     →
