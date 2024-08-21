@@ -13,7 +13,7 @@ const menuItems = [
   { href: "/#/Talent", label: "Web3 Talent Program" },
   { href: "/#/Entrepreneur", label: "Web3 Entrepreneur Program" },
   { href: "/#/goldenvisa", label: "UAE Golden Visa" },
-  { href: "#", label: "OPN Token" },
+  { href: "/#/opntoken", label: "OPN Token" },
 ];
 
 const IcognativeHeroSection = () => {
@@ -48,7 +48,9 @@ const IcognativeHeroSection = () => {
         <div className="flex flex-col justify-between items-center w-full h-[785px] relative">
           <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0 bg-white-0 lg:bg-transparent h-[70px] lg:h-[60px]">
             <div className="flex justify-start lg:justify-start xl:justify-center items-center w-[25%] lg:w-[15%]">
-              <img src={headerLogo} />
+              <a href="/" className="cursor-pointer">
+                <img src={headerLogo} />
+              </a>
             </div>
             <div className="lg:hidden flex items-center">
               <button
@@ -97,7 +99,7 @@ const IcognativeHeroSection = () => {
                   <img
                     src={arrowDown}
                     alt="Arrow Down Image"
-                    className="h-[8px] rounded sm:w-full"
+                    className="h-full rounded sm:w-full"
                     onClick={toggleDropdown}
                     aria-haspopup="true"
                     aria-expanded={isDropDown}
@@ -263,7 +265,7 @@ const IcognativeHeroSection = () => {
                   for Web3
                 </h1>
                 <span className="text-xl font-medium text-[#08122a] opacity-40 sm:w-[600px]">
-                Unlock the Power of GenAI in the IOPn Ecosystem.
+                  Unlock the Power of GenAI in the IOPn Ecosystem.
                 </span>
                 <button
                   className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto"

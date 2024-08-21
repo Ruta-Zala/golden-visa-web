@@ -48,7 +48,9 @@ const OPNChainHeroSection = () => {
         <div className="flex flex-col justify-between items-center w-full h-[785px] relative">
           <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0 bg-white-0 lg:bg-transparent h-[70px] lg:h-[60px]">
             <div className="flex justify-start lg:justify-start xl:justify-center items-center w-[25%] lg:w-[15%]">
-              <img src={headerLogo} />
+              <a href="/" className="cursor-pointer">
+                <img src={headerLogo} />
+              </a>
             </div>
             <div className="lg:hidden flex items-center">
               <button
@@ -95,7 +97,7 @@ const OPNChainHeroSection = () => {
                   <img
                     src={arrowDown}
                     alt="Arrow Down Image"
-                    className="h-[8px] rounded sm:w-full"
+                    className="h-full rounded sm:w-full"
                     onClick={toggleDropdown}
                     aria-haspopup="true"
                     aria-expanded={isDropDown}

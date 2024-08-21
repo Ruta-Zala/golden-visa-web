@@ -1,38 +1,74 @@
 import { IoClose, IoMenu } from "react-icons/io5";
-import { Button } from "../Button/index";
 import { Img } from "../ImgMint/index";
 import { Text } from "../Text/index";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { handleScrollToSection } from "../../utils/helper";
 import headerLogo from "../../assets/header-logo.jpeg";
+import arrowDown from "../../assets/img_arrow_down.svg";
 
-export default function HeaderGenz({ hideTabs = [], ...props }) {
+export default function HeaderGenz({
+  hideTabs = [],
+  isTalentTab,
+  isWeb3Tab,
+  ...props
+}) {
+  const menuItems = [
+    { href: "/#/goldenvisa", label: "UAE Golden Visa" },
+    { href: "/#/OPNChain", label: "OPNChain" },
+    { href: "/#/opntoken", label: "OPN Token" },
+    { href: "/#/Talent", label: "Web3 Talent Program", hide: isTalentTab },
+    {
+      href: "/#/Entrepreneur",
+      label: "Web3 Entrepreneur Program",
+      hide: isWeb3Tab,
+    },
+    { href: "#", label: "OPNVerse" },
+    {
+      href: "/#/Icognative",
+      label: "iCognative",
+    },
+  ];
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropDown, setIsDropDown] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsDropDown((prev) => !prev);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropDown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <header
       {...props}
-      className={`${props.className} flex justify-between items-center gap-5 p-2 bg-light_base rounded-[34px] bg-white-0`}
+      className={`${props.className} flex justify-between items-center gap-5 p-2 ps-6 bg-light_base rounded-[34px] bg-white-0`}
     >
-      <Img
-        src={headerLogo}
-        alt="Logo Container"
-        className="h-[32px] w-[18%] object-contain"
-      />
-      <button className="flex lg:hidden" onClick={toggleMenu}>
+      <a href="/" className="cursor-pointer">
+        <Img
+          src={headerLogo}
+          alt="Logo Container"
+          className="h-12 w-48 md:w-32 lg:w-48  object-contain"
+        />
+      </a>
+      <button className="flex md:hidden" onClick={toggleMenu}>
         <IoMenu className="text-3xl text-gray-500 " />
       </button>
-      <ul className="flex justify-center gap-10 max-[1050px]:hidden max-[550px]:hidden pr-8">
-        <li>
-          <a href="/">
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              Home
-            </span>
-          </a>
-        </li>
+      <ul className="flex justify-center gap-10 md:gap-5 lg:gap-10 max-[768px]:hidden max-[550px]:hidden pr-8">
         <li>
           <a onClick={(event) => handleScrollToSection(event, "benefits")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
@@ -63,6 +99,49 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
             </a>
           </li>
         )}
+        <span
+          className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer flex items-center"
+          ref={dropdownRef}
+        >
+          <img
+            src={arrowDown}
+            alt="Arrow Down Image"
+            className="rounded sm:w-full h-full"
+            onClick={toggleDropdown}
+            aria-haspopup="true"
+            aria-expanded={isDropDown}
+          />
+          {isDropDown && (
+            <div className="relative text-left">
+              <div
+                className="z-10 absolute right-0 w-56 mt-9 origin-top-right rounded-md shadow-lg"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="menu-button"
+                tabindex="-1"
+                style={{ backgroundColor: "white" }}
+              >
+                <div className="py-1" role="none">
+                  {menuItems.map((item, index) =>
+                    !item?.hide ? (
+                      <a
+                        key={index}
+                        href={item.href}
+                        className="block px-4 py-2 lg:px-5 lg:py-3 text-lg  text-[#08122a] hover:text-blue-500"
+                        onClick={(event) => {
+                          closeMenu();
+                          item?.onClick(event);
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                    ) : null
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </span>
       </ul>
       {/* <Button
         variant="fill"
@@ -88,23 +167,18 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
               alt="Header Logo"
               className="h-12 w-48 object-contain"
             /> */}
-            <Img
-              src={headerLogo}
-              alt="Logo Container"
-              className="h-[32px] w-[18%] object-contain"
-            />
+            <a href="/" className="cursor-pointer">
+              <Img
+                src={headerLogo}
+                alt="Logo Container"
+                className="h-12 w-48  object-contain"
+              />
+            </a>
             <button onClick={toggleMenu}>
               <IoClose className="text-3xl text-gray-500" />
             </button>
           </div>
           <ul className="flex flex-col items-start gap-4 mt-4">
-            <li>
-              <a href="/">
-                <Text as="p" className="!text-accent-black">
-                  Home
-                </Text>
-              </a>
-            </li>
             <li>
               <a onClick={(event) => handleScrollToSection(event, "benefits")}>
                 <Text as="p" className="!text-accent-black">
@@ -143,6 +217,19 @@ export default function HeaderGenz({ hideTabs = [], ...props }) {
                 </a>
               </li>
             )}
+            {menuItems.map((item, index) => (
+              <li key={`menu-${index}`}>
+                <a
+                  href={item.href}
+                  onClick={(event) => {
+                    closeMenu();
+                    item?.onClick(event);
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
             {/* <Button
               color="dark_0"
               variant="fill"

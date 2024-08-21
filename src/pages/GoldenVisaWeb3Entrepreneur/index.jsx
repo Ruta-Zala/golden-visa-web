@@ -46,7 +46,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
           <div className="flex h-[1000px] items-start justify-center bg-[url(/public/images/img_hero_web.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[1050px]:bg-center">
             <div className="container-xs mb-[248px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[220px] max-[1440px]:w-full max-[1440px]:gap-[165px] max-[1050px]:w-full max-[1050px]:gap-[165px] max-[550px]:gap-[110px]">
-                <HeaderGenz hideTabs={['Golden draw']} />
+                <HeaderGenz hideTabs={['Golden draw']} isWeb3Tab/>
                 <div className="mx-52 flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button

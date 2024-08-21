@@ -98,7 +98,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
           <div className="flex h-[870px] items-start justify-center bg-[url(/public/images/img_hero_genz.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[550px]:bg-[length:250%_100%] max-[550px]:bg-center max-[1050px]:bg-center">
             <div className="container-xs mb-[306px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[238px] max-[1440px]:w-full max-[1440px]:gap-[178px] max-[1050px]:w-full max-[1050px]:gap-[178px] max-[550px]:gap-[119px] max-[550px]:items-center">
-                <HeaderGenz />
+                <HeaderGenz isTalentTab/>
                 <div className="mx-[152px] flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button

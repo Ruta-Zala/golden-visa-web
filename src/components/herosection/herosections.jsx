@@ -36,7 +36,9 @@ const Herosections = () => {
         <div className="flex flex-col justify-between items-center w-full h-[785px] relative">
           <nav className="w-full flex justify-between items-center px-2 py-2 lg:py-0 bg-white-0 lg:bg-transparent h-[70px] lg:h-[50px]">
             <div className="flex justify-start lg:justify-start xl:justify-center items-center w-[25%] lg:w-[15%]">
-              <img src={headerLogo} />
+              <a href="/" className="cursor-pointer">
+                <img src={headerLogo} />
+              </a>
               {/* <svg
                 className="w-24 lg:w-48 h-10"
                 viewBox="0 0 192 32"
@@ -126,7 +128,7 @@ const Herosections = () => {
                   <img
                     src={arrowDown}
                     alt="Arrow Down Image"
-                    className="h-[8px] rounded sm:w-full"
+                    className="h-full rounded sm:w-full"
                     onClick={toggleDropdown}
                     aria-haspopup="true"
                     aria-expanded={isDropDown}
@@ -164,7 +166,7 @@ const Herosections = () => {
                             OPNVerse
                           </a>
                           <a
-                            href="/#"
+                            href="/#/Icognative"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -290,7 +292,7 @@ const Herosections = () => {
                   OPNVerse
                 </a>
                 <a
-                  href="/#"
+                  href="/#/Icognative"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
