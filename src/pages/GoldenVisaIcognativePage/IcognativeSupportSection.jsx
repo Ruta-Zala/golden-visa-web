@@ -4,9 +4,9 @@ import { Button } from '../../components/Button/index';
 const IcognativeSupportSection = () => {
   return (
     <>
-      <div className="px-4 max-w-screen-2xl mx-auto relative mt-16">
-        <div className="flex gap-4 flex-wrap md:flex-nowrap">
-          <div className="w-full md:w-2/3 border rounded-2xl px-5 py-7">
+      <div className="px-4 max-w-screen-2xl mx-auto relative mt-16" id="joinNow">
+        <div className="flex gap-4 flex-wrap lg:flex-nowrap">
+          <div className="w-full lg:w-2/3 border rounded-2xl px-5 py-7">
             <h1 className="w-full text-4xl font-medium text-[#08122A]">
               Support channels
             </h1>
@@ -26,7 +26,7 @@ const IcognativeSupportSection = () => {
               </div>
             </button>
           </div>
-          <div className="w-full md:w-1/3 py-7 px-10 border rounded-2xl bg-gradient-to-r-blue text-white-0">
+          <div className="w-full lg:w-1/3 py-7 px-10 border rounded-2xl bg-gradient-to-r-blue text-white-0">
             <div className="text-3xl">Our documentation</div>
             <div className="mt-6 text-xl text-white-1">
               Ready to build? Explore our developer resources and join the
@@ -39,7 +39,7 @@ const IcognativeSupportSection = () => {
               </div>
             </button>
           </div>
-          <div className="w-full md:w-1/3 py-7 px-10 border rounded-2xl bg-gradient-to-r bg-[#08122A] text-white-0">
+          <div className="w-full lg:w-1/3 py-7 px-10 border rounded-2xl bg-gradient-to-r bg-[#08122A] text-white-0">
             <div className="text-3xl">GitHub repositories</div>
             <div className="mt-6 text-xl text-white-1">
               Access a rich collection of pre-built components to accelerate
