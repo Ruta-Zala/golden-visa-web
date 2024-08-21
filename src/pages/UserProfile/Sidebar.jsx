@@ -1,43 +1,49 @@
-import React from 'react';
+import React from "react";
+import Avatar from "../../assets/Avatar.png";
+import copySvg from "../../assets/copy.svg";
+import { Img } from "../../components/Img";
 
-function Sidebar() {
+export default function SideBar() {
   return (
-    <div className="w-1/4 bg-white p-6 rounded-lg shadow-md">
-      <div className="text-center">
-        <img
-          src="https://via.placeholder.com/100"
-          alt="Profile"
-          className="rounded-full w-24 mx-auto"
-        />
-        <h2 className="text-xl font-bold mt-4">John Doe</h2>
-        <p className="text-gray-500">Joined August 2024</p>
-      </div>
-      <div className="mt-6">
-        <p className="font-semibold">Bio</p>
-        <p className="text-gray-600">
-          Crypto enthusiast. OPN to the moon! 🚀 Passionate about blockchain & its potential. Investing in OPN for a future.
-        </p>
-        <div className="mt-4">
-          <p className="font-semibold">Email</p>
-          <p className="text-gray-600">johndoe@gmail.com</p>
+    <>
+      <div className="flex flex-col gap-y-4 h-[875px] w-[329px] p-8">
+        <div>
+          <Img src={Avatar} alt="Logo Container" className="object-contain" />
         </div>
-        <div className="mt-4">
-          <p className="font-semibold">Phone</p>
-          <p className="text-gray-600">(123) 456-78-90</p>
+        <div className="flex flex-col">
+          <h1 className="text-[#070B0F] text-2xl font-medium">John Doe</h1>
+          <p className="text-[#94A3B8] text-base font-extralight">
+            Joined August 2024
+          </p>
         </div>
-        <div className="mt-4">
-          <p className="font-semibold">Wallet address</p>
-          <p className="text-gray-600 break-words">0x1234567890ABCDEF1234567890...</p>
-        </div>
-        <div className="mt-6 flex space-x-3 justify-center">
+        <div>
+          <hr />
+          <p className="text-[#94A3B8] text-base font-light">Bio</p>
+          <p className="text-base font-extralight">
+            Crypto enthusiast. OPN to the moon! :rocket: Passionate about blockchain &
+            its potential. Investing in OPN for a future.
+          </p>
+          <hr />
+          <p className="text-[#94A3B8] text-base font-light">Email</p>
+          <p className="text-base font-extralight">johndoe@gmail.com</p>
+          <p className="text-[#94A3B8] text-base font-light">Phone</p>
+          <p className="text-base font-extralight">(123) 456-78-90</p>
+          <hr />
+          <p className="text-[#94A3B8] text-base font-light">Wallet address</p>
+          <div>
+            <p className="text-base font-extralight truncate w-64">
+              0x1234567890ABCDEF1234567890ABCDEF1234567890
+            </p>
+            <img src={copySvg} />
+          </div>
+          <div className="mt-6 flex space-x-3 justify-center">
           {/* Add social media icons here */}
         </div>
         <div className="mt-6 text-center">
           <button className="text-red-500">Log Out</button>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
-
-export default Sidebar;
