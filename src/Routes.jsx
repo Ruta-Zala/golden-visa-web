@@ -7,6 +7,7 @@ import GoldenVisaWeb3EntrepreneurPage from "./pages/GoldenVisaWeb3Entrepreneur";
 import NotFound from "./pages/NotFound";
 import GoldenVisaIcognativePage from "./pages/GoldenVisaIcognativePage";
 import GoldenVisaOPNChainPage from "./pages/GoldenVisaOPNChain";
+import UserProfilePage from "./pages/UserProfile";
 
 const Routes = () => {
   let element = useRoutes([
@@ -37,7 +38,7 @@ const Routes = () => {
     },
     {
       path: "/profile",
-      element: <GoldenVisaOPNChainPage />,
+      element: <UserProfilePage />,
     },
     { path: "*", element: <NotFound /> },
   ]);
