@@ -1,0 +1,29 @@
+.referralBg1 {
+  background: linear-gradient(
+      180deg,
+      rgba(150, 203, 255, 0.9) 20.37%,
+      rgba(50, 107, 216, 0.9) 100%
+    ),
+    linear-gradient(0deg, rgba(241, 245, 249, 0) 20.9%, #f1f5f9 78.6%);
+}
+
+.referralBg2 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(176, 195, 255, 0.9) 10.97%,
+      rgba(114, 172, 250, 0.9) 59.36%,
+      rgba(31, 141, 242, 0.9) 100%
+    ),
+    linear-gradient(0deg, rgba(241, 245, 249, 0) 22.75%, #f1f5f9 82.79%);
+}
+
+.referralBg3 {
+  background: 
+    linear-gradient(
+      180deg,
+      rgba(230, 218, 247, 0.95) 5.22%,
+      rgba(68, 121, 250, 0.95) 100%
+    ),
+    linear-gradient(0deg, rgba(241, 245, 249, 0) 17.05%, #f1f5f9 83.87%);
+}
