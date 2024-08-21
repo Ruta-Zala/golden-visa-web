@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { ethers } from "ethers";
-import { useAccount } from "wagmi";
+import {  ethers } from "ethers";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import { Button } from "../../components/Button/index";
 import { Img } from "../../components/ImgMint/index";
 import { Heading } from "../../components/HeadingMint/index";
-import { Input } from "../../components/Input/index";
 import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
+import { getBalance } from "../../utils/helper";
 
 import {
   getLocalStorage,
@@ -24,6 +24,9 @@ export default function TokenMintSection({ referralAddress }) {
   const [loading, setLoading] = useState(false);
   const [OpnAmountInWei, setOpnAmountInWei] = useState(null);
   const [referral, setReferral] = useState(null);
+  const [tokenBalance, setIsTokenBalance] = useState(0);
+  const chain = useChainId();
+  const { switchChain } = useSwitchChain();
 
   useEffect(() => {
     if (referralAddress) {
@@ -49,6 +52,12 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     console.log(isConnected);
   }, [isConnected]);
+
+  useEffect(() => {
+    if (isConnected && chain !== 1) {
+      switchChain({ chainId: 1 });
+    }
+  }, [isConnected, chain, switchChain]);
 
   const handleAmountChange = (event) => {
     const inputValue = event.target.value;
@@ -105,6 +114,11 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     fetchOPNReturns();
   }, [selectedToken, inputAmount]);
+
+  useEffect(() => {
+    console.log("calling");
+    getBalance(selectedToken?.address, setIsTokenBalance);
+  }, [selectedToken?.address]);
 
   // Function to handle the mint process
   const handleMint = async () => {
@@ -277,13 +291,14 @@ export default function TokenMintSection({ referralAddress }) {
                         </option>
                       ))}
                     </select>
-
                     <img
                       src={selectedToken.logoURI}
                       alt={selectedToken.symbol}
                       className="h-[32px] w-[32px] pointer-events-none"
-                    />                  </div>
+                    />{" "}
+                  </div>
                 </label>
+                <h4> Balance:{tokenBalance}</h4>
               </div>
               <div className="flex w-[90%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
                 <Heading
@@ -311,7 +326,6 @@ export default function TokenMintSection({ referralAddress }) {
                       alt="Ellipse 362"
                       loading="lazy"
                     />
-                    
                   </div>
                 </label>
               </div>

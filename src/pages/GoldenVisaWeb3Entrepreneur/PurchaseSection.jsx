@@ -5,7 +5,7 @@ import { Text } from "../../components/Text";
 import { Input } from "../../components/InputGenz";
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import {
   paymentTokens,
   vaultContractAddress,
@@ -16,6 +16,7 @@ import {
   web3StakeContractAddress,
   web3StakeContractABI,
 } from "../../utils/helper";
+import { getBalance } from "../../utils/helper";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
 
@@ -26,6 +27,39 @@ export default function PurchaseSection({ referralAddress }) {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const chain = useChainId();
+  const { switchChain } = useSwitchChain();
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [TokenBalance, setIsTokenBalance] = useState(0);
+  const validateName = (name) => {
+    const regex = /^[A-Za-z]+$/;
+    return regex.test(name);
+  };
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+  const handleNameChange = (e) => {
+    const name = e.target.value;
+    setName(name);
+    if (!validateName(name)) {
+      setNameError("Name can only contain letters (A-Z, a-z).");
+    } else {
+      setNameError("");
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address.");
+    } else {
+      setEmailError("");
+    }
+  };
 
   useEffect(() => {
     if (referralAddress) {
@@ -37,8 +71,16 @@ export default function PurchaseSection({ referralAddress }) {
     }
   }, [referralAddress]);
 
-  const isButtonDisabled = !name || !email || !count;
+  const isButtonDisabled =
+    !name || !email || !count || nameError != "" || emailError != "";
+
   const { isConnected } = useAccount();
+
+  useEffect(() => {
+    if (isConnected && chain !== 1) {
+      switchChain({ chainId: 1 });
+    }
+  }, [isConnected, chain, switchChain]);
 
   const handleTokenChange = (event) => {
     const selected = paymentTokens.find(
@@ -165,6 +207,10 @@ export default function PurchaseSection({ referralAddress }) {
       console.error("Error during staking:", error);
     }
   };
+  useEffect(() => {
+    console.log("calling");
+    getBalance(selectedToken?.address, setIsTokenBalance);
+  }, [selectedToken?.address]);
 
   return (
     <>
@@ -232,9 +278,10 @@ export default function PurchaseSection({ referralAddress }) {
                     name="Name Input"
                     placeholder="Enter Name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => handleNameChange(e)}
                   />
                 </label>
+                {nameError && <p style={{ color: "red" }}>{nameError}</p>}
               </div>
               <div className="flex w-[100%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
                 <Heading
@@ -250,9 +297,10 @@ export default function PurchaseSection({ referralAddress }) {
                     name="Email Input"
                     placeholder="Enter Email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => handleEmailChange(e)}
                   />
                 </label>
+                {emailError && <p style={{ color: "red" }}>{emailError}</p>}
               </div>
               <div className="w-full flex flex-col gap-2">
                 <Heading
@@ -282,6 +330,7 @@ export default function PurchaseSection({ referralAddress }) {
                     />
                   </div>
                 </div>
+                <h4> Balance:{TokenBalance}</h4>
               </div>
               <div className="w-full flex flex-col gap-2">
                 <Heading
@@ -296,7 +345,8 @@ export default function PurchaseSection({ referralAddress }) {
                     type="text"
                     value={referral}
                     onChange={handleReferralChange}
-                    placeholder="Enter Referral Address"/>
+                    placeholder="Enter Referral Address"
+                  />
                 </div>
               </div>
 
@@ -358,8 +408,13 @@ export default function PurchaseSection({ referralAddress }) {
                     disabled={isButtonDisabled}
                     onClick={handleStakeWeb3}
                     shape="round"
-                    className="flex items-center justify-center relative gap-[34px] self-stretch font-medium  bg-[#2573C0]"
+                    class={`font-bold py-3 px-8 rounded-full transition duration-200 ${
+                      isButtonDisabled
+                        ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                        : "bg-blue-600 text-white hover:bg-blue-700"
+                    }`}
                     color="white_0"
+                    // className="flex items-center justify-center relative gap-[34px] self-stretch font-medium  bg-[#2573C0]"
                   >
                     <span class="absolute left-1/2 transform -translate-x-1/2">
                       {loading ? <Loader /> : "Participate"}
@@ -376,23 +431,23 @@ export default function PurchaseSection({ referralAddress }) {
                 </div>
               ) : (
                 <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-4 bg-white-0">
-                <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
-                  <ConnectWallet />
-                </h5>
-                <button
-                  class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
-                  style={{
-                    backgroundColor: "black",
-                    padding: "12px",
-                  }}
-                >
-                  <img
-                    src="images/img_arrowleft_white_0.svg"
-                    alt="testImg"
-                    loading="lazy"
-                  />
-                </button>
-              </div>
+                  <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
+                    <ConnectWallet />
+                  </h5>
+                  <button
+                    class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                    style={{
+                      backgroundColor: "black",
+                      padding: "12px",
+                    }}
+                  >
+                    <img
+                      src="images/img_arrowleft_white_0.svg"
+                      alt="testImg"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
               )}
             </div>
           </div>
