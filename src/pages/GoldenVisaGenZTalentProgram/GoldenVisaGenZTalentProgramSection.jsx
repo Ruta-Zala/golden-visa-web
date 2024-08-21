@@ -17,6 +17,7 @@ import {
   nullAddress,
 } from "../../utils/helper";
 import Loader from "../../components/Loader";
+import { getBalance } from "../../utils/helper";
 
 export default function GoldenVisaGenZTalentProgramSection({
   referralAddress,
@@ -35,6 +36,7 @@ export default function GoldenVisaGenZTalentProgramSection({
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [countError, setCountError] = useState("");
+  const [TokenBalance, setIsTokenBalance] = useState(0);
 
   const isButtonDisabled =
     !name ||
@@ -304,31 +306,11 @@ export default function GoldenVisaGenZTalentProgramSection({
     }
   };
 
-  const [TokenBalance, setIsTokenBalance] = useState(0);
   useEffect(() => {
     console.log("calling");
-    getBalance(selectedToken?.address);
-  }, [selectedToken?.address]);
+    getBalance(selectedToken.address, setIsTokenBalance);
+  }, [selectedToken.address]);
 
-  const getBalance = async (address) => {
-    console.log(address, "address");
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const walletAddress = await signer.getAddress();
-
-    try {
-      const tokenContract = new ethers.Contract(
-        address,
-        ERC20balanceOf,
-        signer
-      );
-
-      const balance = await tokenContract.balanceOf(walletAddress);
-      const formatedBalance = balance.toNumber();
-      setIsTokenBalance(formatedBalance);
-      return formatedBalance;
-    } catch (error) {}
-  };
   return (
     <>
       {/* golden visa gen z talent program section */}

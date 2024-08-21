@@ -1,5 +1,7 @@
 import vaultContractABI from "../abis/vaultContractABI.json";
 import web3StakeContractABI from "../abis/stakeWeb3ABI.json"
+import { ethers } from "ethers";
+import ERC20BalanceOf from "../abis/ERC20balanceOf.json"
 
 export const handleScrollToSection = (event, sectionId) => {
   event.preventDefault(); // Prevent default anchor behavior
@@ -10,6 +12,24 @@ export const handleScrollToSection = (event, sectionId) => {
       block: "start",
     });
   }
+};
+
+export const getBalance = async (address, setIsTokenBalance) => {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  const walletAddress = await signer.getAddress();
+  try {
+    const tokenContract = new ethers.Contract(
+      address,
+      ERC20BalanceOf,
+      signer
+    );
+    const balance = await tokenContract.balanceOf(walletAddress);
+    const formatedBalance = balance.toNumber();
+    setIsTokenBalance(formatedBalance);
+    console.log(balance, formatedBalance, "heelo")
+    return formatedBalance;
+  } catch (error) {}
 };
 
 export const handleScrollToTop = () => {

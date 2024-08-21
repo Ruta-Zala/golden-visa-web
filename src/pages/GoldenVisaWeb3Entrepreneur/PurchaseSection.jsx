@@ -16,6 +16,7 @@ import {
   web3StakeContractAddress,
   web3StakeContractABI,
 } from "../../utils/helper";
+import { getBalance } from "../../utils/helper";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
 
@@ -30,6 +31,7 @@ export default function PurchaseSection({ referralAddress }) {
   const { switchChain } = useSwitchChain();
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [TokenBalance, setIsTokenBalance] = useState(0);
   const validateName = (name) => {
     const regex = /^[A-Za-z]+$/;
     return regex.test(name);
@@ -205,31 +207,11 @@ export default function PurchaseSection({ referralAddress }) {
       console.error("Error during staking:", error);
     }
   };
-  const [TokenBalance, setIsTokenBalance] = useState(0);
   useEffect(() => {
     console.log("calling");
-    getBalance(selectedToken?.address);
+    getBalance(selectedToken?.address, setIsTokenBalance);
   }, [selectedToken?.address]);
 
-  const getBalance = async (address) => {
-    console.log(address, "address");
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const walletAddress = await signer.getAddress();
-
-    try {
-      const tokenContract = new ethers.Contract(
-        address,
-        ERC20balanceOf,
-        signer
-      );
-
-      const balance = await tokenContract.balanceOf(walletAddress);
-      const formatedBalance = balance.toNumber();
-      setIsTokenBalance(formatedBalance);
-      return formatedBalance;
-    } catch (error) {}
-  };
   return (
     <>
       {/* purchase section */}

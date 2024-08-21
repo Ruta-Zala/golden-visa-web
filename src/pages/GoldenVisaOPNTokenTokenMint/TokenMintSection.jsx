@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Signer, ethers } from "ethers";
+import {  ethers } from "ethers";
 import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import { Button } from "../../components/Button/index";
 import { Img } from "../../components/ImgMint/index";
 import { Heading } from "../../components/HeadingMint/index";
-import { Input } from "../../components/Input/index";
 import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
-import ERC20balanceOf from "../../abis/ERC20balanceOf.json";
+import { getBalance } from "../../utils/helper";
 
 import {
   getLocalStorage,
@@ -25,6 +24,7 @@ export default function TokenMintSection({ referralAddress }) {
   const [loading, setLoading] = useState(false);
   const [OpnAmountInWei, setOpnAmountInWei] = useState(null);
   const [referral, setReferral] = useState(null);
+  const [tokenBalance, setIsTokenBalance] = useState(0);
   const chain = useChainId();
   const { switchChain } = useSwitchChain();
 
@@ -114,32 +114,12 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     fetchOPNReturns();
   }, [selectedToken, inputAmount]);
-  const [TokenBalance, setIsTokenBalance] = useState(0);
+
   useEffect(() => {
     console.log("calling");
-    getBalance(selectedToken?.address);
+    getBalance(selectedToken?.address, setIsTokenBalance);
   }, [selectedToken?.address]);
 
-  const getBalance = async (address) => {
-    console.log(address, "address");
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const walletAddress = await signer.getAddress();
-
-    try {
-      const tokenContract = new ethers.Contract(
-        address,
-        ERC20balanceOf,
-        signer
-      );
-
-      const balance = await tokenContract.balanceOf(walletAddress);
-      const formatedBalance = balance.toNumber();
-      setIsTokenBalance(formatedBalance);
-      return formatedBalance;
-    } catch (error) {}
-  };
-  console.log(TokenBalance, "TokenBalance");
   // Function to handle the mint process
   const handleMint = async () => {
     if (!inputAmount) return;
@@ -318,7 +298,7 @@ export default function TokenMintSection({ referralAddress }) {
                     />{" "}
                   </div>
                 </label>
-                <h4> Balance:{TokenBalance}</h4>
+                <h4> Balance:{tokenBalance}</h4>
               </div>
               <div className="flex w-[90%] flex-col items-start gap-2 max-[1440px]:w-full max-[1050px]:w-full">
                 <Heading
