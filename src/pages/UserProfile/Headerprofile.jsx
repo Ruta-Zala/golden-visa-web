@@ -17,16 +17,13 @@ export default function Headerprofile({ ...props }) {
     <>
       <header
         {...props}
-        className={`${props.className} flex justify-between items-center gap-5 p-2 ps-6 mt-4 mx-8 bg-light_base rounded-[34px] bg-[
-#F1F5F9]`}
-      >
-        <a href="/" className="cursor-pointer">
-          <Img
-            src={headerLogo}
-            alt="Logo Container"
-            className="h-12 w-48  object-contain"
-          />
-        </a>
+        className={`${props.className} flex justify-between items-center gap-5 p-2 mt-4 mx-8 bg-light_base rounded-[34px] w-[calc[100vw-125px)] bg-[
+#F1F5F9]`}>
+        <Img
+          src={headerLogo}
+          alt="Logo Container"
+          className="h-[32px] w-[18%] object-contain"
+        />
         <button className="flex lg:hidden " onClick={toggleMenu}>
           <img src={Menu} alt="" className="h-[8px] rounded sm:w-full mr-4" />
         </button>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from '../../assets/Avatar.png';
 import copySvg from '../../assets/copy.svg';
 import TwitterLogo from '../../assets/profile/twitter-logo.svg';
 import FacebookLogo from '../../assets/profile/facebook-logo.svg';
@@ -16,34 +15,11 @@ const socialMediaLogos = [
   { src: WhatsappLogo, alt: 'WhatsApp Logo' },
 ];
 
-export default function SideBar() {
+export default function ProfileDetails() {
   return (
     <>
-      <div className="flex flex-col gap-y-4 h-[875px] w-[329px] ">
-        <div className="flex sm:flex-col sm:gap-0 gap-2 flex-row">
-          <div>
-            <Img
-              src={Avatar}
-              alt="Logo Container"
-              className="object-contain h-[80px] w-[80px] sm:h-[80px] sm:w-[80px] md:h-[150px] md:w-[100px] lg:h-[100px] xl:w-[150px] xl:h-[200px] "
-            />
-          </div>
-          <div className="flex flex-col sm:font-normal mt-4">
-            <h1 className="text-[#070B0F] text-2xl font-medium">John Doe</h1>
-            <p className="text-[#94A3B8] text-base font-extralight sm:font-normal">
-              Joined August 2024
-            </p>
-          </div>
-        </div>
-
+      <div className="flex flex-col gap-y-4 h-full w-full ">
         <div>
-          <hr className="my-3" />
-          <p className="text-[#94A3B8] text-base font-light">Bio</p>
-          <p className="text-base font-extralight">
-            Crypto enthusiast. OPN to the moon! 🚀 Passionate about blockchain &
-            its potential. Investing in OPN for a future.
-          </p>
-          <hr className="my-4" />
           <p className="text-[#94A3B8] text-base font-light">Email</p>
           <p className="text-base font-extralight">johndoe@gmail.com</p>
           <p className="text-[#94A3B8] text-base font-light mt-4">Phone</p>

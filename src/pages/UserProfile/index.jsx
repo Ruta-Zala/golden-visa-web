@@ -1,12 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import HeaderGenz from '../../components/HeaderGenz';
 import Sidebar from './Sidebar';
 import Tabs from './Tabs';
 import Headerprofile from './Headerprofile';
 import Footer from '../../components/FooterMint';
+import ProfileSummary from './ProfileSummary';
 
 function UserProfile() {
+  const [isMobileOrTablet, setIsMobileOrTablet] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobileOrTablet(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -24,9 +37,10 @@ function UserProfile() {
         <meta name="keywords" content="IOPn, RAKDAO, GenZ Talent Program" />
       </Helmet>
       <Headerprofile />
-      <div className="flex min-h-screen  p-10 space-x-8">
-        <Sidebar />
+      <div className="flex min-h-screen space-x-8 min-[765px]:p-10 p-5">
+        {!isMobileOrTablet && <Sidebar />}
         <div className="flex-row w-full">
+          {isMobileOrTablet && <ProfileSummary />}
           <Tabs />
         </div>
       </div>
