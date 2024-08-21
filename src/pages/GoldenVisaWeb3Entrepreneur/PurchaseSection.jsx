@@ -3,7 +3,7 @@ import { Img } from "../../components/ImgMint";
 import { Heading } from "../../components/HeadingMint";
 import { Text } from "../../components/Text";
 import { Input } from "../../components/InputGenz";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ethers } from "ethers";
 import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import {
@@ -21,7 +21,7 @@ import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
 
 export default function PurchaseSection({ referralAddress }) {
-  const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
+  const [selectedToken, setSelectedToken] = useState(paymentTokens[1]);
   const count = 1;
   const [referral, setReferral] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -32,6 +32,10 @@ export default function PurchaseSection({ referralAddress }) {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [TokenBalance, setIsTokenBalance] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
   const validateName = (name) => {
     const regex = /^[A-Za-z]+$/;
     return regex.test(name);
@@ -88,6 +92,24 @@ export default function PurchaseSection({ referralAddress }) {
     );
     setSelectedToken(selected);
   };
+
+  const handleSelect = (token) => {
+    handleTokenChange({ target: { value: token.id } });
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleReferralChange = (event) => {
     setReferral(event.target.value);
@@ -312,22 +334,40 @@ export default function PurchaseSection({ referralAddress }) {
                 </Heading>
                 <div className="flex items-center justify-between border border-solid border-blue-900_1e bg-white-0 rounded-full p-4 text-[25px]">
                   <div className="relative flex w-full gap-2 items-center justify-between">
-                    <select
-                      className="appearance-none bg-transparent text-gray-700 font-medium px-2 rounded-full w-full focus:outline-none"
-                      value={selectedToken.id}
-                      onChange={handleTokenChange}
-                    >
-                      {paymentTokens.map((token) => (
-                        <option key={token.id} value={token.id}>
-                          {token.symbol}
-                        </option>
-                      ))}
-                    </select>
-                    <img
-                      src={selectedToken.logoURI}
-                      alt={selectedToken.symbol}
-                      className="h-[30px] w-[30px] pointer-events-none"
-                    />
+                    <div ref={dropdownRef} className="relative w-full">
+                      <button
+                        type="button"
+                        className="appearance-none bg-transparent text-gray-700 font-medium px-2 py-2 w-full focus:outline-none flex items-center justify-between"
+                        onClick={toggleDropdown}
+                      >
+                        <span>{selectedToken.symbol}</span>
+
+                        <img
+                          src={selectedToken.logoURI}
+                          alt={selectedToken.symbol}
+                          className="h-[30px] w-[30px] pointer-events-none"
+                        />
+                      </button>
+
+                      {isOpen && (
+                        <ul className="absolute z-10 mt-5 bg-white-0 border border-gray-300 rounded-md shadow-lg w-1/2 md:w-full lg:w-1/2  max-h-60 overflow-auto">
+                          {paymentTokens.map((token) => (
+                            <li
+                              key={token.id}
+                              className="cursor-pointer hover:bg-gray-100 px-4 py-2 flex items-center justify-between"
+                              onClick={() => handleSelect(token)}
+                            >
+                              <span>{token.symbol}</span>
+                              <img
+                                src={token.logoURI}
+                                alt={token.symbol}
+                                className="h-[30px] w-[30px] mr-2 pointer-events-none"
+                              />
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <h4> Balance:{TokenBalance}</h4>

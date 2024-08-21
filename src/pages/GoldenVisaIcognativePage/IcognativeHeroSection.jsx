@@ -138,7 +138,7 @@ const IcognativeHeroSection = () => {
                           </a>
 
                           <a
-                            href="#"
+                            href="#/opntoken"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >

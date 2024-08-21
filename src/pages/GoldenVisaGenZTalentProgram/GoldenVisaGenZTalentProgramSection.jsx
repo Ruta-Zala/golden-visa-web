@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ethers } from "ethers";
 import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import { Button } from "../../components/ButtonGenz/index";
@@ -22,7 +22,7 @@ import { getBalance } from "../../utils/helper";
 export default function GoldenVisaGenZTalentProgramSection({
   referralAddress,
 }) {
-  const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
+  const [selectedToken, setSelectedToken] = useState(paymentTokens[1]);
   const [count, setCount] = useState("");
   const [referral, setReferral] = useState(null);
   const [requiredAmount, setRequiredAmount] = useState(null);
@@ -37,6 +37,9 @@ export default function GoldenVisaGenZTalentProgramSection({
   const [emailError, setEmailError] = useState("");
   const [countError, setCountError] = useState("");
   const [TokenBalance, setIsTokenBalance] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   const isButtonDisabled =
     !name ||
@@ -53,6 +56,24 @@ export default function GoldenVisaGenZTalentProgramSection({
     setSelectedToken(selected);
     setRequiredAmount(null);
   };
+
+  const handleSelect = (token) => {
+    handleTokenChange({ target: { value: token.id } });
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     if (isConnected && chain !== 1) {
@@ -359,7 +380,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                 </span>
               </Text> */}
             </div>
-            <div className="relative h-[630px] xl:h-[756px] w-full self-center rounded-[20px] bg-light_base">
+            <div className="relative h-[700px] xl:h-[756px] w-full self-center rounded-[20px] bg-light_base">
               <Img
                 src="images/img_icon_star_glossy_glass_style.png"
                 alt="Star Image"
@@ -397,22 +418,40 @@ export default function GoldenVisaGenZTalentProgramSection({
                     <Heading as="h2">Select Payment Token</Heading>
                     <div className="flex items-center justify-between border border-solid border-blue-900_1e bg-transparent rounded-full p-[0.75rem]">
                       <div className="relative flex w-full gap-2 items-center justify-between">
-                        <select
-                          className="appearance-none bg-transparent text-gray-700 font-medium px-2 rounded-full w-full focus:outline-none"
-                          value={selectedToken.id}
-                          onChange={handleTokenChange}
-                        >
-                          {paymentTokens.map((token) => (
-                            <option key={token.id} value={token.id}>
-                              {token.symbol}
-                            </option>
-                          ))}
-                        </select>
-                        <img
-                          src={selectedToken.logoURI}
-                          alt={selectedToken.symbol}
-                          className="h-[25px] w-[25px] pointer-events-none"
-                        />
+                        <div ref={dropdownRef} className="relative w-full">
+                          <button
+                            type="button"
+                            className="appearance-none bg-transparent text-gray-700 font-medium px-2 py-2 w-full focus:outline-none flex items-center justify-between"
+                            onClick={toggleDropdown}
+                          >
+                            <span>{selectedToken.symbol}</span>
+
+                            <img
+                              src={selectedToken.logoURI}
+                              alt={selectedToken.symbol}
+                              className="h-[25px] w-[25px] pointer-events-none"
+                            />
+                          </button>
+
+                          {isOpen && (
+                            <ul className="absolute z-10 mt-5 bg-white-0 border border-gray-300 rounded-md shadow-lg w-1/2 md:w-full lg:w-1/2  max-h-60 overflow-auto">
+                              {paymentTokens.map((token) => (
+                                <li
+                                  key={token.id}
+                                  className="cursor-pointer hover:bg-gray-100 px-4 py-2 flex items-center justify-between"
+                                  onClick={() => handleSelect(token)}
+                                >
+                                  <span>{token.symbol}</span>
+                                  <img
+                                    src={token.logoURI}
+                                    alt={token.symbol}
+                                    className="h-[25px] w-[25px] mr-2 pointer-events-none"
+                                  />
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <h4> Balance:{TokenBalance}</h4>

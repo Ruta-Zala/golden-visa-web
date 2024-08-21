@@ -5,17 +5,15 @@ import 'swiper/css/navigation'; // Import navigation styles
 import { useRef } from 'react'; // Import useRef from React
 import { Autoplay, Navigation } from 'swiper/modules'; // Import Navigation module
 import { Swiper, SwiperSlide } from 'swiper/react';
-import feature1 from '../../assets/feature1.png';
-import feature2 from '../../assets/feature2.png';
-import feature3 from '../../assets/feature3.png';
-import feature4 from '../../assets/feature4.png';
-import feature5 from '../../assets/feature5.png';
+import feature2 from '../../assets/Feature6.png';
+import feature3 from '../../assets/Feature7.png';
+import feature1 from '../../assets/Feature8.png';
+import feature4 from '../../assets/Feature9.png';
 
 import icon1 from '../../assets/OPNChain/transaction.png';
 import icon2 from '../../assets/OPNChain/currency-exchange.png';
 import icon3 from '../../assets/OPNChain/shield.png';
 import icon4 from '../../assets/OPNChain/ethereum.png';
-import icon5 from '../../assets/brain.png';
 
 const cardsData = [
   {
@@ -45,13 +43,6 @@ const cardsData = [
     title: 'EVM compatibility',
     description:
       'Run Ethereum-based smart contracts and applications on the blockchain, expanding developer and user base.',
-  },
-  {
-    icon: icon5,
-    image: feature5,
-    title: 'Future-Proof Solutions',
-    description:
-      'Stay ahead with future-proof solutions designed to adapt and scale with your evolving needs in the digital age.',
   },
 ];
 
@@ -96,11 +87,11 @@ const OPNChainFeatureSection = () => {
           className="mySwiper">
           {cardsData.map((card, index) => (
             <SwiperSlide key={index} className="flex items-stretch">
-              <div className="flex flex-col items-stretch p-3 gap-2.5 rounded-2xl features-card relative z-0 overflow-hidden flex-1">
+              <div className="flex flex-col items-stretch p-3 gap-2.5 rounded-2xl features-card relative z-0 overflow-hidden flex-1 relative">
                 <img
                   src={card.image}
                   alt=""
-                  className="w-64 h-80 object-contain absolute -top-20 -right-24"
+                  className="absolute top-0 bottom-0 right-0 left-0 h-full w-full object-cover absolute"
                 />
                 <div className="features-card-icon-container">
                   <div className="features-card-icon">→</div>
@@ -124,7 +115,7 @@ const OPNChainFeatureSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-30 h-[100px] w-[100px] rounded-full bg-[#fff] hidden md:flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-30 h-[100px] w-[100px] rounded-full bg-[#fff] hidden md:flex lg:hidden items-center justify-center">
           <button
             ref={prevRef}
             className="swiper-button-prev p-3 after:content-['prev'] after:text-[16px] after:text-slate-900 rounded-full"

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {  ethers } from "ethers";
+import React, { useState, useEffect, useRef } from "react";
+import { ethers } from "ethers";
 import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import { Button } from "../../components/Button/index";
 import { Img } from "../../components/ImgMint/index";
@@ -18,7 +18,7 @@ import {
 } from "../../utils/helper";
 
 export default function TokenMintSection({ referralAddress }) {
-  const [selectedToken, setSelectedToken] = useState(paymentTokens[0]);
+  const [selectedToken, setSelectedToken] = useState(paymentTokens[1]);
   const [inputAmount, setInputAmount] = useState("");
   const [updatedInputAmount, setUpdatedInputAmount] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,6 +27,9 @@ export default function TokenMintSection({ referralAddress }) {
   const [tokenBalance, setIsTokenBalance] = useState(0);
   const chain = useChainId();
   const { switchChain } = useSwitchChain();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     if (referralAddress) {
@@ -47,6 +50,24 @@ export default function TokenMintSection({ referralAddress }) {
     );
     setSelectedToken(selected);
   };
+
+  const handleSelect = (token) => {
+    handleTokenChange({ target: { value: token.id } });
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const { isConnected } = useAccount();
   useEffect(() => {
@@ -272,30 +293,41 @@ export default function TokenMintSection({ referralAddress }) {
                     name="Payment Input"
                     placeholder="$ 100"
                   />
-                  <div className="flex gap-4 border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
-                    {/* <img
-                      className="h-[32px] w-[32px]"
-                      src="images/img_ellipse_362.png"
-                      alt="Ellipse 362"
-                      loading="lazy"
-                    />
-                    USD */}
-                    <select
-                      className="appearance-none bg-transparent text-gray-700 font-medium px-2 rounded-full focus:outline-none"
-                      value={selectedToken.id}
-                      onChange={handleTokenChange}
-                    >
-                      {paymentTokens.map((token) => (
-                        <option key={token.id} value={token.id}>
-                          {token.symbol}
-                        </option>
-                      ))}
-                    </select>
-                    <img
-                      src={selectedToken.logoURI}
-                      alt={selectedToken.symbol}
-                      className="h-[32px] w-[32px] pointer-events-none"
-                    />{" "}
+                  <div className="min-w-[140px] md:min-w-[180px] flex gap-4 border border-solid bg-[#fff] px-[10px] py-0 rounded-[30px] items-center">
+                    <div ref={dropdownRef} className="relative w-full">
+                      <button
+                        type="button"
+                        className="appearance-none bg-transparent text-gray-700 font-medium px-2 py-2 w-full focus:outline-none flex items-center justify-between"
+                        onClick={toggleDropdown}
+                      >
+                        <span>{selectedToken.symbol}</span>
+
+                        <img
+                          src={selectedToken.logoURI}
+                          alt={selectedToken.symbol}
+                          className="h-[32px] w-[32px] pointer-events-none"
+                        />
+                      </button>
+
+                      {isOpen && (
+                        <ul className="absolute z-10 mt-2 bg-white-0 border border-gray-300 rounded-md shadow-lg w-full  max-h-60 overflow-auto">
+                          {paymentTokens.map((token) => (
+                            <li
+                              key={token.id}
+                              className="w-full cursor-pointer hover:bg-gray-100 px-4 py-2 flex items-center justify-between"
+                              onClick={() => handleSelect(token)}
+                            >
+                              <span>{token.symbol}</span>
+                              <img
+                                src={token.logoURI}
+                                alt={token.symbol}
+                                className="h-[32px] w-[32px] pointer-events-none"
+                              />
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
                 </label>
                 <h4> Balance:{tokenBalance}</h4>

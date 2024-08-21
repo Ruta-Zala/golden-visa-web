@@ -61,7 +61,7 @@ const IcognativeAboutSection2 = () => {
             key={index}
             className="accordion-item mb-4 flex flex-col flex-grow">
             <div
-              className={`accordion-header flex items-center justify-between p-4 rounded-lg shadow-md cursor-pointer ${
+              className={`accordion-header rounded-t-lg flex items-center justify-between p-4 shadow-md cursor-pointer ${
                 activeIndex === index ? 'bg-gray-50' : 'bg-white'
               }`}
               onClick={() => toggleAccordion(index)}>
@@ -84,7 +84,7 @@ const IcognativeAboutSection2 = () => {
               </div>
             </div>
             <div
-              className={`accordion-content mt-2 p-4 rounded-lg ${
+              className={`accordion-content p-4 rounded-lg bg-gray-50 rounded-b-lg ${
                 activeIndex === index ? 'block' : 'hidden'
               }`}>
               <p className="text-gray-700 text-sm">{item.description}</p>
