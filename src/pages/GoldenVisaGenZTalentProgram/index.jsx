@@ -153,7 +153,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
         {/* token purchase section */}
         {/* <TokenPurchaseSection /> */}
         <div
-          id="refferralProgram"
+          id="referral"
           className="container-xs mt-[80px] md:mt-[100px] xl:mt-[180px] max-[1440px]:px-5 max-[1050px]:px-5"
         >
           <div className="flex gap-4 flex-col md:flex-row">

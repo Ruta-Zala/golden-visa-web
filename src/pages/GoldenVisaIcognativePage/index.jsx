@@ -7,7 +7,7 @@ import IcognativeAboutSection2 from "./IcognativeAboutSection2";
 import IcognativeCardsSection from "./IcognativeCardsSection";
 import IcognativeFeatureSection from "./IcognativeFeatureSection";
 import IcognativeUsecaseSection from "./IcognativeUsecaseSection";
-import IcognativeSupportSection from "./IcognativeSupportSection";
+// import IcognativeSupportSection from "./IcognativeSupportSection";
 import Footer from "../../components/Footer/FooterEl";
 
 const GoldenVisaIcognativePage = () => {
@@ -27,7 +27,7 @@ const GoldenVisaIcognativePage = () => {
       <IcognativeAboutSection2 />
       <IcognativeFeatureSection />
       <IcognativeUsecaseSection />
-      <IcognativeSupportSection />
+      {/* <IcognativeSupportSection /> */}
       <Footer />
     </>
   );

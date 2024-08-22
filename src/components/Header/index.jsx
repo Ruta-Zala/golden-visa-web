@@ -74,16 +74,7 @@ export default function Header({ ...props }) {
         <li onClick={(event) => handleScrollToSection(event, "howItWroks")}>
           <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              How it works
-            </span>
-          </a>
-        </li>
-        <li
-          onClick={(event) => handleScrollToSection(event, "refferralProgram")}
-        >
-          <a>
-            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              Perks
+            Tokenomics
             </span>
           </a>
         </li>
@@ -91,6 +82,15 @@ export default function Header({ ...props }) {
           <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
               Mint Token
+            </span>
+          </a>
+        </li>
+           <li
+          onClick={(event) => handleScrollToSection(event, "refferralProgram")}
+        >
+          <a>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+            Referral
             </span>
           </a>
         </li>

@@ -19,7 +19,7 @@ const OPNChainDeveloperSection = () => {
             </h1>
             <p className="opacity-50 text-lg mt-4 mb-0">
               Here, you'll encounter the passionate builders and visionaries
-              shaping the future of Web3 at iOPN.
+              shaping the future of Web3 at IOPn.
             </p>
 
             <div className="mt-14 flex gap-3 flex-wrap">

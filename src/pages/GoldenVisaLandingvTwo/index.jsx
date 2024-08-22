@@ -610,8 +610,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       chance to win a UAE Golden Visa.
                     </Text>
                   </div>
-                  <Link to="">
-                    {/* <Link to="/opntoken"> */}
+                  <Link to="/opntoken">
                     <Button
                       variant="fill"
                       shape="round"
