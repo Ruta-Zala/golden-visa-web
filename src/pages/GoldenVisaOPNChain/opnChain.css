@@ -1,0 +1,18 @@
+.opn-chain-explore-card-bg{
+    background: url('../../assets/OPNChain/cards-bg.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.opn-card1{
+    background-blend-mode: lighten;
+    background: linear-gradient(210.76deg, #000000 0%, #0B3966 100%);
+}
+
+.opn-card2{
+    background: linear-gradient(210.76deg, #000000 0%, #0B3966 100%);
+    background-blend-mode: lighten;
+}
+
+.opn-card3{
+    background: #5064FB;
+}
