@@ -500,6 +500,7 @@
 
 @media (max-width: 767px) {
   .genz-talent-bg {
+    background-image: url('../src/assets/profile/genz-bg-sm.png');
     transform: rotate(180deg);
     top: 210px;
   }
