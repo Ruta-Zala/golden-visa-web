@@ -37,9 +37,9 @@ function ContentSection() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   return (
     <>
-      <div className="w-full overflow-x-auto border-b">
+      <div className="w-full overflow-x-auto ">
         {/* Tab Navigation */}
-        <div className="flex space-x-4 sm:mb-6">
+        <div className="flex space-x-4 sm:mb-6 border-b w-full">
           {tabs.map((tab, i) => (
             <a
               className={`py-2 px-4 flex-1 text-center text-[18px] font-medium cursor-pointer text-nowrap ${activeTabIndex === i
