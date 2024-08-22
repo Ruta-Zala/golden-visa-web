@@ -3,7 +3,6 @@ import { Button } from "../../components/ButtonGenz/index";
 import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
 import { Input } from "../../components/InputGenz/index";
-// import Footer from "../../components/FooterGenz/index";
 import Header from "../../components/Header/index";
 import FAQSection from "./FAQSection";
 import GoldenVisaGenZTalentProgramSection from "./GoldenVisaGenZTalentProgramSection";

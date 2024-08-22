@@ -2,9 +2,9 @@ import { Helmet } from "react-helmet";
 import OPNChainDeveloperSection from "./OPNChainDeveloperSection";
 import OPNChainUseCaseSection from "./OPNChainUseCaseSection";
 import OPNChainHeroSection from "./OPNChainHeroSection";
-import OPNChainFooterSection from "./OPNChainFooterSection";
 import OPNChainFeatureSection from "./OPNChainFeatureSection";
 import OPNChainExploreSection from "./OPNChainExploreSection";
+import Footer from "../../components/Footer/FooterEl";
 
 export default function GoldenVisaOPNChainPage() {
   return (
@@ -28,7 +28,7 @@ export default function GoldenVisaOPNChainPage() {
       <OPNChainExploreSection />
       <OPNChainUseCaseSection />
       <OPNChainDeveloperSection />
-      <OPNChainFooterSection />
+      <Footer />
     </>
   );
 }
