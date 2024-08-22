@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Sidebar from './Sidebar';
 import Tabs from './Tabs';
 import Headerprofile from './Headerprofile';
-import Footer from '../../components/FooterMint';
+import Footer from '../../components/Footer/FooterEl';
 import ProfileSummary from './ProfileSummary';
 
 function UserProfile() {
@@ -42,9 +42,10 @@ function UserProfile() {
         <div className="flex-row w-full">
           {isMobileOrTablet && <ProfileSummary />}
           <Tabs />
+          <Footer />
         </div>
       </div>
-      <Footer />
+     
     </>
   );
 }
