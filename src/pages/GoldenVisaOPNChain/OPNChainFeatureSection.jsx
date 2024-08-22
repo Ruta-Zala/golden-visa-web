@@ -87,11 +87,11 @@ const OPNChainFeatureSection = () => {
           className="mySwiper">
           {cardsData.map((card, index) => (
             <SwiperSlide key={index} className="flex items-stretch">
-              <div className="flex flex-col items-stretch p-3 gap-2.5 rounded-2xl features-card relative z-0 overflow-hidden flex-1 relative">
+              <div className="flex flex-col items-stretch p-3 gap-2.5 rounded-2xl features-card relative z-0 overflow-hidden flex-1">
                 <img
                   src={card.image}
                   alt=""
-                  className="absolute top-0 bottom-0 right-0 left-0 h-full w-full object-cover absolute"
+                  className="w-64 h-80 object-contain absolute -top-20 -right-16"
                 />
                 <div className="features-card-icon-container">
                   <div className="features-card-icon">→</div>
