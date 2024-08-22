@@ -17,7 +17,7 @@ export default function Headerprofile({ ...props }) {
     <>
       <header
         {...props}
-        className={`${props.className} flex justify-between items-center gap-5 p-2 mt-4 mx-8 bg-light_base rounded-[34px] w-[calc[100vw-125px)] bg-[
+        className={`${props.className} flex justify-between items-center gap-5 p-2 mt-4 mx-4 sm:mx-8 bg-light_base rounded-[34px] w-[calc[100vw-125px)] bg-[
 #F1F5F9]`}
       >
         <a href="/">
