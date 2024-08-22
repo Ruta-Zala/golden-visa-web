@@ -2,6 +2,7 @@ import React from 'react';
 import GenZEntryLogo from '../../../assets/profile/genz-entry-logo.png';
 import GenZCalLogo from '../../../assets/profile/genz-cal-logo.png';
 import { Text } from '../../../components/Text';
+import { handleScrollToSection } from '../../../utils/helper';
 
 function GenZTalentSection() {
   const cardList = [
@@ -11,51 +12,119 @@ function GenZTalentSection() {
       img: GenZEntryLogo,
     },
     {
-      rewardPercentage: 'Nex draw',
+      rewardPercentage: 'Next draw',
       rewardDescription: '14 August, 2024',
       img: GenZCalLogo,
     },
   ];
+
   return (
-    <div
-      className="relative w-full bg-gray-100 rounded-[20px] bg-cover bg-no-repeat"
-      id="genz-talent-program">
-      <div className="relative w-full p-[24px] z-10 xl:p-[24px] lg:p-[20px] md:p-[18px] sm:p-[16px] my-12">
-        <h1 className="text-2xl md:text-3xl font-medium text-[#08122A] mb-4 ">
-          GenZ Talent Program
-        </h1>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {cardList.map((d, index) => (
-            <div
-              index={`reward_info_${index}`}
-              className={`flex max-[550px]:flex-row items-center gap-7 p-7 bg-white-0 flex-1 rounded-[16px] max-[550px]:items-center`}>
-              <div>
-                <img
-                  class="h-[48px] w-[48px]"
-                  src={d.img}
-                  alt="Arrow Left"
-                  loading="lazy"
-                />
+    <>
+      <div
+        className="relative w-full bg-gray-100 rounded-[20px] bg-cover bg-no-repeat"
+        id="genz-talent-program">
+        <div className="relative w-full p-[24px] z-10 xl:p-[24px] lg:p-[20px] md:p-[18px] sm:p-[16px] my-12">
+          <h1 className="text-2xl md:text-3xl font-medium text-[#08122A] mb-4 ">
+            GenZ Talent Program
+          </h1>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {cardList.map((d, index) => (
+              <div
+                key={`reward_info_${index}`}
+                className={`flex max-[550px]:flex-row items-center gap-7 p-7 bg-white-0 flex-1 rounded-[16px] max-[550px]:items-center`}>
+                <div>
+                  <img
+                    className="h-[48px] w-[48px]"
+                    src={d.img}
+                    alt="Reward Logo"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <Text
+                    size="visa_desktop_headers_h3"
+                    as="p"
+                    className="w-full leading-[140%] !text-slate-400 sm:text-[14px] text-[12px] uppercase">
+                    {d.rewardPercentage}
+                  </Text>
+                  <Text
+                    size="visa_desktop_body_text_18"
+                    as="p"
+                    className="w-full font-normal xl:text-[26px] lg:text-[20px] sm:text-[28px] text-[26px]">
+                    {d.rewardDescription}
+                  </Text>
+                </div>
               </div>
-              <div className="flex flex-col gap-1">
-                <Text
-                  size="visa_desktop_headers_h3"
-                  as="p"
-                  className="w-full leading-[140%] !text-slate-400 sm:text-[14px] text-[12px] uppercase">
-                  {d.rewardPercentage}
-                </Text>
-                <Text
-                  size="visa_desktop_body_text_18"
-                  as="p"
-                  className="w-full font-normal xl:text-[26px] lg:text-[20px] sm:text-[28px] text-[26px]">
-                  {d.rewardDescription}
-                </Text>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col w-full md:w-1/2 gap-4">
+          <div className="profile-card1 im-minicards-2 h-1/2">
+            <div className="minibox-text justify-end md:justify-center h-full">
+              <div className="headline">
+                <h1 className="openchanh1 w-full text-4xl font-medium">
+                  GenZ Talent Program
+                </h1>
+                <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] ">
+                  Welcome to the UAE GoldenVisa Portal
+                </p>
+              </div>
+              <button
+                className="learn-more-button link-pb w-full lg:w-auto justify-between"
+                onClick={(event) => handleScrollToSection(event, 'mintToken')}>
+                <li className="font-medium flex-1 text-center">
+                  Mint OPN Tokens Now
+                </li>
+                <div className="link-pb-arrow rotate-[-45deg]">→</div>
+              </button>
+            </div>
+          </div>
+          <div className="profile-card2 im-minicards-2 h-1/2">
+            <div className="minibox-text justify-end md:justify-center h-full">
+              <div className="headline">
+                <h1 className="openchanh1 w-full text-4xl font-medium">
+                  Web3 Entrepreneur Program
+                </h1>
+                <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] ">
+                  Unlock Your Future with OPN Tokens!
+                </p>
+              </div>
+              <button
+                className="learn-more-button link-pb w-full lg:w-auto justify-between"
+                onClick={(event) => handleScrollToSection(event, 'mintToken')}>
+                <li className="font-medium flex-1 text-center">
+                  Mint OPN Tokens Now
+                </li>
+                <div className="link-pb-arrow rotate-[-45deg]">→</div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="profile-card3 im-minicards-2 w-full md:w-1/2">
+          <div className="minibox-text justify-end md:justify-center h-full">
+            <div className="headline">
+              <h1 className="openchanh1 w-full text-4xl font-medium">
+                Unlock Your Future <br /> with OPN Tokens!
+              </h1>
+              <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] md:min-h-[200px]">
+                Join the IOPn ecosystem and power the GenZ Talent Program.
+                Purchase OPN tokens for your chance at a UAE Golden Visa!
+              </p>
+            </div>
+            <button
+              className="learn-more-button link-pb w-full lg:w-auto justify-between"
+              onClick={(event) => handleScrollToSection(event, 'mintToken')}>
+              <li className="font-medium flex-1 text-center">
+                Mint OPN Tokens Now
+              </li>
+              <div className="link-pb-arrow rotate-[-45deg]">→</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
