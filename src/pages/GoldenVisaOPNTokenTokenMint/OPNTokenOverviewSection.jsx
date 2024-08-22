@@ -135,7 +135,7 @@ export default function OPNTokenOverviewSection() {
                 <div className="flex flex-col gap-4">
                   <ChainProfile />
                   <ChainProfile
-                    chainImage="images/money.svg"
+                    chainImage="images/money_icon.png"
                     chainLabel="Total Supply"
                     chainName="50 Billion"
                   />

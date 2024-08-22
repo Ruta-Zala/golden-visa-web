@@ -338,7 +338,7 @@ export default function TokenMintSection({ referralAddress }) {
                 >
                   You will get
                 </Heading>
-                <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[70px] pl-[26px] pr-6 text-[28px]">
+                <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 text-dark-0 h-[70px] pl-[26px] pr-6 text-[28px]">
                   <input
                     className="placeholder:text-slate-900"
                     type="text"
