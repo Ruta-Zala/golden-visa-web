@@ -1,5 +1,5 @@
 import partner7 from "../../assets/parternes/apex.png";
-import partner6 from "../../assets/parternes/chainLink.png";
+import partner6 from "../../assets/parternes/chainLink_blue.png";
 import partner5 from "../../assets/parternes/dubaiWorld.png";
 import partner4 from "../../assets/parternes/dmcc.png";
 import partner3 from "../../assets/parternes/development.png";
