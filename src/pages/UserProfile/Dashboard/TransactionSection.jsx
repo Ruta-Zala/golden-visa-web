@@ -95,7 +95,7 @@ const TransactionSection = () => {
           </div>
 
           {/* Transaction Table */}
-          <div className="overflow-x-auto p-6">
+          <div className="overflow-x-auto p-3">
             <table className="w-full bg-white rounded-lg md:rounded-xl text-sm md:text-base">
               <thead className="bg-light_base text-left rounded-xl text-slate-400">
                 <tr>

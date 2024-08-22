@@ -37,15 +37,16 @@ function ContentSection() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   return (
     <>
-      <div className="w-full overflow-x-auto ">
+      <div className="w-full">
         {/* Tab Navigation */}
-        <div className="flex space-x-4 sm:mb-6 border-b w-full">
+        <div className="flex sm:mb-6 border-b w-full  overflow-x-auto">
           {tabs.map((tab, i) => (
             <a
-              className={`py-2 px-4 flex-1 text-center text-[18px] font-medium cursor-pointer text-nowrap ${activeTabIndex === i
-                ? 'border-b-2 border-blue-500 text-blue-500'
-                : 'text-dark-0'
-                }`}
+            className={`py-2 px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
+              activeTabIndex === i
+                ? "border-b-2 border-blue-500 text-gray-900"
+                : "text-gray-500"
+            }`}
               onClick={(event) => {
                 setActiveTabIndex(i);
                 handleScrollToSection(event, tab.href);

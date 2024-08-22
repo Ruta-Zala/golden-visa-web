@@ -37,7 +37,7 @@ function UserProfile() {
         <meta name="keywords" content="IOPn, RAKDAO, GenZ Talent Program" />
       </Helmet>
       <Headerprofile />
-      <div className="flex min-h-screen md:space-x-4 xl:space-x-8 min-[765px]:p-10 md:m-8">
+      <div className="flex min-h-screen md:space-x-4 xl:space-x-8 min-[765px]:p-10 md:m-4">
         {!isMobileOrTablet && <Sidebar />}
         <div className="flex-row w-full">
           {isMobileOrTablet && <ProfileSummary />}

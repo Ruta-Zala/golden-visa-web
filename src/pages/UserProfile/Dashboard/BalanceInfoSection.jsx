@@ -59,7 +59,7 @@ function BalanceInfoSection() {
           <img
             src={Icon2}
             alt="Icon1"
-            className="absolute lg:top-[-50px] top-[-20px] lg:right-[-20px] sm:right-[-20px] right-[3px] lg:w-[180px] lg:h-[180px] md:h-[150px] sm:h-[120px] h-[90px] md:w-[150px] sm:w-[120px] w-[80px]"
+            className="absolute lg:top-[-50px] top-[-20px] -sm:right-[6px] -md:right-[6px] -lg:right-[10px] xl:right-[15px] right-[3px] lg:w-[180px] lg:h-[180px] md:h-[150px] sm:h-[120px] h-[90px] md:w-[150px] sm:w-[120px] w-[80px]"
           />
           <div className="flex flex-col items-start gap-3.5 relative z-50">
             <Text

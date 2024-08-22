@@ -34,7 +34,7 @@ const referralRewardsList = [
     rewardPercentage: "10%",
     rewardDescription: "GenZ talent program reward tier",
     img: Referral2,
-    imgClassName: "w-[80px] h-[80px]",
+    imgClassName: "w-[80px] h-[80px] scale-[1.3]",
   },
   {
     rewardPercentage: "124",
@@ -130,11 +130,13 @@ const walletOptions = [
   {
     label: "Coinbase wallet",
     icon: CoinbaseWallet,
+    iconClasses: 'scale-[0.8]',
     color: "bg-[#0051FF]",
   },
   {
     label: "Formatic",
     icon: Formatic,
+    iconClasses: 'scale-[0.8]',
     color: "bg-[#6852FF]",
   },
 ];
@@ -250,7 +252,7 @@ function Referrals() {
           {tabs.map((tab, i) => (
             <a
               key={`subtab_${i}`}
-              className={`py-2 px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer text-nowrap ${
+              className={`py-2 px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
                 activeTabIndex === i
                   ? "border-b-2 border-blue-500 text-gray-900"
                   : "text-gray-500"
@@ -340,7 +342,7 @@ function Referrals() {
                     <img
                       src={wallet.icon}
                       alt={wallet.label}
-                      className="w-[30px] h-[30px] mr-2"
+                      className={`w-[30px] h-[30px] mr-2 ${wallet.iconClasses || ''}`}
                     />
                     <Text
                       size="visa_body_text_18"
