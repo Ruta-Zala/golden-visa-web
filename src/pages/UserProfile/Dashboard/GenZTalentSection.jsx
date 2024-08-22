@@ -69,16 +69,17 @@ function GenZTalentSection() {
               </div>
             ))}
           </div>
-          <div className="h-full rounded-[24px] bg-[url(./assets/profile/genz-background.png)] bg-cover bg-no-repeat px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4">
+          <div className="relative h-full rounded-[24px] px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4 overflow-hidden bg-white-0">
+          <div className="genz-talent-bg"></div>
             <div className="flex gap-4 max-[1050px]:flex-col h-full items-center">
               <Text
                 size="visa_desktop_headers_h3"
                 as="p"
-                className="text-4xl font-medium w-full leading-[105%] max-[1440px]:w-[56%] max-[1440px]:text-[32px] max-[1050px]:w-full max-[550px]:text-[24px]"
+                className="text-4xl font-medium w-full leading-[105%] max-[1440px]:w-[56%] max-[1440px]:text-[32px] max-[1050px]:w-full max-[550px]:text-[24px] relative"
               >
                 Time left until <br /> next draw
               </Text>
-              <div className="flex w-full gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row">
+              <div className="flex w-full gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row relative">
                 {timeCounterList.map((d, index) => (
                   <DaysCounter {...d} key={"daysList" + index} />
                 ))}

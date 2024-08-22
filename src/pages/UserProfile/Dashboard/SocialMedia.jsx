@@ -87,7 +87,7 @@ const SocialMedia = () => {
         </div>
       </div>
 
-      <div className="bg-light_base rounded-2xl min-[765px]:p-6 py-10 px-8" id="Social Media Posting">
+      <div className="bg-light_base rounded-2xl min-[765px]:p-6 p-4 sm:py-10 sm:px-8" id="Social Media Posting">
         <div className="mb-6">
           <h1 className="text-3xl font-medium text-dark-0">Social Media Posting</h1>
           <p className="opacity-50 text-lg mt-2">
