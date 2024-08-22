@@ -69,7 +69,7 @@ function GenZTalentSection() {
               </div>
             ))}
           </div>
-          <div className="h-full rounded-[24px] bg-[url(./assets/profile/referrals/referral-bg.jpeg)] bg-cover bg-no-repeat px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4">
+          <div className="h-full rounded-[24px] bg-[url(./assets/profile/genz-background.png)] bg-cover bg-no-repeat px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4">
             <div className="flex gap-4 max-[1050px]:flex-col h-full items-center">
               <Text
                 size="visa_desktop_headers_h3"
