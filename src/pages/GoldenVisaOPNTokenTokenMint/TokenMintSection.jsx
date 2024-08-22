@@ -8,7 +8,7 @@ import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
 import { getBalance } from "../../utils/helper";
-import { useOpnPrice } from '../../context/opnPriceContext';
+import { useOpnPrice } from "../../context/opnPriceContext";
 
 import {
   getLocalStorage,
@@ -32,7 +32,7 @@ export default function TokenMintSection({ referralAddress }) {
   const dropdownRef = useRef(null);
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-  const {price} = useOpnPrice();
+  const { price } = useOpnPrice();
   useEffect(() => {
     if (referralAddress) {
       setLocalStorage("refAddress", referralAddress);
@@ -365,7 +365,11 @@ export default function TokenMintSection({ referralAddress }) {
                 <button
                   disabled={isButtonDisabled}
                   onClick={handleMint}
-                  class="gap-[34px] font-medium white capitalize w-[90%] max-[1440px]:w-full max-[1050px]:w-full bg-[#2573C0] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium rounded-[26px] px-3 py-3 text-xl relative border border-slate-900"
+                  class={`gap-[34px] font-medium white capitalize w-[90%] max-[1440px]:w-full max-[1050px]:w-full bg-[#2573C0] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium rounded-[26px] px-3 py-3 text-xl relative border border-slate-900 ${
+                    isButtonDisabled
+                      ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                      : "bg-blue-600 text-white hover:bg-blue-700"
+                  }`}
                   style={{ color: "white" }}
                 >
                   {loading ? <Loader /> : "Mint"}
