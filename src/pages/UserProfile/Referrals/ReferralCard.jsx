@@ -25,10 +25,10 @@ function ReferralCard({
         </div>
 
         {/* Referral Tiers */}
-        <div className={`grid grid-cols-1 ${ referralList?.length === 1 ? 'xl:grid-cols-1' :'xl:grid-cols-3'} gap-4 mb-9`}>
+        <div className={`grid grid-cols-1 ${ referralList?.length === 1 ? 'xl:grid-cols-1' :'md:grid-cols-1 xl:grid-cols-3'} gap-4 mb-9`}>
           <Suspense fallback={<div>Loading feed...</div>}>
             {referralList.map((d, index) => (
-              <RewardInfo {...d} key={"referralList" + index} className="!justify-start" />
+              <RewardInfo {...d} key={"referralList" + index} className="!justify-start !items-start" />
             ))}
           </Suspense>
         </div>

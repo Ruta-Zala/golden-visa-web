@@ -19,7 +19,7 @@ function Tabs() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-16">
       {/* Tab Navigation */}
       <div className="relative">
         <div className="flex flex-nowrap border-b overflow-x-auto whitespace-nowrap">

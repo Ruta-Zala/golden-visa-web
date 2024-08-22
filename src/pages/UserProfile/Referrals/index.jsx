@@ -209,7 +209,7 @@ function Referrals() {
     <>
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">
         <div className="relative w-full p-[24px] z-10">
-          <div className="grid grid-cols-1 gap-4 xl:grid-cols-3 md:grid-cols-1">
+          <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
             <Suspense fallback={<div>Loading feed...</div>}>
               {referralRewardsList.map((d, index) => (
                 <div
@@ -250,7 +250,7 @@ function Referrals() {
           {tabs.map((tab, i) => (
             <a
               key={`subtab_${i}`}
-              className={`py-2 min-w-[250px] px-4 flex-1 text-center text-[18px] font-medium cursor-pointer ${
+              className={`py-2 min-w-[122px] px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
                 activeTabIndex === i
                   ? "border-b-2 border-blue-500 text-gray-900"
                   : "text-gray-500"
@@ -301,7 +301,7 @@ function Referrals() {
             currentRewardCount={`Referral count: ${72}`}
             className="referralBg1"
             bgImage={Referral2}
-            imgClassName="-bottom-[280px]"
+            imgClassName="-bottom-[280px] h-[750px] -right-[26px]"
             id={1}
           />
           <ReferralCard
@@ -318,7 +318,7 @@ function Referrals() {
             currentRewardCount={`${750} OPN reward earned`}
             className="referralBg3"
             bgImage={Referral3}
-            imgClassName="-bottom-[280px]"
+            imgClassName="-bottom-[280px]  h-[700px] -right-[26px]"
             id={2}
           />
           <div className="w-full">
@@ -329,7 +329,7 @@ function Referrals() {
               Seamlessly integrate IOPn with various Web3 wallets to generate
               and manage referral links.
             </p>
-            <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
               {walletOptions?.map((wallet) => {
                 return (
                   <button
@@ -435,7 +435,7 @@ function Referrals() {
                   </>
                 ) : (
                   <div className="flex justify-center  w-full md:w-[40%] lg:w-[25%] bg-gradient3 items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1 md:p-3 bg-white-0">
-                    <h5 className="text-white-0 font-outfit font-bold capitalize text-xl">
+                    <h5 className="text-white-0 font-outfit font-bold capitalize text-xl flex-1 text-center">
                       <ConnectWallet />
                     </h5>
                     <button
@@ -474,7 +474,7 @@ function Referrals() {
               Share your link on your connected social media with a single
               click.
             </p>
-            <div className="grid grid-cols-1 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4">
               {socialMediaOptions?.map((media) => {
                 return (
                   <button

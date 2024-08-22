@@ -6,9 +6,9 @@ import linkedin from "../../assets/linkedin.png";
 import medium from "../../assets/icon-medium.svg";
 import logo from "../../assets/header-logo.png";
 import { handleScrollToTop } from "../../utils/helper";
-const Footer = () => {
+const Footer = ({className = ""}) => {
   return (
-    <div className="flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4">
+    <div className={`flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4 ${className}`}>
       <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full ">
         <div className="w-full md:w-2/4">
           <img

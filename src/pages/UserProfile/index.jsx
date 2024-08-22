@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import Sidebar from './Sidebar';
 import Tabs from './Tabs';
 import Headerprofile from './Headerprofile';
-import Footer from '../../components/Footer/FooterEl';
 import ProfileSummary from './ProfileSummary';
+import Footer from '../../components/Footer/FooterEl';
 
 function UserProfile() {
   const [isMobileOrTablet, setIsMobileOrTablet] = React.useState(false);
@@ -37,15 +37,14 @@ function UserProfile() {
         <meta name="keywords" content="IOPn, RAKDAO, GenZ Talent Program" />
       </Helmet>
       <Headerprofile />
-      <div className="flex min-h-screen space-x-8 min-[765px]:p-10 p-5">
+      <div className="flex min-h-screen md:space-x-4 xl:space-x-8 min-[765px]:p-10 p-5 mx-8">
         {!isMobileOrTablet && <Sidebar />}
         <div className="flex-row w-full">
           {isMobileOrTablet && <ProfileSummary />}
           <Tabs />
-          <Footer />
         </div>
       </div>
-     
+      <Footer className='!mt-0 !max-w-full'/>
     </>
   );
 }

@@ -94,11 +94,11 @@ const ReferralHistory = () => {
       </p>
       <div className="bg-slate-100 rounded-xl md:rounded-2xl p-4 md:p-6">
         {/* Tabs */}
-        <div className="flex space-x-4 border-b mt-[30px] overflow-x-auto">
+        <div className="flex space-x-4 border-b overflow-x-auto">
           {tabs.map((tab, i) => (
             <a
               key={`subtab_${i}`}
-              className={`py-2 px-4 text-center text-[18px] font-medium cursor-pointer ${
+              className={`py-2 px-4 text-center  md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
                 activeTabIndex === i
                   ? "border-b-2 border-blue-500 text-gray-900"
                   : "text-gray-500"
@@ -111,7 +111,7 @@ const ReferralHistory = () => {
             </a>
           ))}
         </div>
-        <div className="bg-white-0 rounded-xl md:rounded-2xl m-4 md:m-6">
+        <div className="bg-white-0 rounded-xl md:rounded-2xl mt-4 md:mt-6">
           {/* Filters */}
           <div className="flex flex-col md:flex-row justify-between p-5 pt-6 md:space-y-0 referral-date-picker">
             <DatePicker
@@ -125,22 +125,22 @@ const ReferralHistory = () => {
           </div>
 
           {/* Transaction Table */}
-          <div className="overflow-x-auto p-6">
+          <div className="p-6">
             <table className="w-full bg-white rounded-lg md:rounded-xl shadow-sm text-sm md:text-base">
               <thead className="bg-slate-100 text-left">
                 <tr>
-                  <th className="px-4 md:px-6 py-3 md:py-4 text-slate-400 font-normal text-[18px] rounded-l-[20px]">
+                  <th className="px-4 md:px-6 py-3 md:py-4 text-slate-400 font-normal text-[18px] rounded-l-[20px] min-w-[117px]">
                     Invited
                   </th>
-                  <th className="px-4 md:px-6 py-3 md:py-4 text-slate-400 font-normal text-[18px]">
+                  <th className="px-4 md:px-6 py-3 md:py-4 text-slate-400 font-normal text-[18px] min-w-[117px]">
                     Reward
                   </th>
-                  <th className="px-4 md:px-6 py-3 md:py-4 text-slate-400 font-normal text-[18px] rounded-r-[20px]">
+                  <th className="px-4 md:px-6 py-3 md:py-4 text-slate-400 font-normal text-[18px] rounded-r-[20px] min-w-[360px]">
                     Date
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="overflow-hidden">
                 {tableData?.map((data) => {
                   const {label, className} = rewards[data?.rewardType || "mint_referrals"]
                   return (
@@ -156,7 +156,7 @@ const ReferralHistory = () => {
                       </div>
                     </td>
                     <td className="px-4 md:px-6 py-3 md:py-4 text-[16px]">
-                      {data?.reward}
+                      {data?.reward} OPN
                     </td>
                     <td className="px-4 md:px-6 py-3 md:py-4 flex items-center justify-between text-[16px]">
                       <div className="text-slate-400">{data?.date}</div>
