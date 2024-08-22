@@ -42,7 +42,7 @@ const cardData = [
 
 const OPNChainExploreSection = () => {
   return (
-    <div className="px-4 max-w-screen-2xl mx-auto relative mt-16" id="opnChain">
+    <div className="px-4 max-w-screen-2xl mx-auto relative mt-16">
       <h4 className="text-4xl">OPNChain</h4>
       <p className="mt-4 mb-12 text-xl text-[#7f8c8d] max-w-screen-md">
         Explore an ecosystem where technology serves <br /> humanity & empowers

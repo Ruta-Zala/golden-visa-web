@@ -115,6 +115,13 @@ const IcognativeHeroSection = () => {
                         style={{ backgroundColor: "white" }}
                       >
                         <div className="py-1" role="none">
+                        <a
+                            href="/#/goldenvisa"
+                            className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
+                            role="menuitem"
+                          >
+                            UAE Golden Visa
+                          </a>
                           <a
                             href="/#/Talent"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
@@ -129,21 +136,7 @@ const IcognativeHeroSection = () => {
                           >
                             Web3 Entrepreneur Program
                           </a>
-                          <a
-                            href="/#/goldenvisa"
-                            className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem"
-                          >
-                            UAE Golden Visa
-                          </a>
 
-                          <a
-                            href="#/opntoken"
-                            className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem"
-                          >
-                            OPN Token
-                          </a>
                         </div>
                       </div>
                     </div>

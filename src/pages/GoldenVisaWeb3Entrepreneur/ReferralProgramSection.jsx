@@ -58,7 +58,7 @@ export default function ReferralProgramSection() {
   return (
     <>
       {/* referral program section */}
-      <div id="refferralProgram" className="relative h-[1068px] content-center self-stretch max-[1440px]:h-auto max-[1050px]:h-auto">
+      <div id="referral" className="relative h-[1068px] content-center self-stretch max-[1440px]:h-auto max-[1050px]:h-auto">
         <div className="container-xs flex flex-col lg:gap-4 gap-14 max-[1440px]:px-5 max-[1050px]:px-5">
           <div className="gap-4 grid lg:grid-cols-2">
             <div className="w-full rounded-[20px] bg-light_base overflow-hidden">

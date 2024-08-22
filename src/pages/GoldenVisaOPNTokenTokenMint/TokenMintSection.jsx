@@ -241,7 +241,7 @@ export default function TokenMintSection({ referralAddress }) {
             <div className="flex flex-col items-start gap-[18px]">
               <Button
                 size="xs"
-                className="min-w-[134px] !text-slate-900 rounded-[18px] font-medium uppercase !border !border-slate-900 rounded-full"
+                className="min-w-[134px] !text-slate-900 rounded-[18px] font-medium uppercase !border !border-slate-900"
               >
                 Token Mint
               </Button>
@@ -250,7 +250,7 @@ export default function TokenMintSection({ referralAddress }) {
                 as="p"
                 className="text-3xl md:text-5xl"
               >
-                Mint OPN Tokens{" "}
+                Mint OPN Tokens
               </Text>
             </div>
             <Text

@@ -75,11 +75,16 @@ const OPNChainHeroSection = () => {
             </div>
             <div className="hidden lg:flex items-center justify-between gap-3 w-[49%] lg:w-[48%]">
               <div className="flex flex-row items-center px-3 xl:px-6 justify-around bg-[#f1f5f9] rounded-full py-3 flex-1">
-                <a
+                {/* <a
                   onClick={(event) => handleScrollToSection(event, "opnChain")}
                 >
                   <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                    OPNChain
+                    OPN Token
+                  </span>
+                </a> */}
+                 <a href="#/opntoken">
+                  <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
+                  OPN Token
                   </span>
                 </a>
                 <a href="#/iCognative">
@@ -113,12 +118,19 @@ const OPNChainHeroSection = () => {
                         style={{ backgroundColor: "white" }}
                       >
                         <div className="py-1" role="none">
+                        <a
+                            href="/#/goldenvisa"
+                            className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
+                            role="menuitem"
+                          >
+                            UAE Golden Visa
+                          </a>
                           <a
                             href="/#/Talent"
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            GenZ Talent Program
+                            Web3 Talent Program
                           </a>
                           <a
                             href="/#/Entrepreneur"
@@ -126,21 +138,6 @@ const OPNChainHeroSection = () => {
                             role="menuitem"
                           >
                             Web3 Entrepreneur Program
-                          </a>
-                          <a
-                            href="/#/goldenvisa"
-                            className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem"
-                          >
-                            UAE Golden Visa
-                          </a>
-
-                          <a
-                            href="/#/opntoken"
-                            className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
-                            role="menuitem"
-                          >
-                            OPN Token
                           </a>
                         </div>
                       </div>

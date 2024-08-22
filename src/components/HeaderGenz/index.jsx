@@ -90,6 +90,13 @@ export default function HeaderGenz({
             </span>
           </a>
         </li>
+        <li>
+          <a onClick={(event) => handleScrollToSection(event, "referral")}>
+            <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
+            Referral
+            </span>
+          </a>
+        </li>
         {!hideTabs?.includes("Golden draw") && (
           <li>
             <a onClick={(event) => handleScrollToSection(event, "goldenDraw")}>

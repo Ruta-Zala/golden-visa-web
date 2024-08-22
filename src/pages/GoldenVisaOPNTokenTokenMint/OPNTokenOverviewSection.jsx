@@ -95,7 +95,7 @@ export default function OPNTokenOverviewSection() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full flex-col gap-12 rounded-[20px] border border-solid border-gray-200 bg-white-0 p-10 shadow-lg max-[550px]:p-4" id="howItWroks">
+              <div className="flex w-full flex-col gap-12 rounded-[20px] border border-solid border-gray-200 bg-white-0 p-10 shadow-lg max-[550px]:p-4" >
                 <div className="flex flex-col items-start gap-3.5">
                   <Text
                     size="visa_desktop_headers_h3"
@@ -123,7 +123,7 @@ export default function OPNTokenOverviewSection() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-4 max-[1050px]:flex-col">
+            <div className="flex gap-4 max-[1050px]:flex-col" id="howItWroks">
               <div className="flex w-[32%] flex-col gap-[140px] rounded-[20px] bg-gradient5 p-12 max-[1440px]:gap-[105px] max-[1050px]:w-full max-[1050px]:gap-[105px] max-[1050px]:p-5 max-[550px]:gap-[70px] max-[550px]:p-4">
                 <Text
                   size="visa_desktop_headers_h3"
