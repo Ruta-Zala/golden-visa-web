@@ -27,7 +27,7 @@ function GenZTalentSection() {
   ];
 
   return (
-    <div className="m-4 sm:m-0">
+    <>
       <div
         className="relative w-full bg-light_base rounded-[20px] bg-cover bg-no-repeat"
         id="genz-talent-program"
@@ -61,7 +61,7 @@ function GenZTalentSection() {
                   <Text
                     size="visa_desktop_body_text_18"
                     as="p"
-                    className="w-full font-normal xl:text-[26px] lg:text-[20px] sm:text-[28px] text-[20px]"
+                    className="w-full font-normal xl:text-[26px] lg:text-[20px] sm:text-[28px] text-[18px]"
                   >
                     {d.rewardDescription}
                   </Text>
@@ -156,7 +156,7 @@ function GenZTalentSection() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

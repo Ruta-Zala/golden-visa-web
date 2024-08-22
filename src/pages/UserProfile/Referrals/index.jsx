@@ -206,7 +206,7 @@ function Referrals() {
       });
   };
   return (
-    <div className="mx-4 sm:m-0">
+    <>
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">
         <div className="relative w-full p-[24px] z-10">
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
@@ -500,7 +500,7 @@ function Referrals() {
           <ReferralHistory/>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

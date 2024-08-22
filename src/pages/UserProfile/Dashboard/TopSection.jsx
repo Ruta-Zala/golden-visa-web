@@ -28,7 +28,7 @@ const referralRewardsList = [
 ];
 function TopSection() {
   return (
-    <div className="mx-4 sm:m-0">
+    <>
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">
         <div className="relative w-full p-[24px] z-10 xl:p-[24px] lg:p-[20px] md:p-[18px] sm:p-[16px] my-12">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 md:grid-cols-2">
@@ -68,7 +68,7 @@ function TopSection() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 export default TopSection;

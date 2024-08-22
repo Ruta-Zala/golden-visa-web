@@ -56,7 +56,7 @@ function ContentSection() {
         </div>
       </div>
       <div
-        className="bg-light_base rounded-xl md:rounded-2xl p-4 md:p-6 m-4 sm:m-0 mt-6"
+        className="bg-light_base rounded-xl md:rounded-2xl p-4 md:p-6 mt-6"
         id="Token Balances">
         <div className="mb-4 md:mb-6">
           <h1 className="text-2xl md:text-3xl font-medium text-dark-0 mt-3">

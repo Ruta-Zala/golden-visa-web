@@ -38,7 +38,7 @@ const TransactionSection = () => {
   };
 
   return (
-    <div className="mx-4 sm:mx-0 md:pt-16 md:pb-4" id="History">
+    <div className="pt-16 md:pb-4" id="History">
       {/* Header */}
       <div className="mb-4 md:mb-6">
         <h1 className="text-2xl md:text-3xl font-medium text-[#08122A]">

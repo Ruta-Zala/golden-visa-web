@@ -65,7 +65,7 @@ const SocialMedia = () => {
   };
 
   return (
-    <div className="mx-4 sm:mx-0" id='IOPn Socials'>
+    <div id='IOPn Socials'>
       <div className="mb-10 sm:mb-20">
         <h1 className="text-3xl font-medium text-dark-0">Join IOPn Socials</h1>
         <p className="opacity-50 text-lg mt-2">

@@ -56,7 +56,7 @@ function Tabs() {
       </div>
 
       {/* Tab Content */}
-      <div className="mt-4 sm:mt-[50px]">
+      <div className="mx-4 sm:mx-0 mt-4 sm:mt-[50px]">
         {activeTab === 'dashboard' && <Dashboard />}
         {activeTab === 'referrals' && <Referrals />}
         {isMobileOrTablet && activeTab === 'profileDetails' && (

@@ -5,7 +5,7 @@ import Icon2 from '../../../assets/profile/referrals/referral3.svg';
 
 function BalanceInfoSection() {
   return (
-    <div className="flex flex-col gap-4 m-4 mt-0 sm:m-0 sm:mt-4 " id="Stacked-Balance">
+    <div className="flex flex-col gap-4" id="Stacked-Balance">
       <div className="mb-4 md:mb-6">
         <h1 className="text-2xl md:text-3xl font-medium text-dark-0">
           Staked Balance Information
