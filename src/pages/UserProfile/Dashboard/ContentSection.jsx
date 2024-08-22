@@ -11,7 +11,7 @@ import { handleScrollToSection } from '../../../utils/helper';
 const tabs = [
   { name: 'Token Balances', href: 'Token Balances' },
   { name: 'GenZ Talent Program', href: 'genz-talent-program' },
-  { name: 'Stacked Balance' },
+  { name: 'Stacked Balance', href: 'Stacked-Balance' },
   { name: 'IOPn Socials', href: 'IOPn Socials' },
   { name: 'Social Media Posting', href: 'Social Media Posting' },
   { name: 'History', href: 'History' },
@@ -23,7 +23,7 @@ function ContentSection() {
     <>
       <div className="w-full overflow-x-auto">
         {/* Tab Navigation */}
-        <div className="flex space-x-4 border-b mt-[50px]">
+        <div className="flex space-x-4 border-b mt-[50px] mb-6">
           {tabs.map((tab, i) => (
             <a
               className={`py-2 px-4 flex-1 text-center text-[18px] font-medium cursor-pointer ${

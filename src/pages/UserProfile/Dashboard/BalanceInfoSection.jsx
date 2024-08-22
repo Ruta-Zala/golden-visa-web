@@ -5,7 +5,7 @@ import Icon2 from '../../../assets/profile/referrals/referral3.svg';
 
 function BalanceInfoSection() {
   return (
-    <div className="flex flex-col gap-4 mt-4">
+    <div className="flex flex-col gap-4 mt-4" id="Stacked-Balance">
       <div className="mb-4 md:mb-6">
         <h1 className="text-2xl md:text-3xl font-medium text-[#08122A]">
         Staked Balance Information
@@ -14,7 +14,7 @@ function BalanceInfoSection() {
         The live price of Tether OPN Token is $ 1.000715 per (OPN / USD) with a current market cap of $ 115.72B USD. 24-hour trading volume is $ 45.77B USD. USDT to OPN price is updated in real-time.
         </p>
       </div>
-      <div className="flex gap-4 max-[1050px]:flex-col">
+      <div className="flex gap-4 max-[1050px]:flex-col mb-20">
         <div className="relative flex w-full flex-col gap-[60px] rounded-[20px] bg-light_base max-[550px]:gap-[30px] min-[765px]:p-10 p-5">
           <img
             src={Icon1}

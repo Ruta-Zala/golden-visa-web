@@ -59,7 +59,7 @@ const SocialMedia = () => {
 
   return (
     <div className="w-full" id='IOPn Socials'>
-      <div className="mb-10">
+      <div className="mb-16">
         <h1 className="text-3xl font-medium text-[#08122A]">Join IOPn Socials</h1>
         <p className="opacity-50 text-lg mt-2">
           Share regular updates on IOPn's development, partnerships, and milestones.
