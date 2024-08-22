@@ -37,6 +37,13 @@ const SocialMedia = () => {
     { name: 'Twitter', src: TwitterIcon },
   ];
 
+  const editorIcons = [
+    { data: EmojiIcon, action: () => handleEmojiClick() },
+    { data: CodeSnippet, action: null },
+    { data: Attachment, action: null },
+    { data: Uploads, action: null }
+  ]
+
   const handleIconClick = (iconName) => {
     setActiveIcon(iconName);
   };
@@ -58,9 +65,9 @@ const SocialMedia = () => {
   };
 
   return (
-    <div className="w-full" id='IOPn Socials'>
-      <div className="mb-16">
-        <h1 className="text-3xl font-medium text-[#08122A]">Join IOPn Socials</h1>
+    <div className="mx-4 sm:mx-0" id='IOPn Socials'>
+      <div className="mb-10 sm:mb-20">
+        <h1 className="text-3xl font-medium text-dark-0">Join IOPn Socials</h1>
         <p className="opacity-50 text-lg mt-2">
           Share regular updates on IOPn's development, partnerships, and milestones.
         </p>
@@ -68,7 +75,7 @@ const SocialMedia = () => {
           {socialMediaIcons.map((icon) => (
             <div
               key={icon.name}
-              className="flex items-center justify-center rounded-2xl bg-gray-100 w-[80px] h-[80px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px]"
+              className="flex items-center justify-center rounded-2xl bg-light_base w-[55px] h-[55px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px]"
             >
               <img
                 src={icon.src}
@@ -80,22 +87,22 @@ const SocialMedia = () => {
         </div>
       </div>
 
-      <div className="bg-gray-100 rounded-2xl min-[765px]:p-6 p-3" id="Social Media Posting">
+      <div className="bg-light_base rounded-2xl min-[765px]:p-6 py-10 px-8" id="Social Media Posting">
         <div className="mb-6">
-          <h1 className="text-3xl font-medium text-[#08122A]">Social Media Posting</h1>
+          <h1 className="text-3xl font-medium text-dark-0">Social Media Posting</h1>
           <p className="opacity-50 text-lg mt-2">
             Post news straight to your connected socials from here.
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="w-full md:w-[70%] bg-white-0 rounded-2xl min-[765px]:p-6 p-3">
+          <div className="w-full md:w-[70%] bg-white-0 rounded-2xl min-[765px]:p-6 p-3 relative">
             <div className="flex items-center gap-2">
               {icons.map((icon) => (
                 <div
                   key={icon.name}
                   onClick={() => handleIconClick(icon.name)}
                   className={`cursor-pointer h-[45px] flex items-center justify-center
-                    ${activeIcon === icon.name ? 'bg-gray-100 rounded-t-lg' : 'bg-white'}
+                    ${activeIcon === icon.name ? 'bg-light_base rounded-t-lg font-semibold text-dark-0' : 'bg-white'}
                     ${icon.name === 'Original draft' ? 'w-[120px]' : 'w-[45px]'}
                   `}
                 >
@@ -114,32 +121,18 @@ const SocialMedia = () => {
             <textarea
               value={inputValue}
               onChange={handleChange}
-              className="bg-gray-100 rounded-lg p-6 w-full resize-none min-[765px]:h-[400px] h-[200px]"
+              className="bg-light_base rounded-tr-lg p-6 w-full resize-none min-[765px]:h-[400px] h-[calc(100%-95px)] focus-visible:outline-none"
               placeholder="Post news straight to your connected socials from here."
             />
-            <div className="flex items-center gap-6 bg-gray-100 rounded-b-lg p-2">
+            <div className="flex items-center gap-6 bg-light_base rounded-b-lg p-2">
               <div className="flex gap-6">
-                <img
-                  src={EmojiIcon}
+                {editorIcons.map((item, index) => (<img
+                  key={index}
+                  src={item.data}
                   alt="Insert Emoji"
                   className="h-[24px] w-[24px] cursor-pointer"
-                  onClick={handleEmojiClick}
-                />
-                <img
-                  src={CodeSnippet}
-                  alt="Code Snippet"
-                  className="h-[24px] w-[24px] cursor-pointer"
-                />
-                <img
-                  src={Attachment}
-                  alt="Attachments"
-                  className="h-[24px] w-[24px] cursor-pointer"
-                />
-                <img
-                  src={Uploads}
-                  alt="Uploads"
-                  className="h-[24px] w-[24px] cursor-pointer"
-                />
+                  onClick={item.action}
+                />))}
               </div>
               <div className="flex-1 text-right">
                 <div className="text-gray-500 text-sm px-3 py-1">
@@ -151,7 +144,7 @@ const SocialMedia = () => {
 
           <div className="w-full md:w-[30%] bg-white-0 rounded-2xl p-6">
             <div className="mb-6">
-              <h1 className="text-3xl font-medium text-[#08122A]">Where to post</h1>
+              <h1 className="text-3xl font-medium text-dark-0">Where to post</h1>
               <p className="opacity-50 text-lg mt-2">
                 Select from your connected accounts.
               </p>
@@ -160,15 +153,14 @@ const SocialMedia = () => {
               {icons.slice(1).map((icon) => (
                 <div
                   key={icon.name}
-                  className={`flex items-center gap-2 p-2 rounded-2xl ${
-                    checkedIcons[icon.name] ? 'bg-gray-100' : 'bg-white'
-                  }`}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-2xl ${checkedIcons[icon.name] ? 'bg-light_base' : 'bg-white'
+                    }`}
                 >
-                  <div className="flex items-center gap-2 flex-1">
+                  <div className="flex items-center gap-4 flex-1">
                     <img
                       src={icon.src}
                       alt={icon.name}
-                      className="h-[24px] w-[24px]"
+                      className="h-[36px] w-[36px]"
                     />
                     <div className="text-md font-medium flex flex-col items-start">
                       <span>Johan Deo</span>
@@ -184,7 +176,7 @@ const SocialMedia = () => {
                     type="checkbox"
                     checked={checkedIcons[icon.name] || false}
                     onChange={() => handleCheckboxChange(icon.name)}
-                    className="h-6 w-6 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="h-6 w-6 rounded-full border-gray-300 text-[#2573C0] focus:ring-[#2573C0]"
                   />
                 </div>
               ))}

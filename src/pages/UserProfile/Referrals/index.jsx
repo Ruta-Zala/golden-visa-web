@@ -206,7 +206,7 @@ function Referrals() {
       });
   };
   return (
-    <>
+    <div className="mx-4 sm:m-0">
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">
         <div className="relative w-full p-[24px] z-10">
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
@@ -250,7 +250,7 @@ function Referrals() {
           {tabs.map((tab, i) => (
             <a
               key={`subtab_${i}`}
-              className={`py-2 min-w-[122px] px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
+              className={`py-2 px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer text-nowrap ${
                 activeTabIndex === i
                   ? "border-b-2 border-blue-500 text-gray-900"
                   : "text-gray-500"
@@ -500,7 +500,7 @@ function Referrals() {
           <ReferralHistory/>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

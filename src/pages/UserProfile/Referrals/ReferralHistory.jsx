@@ -98,7 +98,7 @@ const ReferralHistory = () => {
           {tabs.map((tab, i) => (
             <a
               key={`subtab_${i}`}
-              className={`py-2 px-4 text-center  md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
+              className={`py-2 px-4 text-center  md:text-[13px] xl:text-[18px] font-medium cursor-pointer text-nowrap ${
                 activeTabIndex === i
                   ? "border-b-2 border-blue-500 text-gray-900"
                   : "text-gray-500"
@@ -125,7 +125,7 @@ const ReferralHistory = () => {
           </div>
 
           {/* Transaction Table */}
-          <div className="p-6">
+          <div className="p-6 overflow-x-auto">
             <table className="w-full bg-white rounded-lg md:rounded-xl shadow-sm text-sm md:text-base">
               <thead className="bg-slate-100 text-left">
                 <tr>

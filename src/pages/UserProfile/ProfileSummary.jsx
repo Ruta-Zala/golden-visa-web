@@ -4,7 +4,7 @@ import Avatar from '../../assets/Avatar.png';
 
 export default function ProfileSummary() {
   return (
-    <div className="flex flex-col items-start gap-4 mt-4">
+    <div className="flex flex-col items-start gap-4 my-4 bg-light_base sm:bg-none p-5 sm:p-0">
       <div className="flex">
         <Img
           src={Avatar}

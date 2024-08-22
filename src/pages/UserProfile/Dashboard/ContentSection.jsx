@@ -17,20 +17,35 @@ const tabs = [
   { name: 'History', href: 'History' },
 ];
 
+const currencyData = [
+  { currency: "USD", value: "$ 1.000510" },
+  { currency: "EUR", value: "€ 1.000510" },
+  { currency: "AED", value: "د.إ1.000510" },
+  { currency: "INR", value: "₹ 1.000510" },
+  { currency: "BRL", value: "R$ 1.000510" }
+]
+const transactions = [
+  { toAmount: "1.125 BTC", toIcon: BtcIcon },
+  { toAmount: "1.125 BNB", toIcon: BnbIcon },
+  { toAmount: "1.125 XRP", toIcon: XrpIcon },
+  { toAmount: "1.125 ETH", toIcon: EthIcon },
+  { toAmount: "1.125 SLN", toIcon: SlnIcon }
+];
+
+
 function ContentSection() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   return (
     <>
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto border-b">
         {/* Tab Navigation */}
-        <div className="flex space-x-4 border-b mt-[50px] mb-6">
+        <div className="flex space-x-4 sm:mb-6">
           {tabs.map((tab, i) => (
             <a
-              className={`py-2 px-4 flex-1 text-center text-[18px] font-medium cursor-pointer ${
-                activeTabIndex === i
-                  ? 'border-b-2 border-blue-500 text-gray-900'
-                  : 'text-gray-500'
-              }`}
+              className={`py-2 px-4 flex-1 text-center text-[18px] font-medium cursor-pointer text-nowrap ${activeTabIndex === i
+                ? 'border-b-2 border-blue-500 text-blue-500'
+                : 'text-dark-0'
+                }`}
               onClick={(event) => {
                 setActiveTabIndex(i);
                 handleScrollToSection(event, tab.href);
@@ -41,10 +56,10 @@ function ContentSection() {
         </div>
       </div>
       <div
-        className="bg-gray-100 rounded-xl md:rounded-2xl p-4 md:p-6"
+        className="bg-light_base rounded-xl md:rounded-2xl p-4 md:p-6 m-4 sm:m-0 mt-6"
         id="Token Balances">
         <div className="mb-4 md:mb-6">
-          <h1 className="text-2xl md:text-3xl font-medium text-[#08122A]">
+          <h1 className="text-2xl md:text-3xl font-medium text-dark-0 mt-3">
             OPN Token real time balance updates
           </h1>
           <p className="opacity-50 text-sm md:text-lg mt-2">
@@ -54,207 +69,69 @@ function ContentSection() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 flex-1">
-            <h1 className="text-2xl md:text-3xl font-medium text-[#08122A] w-full mb-4">
+          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 md:pb-2 flex-1">
+            <h1 className="text-2xl font-medium text-dark-0 w-full mb-4">
               In major currencies
             </h1>
             <div>
-              <table className="w-full bg-white rounded-lg md:rounded-xl shadow-sm text-sm md:text-base">
+              <table className="w-full bg-white rounded-lg md:rounded-xl text-sm md:text-base">
                 <tbody>
-                  <tr className="border-t">
-                    <td className="py-3 md:py-4 font-medium">1 OPN to USD</td>
-                    <td className="py-3 md:py-4 flex justify-end font-medium">
-                      $ 1.000510
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-3 md:py-4">1 OPN to EUR</td>
-                    <td className="py-3 md:py-4 flex justify-end">
-                      € 1.000510
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-3 md:py-4">1 OPN to AED</td>
-                    <td className="py-3 md:py-4 flex justify-end">1.000510</td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-3 md:py-4">1 OPN to INR</td>
-                    <td className="py-3 md:py-4 flex justify-end">
-                      ₹ 1.000510
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-3 md:py-4">1 OPN to BRL</td>
-                    <td className="py-3 md:py-4 flex justify-end">
-                      R$ 1.000510
-                    </td>
-                  </tr>
+                  {currencyData.map((item, index) => (
+                    <tr key={index} className={`border-t ${index === 0 ? '' : 'text-grey'}`}>
+                      <td className="px-4 md:px-0 py-3 md:py-4">
+                        {`1 OPN to ${item.currency}`}
+                      </td>
+                      <td className="py-3 md:py-4 flex justify-end">
+                        {item.value}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 flex-1">
-            <h1 className="text-2xl md:text-3xl font-medium text-[#08122A] mb-5">
+          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 md:pb-2 flex-1">
+            <h1 className="text-2xl font-medium text-dark-0 mb-4">
               Conversion rates
             </h1>
             <div>
-              <table className="w-full bg-white rounded-lg md:rounded-xl shadow-sm text-sm md:text-base">
+              <table className="w-full bg-white rounded-lg md:rounded-xl text-sm md:text-base">
                 <tbody>
-                  <tr className="border-b">
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={TransactionIcon}
-                          alt="Transaction Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                        1.000 OPN
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={ArrowIcon}
-                          alt="Arrow Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center font-medium justify-end">
-                        <img
-                          src={BtcIcon}
-                          alt="BTC Icon"
-                          className="w-5 h-5 mr-2"
-                        />
-                        1.125 BTC
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={TransactionIcon}
-                          alt="Transaction Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                        1.000 OPN
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={ArrowIcon}
-                          alt="Arrow Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center font-medium justify-end">
-                        <img
-                          src={BnbIcon}
-                          alt="BNB Icon"
-                          className="w-5 h-5 mr-2"
-                        />
-                        1.125 BNB
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={TransactionIcon}
-                          alt="Transaction Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                        1.000 OPN
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={ArrowIcon}
-                          alt="Arrow Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center font-medium justify-end">
-                        <img
-                          src={XrpIcon}
-                          alt="XRP Icon"
-                          className="w-5 h-5 mr-2"
-                        />
-                        1.125 XRP
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={TransactionIcon}
-                          alt="Transaction Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                        1.000 OPN
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={ArrowIcon}
-                          alt="Arrow Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center font-medium justify-end">
-                        <img
-                          src={EthIcon}
-                          alt="ETH Icon"
-                          className="w-5 h-5 mr-2"
-                        />
-                        1.125 ETH
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={TransactionIcon}
-                          alt="Transaction Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                        1.000 OPN
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center">
-                        <img
-                          src={ArrowIcon}
-                          alt="Arrow Icon"
-                          className="w-4 h-4 mr-2"
-                        />
-                      </div>
-                    </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
-                      <div className="flex items-center font-medium justify-end">
-                        <img
-                          src={SlnIcon}
-                          alt="SLN Icon"
-                          className="w-5 h-5 mr-2"
-                        />
-                        1.125 SLN
-                      </div>
-                    </td>
-                  </tr>
+                  {transactions.map((transaction, index) => (
+                    <tr key={index} className="border-t">
+                      <td className="px-4 md:px-0 py-3 md:py-2">
+                        <div className="flex items-center text-grey text-nowrap">
+                          <span className="bg-stroke mr-2 rounded-full h-6 w-6">
+                            <img
+                              src={TransactionIcon}
+                              alt="Transaction Icon"
+                              className="w-4 h-4 m-1"
+                            />
+                          </span>
+                          1.000 OPN
+                        </div>
+                      </td>
+                      <td className="px-4 md:px-0 py-3 md:py-4">
+                        <div className="flex items-center">
+                          <img
+                            src={ArrowIcon}
+                            alt="Arrow Icon"
+                            className="w-6 h-4 mr-2"
+                          />
+                        </div>
+                      </td>
+                      <td className="px-4 md:px-0 py-3 md:py-4 text-nowrap">
+                        <div className="flex items-center font-medium justify-end">
+                          <img
+                            src={transaction.toIcon}
+                            alt="Destination Icon"
+                            className="w-5 h-5 mr-2"
+                          />
+                          {transaction.toAmount}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

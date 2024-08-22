@@ -22,13 +22,13 @@ const referralRewardsList = [
   },
   {
     rewardPercentage: "3400 DAI",
-    rewardDescription: "MAKER",
+    rewardDescription: "MAKER DAO",
     img: Dashboard4,
   },
 ];
 function TopSection() {
   return (
-    <>
+    <div className="mx-4 sm:m-0">
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">
         <div className="relative w-full p-[24px] z-10 xl:p-[24px] lg:p-[20px] md:p-[18px] sm:p-[16px] my-12">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 md:grid-cols-2">
@@ -36,9 +36,9 @@ function TopSection() {
               {referralRewardsList.map((d, index) => (
                 <div
                   index={`reward_info_${index}`}
-                  className={`flex max-[550px]:flex-row justify-center items-center gap-7 p-3 bg-white-0 flex-1 rounded-[16px] max-[550px]:items-center`}
+                  className={`flex max-[550px]:flex-row items-center gap-5 p-3 bg-white-0 flex-1 rounded-[16px] max-[550px]:items-center`}
                 >
-                  <div>
+                  <div className="ml-3">
                     <img
                       class="h-[36px] w-[36px]"
                       src={d.img}
@@ -50,14 +50,14 @@ function TopSection() {
                     <Text
                       size="visa_desktop_headers_h3"
                       as="p"
-                      className="font-normal xl:text-[26px] lg:text-[20px] sm:text-[28px] text-[26px]"
+                      className="font-medium xl:text-[26px] lg:text-[20px] sm:text-[28px] text-[26px]"
                     >
                       {d.rewardPercentage}
                     </Text>
                     <Text
                       size="visa_desktop_body_text_18"
                       as="p"
-                      className="w-[86%] leading-[140%] !text-slate-400 sm:text-[14px] text-[12px] uppercase"
+                      className="w-[86%] leading-[140%] !text-slate-400 sm:text-[14px] text-[12px] uppercase font-medium"
                     >
                       {d.rewardDescription}
                     </Text>
@@ -68,7 +68,7 @@ function TopSection() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default TopSection;

@@ -17,7 +17,7 @@ const socialMediaLogos = [
 
 export default function ProfileDetails() {
   return (
-    <>
+    <div className='mx-4 sm:mx-0'>
       <div className="flex flex-col gap-y-4 h-full w-full ">
         <div>
           <p className="text-[#94A3B8] text-base font-light">Email</p>
@@ -47,6 +47,6 @@ export default function ProfileDetails() {
           <button className="text-[#E11D48] font-medium">Log Out</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

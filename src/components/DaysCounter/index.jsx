@@ -21,7 +21,7 @@ export default function DaysCounter({
       <Button
         size="3xl"
         variant="fill"
-        className="self-stretch bg-slate-100 rounded-bl-[20px] rounded-br-[20px] border-b border-l border-r border-solid border-gray-300 !text-dark-0 shadow-sm"
+        className="self-stretch bg-white-0 rounded-bl-[20px] rounded-br-[20px] border-b border-l border-r border-solid border-gray-300 !text-dark-0 shadow-sm"
       >
         {fourButton}
       </Button>

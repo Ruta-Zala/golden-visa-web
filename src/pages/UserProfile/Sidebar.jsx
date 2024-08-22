@@ -25,7 +25,7 @@ export default function SideBar() {
             <Img
               src={Avatar}
               alt="Logo Container"
-              className="object-contain h-[80px] w-[80px] sm:h-[80px] sm:w-[80px] md:h-[150px] md:w-[100px] lg:h-[100px] xl:w-[150px] xl:h-[200px] "
+              className="object-contain h-[80px] w-[80px] sm:h-[80px] sm:w-[80px] md:h-[150px] md:w-[100px] lg:h-[100px] xl:w-[200px] xl:h-[200px] "
             />
           </div>
           <div className="flex flex-col sm:font-normal mt-4">
@@ -37,8 +37,8 @@ export default function SideBar() {
         </div>
 
         <div>
-          <hr className="my-3" />
-          <p className="text-[#94A3B8] text-base font-light">Bio</p>
+          <hr className="my-4" />
+          <p className="text-[#94A3B8] font-light text-lg">Bio</p>
           <p className="text-base font-extralight">
             Crypto enthusiast. OPN to the moon! 🚀 Passionate about blockchain &
             its potential. Investing in OPN for a future.
