@@ -27,3 +27,7 @@
     ),
     linear-gradient(0deg, rgba(241, 245, 249, 0) 17.05%, #f1f5f9 83.87%);
 }
+
+.referral-date-picker .react-datepicker__close-icon{
+  right: -7px
+}

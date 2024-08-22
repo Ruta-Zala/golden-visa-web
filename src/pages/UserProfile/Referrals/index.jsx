@@ -217,7 +217,7 @@ function Referrals() {
                   className={`flex max-[550px]:flex-row justify-start items-start gap-7 p-3 bg-white-0 flex-1 rounded-[16px] max-[550px]:items-center`}
                 >
                   <img
-                    class={`${d?.imgClassName || ""} self-stretch`}
+                    className={`${d?.imgClassName || ""} self-stretch`}
                     src={d.img}
                     alt="Arrow Left"
                     loading="lazy"
@@ -435,11 +435,11 @@ function Referrals() {
                   </>
                 ) : (
                   <div className="flex justify-center  w-full md:w-[40%] lg:w-[25%] bg-gradient3 items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1 md:p-3 bg-white-0">
-                    <h5 class="text-white-0 font-outfit font-bold capitalize text-xl">
+                    <h5 className="text-white-0 font-outfit font-bold capitalize text-xl">
                       <ConnectWallet />
                     </h5>
                     <button
-                      class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                      className="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
                       style={{
                         backgroundColor: "white",
                         padding: "12px",
