@@ -70,7 +70,7 @@ function ContentSection() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 md:pb-2 flex-1">
+          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 md:pb-2 flex-1 overflow-x-auto">
             <h1 className="text-2xl font-medium text-dark-0 w-full mb-4">
               In major currencies
             </h1>
@@ -91,7 +91,7 @@ function ContentSection() {
               </table>
             </div>
           </div>
-          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 md:pb-2 flex-1">
+          <div className="bg-white-0 rounded-xl md:rounded-2xl p-4 md:p-6 md:pb-2 flex-1 overflow-x-auto">
             <h1 className="text-2xl font-medium text-dark-0 mb-4">
               Conversion rates
             </h1>
