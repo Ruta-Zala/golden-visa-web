@@ -50,7 +50,7 @@ export default function Goldenvisaweb3entrepreneursection() {
               </Text>
             </div>
             <div className="bg-[url(/public/images/img_icon_star_glossy_glass_style%20copy.png)] bg-contain bg-no-repeat bg-center bg-cover xl:bg-contain pt-[11rem] pb-[7rem]">
-              <div className="flex py-0 lg:py-16 gap-4 flex-col md:flex-row">
+              <div className="flex py-0 lg:py-16 gap-4 flex-col md:flex-row mx-4">
                 <Suspense fallback={<div>Loading feed...</div>}>
                   {benefitsList.map((d, index) => (
                     <UserProfile

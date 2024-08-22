@@ -24,7 +24,7 @@ export default function Headerprofile({ ...props }) {
           <Img
             src={headerLogo}
             alt="Logo Container"
-            className="h-12 w-48 object-contain"
+            className="h-12 w-48 object-contain ml-5"
           />
         </a>
         <button className="flex lg:hidden " onClick={toggleMenu}>
