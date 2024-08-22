@@ -26,7 +26,7 @@ const GoldenVisaIcognativePage = () => {
       <IcognativeProductsCard />
       <IcognativeAboutSection2 />
       <IcognativeFeatureSection />
-      <IcognativeUsecaseSection />
+      {/* <IcognativeUsecaseSection /> */}
       {/* <IcognativeSupportSection /> */}
       <Footer />
     </>

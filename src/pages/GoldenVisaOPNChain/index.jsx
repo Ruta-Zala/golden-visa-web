@@ -26,7 +26,7 @@ export default function GoldenVisaOPNChainPage() {
       <OPNChainHeroSection />
       <OPNChainFeatureSection />
       <OPNChainExploreSection />
-      <OPNChainUseCaseSection />
+      {/* <OPNChainUseCaseSection /> */}
       <OPNChainDeveloperSection />
       <Footer />
     </>
