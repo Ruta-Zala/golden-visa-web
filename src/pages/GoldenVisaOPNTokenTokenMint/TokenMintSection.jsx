@@ -8,6 +8,7 @@ import { Text } from "../../components/Text/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
 import Loader from "../../components/Loader";
 import { getBalance } from "../../utils/helper";
+import { useOpnPrice } from "../../context/opnPriceContext";
 
 import {
   getLocalStorage,
@@ -31,6 +32,7 @@ export default function TokenMintSection({ referralAddress }) {
   const dropdownRef = useRef(null);
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+  const { price } = useOpnPrice();
   useEffect(() => {
     if (referralAddress) {
       setLocalStorage("refAddress", referralAddress);
@@ -260,17 +262,13 @@ export default function TokenMintSection({ referralAddress }) {
               and controlled release into the market. This gradual approach
               helps maintain price stability and prevents market manipulation.
             </Text>
-            {/* <Text
+            <Text
               size="visa_desktop_body_text_20"
               as="p"
               className="mt-5 w-[90%] leading-[140%] max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[15px] text-[20px] max-[550px]:mb-6"
             >
-              <span>Act fast! Only&nbsp;</span>
-              <span className="font-medium">
-                120.75K OPN tokens remain for today&#39;s mint. Don&#39;t miss
-                out on this opportunity. Daily cap enforced for fairness.
-              </span>
-            </Text> */}
+              <span>{`1 OPN = ${price} USDT`}</span>
+            </Text>
           </div>
           <div className="flex flex-1 flex-col gap-[60px] self-center max-[1050px]:self-stretch max-[550px]:gap-[30px]">
             <div className="flex flex-col items-end gap-6">
@@ -367,7 +365,11 @@ export default function TokenMintSection({ referralAddress }) {
                 <button
                   disabled={isButtonDisabled}
                   onClick={handleMint}
-                  class="gap-[34px] font-medium white capitalize w-[90%] max-[1440px]:w-full max-[1050px]:w-full bg-[#2573C0] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium rounded-[26px] px-3 py-3 text-xl relative border border-slate-900"
+                  class={`gap-[34px] font-medium white capitalize w-[90%] max-[1440px]:w-full max-[1050px]:w-full bg-[#2573C0] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium rounded-[26px] px-3 py-3 text-xl relative border border-slate-900 ${
+                    isButtonDisabled
+                      ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                      : "bg-blue-600 text-white hover:bg-blue-700"
+                  }`}
                   style={{ color: "white" }}
                 >
                   {loading ? <Loader /> : "Mint"}

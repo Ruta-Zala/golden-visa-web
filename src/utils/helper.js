@@ -1,7 +1,9 @@
 import vaultContractABI from "../abis/vaultContractABI.json";
-import web3StakeContractABI from "../abis/stakeWeb3ABI.json"
+import web3StakeContractABI from "../abis/stakeWeb3ABI.json";
 import { ethers } from "ethers";
-import ERC20BalanceOf from "../abis/ERC20balanceOf.json"
+import ERC20BalanceOf from "../abis/ERC20balanceOf.json";
+const vaultContractAddress = "0x829436b7a2a739d80f51e89947ee23959f531e57";
+const web3StakeContractAddress = "0xd56e2c66009bc30bad7779cc89470a23d074b8e7";
 
 export const handleScrollToSection = (event, sectionId) => {
   event.preventDefault(); // Prevent default anchor behavior
@@ -26,19 +28,41 @@ export const getBalance = async (address, setIsTokenBalance) => {
     );
     const balance = await tokenContract.balanceOf(walletAddress);
     const formatedBalance = balance.toNumber();
-    setIsTokenBalance(formatedBalance);
-    console.log(balance, formatedBalance, "heelo")
+    if (address === paymentTokens[0].address) {
+      // const x = 67889567212000000000000;
+      const daiBalance = Math.floor((formatedBalance / 1e18) * 100) / 100;
+      // const daiBalanceExample = Math.floor((x / 1e18) * 100) / 100;
+      setIsTokenBalance(daiBalance);
+    } else {
+      // const x = 500000000;
+      const usdtOrUsdcBalance = Math.floor((formatedBalance / 1e6) * 100) / 100;
+      // const usdtOrUsdcBalanceTest = Math.floor((x / 1e6) * 100) / 100;
+      setIsTokenBalance(usdtOrUsdcBalance);
+    }
     return formatedBalance;
   } catch (error) {}
+};
+export const getOpnPrice = async () => {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+
+  const minter = new ethers.Contract(
+    vaultContractAddress,
+    vaultContractABI,
+    signer
+  );
+
+  const OPNPrice = await minter.calculateTodayPrice();
+  const formatedOPNPrice = OPNPrice / 1e6;
+
+  console.log(formatedOPNPrice);
+  return formatedOPNPrice;
 };
 
 export const handleScrollToTop = () => {
   window.scrollTo(0, 0);
 };
 
-
-const vaultContractAddress = "0x829436b7a2a739d80f51e89947ee23959f531e57";
-const web3StakeContractAddress = "0xd56e2c66009bc30bad7779cc89470a23d074b8e7";
 const paymentTokens = [
   {
     id: "1",
@@ -65,7 +89,6 @@ const paymentTokens = [
     decimals: 6,
   },
 ];
-
 
 const setLocalStorage = (key, data) => {
   sessionStorage.setItem(key, data);

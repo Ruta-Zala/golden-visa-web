@@ -8,6 +8,7 @@ import { Heading } from "../../components/HeadingGenz/index";
 import { Input } from "../../components/InputGenz/index";
 import { DatePicker } from "../../components/DatePicker/index";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
+import { useOpnPrice } from "../../context/opnPriceContext";
 import {
   paymentTokens,
   vaultContractAddress,
@@ -17,7 +18,7 @@ import {
   nullAddress,
 } from "../../utils/helper";
 import Loader from "../../components/Loader";
-import { getBalance } from "../../utils/helper";
+import { getBalance, getOpnPrice } from "../../utils/helper";
 
 export default function GoldenVisaGenZTalentProgramSection({
   referralAddress,
@@ -36,10 +37,11 @@ export default function GoldenVisaGenZTalentProgramSection({
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [countError, setCountError] = useState("");
-  const [TokenBalance, setIsTokenBalance] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const toggleDropdown = () => setIsOpen(!isOpen);
+  const [tokenBalance, setIsTokenBalance] = useState(0);
+  const { price } = useOpnPrice();
 
   const isButtonDisabled =
     !name ||
@@ -69,9 +71,9 @@ export default function GoldenVisaGenZTalentProgramSection({
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -368,6 +370,13 @@ export default function GoldenVisaGenZTalentProgramSection({
                 approach helps maintain price stability and prevents market
                 manipulation.
               </Text>
+              <Text
+                size="visa_desktop_body_text_20"
+                as="p"
+                className="mt-5 w-[90%] leading-[140%] max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[15px] text-[20px] max-[550px]:mb-6"
+              >
+                <span>{`1 OPN = ${price} USDT`}</span>
+              </Text>
               {/* <Text
                 size="visa_desktop_body_text_20"
                 as="p"
@@ -454,7 +463,10 @@ export default function GoldenVisaGenZTalentProgramSection({
                         </div>
                       </div>
                     </div>
-                    <h4> Balance:{TokenBalance}</h4>
+                    <h4>
+                      {" "}
+                      Balance:{Math.floor((tokenBalance / 1e6) * 100) / 100}
+                    </h4>
                   </div>
 
                   <div className="w-full flex flex-col gap-2">

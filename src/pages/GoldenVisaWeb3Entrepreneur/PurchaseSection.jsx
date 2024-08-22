@@ -5,6 +5,7 @@ import { Text } from "../../components/Text";
 import { Input } from "../../components/InputGenz";
 import React, { useState, useEffect, useRef } from "react";
 import { ethers } from "ethers";
+import { useOpnPrice } from "../../context/opnPriceContext";
 import { useAccount, useChainId, useSwitchChain } from "wagmi";
 import {
   paymentTokens,
@@ -31,11 +32,12 @@ export default function PurchaseSection({ referralAddress }) {
   const { switchChain } = useSwitchChain();
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [TokenBalance, setIsTokenBalance] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+  const [tokenBalance, setIsTokenBalance] = useState(0);
+  const { price } = useOpnPrice();
   const validateName = (name) => {
     const regex = /^[A-Za-z]+$/;
     return regex.test(name);
@@ -267,6 +269,13 @@ export default function PurchaseSection({ referralAddress }) {
               and controlled release into the market. This gradual approach
               helps maintain price stability and prevents market manipulation.
             </Text>
+            <Text
+              size="visa_desktop_body_text_20"
+              as="p"
+              className="mt-5 w-[90%] leading-[140%] max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[15px] text-[20px] max-[550px]:mb-6"
+            >
+              <span>{`1 OPN = ${price} USDT`}</span>
+            </Text>
             {/* <Text
               size="visa_desktop_body_text_20"
               as="p"
@@ -370,7 +379,7 @@ export default function PurchaseSection({ referralAddress }) {
                     </div>
                   </div>
                 </div>
-                <h4> Balance:{TokenBalance}</h4>
+                <h4> Balance:{Math.floor((tokenBalance / 1e6) * 100) / 100}</h4>
               </div>
               <div className="w-full flex flex-col gap-2">
                 <Heading
