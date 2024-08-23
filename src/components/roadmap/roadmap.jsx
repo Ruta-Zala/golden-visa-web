@@ -63,7 +63,7 @@ const Roadmap = () => {
   ];
 
   return (
-    <div className="flex flex-col items-start max-w-screen-2xl mx-auto mt-28 px-4">
+    <div className="flex flex-col items-start max-w-screen-2xl mx-auto mt-28 px-4" id="roadmap">
       <div className="headline w-full px-4">
         <div className="tagline mb-4">
           <p className="inline-block px-3 py-2 bg-[#070b0f] text-white-0 rounded-2xl text-sm mb-2.5 font-extralight">

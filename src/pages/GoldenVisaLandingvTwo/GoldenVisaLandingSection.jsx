@@ -26,7 +26,7 @@ export default function GoldenVisaLandingSection() {
               achievers, and transform your life.
             </p>
             <div className="flex flex-col md:flex-row gap-4">
-            <Link to="/Talent" onClick={handleScrollToTop}>
+              <Link to="/Talent" onClick={handleScrollToTop}>
                 <Button
                   variant="fill"
                   shape="round"
@@ -44,21 +44,23 @@ export default function GoldenVisaLandingSection() {
                   Enter the Draw
                 </Button>
               </Link>
-              <Button
-                shape="round"
-                rightIcon={
-                  <div className="flex w-9 h-9 items-center justify-center rounded-[50%] bg-white-0">
-                    <Img
-                      src="images/img_arrowleft.svg"
-                      alt="Arrow Left"
-                      className="h-5 w-5"
-                    />
-                  </div>
-                }
-                className="gap-4 capitalize"
-              >
-                Learn more
-              </Button>
+              <Link to="/Talent" onClick={handleScrollToTop}>
+                <Button
+                  shape="round"
+                  rightIcon={
+                    <div className="flex w-9 h-9 items-center justify-center rounded-[50%] bg-white-0">
+                      <Img
+                        src="images/img_arrowleft.svg"
+                        alt="Arrow Left"
+                        className="h-5 w-5"
+                      />
+                    </div>
+                  }
+                  className="gap-4 capitalize"
+                >
+                  Learn more
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

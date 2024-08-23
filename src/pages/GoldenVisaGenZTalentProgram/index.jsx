@@ -12,7 +12,7 @@ import StepByStepProcessSection from "./StepByStepProcessSection";
 import TokenPurchaseSection from "./TokenPurchaseSection";
 import React, { Suspense, useEffect, useState } from "react";
 import HeaderGenz from "../../components/HeaderGenz";
-import { handleScrollToSection } from "../../utils/helper";
+import { handleScrollToSection, handleScrollToTop } from "../../utils/helper";
 import Footer from "../../components/Footer/FooterEl";
 import RewardInfo from "../../components/RewardInfo";
 import { useAccount } from "wagmi";
@@ -97,7 +97,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
           <div className="flex h-[870px] items-start justify-center bg-[url(/public/images/img_hero_genz.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[550px]:bg-[length:250%_100%] max-[550px]:bg-center max-[1050px]:bg-center">
             <div className="container-xs mb-[306px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[238px] max-[1440px]:w-full max-[1440px]:gap-[178px] max-[1050px]:w-full max-[1050px]:gap-[178px] max-[550px]:gap-[119px] max-[550px]:items-center">
-                <HeaderGenz isTalentTab/>
+                <HeaderGenz isTalentTab />
                 <div className="mx-[152px] flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button
@@ -196,7 +196,8 @@ export default function GoldenVisaGenZTalentProgramPage() {
                 <Text
                   size="visa_desktop_headers_h3"
                   as="p"
-                  className="!text-white-0 max-[1050px]:text-[28px] max-[550px]:text-[22px] ">
+                  className="!text-white-0 max-[1050px]:text-[28px] max-[550px]:text-[22px] "
+                >
                   Generate Referral Link
                 </Text>
                 <Text
@@ -377,20 +378,24 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     Golden Visa.
                   </Text>
                 </div>
-                <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
-                  <div className="flex-1 text-center">Mint OPN Tokens Now</div>
-                  <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-white-0">
-                    <img
-                      class="h-[10px] w-[10px]"
-                      src="images/img_arrowleft_blue_800.svg"
-                      alt="Arrow Left"
-                      loading="lazy"
-                    />
-                  </div>
-                </button>
+                <a href="/#/opntoken" onClick={handleScrollToTop}>
+                  <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
+                    <div className="flex-1 text-center">
+                      Mint OPN Tokens Now
+                    </div>
+                    <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-white-0">
+                      <img
+                        class="h-[10px] w-[10px]"
+                        src="images/img_arrowleft_blue_800.svg"
+                        alt="Arrow Left"
+                        loading="lazy"
+                      />
+                    </div>
+                  </button>
+                </a>
               </div>
             </div>
-            <Footer hideUpperSection className="px-0 !mt-0"/>
+            <Footer hideUpperSection className="px-0 !mt-0" />
           </div>
         </div>
       </div>

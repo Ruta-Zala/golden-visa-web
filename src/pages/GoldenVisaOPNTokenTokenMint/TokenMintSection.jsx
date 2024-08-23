@@ -262,6 +262,31 @@ export default function TokenMintSection({ referralAddress }) {
               and controlled release into the market. This gradual approach
               helps maintain price stability and prevents market manipulation.
             </Text>
+
+            <Text
+              size="visa_desktop_body_text_20"
+              as="p"
+              className="mt-3 w-[90%] leading-[140%] !text-dark-1 max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[15px] text-[16px]"
+            >
+              <span className="text-black-0 font-medium mr-1">
+                Demand-Driven Token Supply:{" "}
+              </span>{" "}
+              Tokens are minted in real-time based on user demand, aligning
+              supply with ecosystem growth.
+              <div className="mt-1" />
+              <span className="text-black-0 font-medium mr-1">
+                Fair Access and Transparency:{" "}
+              </span>{" "}
+              All participants have equal opportunities under clear, public
+              rules.
+              <div className="mt-1" />
+              <span className="text-black-0 font-medium mr-1">
+                Sustainable Token Economy:{" "}
+              </span>{" "}
+              Dynamic minting prevents oversupply, promoting long-term stability
+              and value.
+            </Text>
+
             <Text
               size="visa_desktop_body_text_20"
               as="p"

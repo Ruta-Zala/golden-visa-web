@@ -1,3 +1,4 @@
+import { handleScrollToTop } from "../../utils/helper";
 import "./productbig.css";
 const Productbig = () => {
   return (
@@ -20,10 +21,14 @@ const Productbig = () => {
                 empowerment.
               </p>
             </div>
-            <div className="link-pb">
+            <a
+              className="link-pb cursor-pointer"
+              href="/#/OPNChain"
+              onClick={handleScrollToTop}
+            >
               <li className="font-medium">Learn More</li>
               <div className="link-pb-arrow rotate-[-45deg] text-2xl">→</div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -47,12 +52,16 @@ const Productbig = () => {
                 come to life.
               </p>
             </div>
-            <div className="link-pb">
+            <a
+              className="link-pb cursor-pointer"
+              href="/#/Icognative"
+              onClick={handleScrollToTop}
+            >
               <li className="li2 font-medium">Learn More</li>
               <div className="link-pb-arrow arr2 rotate-[-45deg] text-2xl">
                 →
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -73,12 +82,16 @@ const Productbig = () => {
                 interconnected spaces for play, work, and exploration.
               </p>
             </div>
-            <div className="link-pb">
+            <a
+              className="link-pb cursor-pointer"
+              href="/#/OPNVerse"
+              onClick={handleScrollToTop}
+            >
               <li className="li2 font-medium">Learn More</li>
               <div className="link-pb-arrow arr2 rotate-[-45deg] text-2xl">
                 →
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

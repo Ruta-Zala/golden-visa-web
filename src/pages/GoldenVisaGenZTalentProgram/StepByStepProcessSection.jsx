@@ -3,6 +3,7 @@ import { Button } from "../../components/ButtonGenz/index";
 import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
 import React from "react";
+import { handleScrollToTop } from "../../utils/helper";
 
 export default function StepByStepProcessSection() {
   return (
@@ -63,7 +64,7 @@ export default function StepByStepProcessSection() {
                         Web3 Ecosystem.
                       </Text>
                     </div>
-                    <a href="/#/opntoken">
+                    <a href="/#/opntoken" onClick={handleScrollToTop}>
                       <Button
                         shape="round"
                         color="undefined_undefined"
