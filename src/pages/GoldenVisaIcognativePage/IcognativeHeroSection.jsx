@@ -5,7 +5,7 @@ import { handleScrollToSection } from "../../utils/helper";
 
 const menuItems = [
   { href: "/#/OPNChain", label: "OPNChain" },
-  { href: "#", label: "OPNVerse" },
+  { href: "/#/OPNVerse", label: "OPNVerse" },
   {
     label: "iCognative",
     onClick: (event) => handleScrollToSection(event, "iCognative"),
@@ -89,9 +89,11 @@ const IcognativeHeroSection = () => {
                 >
                   iCognative
                 </span>
-                <span className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer">
-                  OPNVerse
-                </span>
+                <a href="/#/OPNVerse">
+                  <span className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer">
+                    OPNVerse
+                  </span>
+                </a>
                 <span
                   className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer"
                   ref={dropdownRef}

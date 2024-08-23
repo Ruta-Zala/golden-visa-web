@@ -22,7 +22,7 @@ export default function HeaderGenz({
       label: "Web3 Entrepreneur Program",
       hide: isWeb3Tab,
     },
-    { href: "#", label: "OPNVerse" },
+    { href: "/#/OPNVerse", label: "OPNVerse" },
     {
       href: "/#/Icognative",
       label: "iCognative",

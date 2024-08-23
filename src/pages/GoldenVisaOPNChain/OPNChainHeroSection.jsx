@@ -9,7 +9,7 @@ const menuItems = [
     onClick: (event) => handleScrollToSection(event, "opnChain"),
   },
   { href: "/#/iCognative", label: "iCognative" },
-  { href: "#", label: "OPNVerse" },
+  { href: "/#/OPNVerse", label: "OPNVerse" },
   { href: "/#/Talent", label: "GenZ Talent Program" },
   { href: "/#/Entrepreneur", label: "Web3 Entrepreneur Program" },
   { href: "/#/goldenvisa", label: "UAE Golden Visa" },
@@ -92,9 +92,11 @@ const OPNChainHeroSection = () => {
                     iCognative
                   </span>
                 </a>
-                <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                  OPNVerse
-                </span>
+                <a href="/#/OPNVerse">
+                  <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
+                    OPNVerse
+                  </span>
+                </a>
                 <span
                   className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer"
                   ref={dropdownRef}

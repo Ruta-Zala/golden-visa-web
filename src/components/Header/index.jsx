@@ -15,7 +15,7 @@ const menuItems = [
     href: "/#/Entrepreneur",
     label: "Web3 Entrepreneur Program",
   },
-  { href: "#", label: "OPNVerse" },
+  { href: "/#/OPNVerse", label: "OPNVerse" },
   {
     href: "/#/Icognative",
     label: "iCognative",

@@ -1,0 +1,44 @@
+.opn-verse-main-hero {
+    background-image: url("../../assets/OPNVerse/heroBanner.png");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 800px;
+}
+
+@media (max-width: 767px) {
+    .opn-verse-main-hero {
+        background-image: url("../../assets/OPNVerse/heroBanner.png");
+        background-size: cover;
+        border-radius: 20px;
+        min-height: 100%;
+    }
+}
+
+.island-feature-card {
+    height: 520px !important;
+}
+
+.island-feature-card-icon {
+    bottom: 10px;
+    top: auto !important;
+    transform: rotate(-45deg);
+    font-size: 25px;
+}
+
+.digital-twins-feature-card {
+    height: 520px !important;
+}
+
+.digital-twins-feature-card-icon {
+    left: 20px;
+    top: 20px !important;
+}
+
+.open-verse-topic-slider .swiper-slide-prev::before {
+    content: '';
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}

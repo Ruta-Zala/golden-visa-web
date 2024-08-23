@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import GoldenVisaIcognativePage from "./pages/GoldenVisaIcognativePage";
 import GoldenVisaOPNChainPage from "./pages/GoldenVisaOPNChain";
 import UserProfilePage from "./pages/UserProfile";
+import GoldenVisaOPNVersePage from './pages/GoldenVisaOPNVerse'
 
 const Routes = () => {
   let element = useRoutes([
@@ -39,6 +40,10 @@ const Routes = () => {
     {
       path: "/profile",
       element: <UserProfilePage />,
+    },
+    {
+      path: "/OPNVerse",
+      element: <GoldenVisaOPNVersePage />,
     },
     { path: "*", element: <NotFound /> },
   ]);
