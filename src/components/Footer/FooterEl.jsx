@@ -12,7 +12,7 @@ const Footer = ({
   footerImg = "",
   title = "",
   summary = "",
-  buttonTitle = "",
+  hideUpperSection = false,
   hideConnectChip = false,
   footerButton = null,
 }) => {
@@ -20,7 +20,7 @@ const Footer = ({
     <div
       className={`flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4 ${className}`}
     >
-      <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full">
+      {!hideUpperSection && <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full">
         {/* Image container */}
         <div className="w-full md:w-2/4 flex self-stretch">
           <img
@@ -83,7 +83,7 @@ const Footer = ({
             </a>
           </div>
         </div>
-      </div>
+      </div>}
       <footer className="flex flex-col items-center p-0 bg-[#e2e8f0] rounded-2xl w-full">
         <div className="flex flex-col md:flex-row justify-between p-9 w-full border-b border-[#08122A26]">
           <div className="flex flex-1 flex-col items-start p-0">

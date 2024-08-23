@@ -61,15 +61,15 @@ const IcognativeAboutSection2 = () => {
             key={index}
             className="accordion-item mb-4 flex flex-col flex-grow">
             <div
-              className={`accordion-header rounded-t-lg flex items-center justify-between p-4 shadow-md cursor-pointer ${
-                activeIndex === index ? 'bg-gray-50' : 'bg-white'
+              className={`accordion-header ${ activeIndex === index ? 'rounded-t-[20px]' : 'rounded-[20px]'} flex items-center justify-between p-4 ${ activeIndex === index ? 'border-0' : 'border border-slate-200'} shadow-md cursor-pointer ${
+                activeIndex === index ? 'bg-gray-50' : 'bg-white-0'
               }`}
               onClick={() => toggleAccordion(index)}>
               <span className="font-semibold text-lg">{item.title}</span>
               <div className="flex items-center">
                 <div
                   className={`icon-container w-12 h-12 flex items-center justify-center rounded-lg ${
-                    activeIndex === index ? 'bg-white' : 'bg-gray-50'
+                    activeIndex === index ? 'bg-white-0' : 'bg-gray-50'
                   }`}>
                   <img
                     src={item.icon}
@@ -84,7 +84,7 @@ const IcognativeAboutSection2 = () => {
               </div>
             </div>
             <div
-              className={`accordion-content p-4 rounded-lg bg-gray-50 rounded-b-lg ${
+              className={`accordion-content p-4 rounded-lg bg-gray-50 rounded-b-[20px] ${
                 activeIndex === index ? 'block' : 'hidden'
               }`}>
               <p className="text-gray-700 text-sm">{item.description}</p>

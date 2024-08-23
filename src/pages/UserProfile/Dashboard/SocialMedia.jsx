@@ -94,8 +94,8 @@ const SocialMedia = () => {
             Post news straight to your connected socials from here.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="w-full md:w-[70%] bg-white-0 rounded-2xl min-[765px]:p-6 p-3 relative">
+        <div className="flex flex-col lg:flex-row gap-4">
+          <div className="w-full lg:w-[70%] bg-white-0 rounded-2xl min-[765px]:p-6 p-3 relative">
             <div className="flex items-center gap-2">
               {icons.map((icon) => (
                 <div
@@ -142,7 +142,7 @@ const SocialMedia = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[30%] bg-white-0 rounded-2xl p-6">
+          <div className="w-full lg:w-[30%] bg-white-0 rounded-2xl p-6">
             <div className="mb-6">
               <h1 className="text-3xl font-medium text-dark-0">Where to post</h1>
               <p className="opacity-50 text-lg mt-2">

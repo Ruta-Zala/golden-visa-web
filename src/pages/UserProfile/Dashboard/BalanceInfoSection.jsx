@@ -26,7 +26,7 @@ function BalanceInfoSection() {
               size="visa_desktop_headers_h3"
               as="p"
               className="text-2xl md:text-3xl">
-              GenZ Talent <br />
+              Web3 Talent <br />
               Program
             </Text>
             <Text

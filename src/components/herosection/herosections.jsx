@@ -247,7 +247,7 @@ const Herosections = () => {
               </div>
               <div className="flex flex-col lg:flex-row lg:ml-auto lg:mr-4">
                 <a
-                  href="#"
+                  href="/#/goldenvisa"
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >

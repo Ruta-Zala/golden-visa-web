@@ -32,7 +32,7 @@ const referralRewardsList = [
   },
   {
     rewardPercentage: "10%",
-    rewardDescription: "GenZ talent program reward tier",
+    rewardDescription: "Web3 talent program reward tier",
     img: Referral2,
     imgClassName: "w-[80px] h-[80px] scale-[1.3]",
   },
@@ -45,7 +45,7 @@ const referralRewardsList = [
 ];
 const tabs = [
   { name: "OPN Token and Minting", href: "referralCard-0" },
-  { name: "GenZ Talent Program Referrals", href: "referralCard-1" },
+  { name: "Web3 Talent Program Referrals", href: "referralCard-1" },
   { name: "Web3 Entrepreneur Referrals", href: "referralCard-2" },
   { name: "Generate Link", href: "generateLink" },
   { name: "Referrals History", href: "referralHistory" },
@@ -289,7 +289,7 @@ function Referrals() {
             imgClassName="-bottom-[400px]"
           />
           <ReferralCard
-            title="Refer GenZ Talent Program Participants"
+            title="Refer Web3 Talent Program Participants"
             summary={
               <>
                 Want to help your friends kickstart their careers and earn some

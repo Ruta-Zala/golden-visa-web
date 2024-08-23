@@ -21,7 +21,7 @@ function Tabs() {
   return (
     <div className="w-full mb-16">
       {/* Tab Navigation */}
-      <div className="relative">
+      <div className="relative mx-4">
         <div className="flex flex-nowrap border-b overflow-x-auto whitespace-nowrap">
           <button
             className={`py-2 px-4 text-lg sm:text-2xl font-medium ${
@@ -56,7 +56,7 @@ function Tabs() {
       </div>
 
       {/* Tab Content */}
-      <div className="mx-4 sm:mx-0 mt-4 sm:mt-[50px]">
+      <div className="mx-4 mt-4 sm:mt-[50px]">
         {activeTab === 'dashboard' && <Dashboard />}
         {activeTab === 'referrals' && <Referrals />}
         {isMobileOrTablet && activeTab === 'profileDetails' && (

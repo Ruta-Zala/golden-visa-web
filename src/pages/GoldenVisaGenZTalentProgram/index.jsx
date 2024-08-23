@@ -337,7 +337,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
         {/* f a q section */}
         <FAQSection />
         <div className="mb-1 mt-[80px] md:mt-[100px] xl:mt-[180px] flex flex-col items-center self-stretch">
-          <div className="container-xs flex flex-col gap-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
+          <div className="container-xs flex flex-col gap-[30px] max-[1440px]:px-5 max-[1050px]:px-5">
             <div className="flex flex-col md:flex-row gap-4">
               <Img
                 src="images/img_rectangle_11_582x742.png"
@@ -390,7 +390,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                 </button>
               </div>
             </div>
-            <Footer />
+            <Footer hideUpperSection className="px-0 !mt-0"/>
           </div>
         </div>
       </div>

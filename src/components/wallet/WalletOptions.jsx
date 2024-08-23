@@ -2,8 +2,7 @@ import * as React from 'react'
 import { useConnect } from 'wagmi'
 
 export function WalletOptions() {
-  const { connectors, connect } = useConnect()
-console.log('connectorsconnectors', connectors);
+  const { connectors, connect } = useConnect();
 const filteredConnectors = connectors.filter(
   (connector) => connector.name === 'MetaMask'
 );

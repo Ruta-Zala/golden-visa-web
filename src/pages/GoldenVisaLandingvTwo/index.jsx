@@ -631,7 +631,7 @@ export default function GoldenVisaLandingvTwoPage() {
                 </div>
               </div>
               {/* <FooterVisa /> */}
-              <Footer />
+              <Footer hideUpperSection className="px-0 !mt-5"/>
             </div>
           </div>
         </div>

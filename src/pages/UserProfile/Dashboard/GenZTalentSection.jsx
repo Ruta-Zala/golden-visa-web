@@ -34,7 +34,7 @@ function GenZTalentSection() {
       >
         <div className="relative w-full p-[16px] md:p-[18px] lg:p-[10px] xl:p-[24px] z-10 my-16">
           <h1 className="text-2xl md:text-3xl font-medium text-[#08122A] mb-4 ">
-            GenZ Talent Program
+            Web3 Talent Program
           </h1>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mb-4">
             {cardList.map((d, index) => (
@@ -95,7 +95,7 @@ function GenZTalentSection() {
             <div className="minibox-text justify-end md:justify-center h-full">
               <div className="headline">
                 <h1 className="openchanh1 w-full text-4xl font-medium">
-                  GenZ Talent Program
+                Web3 Talent Program
                 </h1>
                 <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] ">
                   Welcome to the UAE GoldenVisa Portal
@@ -141,7 +141,7 @@ function GenZTalentSection() {
                 Unlock Your Future <br /> with OPN Tokens!
               </h1>
               <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] md:min-h-[200px]">
-                Join the IOPn ecosystem and power the GenZ Talent Program.
+                Join the IOPn ecosystem and power the Web3 Talent Program.
                 Purchase OPN tokens for your chance at a UAE Golden Visa!
               </p>
             </div>

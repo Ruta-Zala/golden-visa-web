@@ -10,7 +10,7 @@ import { handleScrollToSection } from '../../../utils/helper';
 
 const tabs = [
   { name: 'Token Balances', href: 'Token Balances' },
-  { name: 'GenZ Talent Program', href: 'genz-talent-program' },
+  { name: 'Web3 Talent Program', href: 'genz-talent-program' },
   { name: 'Stacked Balance', href: 'Stacked-Balance' },
   { name: 'IOPn Socials', href: 'IOPn Socials' },
   { name: 'Social Media Posting', href: 'Social Media Posting' },

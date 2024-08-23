@@ -13,18 +13,17 @@ import React, { useEffect, useState } from "react";
 import HeaderGenz from "../../components/HeaderGenz";
 import Footer from "../../components/Footer/FooterEl";
 import { handleScrollToSection } from "../../utils/helper";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 export default function GoldenVisaWeb3EntrepreneurPage() {
-
   const location = useLocation();
   const [referalId, setReferalId] = useState(null);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const ref = queryParams.get('ref');
-    setReferalId(ref)
-  }, [location])
+    const ref = queryParams.get("ref");
+    setReferalId(ref);
+  }, [location]);
   return (
     <>
       <Helmet>
@@ -39,14 +38,17 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
           name="description"
           content="Unlock endless opportunities with a UAE Golden Visa"
         />
-        <meta name="keywords" content="IOPn, RAKDAO, Web3 Entrepreneur Program" />
+        <meta
+          name="keywords"
+          content="IOPn, RAKDAO, Web3 Entrepreneur Program"
+        />
       </Helmet>
       <div className="flex w-full flex-col items-center bg-white-0">
         <div className="self-stretch">
           <div className="flex h-[1000px] items-start justify-center bg-[url(/public/images/img_hero_web.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto max-[1050px]:bg-center">
             <div className="container-xs mb-[248px] flex justify-center px-14 max-[1440px]:px-5 max-[1050px]:px-5">
               <div className="flex w-[90%] flex-col gap-[220px] max-[1440px]:w-full max-[1440px]:gap-[165px] max-[1050px]:w-full max-[1050px]:gap-[165px] max-[550px]:gap-[110px]">
-                <HeaderGenz hideTabs={['Golden draw']} isWeb3Tab/>
+                <HeaderGenz hideTabs={["Golden draw"]} isWeb3Tab />
                 <div className="mx-52 flex flex-col items-center gap-12 max-[1050px]:mx-0">
                   <div className="flex flex-col items-center gap-[30px] self-stretch">
                     <Button
@@ -75,7 +77,12 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                   >
                     Explore the benefits of our Web3 Entrepreneur Program
                   </Text>
-                  <button class="min-w-[268px] gap-4 font-medium capitalize text-black flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black" onClick={(event) => handleScrollToSection(event, "participate")}>
+                  <button
+                    class="min-w-[268px] gap-4 font-medium capitalize text-black flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap rounded-[26px] h-[52px] pl-8 pr-2 text-[18px] bg-white-0 text-black"
+                    onClick={(event) =>
+                      handleScrollToSection(event, "participate")
+                    }
+                  >
                     Participate Now
                     <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                       <img
@@ -205,7 +212,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2">
+                  className="!text-dark-2 mt-2"
+                >
                   Register, mint and stake OPN Tokens
                 </Text>
               </div>
@@ -289,7 +297,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2">
+                  className="!text-dark-2 mt-2"
+                >
                   Upload required documentation
                 </Text>
               </div>
@@ -314,7 +323,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2">
+                  className="!text-dark-2 mt-2"
+                >
                   Initiate and complete the visa process
                 </Text>
               </div>
@@ -348,7 +358,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2">
+                  className="!text-dark-2 mt-2"
+                >
                   Register, mint and stake OPN Tokens
                 </Text>
               </div>
@@ -370,7 +381,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2">
+                  className="!text-dark-2 mt-2"
+                >
                   Upload required documentation
                 </Text>
               </div>
@@ -392,7 +404,8 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                 <Text
                   size="visa_desktop_body_text_18"
                   as="p"
-                  className="!text-dark-2 mt-2">
+                  className="!text-dark-2 mt-2"
+                >
                   Initiate and complete the visa process
                 </Text>
               </div>
@@ -406,12 +419,10 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
         </div>
         {/* f a q section */}
         <FAQSection />
-        <div className="md:mt-[180px] mt-[80px] flex flex-col items-center gap-[50px] self-stretch">
+        <div className="md:mt-[180px] mt-[80px] flex flex-col items-center gap-[30px] self-stretch">
           {/* referral program section */}
           <ReferralProgramSection />
-          <div className="container-xs mb-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
-            <Footer />
-          </div>
+          <Footer hideUpperSection className="!mt-0" />
         </div>
       </div>
     </>

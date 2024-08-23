@@ -165,7 +165,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
         {/* token mint section */}
         <TokenMintSection referralAddress={referalId} />
         <div id="refferralProgram" className="mb-1 mt-[118px] flex flex-col items-center">
-          <div className="container-xs flex flex-col gap-[50px] max-[1440px]:px-5 max-[1050px]:px-5">
+          <div className="container-xs flex flex-col gap-[30px] max-[1440px]:px-5 max-[1050px]:px-5">
             <div className="relative h-[1186px] content-center max-[1440px]:h-auto max-[1050px]:h-auto">
               <div className="mx-auto flex flex-1 flex-col gap-4 relative">
                 <div className="flex gap-4 max-[1050px]:flex-col">
@@ -382,7 +382,7 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
               </div>
               {/* <div className="absolute bottom-0 left-0 right-0 top-0 m-auto h-[64px] w-[64px] rounded-br-[32px] rounded-tl-[32px] bg-blue-700" /> */}
             </div>
-            <Footer />
+            <Footer hideUpperSection className="px-0 !mt-0"/>
           </div>
         </div>
       </div>
