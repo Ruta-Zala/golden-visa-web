@@ -37,8 +37,40 @@
 
 .open-verse-topic-slider .swiper-slide-prev::before {
     content: '';
-    background-color: transparent;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.74) 74%,
+            rgba(255, 255, 255, 0.9229) 92.29%,
+            rgba(255, 255, 255, 1) 100%);
     position: absolute;
     inset: 0;
     z-index: 2;
+}
+
+.open-verse-topic-slider .swiper-slide-next::before {
+    content: '';
+    background: linear-gradient(to left,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.74) 74%,
+            rgba(255, 255, 255, 0.9229) 92.29%,
+            rgba(255, 255, 255, 1) 100%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.open-verse-topic-slider {
+    position: relative;
+}
+
+@media (min-width: 1434px) { 
+    .open-verse-topic-slider .swiper-slide-visible {
+        width: 300px !important;
+        top: 30px;
+    }
+    
+    .open-verse-topic-slider .swiper-slide-active {
+        width: 800px !important;
+        top: 0;
+    }
 }

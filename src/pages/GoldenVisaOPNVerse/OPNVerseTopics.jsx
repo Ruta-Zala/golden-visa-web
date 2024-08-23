@@ -24,6 +24,11 @@ const features = [
         name: "DMCC- video of environment used for live VC pitch event",
         description: "Immerse yourself in the breathtaking virtual replica of Marjan Island, a jewel in the crown of Ras Al Khaimah. This meticulously crafted digital landscape captures the island's essence, from its pristine beaches and turquoise waters to its luxurious resorts and vibrant marina. Explore every corner of this virtual paradise, from the bustling promenade lined with upscale boutiques to the serene private beaches perfect for relaxation. Marvel at the stunning architecture of the island's iconic landmarks, all recreated with stunning detail. Experience the magic of Marjan Island, anytime, anywhere.",
         image: topic1
+    }, 
+    {
+        name: "Marjan Island for Ras al Khaimah Government",
+        description: "Immerse yourself in the breathtaking virtual replica of Marjan Island, a jewel in the crown of Ras Al Khaimah. This meticulously crafted digital landscape captures the island's essence, from its pristine beaches and turquoise waters to its luxurious resorts and vibrant marina. Explore every corner of this virtual paradise, from the bustling promenade lined with upscale boutiques to the serene private beaches perfect for relaxation. Marvel at the stunning architecture of the island's iconic landmarks, all recreated with stunning detail. Experience the magic of Marjan Island, anytime, anywhere.",
+        image: topic1
     },
 ]
 
@@ -84,20 +89,20 @@ export default function OPNVerseTopics() {
                 {features.map((card, index) => (
                     <SwiperSlide key={index} className="flex items-stretch">
                         {({ isActive }) => (
-                            <div className="rounded-2xl opn-verse-topic-card  relative overflow-hidden h-[650px]">
+                            <div className="rounded-2xl opn-verse-topic-card relative overflow-hidden">
                                 <img
                                     src={card.image}
                                     alt=""
-                                    className="w-full h-80 object-cover absolute inset-0 z-0"
+                                    className={`w-full ${isActive ? 'h-96' : 'h-80'} object-cover absolute inset-0 z-0`}
                                 />
-                                <div className="opn-verse-topic-card-text h-full pt-80 mt-2 text-left p-4">
+                                <div className={`opn-verse-topic-card-text h-full ${isActive ? 'pt-96' : 'pt-80'} mt-2 text-left p-4`}>
                                     <div>
-                                        <div className="flex">
+                                        <div className="flex justify-between">
                                             <h2 className="opn-verse-topic-card-title text-lg md:text-2xl font-semibold truncate">
                                                 {card.name}
                                             </h2>
                                             <button
-                                                className={`box-border font-medium flex-row justify-center items-center py-2 ps-5 pr-2 gap-4 rounded-full text-dark-0 cursor-pointer bg-stroke w-full sm:w-auto text-sm text-nowrap ${isActive ? 'flex' : 'hidden'}`}
+                                                className={`ml-3 box-border font-medium flex-row justify-center items-center py-2 ps-5 pr-2 gap-4 rounded-full text-dark-0 cursor-pointer bg-stroke w-full sm:w-auto text-sm text-nowrap ${isActive ? 'flex' : 'hidden'}`}
                                             >
                                                 Join Now
                                                 <div className="flex flex-row justify-center items-center p-0 gap-2.5 w-6 h-6 text-white-0 bg-dark-0 rounded-full rotate-[-45deg]">
@@ -113,7 +118,7 @@ export default function OPNVerseTopics() {
                                         <hr className="my-4" />
                                         <div className="flex justify-between items-center" >
                                             <div className="text-sm text-dark-0/40">Features for participants:</div>
-                                            <div className="flex gap-2">
+                                            <div className="flex gap-2 flex-wrap">
                                                 <span className="text-xs bg-light_base p-2 rounded-lg">Video tours</span>
                                                 <span className="text-xs bg-light_base p-2 rounded-lg">Open world chat</span>
                                                 <span className="text-xs bg-light_base p-2 rounded-lg">Special offers</span>
