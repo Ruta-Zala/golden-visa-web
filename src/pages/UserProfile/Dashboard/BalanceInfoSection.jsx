@@ -14,18 +14,18 @@ function BalanceInfoSection() {
           The live price of Tether OPN Token is $ 1.000715 per (OPN / USD) with a current market cap of $ 115.72B USD. 24-hour trading volume is $ 45.77B USD. USDT to OPN price is updated in real-time.
         </p>
       </div>
-      <div className="flex gap-4 max-[1050px]:flex-col mb-10 sm:mb-20">
+      <div className="flex gap-8 max-[1050px]:flex-col mb-10 sm:mb-20">
         <div className="relative flex w-full flex-col gap-[40px] rounded-[20px] bg-light_base max-[550px]:gap-[30px] min-[765px]:p-10 p-5 sm:py-10 sm:px-8">
           <img
             src={Icon1}
             alt="Icon1"
-            className="absolute md:top-[-80px] top-[-40px] md:right-[-40px] sm:right-[-20px] right-[3px] md:w-[250px] sm:w-[150px] md:h-[250px] sm:h-[150px] h-[120px] w-[80px]"
+            className="absolute md:top-[-80px] top-[-40px] right-[15px] md:right-[-3px] lg:right-[3px] md:w-[230px] sm:w-[150px] md:h-[230px] sm:h-[150px] h-[120px] w-[80px] scale-[1.2] md:scale-[1.1] lg:scale-[1]"
           />
           <div className="flex flex-col items-start gap-3.5 relative z-50">
             <Text
               size="visa_desktop_headers_h3"
               as="p"
-              className="text-2xl md:text-3xl lg:text-4xl">
+              className="text-2xl md:text-3xl">
               GenZ Talent <br />
               Program
             </Text>
@@ -43,7 +43,7 @@ function BalanceInfoSection() {
               <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
                 My stakes
               </h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl text-[#2573C0]">
+              <h1 className="text-xl md:text-2xl text-[#2573C0]">
                 2 750 OPN
               </h1>
             </div>
@@ -51,7 +51,7 @@ function BalanceInfoSection() {
               <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
                 Unstake date
               </h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl">25 August</h1>
+              <h1 className="text-xl md:text-2xl">25 August</h1>
             </div>
           </div>
         </div>
@@ -59,13 +59,13 @@ function BalanceInfoSection() {
           <img
             src={Icon2}
             alt="Icon1"
-            className="absolute lg:top-[-50px] top-[-20px] -sm:right-[6px] -md:right-[6px] -lg:right-[10px] xl:right-[15px] right-[3px] lg:w-[180px] lg:h-[180px] md:h-[150px] sm:h-[120px] h-[90px] md:w-[150px] sm:w-[120px] w-[80px]"
+            className="absolute lg:top-[-50px] top-[-20px] -sm:right-[6px] -md:right-[6px] -lg:right-[10px] xl:right-[-15px] right-[3px] lg:w-[180px] lg:h-[180px] md:h-[150px] sm:h-[120px] h-[90px] md:w-[150px] sm:w-[120px] w-[80px] md:scale-[1.2] lg:scale-[1]"
           />
           <div className="flex flex-col items-start gap-3.5 relative z-50">
             <Text
               size="visa_desktop_headers_h3"
               as="p"
-              className="text-2xl md:text-3xl lg:text-4xl">
+              className="text-2xl md:text-3xl">
               Web3 Entrepreneur <br /> Program
             </Text>
             <Text
@@ -82,7 +82,7 @@ function BalanceInfoSection() {
               <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
                 My stakes
               </h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl text-[#2573C0]">
+              <h1 className="text-xl md:text-2xl text-[#2573C0]">
                 2 750 OPN
               </h1>
             </div>
@@ -90,7 +90,7 @@ function BalanceInfoSection() {
               <h3 className="w-full text-[16px] lg:text-[20px] leading-[140%] max-[550px]:text-[14px]">
                 Unstake date
               </h3>
-              <h1 className="text-xl md:text-2xl lg:text-3xl">25 August</h1>
+              <h1 className="text-xl md:text-2xl">25 August</h1>
             </div>
           </div>
         </div>

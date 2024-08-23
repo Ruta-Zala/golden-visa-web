@@ -5,11 +5,12 @@ import 'swiper/css/navigation';
 import { useRef } from 'react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import feature1 from '../../assets/feature1.png';
-import feature2 from '../../assets/feature2.png';
-import feature3 from '../../assets/feature3.png';
-import feature4 from '../../assets/feature4.png';
-import feature5 from '../../assets/feature5.png';
+import feature10 from '../../assets/Feature10.png';
+import feature11 from '../../assets/Feature11.png';
+import feature12 from '../../assets/Feature12.png';
+import feature13 from '../../assets/Feature13.png';
+import feature14 from '../../assets/Feature14.png';
+import feature15 from '../../assets/Feature15.png';
 
 import icon1 from '../../assets/Analysis.png';
 import icon2 from '../../assets/Language.png';
@@ -20,42 +21,42 @@ import icon5 from '../../assets/nanotechnology.png';
 const cardsData = [
   {
     icon: icon1,
-    image: feature2,
+    image: feature10,
     title: 'Predictive analytics',
     description:
       'Seamlessly connect different blockchains, expanding the ecosystem and enabling cross-chain interactions.',
   },
   {
     icon: icon2,
-    image: feature3,
+    image: feature11,
     title: 'Natural language processing',
     description:
       'Protect assets and user data with advanced cryptographic protocols and robust consensus mechanisms.',
   },
   {
     icon: icon3,
-    image: feature1,
+    image: feature12,
     title: 'Automated decision support',
     description:
       'Run Ethereum-based smart contracts and applications on the blockchain, expanding developer and user base.',
   },
   {
     icon: icon4,
-    image: feature4,
+    image: feature13,
     title: 'Continuous learning',
     description:
       'Run Ethereum-based smart contracts and applications on the blockchain, expanding developer and user base.',
   },
   {
     icon: icon5,
-    image: feature5,
+    image: feature14,
     title: 'Integration with other pillars',
     description:
       'Run Ethereum-based smart contracts and applications on the blockchain, expanding developer and user base.',
   },
   {
     icon: icon1,
-    image: feature3,
+    image: feature15,
     title: 'AI-driven insights',
     description:
       'Handle more transactions: process a higher volume of transactions without sacrificing speed or security.',
@@ -107,7 +108,7 @@ const IcognativeCardsSection = () => {
                 <img
                   src={card.image}
                   alt=""
-                  className="w-64 h-80 object-contain absolute -top-20 -right-24"
+                  className="w-80 h-80 object-contain absolute -top-20 -right-24"
                 />
                 <div className="features-card-icon-container">
                   <div className="features-card-icon">→</div>

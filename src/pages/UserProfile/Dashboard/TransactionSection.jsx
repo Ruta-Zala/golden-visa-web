@@ -60,7 +60,7 @@ const TransactionSection = () => {
             </button>
           </>))}
         </div>
-        <div className="bg-white-0 rounded-xl md:rounded-2xl m-4 md:m-6 md:mb-4">
+        <div className="bg-white-0 rounded-xl md:rounded-2xl m-4 md:m-4 md:mb-4">
           {/* Filters */}
           <div className="flex flex-col md:flex-row justify-between mb-4 p-4 space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 sm:w-1/2">
@@ -99,13 +99,13 @@ const TransactionSection = () => {
             <table className="w-full bg-white rounded-lg md:rounded-xl text-sm md:text-base">
               <thead className="bg-light_base text-left rounded-xl text-slate-400">
                 <tr>
-                  {tableHeader.map((item, index) => <th key={index} className={`font-normal px-4 md:px-6 py-3 md:py-4 ${index === 0 && 'rounded-l-lg'} ${index === tableHeader.length - 1 && 'rounded-r-lg'}`}>{item}</th>)}
+                  {tableHeader.map((item, index) => <th key={index} className={`font-normal px-4 py-3 md:py-4 ${index === 0 && 'rounded-l-lg'} ${index === tableHeader.length - 1 && 'rounded-r-lg'}`}>{item}</th>)}
                 </tr>
               </thead>
               <tbody>
                 {transactions.map((transaction, index) => (
                   <tr key={index} className={index !== 0 && "border-t"}>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
+                    <td className="px-4 py-3 md:py-4">
                       <div className="flex items-center">
                         <span className="bg-stroke mr-2 rounded-full w-6 h-6">
                           <img
@@ -117,16 +117,16 @@ const TransactionSection = () => {
                         {transaction.type}
                       </div>
                     </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4 text-nowrap">{transaction.amount}</td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
+                    <td className="px-4 py-3 md:py-4 text-nowrap">{transaction.amount}</td>
+                    <td className="px-4 py-3 md:py-4">
                       <div className="inline-block text-nowrap">{transaction.date}</div>
                     </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4">
+                    <td className="px-4 py-3 md:py-4">
                       <div className={`px-2 py-1 md:px-4 md:py-2 rounded-sm inline-block ${statusStyles[transaction.status]}`}>
                         {transaction.status}
                       </div>
                     </td>
-                    <td className="px-4 md:px-6 py-3 md:py-4 text-ellipsis overflow-hidden whitespace-nowrap max-w-[150px]">
+                    <td className="px-4 py-3 md:py-4 text-ellipsis overflow-hidden whitespace-nowrap max-w-[100px]">
                       {transaction.hash}
                     </td>
                   </tr>

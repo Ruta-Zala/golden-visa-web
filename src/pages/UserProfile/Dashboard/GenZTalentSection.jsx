@@ -32,7 +32,7 @@ function GenZTalentSection() {
         className="relative w-full bg-light_base rounded-[20px] bg-cover bg-no-repeat"
         id="genz-talent-program"
       >
-        <div className="relative w-full p-[24px] z-10 xl:p-[24px] lg:p-[20px] md:p-[18px] sm:p-[16px] my-16">
+        <div className="relative w-full p-[16px] md:p-[18px] lg:p-[10px] xl:p-[24px] z-10 my-16">
           <h1 className="text-2xl md:text-3xl font-medium text-[#08122A] mb-4 ">
             GenZ Talent Program
           </h1>
@@ -69,7 +69,7 @@ function GenZTalentSection() {
               </div>
             ))}
           </div>
-          <div className="relative h-full rounded-[24px] px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4 overflow-hidden bg-white-0">
+          <div className="relative h-full rounded-[24px] px-8 lg:px-2 xl:px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4 overflow-hidden bg-white-0">
           <div className="genz-talent-bg"></div>
             <div className="flex gap-4 max-[1050px]:flex-col h-full items-center">
               <Text
@@ -79,7 +79,7 @@ function GenZTalentSection() {
               >
                 Time left until <br /> next draw
               </Text>
-              <div className="flex w-full gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row relative">
+              <div className="ml-4 flex relative gap-4 max-[1050px]:ml-0 max-[1050px]:w-full flex-col md:flex-row">
                 {timeCounterList.map((d, index) => (
                   <DaysCounter {...d} key={"daysList" + index} />
                 ))}

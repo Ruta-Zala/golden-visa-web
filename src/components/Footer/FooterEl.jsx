@@ -6,43 +6,60 @@ import linkedin from "../../assets/linkedin.png";
 import medium from "../../assets/icon-medium.svg";
 import logo from "../../assets/header-logo.png";
 import { handleScrollToTop } from "../../utils/helper";
-const Footer = ({className = ""}) => {
+
+const Footer = ({
+  className = "",
+  footerImg = "",
+  title = "",
+  summary = "",
+  buttonTitle = "",
+  hideConnectChip = false,
+  footerButton = null,
+}) => {
   return (
-    <div className={`flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4 ${className}`}>
-      <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full ">
-        <div className="w-full md:w-2/4">
+    <div
+      className={`flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4 ${className}`}
+    >
+      <div className="flex flex-col md:flex-row justify-center items-start gap-4 w-full">
+        {/* Image container */}
+        <div className="w-full md:w-2/4 flex self-stretch">
           <img
-            src={earth}
+            src={footerImg || earth}
             alt="Earth"
-            className="w-full object-cover h-[340px] md:h-[470px] rounded-xl"
+            className="w-full object-cover h-[340px] md:h-auto md:max-h-[550px] rounded-xl"
           />
         </div>
-        <div className="w-full md:w-2/4">
-          <div className="flex flex-col items-start p-[24px] md:p-12 w-full bg-[#E2E8F0] rounded-2xl">
-            <div className="tagline">
-              <p className="inline-block px-3 py-2 bg-[#070b0f] text-white-0 rounded-2xl text-sm mb-2.5 font-extralight">
-                Get in touch with us
-              </p>
-            </div>
+
+        {/* Text content container */}
+        <div className="w-full md:w-2/4 flex flex-col justify-between self-stretch">
+          <div className="flex flex-col items-start p-[24px] md:p-12 md:pb-20 w-full bg-[#E2E8F0] rounded-2xl">
+            {!hideConnectChip && (
+              <div className="tagline">
+                <p className="inline-block px-3 py-2 bg-[#070b0f] text-white-0 rounded-2xl text-sm mb-2.5 font-extralight">
+                  Get in touch with us
+                </p>
+              </div>
+            )}
             <div className="flex flex-col items-start p-0 gap-4 w-full">
-              <h1 className="w-full text-4xl font-medium text-[#08122A] ">
-                Let&apos;s Connect On-Chain
+              <h1 className="w-full text-4xl font-medium text-[#08122A]">
+                {title || `Let's Connect On-Chain`}
               </h1>
               <p className="w-full max-w-2xl text-lg opacity-50 text-[#08122A]">
-                Building the future of Web3 together. We&apos;d love to hear
-                from developers, creators, and anyone passionate about a more
-                open internet. Feel free to reach out with any questions,
-                feedback, or collaboration ideas.
+                {summary ||
+                  `Building the future of Web3 together. We'd love to hear from developers, creators, and anyone passionate about a more open internet. Feel free to reach out with any questions, feedback, or collaboration ideas.`}
               </p>
+              {footerButton}
             </div>
           </div>
+
+          {/* Social media icons container */}
           <div className="grid grid-cols-5 md:grid-cols-5 items-center gap-4 w-full mt-6">
             <a
               href="https://www.linkedin.com/company/iopn"
               target="_blank"
               className="linkedin social-item"
             >
-              <img src={linkedin} alt="Discord" className="w-32 h-32" />
+              <img src={linkedin} alt="LinkedIn" className="w-32 h-32" />
             </a>
             <a
               href="https://x.com/IOPn_io"
