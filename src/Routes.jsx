@@ -9,6 +9,8 @@ import GoldenVisaIcognativePage from "./pages/GoldenVisaIcognativePage";
 import GoldenVisaOPNChainPage from "./pages/GoldenVisaOPNChain";
 import UserProfilePage from "./pages/UserProfile";
 import GoldenVisaOPNVersePage from './pages/GoldenVisaOPNVerse'
+import LogInPage from './pages/Login'
+import RegisterPage from './pages/Register'
 
 const Routes = () => {
   let element = useRoutes([
@@ -44,6 +46,14 @@ const Routes = () => {
     {
       path: "/OPNVerse",
       element: <GoldenVisaOPNVersePage />,
+    },
+    {
+      path: "/login",
+      element: <LogInPage />,
+    },
+    {
+      path: "/register",
+      element: <RegisterPage />,
     },
     { path: "*", element: <NotFound /> },
   ]);
