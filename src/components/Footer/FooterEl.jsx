@@ -122,14 +122,14 @@ const Footer = ({
             {/* <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
               iCognative
             </span> */}
-            <span>
-              <button className="font-medium flex flex-row justify-center items-center gap-4 border border-[#08122a] rounded-3xl transition-all ease-linear duration-100 px-1 ps-5 py-1 group hover:bg-[#003366] hover:text-white-0">
+            <div className="w-full md:w-fit">
+              <button className="w-full md:w-fit font-medium flex flex-row justify-center items-center gap-4 border border-[#08122a] rounded-3xl transition-all ease-linear duration-100 px-1 ps-5 py-1 group hover:bg-[#003366] hover:text-white-0">
                 Join Now{" "}
                 <div className="flex flex-row justify-center items-center rotate-[-45deg] text-white-0 bg-[#08122a] rounded-[50%] p-0 w-8 h-8 group-hover:bg-white-0 group-hover:text-[#08122a]">
                   →
                 </div>
               </button>
-            </span>
+            </div>
           </div>
         </div>
         <p className="text-sm py-5 opacity-50 text-[#08122a]">

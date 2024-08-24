@@ -26,7 +26,7 @@
 }
 
 .goldenvisacard1 {
-  background: #e2e8f0;
+  background: #F1F5F9;
   padding: 40px;
   gap: 24px;
 }
@@ -36,7 +36,6 @@
   background: url("./assets/goldenvisa/6b1f976bd2d2d9d218e72e807196f04a.jpeg")
     no-repeat center center;
   background-size: cover;
-  transform: scaleX(-1);
 }
 
 .goldenvisaimg img{

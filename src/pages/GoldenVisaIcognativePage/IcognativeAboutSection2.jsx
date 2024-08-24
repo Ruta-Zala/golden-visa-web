@@ -62,7 +62,7 @@ const IcognativeAboutSection2 = () => {
             className="accordion-item mb-4 flex flex-col flex-grow">
             <div
               className={`accordion-header ${ activeIndex === index ? 'rounded-t-[20px]' : 'rounded-[20px]'} flex items-center justify-between p-4 ${ activeIndex === index ? 'border-0' : 'border border-slate-200'} shadow-md cursor-pointer ${
-                activeIndex === index ? 'bg-gray-50' : 'bg-white-0'
+                activeIndex === index ? 'bg-light_base' : 'bg-white-0'
               }`}
               onClick={() => toggleAccordion(index)}>
               <span className="font-semibold text-lg">{item.title}</span>
@@ -84,7 +84,7 @@ const IcognativeAboutSection2 = () => {
               </div>
             </div>
             <div
-              className={`accordion-content p-4 rounded-lg bg-gray-50 rounded-b-[20px] ${
+              className={`accordion-content p-4 rounded-lg bg-light_base rounded-b-[20px] ${
                 activeIndex === index ? 'block' : 'hidden'
               }`}>
               <p className="text-gray-700 text-sm">{item.description}</p>

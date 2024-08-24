@@ -39,7 +39,7 @@ export default function GoldenVisaLandingSection() {
                       />
                     </div>
                   }
-                  className="gap-4 capitalize"
+                  className="gap-4 capitalize w-full"
                 >
                   Enter the Draw
                 </Button>
@@ -56,7 +56,7 @@ export default function GoldenVisaLandingSection() {
                       />
                     </div>
                   }
-                  className="gap-4 capitalize"
+                  className="gap-4 capitalize w-full"
                 >
                   Learn more
                 </Button>

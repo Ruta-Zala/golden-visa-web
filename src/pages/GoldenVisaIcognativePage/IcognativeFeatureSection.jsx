@@ -71,11 +71,11 @@ const IcognativeFeatureSection = () => {
           <SwiperSlide
             key={index}
             className="flex flex-col justify-center items-center p-5 gap-2.5 bg-[#08122A] rounded-2xl w-full">
-            <div className="flex items-center">
+            <div className="flex items-center w-full">
               <img
                 src={partner.image}
                 alt={`Partner ${index + 1}`}
-                className="w-40 h-14 object-contain"
+                className="w-30 h-14 object-contain"
               />
               <div className="ml-4 text-left">
                 <p className="text-lg leading-tight text-[#F1F5F9]">

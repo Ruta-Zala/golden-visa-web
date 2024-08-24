@@ -328,7 +328,7 @@ const Herosections = () => {
                   <br />
                   Spatial.
                 </h1>
-                <button className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0" onClick={(event) => handleScrollToSection(event, "roadmap")}>
+                <button className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto" onClick={(event) => handleScrollToSection(event, "roadmap")}>
                   Roadmap
                   <div className="flex flex-row justify-center items-center p-0 gap-2.5 w-8 h-8 text-white-0 bg-[#08122a] rounded-full rotate-[-45deg]">
                     →

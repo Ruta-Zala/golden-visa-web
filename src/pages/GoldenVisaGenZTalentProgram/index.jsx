@@ -378,7 +378,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     Golden Visa.
                   </Text>
                 </div>
-                <a href="/#/opntoken" onClick={handleScrollToTop}>
+                <a href="/#/opntoken" className="w-full md:w-fit" onClick={handleScrollToTop}>
                   <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
                     <div className="flex-1 text-center">
                       Mint OPN Tokens Now
