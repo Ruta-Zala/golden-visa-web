@@ -24,7 +24,7 @@ const features = [
         name: "DMCC- video of environment used for live VC pitch event",
         description: "Immerse yourself in the breathtaking virtual replica of Marjan Island, a jewel in the crown of Ras Al Khaimah. This meticulously crafted digital landscape captures the island's essence, from its pristine beaches and turquoise waters to its luxurious resorts and vibrant marina. Explore every corner of this virtual paradise, from the bustling promenade lined with upscale boutiques to the serene private beaches perfect for relaxation. Marvel at the stunning architecture of the island's iconic landmarks, all recreated with stunning detail. Experience the magic of Marjan Island, anytime, anywhere.",
         image: topic1
-    }, 
+    },
     {
         name: "Marjan Island for Ras al Khaimah Government",
         description: "Immerse yourself in the breathtaking virtual replica of Marjan Island, a jewel in the crown of Ras Al Khaimah. This meticulously crafted digital landscape captures the island's essence, from its pristine beaches and turquoise waters to its luxurious resorts and vibrant marina. Explore every corner of this virtual paradise, from the bustling promenade lined with upscale boutiques to the serene private beaches perfect for relaxation. Marvel at the stunning architecture of the island's iconic landmarks, all recreated with stunning detail. Experience the magic of Marjan Island, anytime, anywhere.",
@@ -41,7 +41,7 @@ export default function OPNVerseTopics() {
         <p className="mt-4 mb-12 text-xl text-dark-0/40 max-w-screen-sm text-center mx-auto">
             A connected digital ecosystem, seamlessly blending the virtual and real worlds into an unparalleled, immersive journey.
         </p>
-        <div className="relative">
+        <div className="relative open-verse-topic-slider-wrapper">
             <Swiper
                 effect={'coverflow'}
                 slidesPerView={1}
@@ -70,11 +70,10 @@ export default function OPNVerseTopics() {
                         spaceBetween: 0,
                     },
                 }}
-                autoplay={false}
-                // autoplay={{
-                //     delay: 3000,
-                //     disableOnInteraction: false,
-                // }}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
                 loop={true}
                 navigation={{
                     prevEl: prevRef.current,
@@ -131,16 +130,14 @@ export default function OPNVerseTopics() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-30 h-[100px] w-[100px] rounded-full bg-[#fff] hidden md:flex lg:hidden items-center justify-center">
-                <button
-                    ref={prevRef}
-                    className="swiper-button-prev p-3 after:content-['prev'] after:text-[16px] after:text-slate-900 rounded-full"
-                />
-                <button
-                    ref={nextRef}
-                    className="swiper-button-next p-3 after:content-['next'] after:text-[16px] after:text-slate-900 rounded-full"
-                />
-            </div>
+            <button
+                ref={prevRef}
+                className="bg-[linear-gradient(90deg,_#3983CC_0%,_#0056B8_100%)] h-12 w-12 swiper-button-prev p-3 after:content-['\2190'] after:text-[16px] after:text-white-0 rounded-full"
+            />
+            <button
+                ref={nextRef}
+                className="bg-[linear-gradient(90deg,_#3983CC_0%,_#0056B8_100%)] h-12 w-12 swiper-button-next p-3 after:content-['\2192'] after:text-[16px] after:text-white-0 rounded-full"
+            />
         </div>
     </div >
     )
