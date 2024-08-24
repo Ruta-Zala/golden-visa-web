@@ -37,8 +37,8 @@ const GoldenVisaIcognativePage = () => {
         title="Get Started with iCognative"
         summary="Building the future of Web3 together. We'd love to hear from developers, creators, and anyone passionate about a more open internet. Feel free to reach out with any questions, feedback, or collaboration ideas."
         footerButton={
-          <button className="flex justify-center  w-full xl:w-3/4 bg-gradient3 items-center gap-2.5 border-blue-900_1e border border-solid  text-white-0 rounded-[36px] p-1 md:p-3 bg-white-0">
-            Join the AI-Powered Web3 Revolution
+          <button className="flex justify-between  w-full xl:w-3/4 bg-gradient3 items-center gap-2.5 border-blue-900_1e border border-solid  text-white-0 rounded-[36px] p-1 md:p-3 bg-white-0">
+            <span className="text-center md:text-left flex-1">Join the AI-Powered Web3 Revolution</span>
             <div
               className="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
               style={{
