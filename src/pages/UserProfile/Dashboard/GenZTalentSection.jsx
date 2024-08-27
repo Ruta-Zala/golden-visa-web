@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GenZEntryLogo from "../../../assets/profile/genz-entry-logo.png";
 import GenZCalLogo from "../../../assets/profile/genz-cal-logo.png";
 import { Text } from "../../../components/Text";
 import { handleScrollToSection } from "../../../utils/helper";
 import DaysCounter from "../../../components/DaysCounter";
+import { getGenzEntries } from "../../../utils/helper";
 
 function GenZTalentSection() {
+  const [entries, setEntries] = useState(0);
+
+  const fetchListOfEntries = async () => {
+    const entries = await getGenzEntries();
+
+    setEntries(Number(entries));
+  };
+
+  useEffect(() => {
+    console.log("entries", entries);
+    fetchListOfEntries();
+  }, [entries]);
+
   const cardList = [
     {
       rewardPercentage: "Number of entries",
-      rewardDescription: "10",
+      rewardDescription: `${entries}`,
       img: GenZEntryLogo,
     },
     {
@@ -70,7 +84,7 @@ function GenZTalentSection() {
             ))}
           </div>
           <div className="relative h-full rounded-[24px] px-8 lg:px-2 xl:px-8 py-10 max-[1440px]:h-auto max-[1440px]:py-8 max-[1050px]:h-auto max-[1050px]:p-5 max-[550px]:p-4 overflow-hidden bg-white-0">
-          <div className="genz-talent-bg"></div>
+            <div className="genz-talent-bg"></div>
             <div className="flex gap-4 max-[1050px]:flex-col h-full items-center">
               <Text
                 size="visa_desktop_headers_h3"
@@ -105,9 +119,7 @@ function GenZTalentSection() {
                 className="learn-more-button link-pb w-full lg:w-auto justify-between"
                 onClick={(event) => handleScrollToSection(event, "mintToken")}
               >
-                <li className="font-medium flex-1 text-center">
-                  Join Now
-                </li>
+                <li className="font-medium flex-1 text-center">Join Now</li>
                 <div className="link-pb-arrow rotate-[-45deg]">→</div>
               </button>
             </div>
@@ -126,9 +138,7 @@ function GenZTalentSection() {
                 className="learn-more-button link-pb w-full lg:w-auto justify-between"
                 onClick={(event) => handleScrollToSection(event, "mintToken")}
               >
-                <li className="font-medium flex-1 text-center">
-                  Join Now
-                </li>
+                <li className="font-medium flex-1 text-center">Join Now</li>
                 <div className="link-pb-arrow rotate-[-45deg]">→</div>
               </button>
             </div>

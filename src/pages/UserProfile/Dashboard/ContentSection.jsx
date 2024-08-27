@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import ArrowIcon from '../../../assets/img_arrow.svg';
-import TransactionIcon from '../../../../public/images/transaction_icon.svg';
-import BtcIcon from '../../../assets/btc_icon.png';
-import BnbIcon from '../../../assets/bnb_icon.png';
-import XrpIcon from '../../../assets/xrp_icon.png';
-import EthIcon from '../../../assets/eth_icon.png';
-import SlnIcon from '../../../assets/sln_icon.png';
-import { handleScrollToSection } from '../../../utils/helper';
+import React, { useState } from "react";
+import ArrowIcon from "../../../assets/img_arrow.svg";
+import TransactionIcon from "../../../../public/images/transaction_icon.svg";
+import BtcIcon from "../../../assets/btc_icon.png";
+import BnbIcon from "../../../assets/bnb_icon.png";
+import XrpIcon from "../../../assets/xrp_icon.png";
+import EthIcon from "../../../assets/eth_icon.png";
+import SlnIcon from "../../../assets/sln_icon.png";
+import { handleScrollToSection } from "../../../utils/helper";
+import { useOpnPrice } from "../../../context/opnPriceContext";
 
 const tabs = [
   { name: 'Token Balances', href: 'Token Balances' },
@@ -22,19 +23,19 @@ const currencyData = [
   { currency: "EUR", value: "€ 1.000510" },
   { currency: "AED", value: "د.إ1.000510" },
   { currency: "INR", value: "₹ 1.000510" },
-  { currency: "BRL", value: "R$ 1.000510" }
-]
+  { currency: "BRL", value: "R$ 1.000510" },
+];
 const transactions = [
   { toAmount: "1.125 BTC", toIcon: BtcIcon },
   { toAmount: "1.125 BNB", toIcon: BnbIcon },
   { toAmount: "1.125 XRP", toIcon: XrpIcon },
   { toAmount: "1.125 ETH", toIcon: EthIcon },
-  { toAmount: "1.125 SLN", toIcon: SlnIcon }
+  { toAmount: "1.125 SLN", toIcon: SlnIcon },
 ];
-
 
 function ContentSection() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const { price } = useOpnPrice();
   return (
     <>
       <div className="w-full">
@@ -42,15 +43,16 @@ function ContentSection() {
         <div className="flex sm:mb-6 border-b w-full  overflow-x-auto">
           {tabs.map((tab, i) => (
             <a
-            className={`py-2 px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
-              activeTabIndex === i
-                ? "border-b-2 border-blue-500 text-gray-900"
-                : "text-gray-500"
-            }`}
+              className={`py-2 px-4 flex-1 text-center md:text-[13px] xl:text-[18px] font-medium cursor-pointer ${
+                activeTabIndex === i
+                  ? "border-b-2 border-blue-500 text-gray-900"
+                  : "text-gray-500"
+              }`}
               onClick={(event) => {
                 setActiveTabIndex(i);
                 handleScrollToSection(event, tab.href);
-              }}>
+              }}
+            >
               {tab.name}
             </a>
           ))}
@@ -58,10 +60,11 @@ function ContentSection() {
       </div>
       <div
         className="bg-light_base rounded-xl md:rounded-2xl p-4 md:p-6 mt-6"
-        id="Token Balances">
+        id="Token Balances"
+      >
         <div className="mb-4 md:mb-6">
           <h1 className="text-2xl md:text-3xl font-medium text-dark-0 mt-3">
-            OPN Token real time balance updates
+          {`1 OPN to USD:$${price}`}
           </h1>
           <p className="opacity-50 text-sm md:text-lg mt-2">
             The live price of Tether OPN Token is $ 1.000715 per (OPN / USD)
@@ -78,7 +81,10 @@ function ContentSection() {
               <table className="w-full bg-white rounded-lg md:rounded-xl text-sm md:text-base">
                 <tbody>
                   {currencyData.map((item, index) => (
-                    <tr key={index} className={`border-t ${index === 0 ? '' : 'text-grey'}`}>
+                    <tr
+                      key={index}
+                      className={`border-t ${index === 0 ? "" : "text-grey"}`}
+                    >
                       <td className="px-4 md:px-0 py-3 md:py-4">
                         {`1 OPN to ${item.currency}`}
                       </td>

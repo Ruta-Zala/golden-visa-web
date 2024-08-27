@@ -44,45 +44,41 @@ const referralRewardsList = [
 ];
 
 export default function GoldenVisaOPNTokenTokenMintPage() {
-
   const location = useLocation();
   const { isConnected } = useAccount();
 
-  const [referalUrl, setReferalUrl] = useState('');
+  const [referalUrl, setReferalUrl] = useState("");
   const [referalId, setReferalId] = useState(null);
-
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const ref = queryParams.get('ref');
-    setReferalId(ref)
-  }, [location])
+    const ref = queryParams.get("ref");
+    setReferalId(ref);
+  }, [location]);
 
   const handleGenerateReferal = async () => {
-
     const currentQuery = location.search;
     const params = new URLSearchParams(currentQuery);
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const walletAddress = await signer.getAddress();
-    params.set('ref', walletAddress);
+    params.set("ref", walletAddress);
 
     const newQueryString = params.toString();
     const newUrl = `${import.meta.env.VITE_REACT_APP_FRONTNED_BASE_URL}${location.pathname}?${newQueryString}${location.hash}`;
 
     setReferalUrl(newUrl);
-
   };
 
-
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(referalUrl)
+    navigator.clipboard
+      .writeText(referalUrl)
       .then(() => {
-        console.log('Link copied to clipboard!');
+        console.log("Link copied to clipboard!");
       })
-      .catch(err => {
-        console.error('Failed to copy the link: ', err);
+      .catch((err) => {
+        console.error("Failed to copy the link: ", err);
       });
   };
   return (
@@ -99,7 +95,10 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
           name="description"
           content="Unlock endless opportunities with a UAE Golden Visa"
         />
-        <meta name="keywords" content="IOPn, OPN Token, Minting, Fair Minting" />
+        <meta
+          name="keywords"
+          content="IOPn, OPN Token, Minting, Fair Minting"
+        />
       </Helmet>
       <div className="w-full bg-white-0">
         <div className="flex h-[1000px] items-start justify-center bg-[url(/public/images/img_hero_mint.png)] bg-cover bg-no-repeat py-4 max-[1440px]:h-auto max-[1050px]:h-auto">
@@ -211,7 +210,9 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         as="p"
                         className="w-[86%] leading-[140%] !text-white-1 max-[1440px]:w-full max-[1050px]:w-full max-[550px]:text-[14px] lg:text-[20px]"
                       >
-                        Copy this link and share it with your network to invite others to join you on this exciting journey and earn rewards along the way.
+                        Copy this link and share it with your network to invite
+                        others to join you on this exciting journey and earn
+                        rewards along the way.
                       </Text>
                     </div>
                     <div className="mb-[70px] flex flex-col gap-4">
@@ -264,8 +265,8 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         >
                           Copy Link
                         </Button>
-                        {
-                          isConnected ? <>
+                        {isConnected ? (
+                          <>
                             <Button
                               onClick={handleGenerateReferal}
                               color="white_0"
@@ -283,25 +284,27 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                             >
                               Generate referral link
                             </Button>
-                          </> : <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1 md:p-3 bg-white-0">
-                        <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
-                          <ConnectWallet />
-                        </h5>
-                        <button
-                          class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
-                          style={{
-                            backgroundColor: "black",
-                            padding: "12px",
-                          }}
-                        >
-                          <img
-                            src="images/img_arrowleft_white_0.svg"
-                            alt="testImg"
-                            loading="lazy"
-                          />
-                        </button>
-                      </div>
-                        }
+                          </>
+                        ) : (
+                          <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1 md:p-3 bg-white-0">
+                            <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
+                              <ConnectWallet />
+                            </h5>
+                            <button
+                              class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                              style={{
+                                backgroundColor: "black",
+                                padding: "12px",
+                              }}
+                            >
+                              <img
+                                src="images/img_arrowleft_white_0.svg"
+                                alt="testImg"
+                                loading="lazy"
+                              />
+                            </button>
+                          </div>
+                        )}
                         {/* <Button
                           color="white_0"
                           shape="round"
@@ -323,7 +326,9 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                           as="p"
                           className="text-center leading-[130%] !text-white-2"
                         >
-                          Don’t wait! Mint your OPN Tokens, join the IOPn Web3 Ecosystem today, and take the first step towards a brighter future.
+                          Don’t wait! Mint your OPN Tokens, join the IOPn Web3
+                          Ecosystem today, and take the first step towards a
+                          brighter future.
                         </Text>
                       </div>
                     </div>
@@ -359,12 +364,18 @@ export default function GoldenVisaOPNTokenTokenMintPage() {
                         as="p"
                         className="leading-[140%] !text-dark-1 max-[550px]:text-[14px]"
                       >
-                        Don’t wait! Join The Web3 Talent Program today and take the
-                        first step towards a brighter future. Mint your OPN Tokens
-                        now and enter the monthly draw for your chance to win a UAE Golden Visa.
+                        Don’t wait! Join The Web3 Talent Program today and take
+                        the first step towards a brighter future. Mint your OPN
+                        Tokens now and enter the monthly draw for your chance to
+                        win a UAE Golden Visa.
                       </Text>
                     </div>
-                    <button class="self-stretch capitalize w-full md:w-fit bg-[#2573C0] white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]" onClick={(event) => handleScrollToSection(event, "mintToken")}>
+                    <button
+                      class="self-stretch capitalize w-full md:w-fit bg-[#2573C0] white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]"
+                      onClick={(event) =>
+                        handleScrollToSection(event, "mintToken")
+                      }
+                    >
                       <div className="flex-1 text-center">
                         Mint OPN Tokens Now
                       </div>

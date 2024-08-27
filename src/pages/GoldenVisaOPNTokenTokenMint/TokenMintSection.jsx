@@ -141,6 +141,7 @@ export default function TokenMintSection({ referralAddress }) {
   useEffect(() => {
     console.log("calling");
     getBalance(selectedToken?.address, setIsTokenBalance);
+    console.log('TokenBalance', tokenBalance)
   }, [selectedToken?.address]);
 
   // Function to handle the mint process
