@@ -96,7 +96,7 @@ const Slider = React.forwardRef(
               className="bg-dark-0 p-1 rounded-full"
             >
               <img
-                src="images/img_arrow_left_white_0_1.svg"
+                src="/images/img_arrow_left_white_0_1.svg"
                 alt="Left Arrow"
                 className="h-4 w-4"
               />
@@ -106,7 +106,7 @@ const Slider = React.forwardRef(
               className="bg-dark-0 p-1 rounded-full"
             >
               <img
-                src="images/img_arrow_right.svg"
+                src="/images/img_arrow_right.svg"
                 alt="Right Arrow"
                 className="h-4 w-4"
               />

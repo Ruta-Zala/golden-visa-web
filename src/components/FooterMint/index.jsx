@@ -12,7 +12,7 @@ export default function Footer({ ...props }) {
         <div className="flex flex-col items-center gap-9 self-stretch">
           <div className="mx-auto mt-9 flex w-full max-w-[1428px] items-center justify-between gap-5 self-stretch max-[1440px]:px-5 max-[1050px]:flex-col max-[1050px]:px-5">
             <Img
-              src="images/img_footer_logo.png"
+              src="/images/img_footer_logo.png"
               alt="Footer Logo"
               className="h-[52px] w-[248px] object-contain"
             />
@@ -31,17 +31,17 @@ export default function Footer({ ...props }) {
                 </Text>
                 <div className="flex flex-1 items-center justify-center gap-5">
                   <Img
-                    src="images/img_info.svg"
+                    src="/images/img_info.svg"
                     alt="Info Icon"
                     className="h-[18px] w-[18px]"
                   />
                   <Img
-                    src="images/img_link.svg"
+                    src="/images/img_link.svg"
                     alt="Link Icon"
                     className="h-[20px]"
                   />
                   <Img
-                    src="images/img_airplane.svg"
+                    src="/images/img_airplane.svg"
                     alt="Airplane Icon"
                     className="h-[16px] w-[16px]"
                   />

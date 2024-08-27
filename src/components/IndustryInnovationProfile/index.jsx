@@ -10,7 +10,7 @@ IndustryInnovationProfile.propTypes = {
 };
 
 export default function IndustryInnovationProfile({
-  industryImage = "images/img_industry_innova.svg",
+  industryImage = "/images/img_industry_innova.svg",
   careerGrowthText = "Career Growth",
   accessTopTierText = "Access top tier infrastructure and secure high level positions",
   ...props

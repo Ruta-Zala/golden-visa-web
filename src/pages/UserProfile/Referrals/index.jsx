@@ -423,7 +423,7 @@ function Referrals() {
                       rightIcon={
                         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
                           <img
-                            src="images/img_arrowleft_blue_800.svg"
+                            src="/images/img_arrowleft_blue_800.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                             loading="lazy"
@@ -448,7 +448,7 @@ function Referrals() {
                       }}
                     >
                       <img
-                        src="images/img_arrowleft_blue_800.svg"
+                        src="/images/img_arrowleft_blue_800.svg"
                         alt="testImg"
                         loading="lazy"
                       />

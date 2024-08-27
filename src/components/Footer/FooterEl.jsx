@@ -6,6 +6,7 @@ import linkedin from "../../assets/linkedin.png";
 import medium from "../../assets/icon-medium.svg";
 import logo from "../../assets/header-logo.png";
 import { handleScrollToTop } from "../../utils/helper";
+import { useTranslation } from "react-i18next";
 
 const Footer = ({
   className = "",
@@ -16,6 +17,9 @@ const Footer = ({
   hideConnectChip = false,
   footerButton = null,
 }) => {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
   return (
     <div
       className={`flex flex-col items-center p-0 gap-4 mt-28 mb-5 w-full max-w-screen-2xl mx-auto px-4 ${className}`}
@@ -98,17 +102,17 @@ const Footer = ({
             </p>
           </div>
           <div className="flex flex-2 flex-col lg:flex-row justify-end items-center gap-4 h-fit mt-2">
-            <a href="/#/goldenvisa" onClick={handleScrollToTop}>
+            <a href={`/${currentLocale}/goldenvisa`} onClick={handleScrollToTop}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6] ">
-                UAE Golden Visa
+                {t('UAE Golden Visa')}
               </span>
             </a>
-            <a href="/#/OPNChain">
+            <a href={`/${currentLocale}/OPNChain`}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
                 OPNChain
               </span>
             </a>
-            <a href="/#/opntoken" onClick={handleScrollToTop}>
+            <a href={`/${currentLocale}/opntoken`} onClick={handleScrollToTop}>
               <span className="text-base font-normal w-30 tracking-wide text-[#08122a] cursor-pointer hover:underline hover:text-[#0073e6]">
                 OPN Token
               </span>

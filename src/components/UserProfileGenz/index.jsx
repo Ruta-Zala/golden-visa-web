@@ -3,7 +3,7 @@ import { Img } from "../ImgGenz/index";
 import React from "react";
 
 export default function UserProfile({
-  userImage = "images/img_passport_streamline_core.svg",
+  userImage = "/images/img_passport_streamline_core.svg",
   visaDurationLabel = "Visa Duration",
   visaDurationText = "Flexible options: 10 years UAE Golden VISA",
   ...props

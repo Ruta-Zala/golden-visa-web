@@ -87,7 +87,7 @@ export default function ReferralProgramSection() {
                   </div>
                 </div>
                 <Img
-                  src="images/img_chain_link_2x_1.png"
+                  src="/images/img_chain_link_2x_1.png"
                   alt="Chainlink Image"
                   className="absolute lg:bottom-0 bottom-[unset] lg:left-0 left-[unset] lg:right-[unset] right-0 lg:top-[unset] top-[-50px] m-auto w-[46%] opacity-70 lg:rotate-[unset] rotate-180"
                 />
@@ -127,7 +127,7 @@ export default function ReferralProgramSection() {
                       rightIcon={
                         <div className="copy-link-button hidden md:flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                           <Img
-                            src="images/img_arrowleft_white_0.svg"
+                            src="/images/img_arrowleft_white_0.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />
@@ -151,7 +151,7 @@ export default function ReferralProgramSection() {
                     rightIcon={
                       <div className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-dark-0 absolute right-[5px] mr-2">
                         <Img
-                          src="images/img_arrowleft_white_0.svg"
+                          src="/images/img_arrowleft_white_0.svg"
                           alt="Arrow Left"
                           className="h-[18px] w-[18px]"
                         />
@@ -169,7 +169,7 @@ export default function ReferralProgramSection() {
                       rightIcon={
                         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-2">
                           <Img
-                            src="images/img_arrowleft.svg"
+                            src="/images/img_arrowleft.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />
@@ -190,7 +190,7 @@ export default function ReferralProgramSection() {
                           }}
                         >
                           <img
-                            src="images/img_arrowleft_white_0.svg"
+                            src="/images/img_arrowleft_white_0.svg"
                             alt="testImg"
                             loading="lazy"
                           />
@@ -204,7 +204,7 @@ export default function ReferralProgramSection() {
                   >
                     Don’t wait! Join The Web3 Talent Program today and take the
                     first step towards a brighter future. Mint your OPN Tokens now
-                    and enter the monthly draw for your chance to win a UAE Golden Visa.
+                    and enter the monthly draw for your chance to win a UAE Gloden Visa.
                   </Text>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function ReferralProgramSection() {
           </div>
           <div className="gap-4 grid lg:grid-cols-2">
             <Img
-              src="images/img_rectangle_11 copy 3.png"
+              src="/images/img_rectangle_11 copy 3.png"
               alt="Rectangle Image"
               className="h-full rounded-[20px] w-full"
             />
@@ -254,7 +254,7 @@ export default function ReferralProgramSection() {
                 rightIcon={
                   <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
                     <Img
-                      src="images/img_arrowleft_accent_blue.svg"
+                      src="/images/img_arrowleft_accent_blue.svg"
                       alt="Arrow Left"
                       className="h-[18px] w-[18px]"
                     />

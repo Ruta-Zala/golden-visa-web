@@ -9,11 +9,11 @@ import React, { Suspense } from "react";
 
 const featureList = [
   {
-    investmentImage: "images/investment.svg",
+    investmentImage: "/images/investment.svg",
     investmentText: "Investment Potential",
   },
   {
-    investmentImage: "images/crown.svg",
+    investmentImage: "/images/crown.svg",
     investmentText: (
       <>
         Exclusive
@@ -23,7 +23,7 @@ const featureList = [
     ),
   },
   {
-    investmentImage: "images/planet.svg",
+    investmentImage: "/images/planet.svg",
     investmentText: (
       <>
         Global
@@ -82,7 +82,7 @@ export default function OPNTokenOverviewSection() {
                     as="p"
                     className="w-full text-[16px] lg:text-[20px] leading-[140%] !text-dark-1 max-[550px]:text-[14px]"
                   >
-                   By minting IOPn tokens, you not only become part of an exciting Web3 ecosystem but also get the chance to win a coveted UAE Golden Visa. This prestigious visa offers unparalleled residency benefits, including tax advantages, business ownership opportunities, and access to world-class healthcare and education.
+                   By minting IOPn tokens, you not only become part of an exciting Web3 ecosystem but also get the chance to win a coveted UAE Gloden Visa. This prestigious visa offers unparalleled residency benefits, including tax advantages, business ownership opportunities, and access to world-class healthcare and education.
                   </Text>
                 </div>
                 <div>
@@ -135,7 +135,7 @@ export default function OPNTokenOverviewSection() {
                 <div className="flex flex-col gap-4">
                   <ChainProfile />
                   <ChainProfile
-                    chainImage="images/money_icon.png"
+                    chainImage="/images/money_icon.png"
                     chainLabel="Total Supply"
                     chainName="50 Billion"
                   />
@@ -176,7 +176,7 @@ export default function OPNTokenOverviewSection() {
                         className="w-[86%] leading-[140%] !text-dark-1 max-[1440px]:w-full max-[1050px]:w-full text-xl"
                       >
                         Revolutionary token designed to offer a unique
-                        opportunity to win a coveted UAE Golden Visa.
+                        opportunity to win a coveted UAE Gloden Visa.
                       </Text>
                     </div>
                     <div className="flex flex-col gap-4 ml-4">

@@ -3,8 +3,11 @@ import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import "./GoldenVisaLandingSection.css";
 import { handleScrollToTop } from "../../utils/helper";
+import { useTranslation } from "react-i18next";
 
 export default function GoldenVisaLandingSection() {
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
   return (
     <>
       {/* golden visa landing section */}
@@ -26,14 +29,14 @@ export default function GoldenVisaLandingSection() {
               achievers, and transform your life.
             </p>
             <div className="flex flex-col md:flex-row gap-4">
-              <Link to="/Talent" onClick={handleScrollToTop}>
+              <Link to={`/${currentLocale}/Talent`} onClick={handleScrollToTop}>
                 <Button
                   variant="fill"
                   shape="round"
                   rightIcon={
                     <div className="flex h-9 w-9 items-center justify-center rounded-[50%] bg-dark-0">
                       <Img
-                        src="images/img_arrowleft_white_0.svg"
+                        src="/images/img_arrowleft_white_0.svg"
                         alt="Arrow Left"
                         className="w-5 h-5"
                       />
@@ -44,13 +47,13 @@ export default function GoldenVisaLandingSection() {
                   Enter the Draw
                 </Button>
               </Link>
-              <Link to="/Talent" onClick={handleScrollToTop}>
+              <Link to={`/${currentLocale}/Talent`} onClick={handleScrollToTop}>
                 <Button
                   shape="round"
                   rightIcon={
                     <div className="flex w-9 h-9 items-center justify-center rounded-[50%] bg-white-0">
                       <Img
-                        src="images/img_arrowleft.svg"
+                        src="/images/img_arrowleft.svg"
                         alt="Arrow Left"
                         className="h-5 w-5"
                       />

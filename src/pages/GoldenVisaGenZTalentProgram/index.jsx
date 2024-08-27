@@ -3,13 +3,11 @@ import { Button } from "../../components/ButtonGenz/index";
 import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
 import { Input } from "../../components/InputGenz/index";
-import Header from "../../components/Header/index";
 import FAQSection from "./FAQSection";
 import GoldenVisaGenZTalentProgramSection from "./GoldenVisaGenZTalentProgramSection";
 import GoldenVisaMetricsSection from "./GoldenVisaMetricsSection";
 import MetricsSection from "./MetricsSection";
 import StepByStepProcessSection from "./StepByStepProcessSection";
-import TokenPurchaseSection from "./TokenPurchaseSection";
 import React, { Suspense, useEffect, useState } from "react";
 import HeaderGenz from "../../components/HeaderGenz";
 import { handleScrollToSection, handleScrollToTop } from "../../utils/helper";
@@ -19,6 +17,7 @@ import { useAccount } from "wagmi";
 import { useLocation } from "react-router-dom";
 import { ethers } from "ethers";
 import ConnectWallet from "../../components/wallet/ConnectWallet";
+import { useTranslation } from "react-i18next";
 
 const referralRewardsList = [
   {
@@ -36,6 +35,8 @@ const referralRewardsList = [
 ];
 
 export default function GoldenVisaGenZTalentProgramPage() {
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
   const location = useLocation();
   const { isConnected } = useAccount();
 
@@ -128,7 +129,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                         <img
                           class="h-[18px] w-[18px]"
-                          src="images/img_arrowleft_white_0.svg"
+                          src="/images/img_arrowleft_white_0.svg"
                           alt="Arrow Left"
                           loading="lazy"
                         />
@@ -181,12 +182,12 @@ export default function GoldenVisaGenZTalentProgramPage() {
                 </div>
               </div>
               <Img
-                src="images/img_chain_link_2x_1.png"
+                src="/images/img_chain_link_2x_1.png"
                 alt="Chainlink Image"
                 className="absolute hidden md:flex bottom-0 left-0 m-auto h-auto w-[40%] md:w-[66%] lg-[46%] object-contain opacity-70"
               />
               <Img
-                src="images/img_chain_link_2x_1.png"
+                src="/images/img_chain_link_2x_1.png"
                 alt="Chainlink Image"
                 className="absolute top-0 flex md:hidden right-0 m-0 rotate-[180deg] h-auto w-[50%] object-contain opacity-70"
               />
@@ -227,7 +228,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                       rightIcon={
                         <div className="copy-link-button hidden md:flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
                           <Img
-                            src="images/img_arrowleft.svg"
+                            src="/images/img_arrowleft.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />
@@ -250,7 +251,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     rightIcon={
                       <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-slate-900 absolute right-[5px] mr-1">
                         <Img
-                          src="images/img_arrowleft_white_0.svg"
+                          src="/images/img_arrowleft_white_0.svg"
                           alt="Arrow Left"
                           className="h-[18px] w-[18px]"
                         />
@@ -269,7 +270,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                         rightIcon={
                           <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
                             <Img
-                              src="images/img_arrowleft_blue_800.svg"
+                              src="/images/img_arrowleft_blue_800.svg"
                               alt="Arrow Left"
                               className="h-[18px] w-[18px]"
                             />
@@ -293,7 +294,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                         }}
                       >
                         <img
-                          src="images/img_arrowleft_white_0.svg"
+                          src="/images/img_arrowleft_white_0.svg"
                           alt="testImg"
                           loading="lazy"
                         />
@@ -306,7 +307,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     rightIcon={
                       <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px] mr-1">
                         <Img
-                          src="images/img_arrowleft.svg"
+                          src="/images/img_arrowleft.svg"
                           alt="Arrow Left"
                           className="h-[18px] w-[18px]"
                         />
@@ -341,7 +342,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
           <div className="container-xs flex flex-col gap-[30px] max-[1440px]:px-5 max-[1050px]:px-5">
             <div className="flex flex-col md:flex-row gap-4">
               <Img
-                src="images/img_rectangle_11_582x742.png"
+                src="/images/img_rectangle_11_582x742.png"
                 alt="Promo Image"
                 className="h-[340px] sm:h-[450px] md:h-[582px] w-full rounded-[20px] object-cover md:w-[50%]"
               />
@@ -378,7 +379,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     Golden Visa.
                   </Text>
                 </div>
-                <a href="/#/opntoken" className="w-full md:w-fit" onClick={handleScrollToTop}>
+                <a href={`/${currentLocale}/opntoken`} className="w-full md:w-fit" onClick={handleScrollToTop}>
                   <button class="self-stretch capitalize w-full md:w-fit bg-gradient3 white flex flex-row items-center text-[#fff] cursor-pointer whitespace-nowrap rounded-[26px] px-3 py-2 text-md justify-between md:justify-start gap-0 md:gap-[34px]">
                     <div className="flex-1 text-center">
                       Mint OPN Tokens Now
@@ -386,7 +387,7 @@ export default function GoldenVisaGenZTalentProgramPage() {
                     <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-white-0">
                       <img
                         class="h-[10px] w-[10px]"
-                        src="images/img_arrowleft_blue_800.svg"
+                        src="/images/img_arrowleft_blue_800.svg"
                         alt="Arrow Left"
                         loading="lazy"
                       />

@@ -3,7 +3,7 @@ import { Img } from "../ImgMint/index";
 import React from "react";
 
 export default function ChainProfile({
-  chainImage = "images/ethereum.svg",
+  chainImage = "/images/ethereum.svg",
   chainLabel = "Chain ",
   chainName = "Ethereum",
   ...props

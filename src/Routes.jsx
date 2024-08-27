@@ -8,51 +8,51 @@ import NotFound from "./pages/NotFound";
 import GoldenVisaIcognativePage from "./pages/GoldenVisaIcognativePage";
 import GoldenVisaOPNChainPage from "./pages/GoldenVisaOPNChain";
 import UserProfilePage from "./pages/UserProfile";
-import GoldenVisaOPNVersePage from './pages/GoldenVisaOPNVerse'
-import LogInPage from './pages/Login'
-import RegisterPage from './pages/Register'
+import GoldenVisaOPNVersePage from './pages/GoldenVisaOPNVerse';
+import LogInPage from './pages/Login';
+import RegisterPage from './pages/Register';
 
 const Routes = () => {
   let element = useRoutes([
     { path: "/", element: <Home /> },
     {
-      path: "/goldenvisa",
+      path: "/:locale/goldenvisa",
       element: <GoldenVisaLandingvTwoPage />,
     },
     {
-      path: "/opntoken",
+      path: "/:locale/opntoken",
       element: <GoldenVisaOPNTokenTokenMintPage />,
     },
     {
-      path: "/Talent",
+      path: "/:locale/Talent",
       element: <GoldenVisaGenZTalentProgramPage />,
     },
     {
-      path: "/Entrepreneur",
+      path: "/:locale/Entrepreneur",
       element: <GoldenVisaWeb3EntrepreneurPage />,
     },
     {
-      path: "/Icognative",
+      path: "/:locale/Icognative",
       element: <GoldenVisaIcognativePage />,
     },
     {
-      path: "/OPNChain",
+      path: "/:locale/OPNChain",
       element: <GoldenVisaOPNChainPage />,
     },
     {
-      path: "/profile",
+      path: "/:locale/profile",
       element: <UserProfilePage />,
     },
     {
-      path: "/OPNVerse",
+      path: "/:locale/OPNVerse",
       element: <GoldenVisaOPNVersePage />,
     },
     {
-      path: "/login",
+      path: "/:locale/login",
       element: <LogInPage />,
     },
     {
-      path: "/register",
+      path: "/:locale/register",
       element: <RegisterPage />,
     },
     { path: "*", element: <NotFound /> },

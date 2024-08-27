@@ -26,7 +26,7 @@ export default function TestimonialSection() {
           <div className="flex flex-col md:flex-row items-start my-4 w-full gap-3">
             <div className="flex flex-col gap-5 w-full md:w-2/5 md:mt-20">
               <p className="w-full text-base md:text-3xl">
-                “Winning the UAE Golden Visa through the GenZ Talent Program has
+                “Winning the UAE Gloden Visa through the GenZ Talent Program has
                 opened doors I never imagined possible. The opportunities here
                 are endless.”
               </p>
@@ -47,14 +47,14 @@ export default function TestimonialSection() {
               <div className="w-full md:w-1/2">
                 {" "}
                 <Img
-                  src="images/img_rectangle_33.png"
+                  src="/images/img_rectangle_33.png"
                   alt="Story Image"
                   className="rounded-[20px] h-[482px] w-full"
                 />
               </div>
               <div className="flex flex-col gap-3 w-full md:w-1/2">
                 <Img
-                  src="images/img_rectangle_34.png"
+                  src="/images/img_rectangle_34.png"
                   alt="Next Image"
                   className="h-[482px] rounded-[20px] object-cover"
                 />
@@ -64,7 +64,7 @@ export default function TestimonialSection() {
                   rightIcon={
                     <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                       <Img
-                        src="images/img_arrowright_white_0.svg"
+                        src="/images/img_arrowright_white_0.svg"
                         alt="Arrow Right"
                         className="h-[12px] w-[14px]"
                       />

@@ -5,32 +5,32 @@ import { Suspense } from "react";
 
 const benefitsGrid = [
   {
-    industryImage: "images/img_promotion.svg",
+    industryImage: "/images/img_promotion.svg",
     careerGrowthText: "Life Changing",
     accessTopTierText:
       "10-Year automatically renewable Golden Visa with right to live in any of the seven emirates in the UAE",
   },
   {
-    industryImage: "images/img_airplanes.svg",
+    industryImage: "/images/img_airplanes.svg",
     careerGrowthText: "Family Inclusion",
     accessTopTierText:
       "Bring your immediate family members and obtain work authorization for your spouse and children",
   },
   {
-    industryImage: "images/img_Group.svg",
+    industryImage: "/images/img_Group.svg",
     careerGrowthText: "Entrepreneurial Opportunities",
     accessTopTierText:
       "Establish your business in the UAE with 3-Year Free Business License.",
   },
   {
-    industryImage: "images/img_Opportunities.svg",
+    industryImage: "/images/img_Opportunities.svg",
     careerGrowthText: "Global Mobility",
     accessTopTierText: (
       <>Enjoy easier travel within the region and explore new cultures.</>
     ),
   },
   {
-    industryImage: "images/img_salary.svg",
+    industryImage: "/images/img_salary.svg",
     careerGrowthText: "Competitive Salaries",
     accessTopTierText: (
       <>
@@ -41,7 +41,7 @@ const benefitsGrid = [
     ),
   },
   {
-    industryImage: "images/img_graduation.svg",
+    industryImage: "/images/img_graduation.svg",
     careerGrowthText: "Financial Freedom",
     accessTopTierText: "Access to UAE Banking IBAN",
   },
@@ -57,14 +57,14 @@ export default function GoldenVisaLandingSection1() {
             <div className="flex flex-col gap-5 py-20">
               <div className="flex flex-col items-center gap-6">
                 <div className="flex rounded-2xl border border-solid border-dark-0 p-1.5">
-                  <Heading as="h1">Why the UAE Golden Visa?</Heading>
+                  <Heading as="h1">Why the UAE Gloden Visa?</Heading>
                 </div>
                 <h1 className="text-3xl lg:text-5xl text-center">
                   Explore The Transformative
                   <br />
                   Benefits That Come With
                   <br />
-                  The UAE Golden Visa
+                  The UAE Gloden Visa
                 </h1>
                 <p className="text-2xl text-dark-0 text-center z-[1] pb-20">
                   Imagine a world of endless possibilities! With a UAE Golden
@@ -87,7 +87,7 @@ export default function GoldenVisaLandingSection1() {
                   </div>
                 </div>
                 <Img
-                  src="images/img_background_copy.png"
+                  src="/images/img_background_copy.png"
                   alt="Background Image"
                   className="absolute inset-0 mx-auto my-auto h-[850px] w-full md:w-3/4 object-contain opacity-70"
                 />

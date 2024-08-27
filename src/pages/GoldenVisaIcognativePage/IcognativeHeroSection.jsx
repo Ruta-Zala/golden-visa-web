@@ -2,21 +2,23 @@ import { useState, useRef, useEffect } from "react";
 import arrowDown from "../../assets/img_arrow_down.svg";
 import headerLogo from "../../assets/header-logo.jpeg";
 import { handleScrollToSection } from "../../utils/helper";
-
-const menuItems = [
-  { href: "/#/OPNChain", label: "OPNChain" },
-  { href: "/#/OPNVerse", label: "OPNVerse" },
-  {
-    label: "iCognative",
-    onClick: (event) => handleScrollToSection(event, "iCognative"),
-  },
-  { href: "/#/Talent", label: "Web3 Talent Program" },
-  { href: "/#/Entrepreneur", label: "Web3 Entrepreneur Program" },
-  { href: "/#/goldenvisa", label: "UAE Golden Visa" },
-  { href: "/#/opntoken", label: "OPN Token" },
-];
+import { useTranslation } from "react-i18next";
 
 const IcognativeHeroSection = () => {
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
+  const menuItems = [
+    { href: `/${currentLocale}/OPNChain`, label: "OPNChain" },
+    { href: `/${currentLocale}/OPNVerse`, label: "OPNVerse" },
+    {
+      label: "iCognative",
+      onClick: (event) => handleScrollToSection(event, "iCognative"),
+    },
+    { href: `/${currentLocale}/Talent`, label: "Web3 Talent Program" },
+    { href: `/${currentLocale}/Entrepreneur`, label: "Web3 Entrepreneur Program" },
+    { href: `/${currentLocale}/goldenvisa`, label: t('UAE Golden Visa') },
+    { href: `/${currentLocale}/opntoken`, label: "OPN Token" },
+  ];
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -75,7 +77,7 @@ const IcognativeHeroSection = () => {
             </div>
             <div className="hidden lg:flex items-center justify-between gap-3 w-[49%] lg:w-[48%]">
               <div className="flex flex-row items-center px-3 xl:px-6 justify-around bg-[#f1f5f9] rounded-full py-3 flex-1">
-                <a href="/#/OPNChain">
+                <a href={`/${currentLocale}/OPNChain`}>
                   <span className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer">
                     OPNChain
                   </span>
@@ -89,7 +91,7 @@ const IcognativeHeroSection = () => {
                 >
                   iCognative
                 </span>
-                <a href="/#/OPNVerse">
+                <a href={`/${currentLocale}/OPNVerse`}>
                   <span className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer">
                     OPNVerse
                   </span>
@@ -118,21 +120,21 @@ const IcognativeHeroSection = () => {
                       >
                         <div className="py-1" role="none">
                         <a
-                            href="/#/goldenvisa"
+                            href={`/${currentLocale}/goldenvisa`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            UAE Golden Visa
+                            {t('UAE Golden Visa')}
                           </a>
                           <a
-                            href="/#/Talent"
+                            href={`/${currentLocale}//Talent`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
                             Web3 Talent Program
                           </a>
                           <a
-                            href="/#/Entrepreneur"
+                            href={`/${currentLocale}//Entrepreneur`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >

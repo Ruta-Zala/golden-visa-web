@@ -12,19 +12,23 @@ import logoWhite from "../../assets/logo-white.png";
 import Footer from "../../components/Footer/FooterEl";
 import { Link } from "react-router-dom";
 import { handleScrollToTop } from "../../utils/helper";
+import { useTranslation } from "react-i18next";
 
 export default function GoldenVisaLandingvTwoPage() {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+  
   return (
     <>
       <Helmet>
-        <title>UAE Golden Visa Program - Unlock Your Future</title>
+        <title>UAE Gloden Visa Program - Unlock Your Future</title>
         <meta
           name="description"
-          content="Join the Web3 Talent Program for a chance to win a UAE Golden Visa. Secure your future with career growth, global mobility, and entrepreneurial opportunities. Enter our monthly draw now!"
+          content="Join the Web3 Talent Program for a chance to win a UAE Gloden Visa. Secure your future with career growth, global mobility, and entrepreneurial opportunities. Enter our monthly draw now!"
         />
         <meta
           name="description"
-          content="Unlock endless opportunities with a UAE Golden Visa"
+          content="Unlock endless opportunities with a UAE Gloden Visa"
         />
         <meta name="keywords" content="IOPn, RAKDAO, Golden Visa" />
       </Helmet>
@@ -40,13 +44,13 @@ export default function GoldenVisaLandingvTwoPage() {
                       size="xs"
                       className="min-w-80 rounded-2xl uppercase  w-[32vw]"
                     >
-                      JOIN THE Web3 TALENT PROGRAM
+                      {t("JOIN THE Web3 TALENT PROGRAM")}
                     </Button>
                     <h1 className="text-shadow-ts !text-white-0 text-3xl sm:text-4xl md:text-6xl w-full text-center">
-                        Unlock Your<br/>Future With a<br/>UAE Golden Visa!
+                    {t("Unlock Your")}<br/>{t("Future With a")}<br/>{t("UAE Golden Visa")}!
                     </h1>
                   </div>
-                  <Link to="/Talent" onClick={handleScrollToTop}>
+                  <Link to={`/${currentLocale}/Talent`} onClick={handleScrollToTop}>
                     {/* <Link to="/Talent"> */}
                     <Button
                       variant="fill"
@@ -54,7 +58,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       rightIcon={
                         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                           <Img
-                            src="images/img_arrowleft_white_0.svg"
+                            src="/images/img_arrowleft_white_0.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />
@@ -62,7 +66,7 @@ export default function GoldenVisaLandingvTwoPage() {
                       }
                       className="min-w-[258px] gap-4 capitalize"
                     >
-                      Enter the Draw now
+                      {t("Enter the Draw now")}
                     </Button>
                   </Link>
                 </div>
@@ -98,7 +102,7 @@ export default function GoldenVisaLandingvTwoPage() {
                     best talent to the region to build the future.
                   </p>
                   {/* <p className="w-full !text-center md:text-left !text-white-0 text-lg md:text-xl">
-                    Traditionally, securing a UAE Golden Visa requires a
+                    Traditionally, securing a UAE Gloden Visa requires a
                     significant investment, but the GenZ Talent Program is
                     changing the game. With just 10,000 OPN Tokens, currently
                     valued at $500, you can participate in our innovative Life
@@ -215,7 +219,7 @@ export default function GoldenVisaLandingvTwoPage() {
                     className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
                   >
                     Every month, enter a decentralized draw for a chance to win
-                    a UAE Golden Visa.
+                    a UAE Gloden Visa.
                   </Text>
                 </div>
                 <div className="absolute 2xl:top-[310px] xl:top-[250px] md:top-[180px] top-[130px] xl:left-[140px] left-[10px] justify-between gap-5 flex md:flex-col 2xl:max-w-[280px] xl:max-w-[260px] md:max-w-[220px] max-w-[180px] z-50">
@@ -277,7 +281,7 @@ export default function GoldenVisaLandingvTwoPage() {
                     rightIcon={
                       <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
                         <Img
-                          src="images/img_arrowleft.svg"
+                          src="/images/img_arrowleft.svg"
                           alt="Arrow Left"
                           className="h-[18px] w-[18px]"
                         />
@@ -292,7 +296,7 @@ export default function GoldenVisaLandingvTwoPage() {
                   <img src="/images/img_group_4.png" alt="" />
                 </div>
                 <Img
-                  src="images/img_img.png"
+                  src="/images/img_img.png"
                   alt="Image One"
                   className="absolute left-1/2 2xl:top-[-120px] xl:top-[-80px] top-[-50px] z-50 -translate-x-1/2 m-auto 2xl:max-w-[400px] xl:max-w-[270px] md:max-w-[200px] max-w-[160px] w-full rounded-[24px] object-contain"
                 />
@@ -461,7 +465,7 @@ export default function GoldenVisaLandingvTwoPage() {
                         className="leading-[140%] !text-dark-2 w-full xl:!text-[15px] !text-[13px]"
                       >
                         Every month, enter a decentralized draw for a chance to
-                        win a UAE Golden Visa.
+                        win a UAE Gloden Visa.
                       </Text>
                     </div>
                     <div className="gap-5 flex md:flex-col h-[155px]">
@@ -523,7 +527,7 @@ export default function GoldenVisaLandingvTwoPage() {
                     rightIcon={
                       <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
                         <Img
-                          src="images/img_arrowleft.svg"
+                          src="/images/img_arrowleft.svg"
                           alt="Arrow Left"
                           className="h-[18px] w-[18px]"
                         />
@@ -537,14 +541,14 @@ export default function GoldenVisaLandingvTwoPage() {
                   </div>
                 </div>
                 <div className="flex justify-center pt-10">
-                  <Link to="/Talent" onClick={handleScrollToTop}>
+                  <Link to={`/${currentLocale}/Talent`} onClick={handleScrollToTop}>
                     <Button
                       variant="fill"
                       shape="round"
                       rightIcon={
                         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-[white]">
                           <Img
-                            src="images/img_arrowleft.svg"
+                            src="/images/img_arrowleft.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />
@@ -558,7 +562,7 @@ export default function GoldenVisaLandingvTwoPage() {
                 </div>
                 <div className="mt-7">
                   <Img
-                    src="images/img_img.png"
+                    src="/images/img_img.png"
                     alt="Image One"
                     className="w-full rounded-[24px] object-cover h-[300px]"
                   />
@@ -576,7 +580,7 @@ export default function GoldenVisaLandingvTwoPage() {
             <div className="max-w-screen-2xl mx-auto w-full px-4">
               <div className="flex gap-4 flex-col md:flex-row mb-5">
                 <Img
-                  src="images/img_rectangle_11.png"
+                  src="/images/img_rectangle_11.png"
                   alt="Promo Image"
                   className="rounded-[20px] w-full md:w-1/2"
                 />
@@ -607,17 +611,17 @@ export default function GoldenVisaLandingvTwoPage() {
                       Don’t wait! Join The  Web3 Talent Program today
                       and take the first step towards a brighter future. Mint
                       your OPN Tokens now and enter the monthly draw for your
-                      chance to win a UAE Golden Visa.
+                      chance to win a UAE Gloden Visa.
                     </Text>
                   </div>
-                  <Link to="/opntoken"  onClick={handleScrollToTop}>
+                  <Link to={`/${currentLocale}/opntoken`}  onClick={handleScrollToTop}>
                     <Button
                       variant="fill"
                       shape="round"
                       rightIcon={
                         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-dark-0">
                           <Img
-                            src="images/img_arrowleft_white_0.svg"
+                            src="/images/img_arrowleft_white_0.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />

@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { handleScrollToSection } from "../../utils/helper";
 import headerLogo from "../../assets/header-logo.jpeg";
 import arrowDown from "../../assets/img_arrow_down.svg";
+import { useTranslation } from "react-i18next";
 
 export default function HeaderGenz({
   hideTabs = [],
@@ -12,19 +13,21 @@ export default function HeaderGenz({
   isWeb3Tab,
   ...props
 }) {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
   const menuItems = [
-    { href: "/#/goldenvisa", label: "UAE Golden Visa" },
-    { href: "/#/OPNChain", label: "OPNChain" },
-    { href: "/#/opntoken", label: "OPN Token" },
-    { href: "/#/Talent", label: "Web3 Talent Program", hide: isTalentTab },
+    { href: `/${currentLocale}/goldenvisa`, label: t('UAE Golden Visa') },
+    { href: `/${currentLocale}/OPNChain`, label: "OPNChain" },
+    { href: `/${currentLocale}/opntoken`, label: "OPN Token" },
+    { href: `/${currentLocale}/Talent`, label: "Web3 Talent Program", hide: isTalentTab },
     {
-      href: "/#/Entrepreneur",
+      href: `/${currentLocale}/Entrepreneur`,
       label: "Web3 Entrepreneur Program",
       hide: isWeb3Tab,
     },
-    { href: "/#/OPNVerse", label: "OPNVerse" },
+    { href: `/${currentLocale}/OPNVerse`, label: "OPNVerse" },
     {
-      href: "/#/Icognative",
+      href: `/${currentLocale}/Icognative`,
       label: "iCognative",
     },
   ];
@@ -156,7 +159,7 @@ export default function HeaderGenz({
         rightIcon={
           <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
             <Img
-              src="images/img_arrowleft.svg"
+              src="/images/img_arrowleft.svg"
               alt="Arrow Left"
               className="h-[18px] w-[18px]"
             />
@@ -170,7 +173,7 @@ export default function HeaderGenz({
         <div className="fixed inset-0 z-50 flex w-64 shadow-xl flex-col bg-white-0 p-3 transform transition-transform duration-300">
           <div className="flex justify-between items-center bg-white-0">
             {/* <Img
-              src="images/img_header_logo.png"
+              src="/images/img_header_logo.png"
               alt="Header Logo"
               className="h-12 w-48 object-contain"
             /> */}
@@ -244,7 +247,7 @@ export default function HeaderGenz({
               rightIcon={
                 <div className="flex h-9 w-9 items-center justify-center rounded-[50%] bg-[#ffffff]">
                   <Img
-                    src="images/img_arrowleft.svg"
+                    src="/images/img_arrowleft.svg"
                     alt="Arrow Left"
                     className="h-[18px] w-[18px]"
                   />

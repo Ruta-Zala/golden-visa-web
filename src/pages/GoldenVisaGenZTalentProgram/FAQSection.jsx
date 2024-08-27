@@ -88,7 +88,7 @@ export default function FAQSection() {
                 shape="circle"
                 className="w-[36px] !rounded-[18px] bg-slate-900"
               >
-                <Img src="images/img_arrowleft_white_0.svg" />
+                <Img src="/images/img_arrowleft_white_0.svg" />
               </Button>
             </div>
           </div>
@@ -114,13 +114,13 @@ export default function FAQSection() {
                               </Heading>
                               {props?.expanded ? (
                                 <Img
-                                  src="images/img_icon.svg"
+                                  src="/images/img_icon.svg"
                                   alt="Expand Icon"
                                   className="h-[20px] w-[20px]"
                                 />
                               ) : (
                                 <Img
-                                  src="images/img_plus.svg"
+                                  src="/images/img_plus.svg"
                                   alt="Plus Icon"
                                   className="h-[20px] w-[20px]"
                                 />

@@ -34,7 +34,7 @@ const accordionData = [
               as="p"
               className="!text-dark-1"
             >
-              Eligibility for a 10-year UAE Golden Visa.
+              Eligibility for a 10-year UAE Gloden Visa.
             </Text>
           </li>
           <li>
@@ -63,7 +63,7 @@ const accordionData = [
   {
     benefitQuestion: "How do I participate in the program?",
     benefitAnswer:
-      "To participate, you need to acquire and stake required OPN tokens through the program portal, lock them up for three years, and then you will be eligible for the benefits including the UAE Golden Visa.",
+      "To participate, you need to acquire and stake required OPN tokens through the program portal, lock them up for three years, and then you will be eligible for the benefits including the UAE Gloden Visa.",
   },
   {
     benefitQuestion: "What is the process for staking OPN tokens?",
@@ -76,14 +76,14 @@ const accordionData = [
       "After the three-year staking period, you will receive back your staked OPN tokens.",
   },
   {
-    benefitQuestion: "Can my family also benefit from the UAE Golden Visa?",
+    benefitQuestion: "Can my family also benefit from the UAE Gloden Visa?",
     benefitAnswer:
-      "Yes, the UAE Golden Visa can be extended to direct family members and dependents, providing long-term stability and security for your family.",
+      "Yes, the UAE Gloden Visa can be extended to direct family members and dependents, providing long-term stability and security for your family.",
   },
   {
-    benefitQuestion: "What advantages does the UAE Golden Visa provide?",
+    benefitQuestion: "What advantages does the UAE Gloden Visa provide?",
     benefitAnswer:
-      "The UAE Golden Visa offers long-term stability, the ability to live, work, and study without a national sponsor, flexible entry and exit from the UAE, and can be extended to family members.",
+      "The UAE Gloden Visa offers long-term stability, the ability to live, work, and study without a national sponsor, flexible entry and exit from the UAE, and can be extended to family members.",
   },
   {
     benefitQuestion: "What is RAK DAO and how does it relate to the program?",
@@ -139,13 +139,13 @@ export default function FAQSection() {
                               </Heading>
                               {props?.expanded ? (
                                 <Img
-                                  src="images/img_icon.svg"
+                                  src="/images/img_icon.svg"
                                   alt="Expand Icon"
                                   className="h-[20px] w-[20px]"
                                 />
                               ) : (
                                 <Img
-                                  src="images/img_plus.svg"
+                                  src="/images/img_plus.svg"
                                   alt="Collapse Icon"
                                   className="h-[20px] w-[20px]"
                                 />

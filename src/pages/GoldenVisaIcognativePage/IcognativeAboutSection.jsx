@@ -10,7 +10,7 @@ export default function IcognativeAboutSection() {
           <div className="mx-auto flex flex-1 flex-col gap-4 relative">
             <div className="flex gap-4 max-[1050px]:flex-col">
               <Img
-                src="images/img_Icognative_About.png"
+                src="/images/img_Icognative_About.png"
                 alt="Cta Image"
                 className="h-[300px] md:h-[500px] w-[50%] rounded-[12px] max-[1050px]:w-full"
               />
@@ -39,7 +39,7 @@ export default function IcognativeAboutSection() {
                   <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-black-0">
                     <img
                       class="h-[10px] w-[10px]"
-                      src="images/img_arrowleft_white_0.svg"
+                      src="/images/img_arrowleft_white_0.svg"
                       alt="Arrow Left"
                       loading="lazy"
                     />

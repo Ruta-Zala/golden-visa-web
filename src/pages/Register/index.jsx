@@ -11,11 +11,11 @@ export default function RegisterPage() {
             <title>Sign Up - Unlock Your Future with Golden Visa Chances</title>
             <meta
                 name="description"
-                content="Join the IOPn ecosystem and mint OPN tokens for a chance to win a UAE Golden Visa. Invest in your future with exclusive access and global recognition. Act now and be part of the GenZ Talent Program."
+                content="Join the IOPn ecosystem and mint OPN tokens for a chance to win a UAE Gloden Visa. Invest in your future with exclusive access and global recognition. Act now and be part of the GenZ Talent Program."
             />
             <meta
                 name="description"
-                content="Unlock endless opportunities with a UAE Golden Visa"
+                content="Unlock endless opportunities with a UAE Gloden Visa"
             />
             <meta
                 name="keywords"

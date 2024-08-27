@@ -19,7 +19,7 @@ const IcognativeSupportSection = () => {
               <div class="flex h-[28px] w-[28px] items-center justify-center rounded-[50%] bg-white-0">
                 <img
                   class="h-[10px] w-[10px]"
-                  src="images/img_arrowleft_blue_800.svg"
+                  src="/images/img_arrowleft_blue_800.svg"
                   alt="Arrow Left"
                   loading="lazy"
                 />

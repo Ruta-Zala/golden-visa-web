@@ -47,7 +47,7 @@ const GoldenVisaIcognativePage = () => {
               }}
             >
               <img
-                src="images/img_arrowleft_blue_800.svg"
+                src="/images/img_arrowleft_blue_800.svg"
                 alt="testImg"
                 loading="lazy"
               />

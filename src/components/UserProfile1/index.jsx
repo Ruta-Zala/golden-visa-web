@@ -3,7 +3,7 @@ import { Img } from "../ImgGenz/index";
 import React from "react";
 
 export default function UserProfile1({
-  userImage = "images/img_upload.svg",
+  userImage = "/images/img_upload.svg",
   entryText = "Entry",
   opnCounterText = "10,000 OPN",
   ...props

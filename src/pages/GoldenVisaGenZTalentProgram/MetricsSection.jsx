@@ -7,17 +7,17 @@ import React, { Suspense } from "react";
 
 const entryStatsList = [
   {
-    userImage: "images/wallet.svg",
+    userImage: "/images/wallet.svg",
     entryText: "Entry",
     opnCounterText: "10,000 OPN",
   },
   {
-    userImage: "images/smartphone_1.svg",
+    userImage: "/images/smartphone_1.svg",
     entryText: "Multiplier",
     opnCounterText: "Pay OPN",
   },
   {
-    userImage: "images/money_new.svg",
+    userImage: "/images/money_new.svg",
     entryText: "Additional Benefits",
     opnCounterText: "Exciting Prizes",
   },
@@ -111,7 +111,7 @@ export default function MetricsSection() {
                   <div className="flex flex-1 items-end justify-start px-5 max-[1050px]:px-0 max-[550px]:px-0 overflow-x-auto">
                     <div className="flex flex-col items-center justify-center gap-3">
                       <Img
-                        src="images/img_frame_8.png"
+                        src="/images/img_frame_8.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -119,7 +119,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_9.png"
+                        src="/images/img_frame_9.png"
                         alt="September Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -127,7 +127,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="mt-2 flex flex-1 flex-col items-end gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_9.png"
+                        src="/images/img_frame_9.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -135,7 +135,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_12.png"
+                        src="/images/img_frame_12.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -143,7 +143,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_11.png"
+                        src="/images/img_frame_11.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -151,7 +151,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_12.png"
+                        src="/images/img_frame_12.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -159,7 +159,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_8.png"
+                        src="/images/img_frame_8.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -167,7 +167,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2 max-[550px]:hidden">
                       <Img
-                        src="images/img_frame_10.png"
+                        src="/images/img_frame_10.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -175,7 +175,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2">
                       <Img
-                        src="images/img_frame_12.png"
+                        src="/images/img_frame_12.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -183,7 +183,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2 max-[550px]:hidden">
                       <Img
-                        src="images/img_frame_8.png"
+                        src="/images/img_frame_8.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -191,7 +191,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2 max-[550px]:hidden">
                       <Img
-                        src="images/img_frame_9.png"
+                        src="/images/img_frame_9.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />
@@ -199,7 +199,7 @@ export default function MetricsSection() {
                     </div>
                     <div className="flex flex-1 flex-col items-center gap-3 px-10 max-[1050px]:px-2 max-[550px]:px-2 max-[550px]:hidden">
                       <Img
-                        src="images/img_frame_6.png"
+                        src="/images/img_frame_6.png"
                         alt="August Image"
                         className="h-[258px] object-contain object-bottom"
                       />

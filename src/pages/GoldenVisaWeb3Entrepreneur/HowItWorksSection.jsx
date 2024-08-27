@@ -11,7 +11,7 @@ export default function HowItWorksSection() {
       <div className="mt-[40px] flex justify-center self-stretch" id="howItWroks">
         <div className="mt-[10px] container-xs flex justify-center gap-4 max-[1440px]:px-5 flex-col md:flex-row max-[1050px]:px-5">
           <Img
-            src="images/img_img copy.png"
+            src="/images/img_img copy.png"
             alt="Main Image"
             className="h-[340px] sm:h-[450px] md:h-[auto] rounded-[20px] object-cover w-full md:w-[50%]"
           />
@@ -65,7 +65,7 @@ export default function HowItWorksSection() {
                       rightIcon={
                         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-accent-dark_blue">
                           <Img
-                            src="images/img_arrowleft_white_0.svg"
+                            src="/images/img_arrowleft_white_0.svg"
                             alt="Arrow Left"
                             className="h-[18px] w-[18px]"
                           />

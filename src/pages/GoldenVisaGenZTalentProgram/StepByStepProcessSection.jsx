@@ -4,8 +4,11 @@ import { Img } from "../../components/ImgGenz/index";
 import { Text } from "../../components/TextGenz/index";
 import React from "react";
 import { handleScrollToTop } from "../../utils/helper";
+import { useTranslation } from "react-i18next";
 
 export default function StepByStepProcessSection() {
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
   return (
     <>
       {/* step by step process section */}
@@ -15,7 +18,7 @@ export default function StepByStepProcessSection() {
       >
         <div className="mt-[10px] container-xs flex justify-center gap-4 max-[1440px]:px-5 flex-col md:flex-row max-[1050px]:px-5">
           <Img
-            src="images/img_rectangle_11 copy 2.png"
+            src="/images/img_rectangle_11 copy 2.png"
             alt="Main Image"
             className="h-[340px] sm:h-[450px] md:h-[auto] rounded-[20px] object-cover w-full md:w-[50%]"
           />
@@ -64,14 +67,14 @@ export default function StepByStepProcessSection() {
                         Web3 Ecosystem.
                       </Text>
                     </div>
-                    <a href="/#/opntoken" onClick={handleScrollToTop}>
+                    <a href={`/${currentLocale}/opntoken`} onClick={handleScrollToTop}>
                       <Button
                         shape="round"
                         color="undefined_undefined"
                         rightIcon={
                           <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-accent-dark_blue">
                             <Img
-                              src="images/img_arrowleft_white_0.svg"
+                              src="/images/img_arrowleft_white_0.svg"
                               alt="Arrow Left"
                               className="h-[18px] w-[18px]"
                             />

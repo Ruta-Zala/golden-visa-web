@@ -290,7 +290,7 @@ export default function PurchaseSection({ referralAddress }) {
           </div>
           <div className="relative h-[650px] w-full self-center rounded-[20px] bg-light_base">
             <Img
-              src="images/img_icon_star_glossy_glass_style_442x384.png"
+              src="/images/img_icon_star_glossy_glass_style_442x384.png"
               alt="Star Image"
               className="absolute right-0 top-0 m-auto h-[442px] w-auto rounded-[20px] object-contain opacity-50"
             />
@@ -417,7 +417,7 @@ export default function PurchaseSection({ referralAddress }) {
                   <div className="flex text-lg gap-4 border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
                     <img
                       className="h-[32px] w-[32px]"
-                      src="images/img_ellipse_362_26x32.png"
+                      src="/images/img_ellipse_362_26x32.png"
                       alt="Ellipse 362"
                       loading="lazy"
                     />
@@ -443,7 +443,7 @@ export default function PurchaseSection({ referralAddress }) {
                   <div className="flex gap-4 text-lg border border-solid bg-[#fff] pr-[40px] pl-[20px] py-[5px] rounded-[30px] items-center">
                     <img
                       className="h-[32px] w-[32px]"
-                      src="images/img_ellipse_362.png"
+                      src="/images/img_ellipse_362.png"
                       alt="Ellipse 362"
                       loading="lazy"
                     />
@@ -471,7 +471,7 @@ export default function PurchaseSection({ referralAddress }) {
                     <div class="ml-auto flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
                       <img
                         class="h-[12px] w-[12px]"
-                        src="images/img_arrowleft_blue_800.svg"
+                        src="/images/img_arrowleft_blue_800.svg"
                         alt="Arrow Left"
                         loading="lazy"
                       />
@@ -491,7 +491,7 @@ export default function PurchaseSection({ referralAddress }) {
                     }}
                   >
                     <img
-                      src="images/img_arrowleft_white_0.svg"
+                      src="/images/img_arrowleft_white_0.svg"
                       alt="testImg"
                       loading="lazy"
                     />

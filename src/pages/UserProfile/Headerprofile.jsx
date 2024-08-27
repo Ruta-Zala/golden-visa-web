@@ -71,7 +71,7 @@ export default function Headerprofile({ ...props }) {
           rightIcon={
             <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
               <Img
-                src="images/img_arrowleft.svg"
+                src="/images/img_arrowleft.svg"
                 alt="Arrow Left"
                 className="h-[18px] w-[18px]"
               />
@@ -133,7 +133,7 @@ export default function Headerprofile({ ...props }) {
                 rightIcon={
                   <div className="flex h-9 w-9 items-center justify-center rounded-[50%] bg-[#ffffff]">
                     <Img
-                      src="images/img_arrowleft.svg"
+                      src="/images/img_arrowleft.svg"
                       alt="Arrow Left"
                       className="h-[18px] w-[18px]"
                     />

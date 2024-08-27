@@ -6,27 +6,29 @@ import { Text } from "../Text";
 import headerLogo from "../../assets/header-logo.jpeg";
 import arrowDown from "../../assets/img_arrow_down.svg";
 import { handleScrollToSection } from "../../utils/helper";
-
-const menuItems = [
-  { href: "/#/OPNChain", label: "OPNChain" },
-  { href: "/#/opntoken", label: "OPN Token" },
-  { href: "/#/Talent", label: "Web3 Talent Program" },
-  {
-    href: "/#/Entrepreneur",
-    label: "Web3 Entrepreneur Program",
-  },
-  { href: "/#/OPNVerse", label: "OPNVerse" },
-  {
-    href: "/#/Icognative",
-    label: "iCognative",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function HeaderVisa({ ...props }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropDown, setIsDropDown] = useState(false);
   const dropdownRef = useRef(null);
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
 
+  const menuItems = [
+    { href: `/${currentLocale}/OPNChain`, label: t("OPNChain") },
+    { href: `/${currentLocale}/opntoken`, label: t("OPN Token") },
+    { href: `/${currentLocale}/Talent`, label: t("Web3 Talent Program") },
+    {
+      href: `/${currentLocale}/Entrepreneur`,
+      label: t("Web3 Entrepreneur Program"),
+    },
+    { href: `/${currentLocale}/OPNVerse`, label: t("OPNVerse") },
+    {
+      href: `/${currentLocale}/Icognative`,
+      label: t("iCognative"),
+    },
+  ];
   const toggleDropdown = () => {
     setIsDropDown((prev) => !prev);
   };
@@ -55,7 +57,7 @@ export default function HeaderVisa({ ...props }) {
       className={`${props.className} w-full flex justify-between items-center gap-5 p-2 ps-6 bg-white-0 rounded-[34px]`}
     >
       {/* <Img
-        src="images/img_header_logo.png"
+        src="/images/img_header_logo.png"
         alt="Header Logo"
         className="h-12 w-48 object-contain"
       /> */}
@@ -73,25 +75,25 @@ export default function HeaderVisa({ ...props }) {
         <li>
           <a onClick={(event) => handleScrollToSection(event, "benefits")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              Benefits
+              {t("Benefits")}
             </span>
           </a>
         </li>
         <li>
           <a onClick={(event) => handleScrollToSection(event, "howItWorks")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              How it works
+              {t("How it works")}
             </span>
           </a>
         </li>
         <li>
-          <a href="/#/opntoken">
+          <a href={`/${currentLocale}/opntoken`}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              Mint token
+              {t("Mint token")}
             </span>
           </a>
         </li>
-        
+
         <span
           className="text-md xl:text-lg  tracking-wide text-[#08122a] cursor-pointer flex items-center"
           ref={dropdownRef}
@@ -148,7 +150,7 @@ export default function HeaderVisa({ ...props }) {
         rightIcon={
           <div className="flex h-9 w-9 items-center justify-center rounded-[50%] bg-[#ffffff]">
             <Img
-              src="images/img_arrowleft.svg"
+              src="/images/img_arrowleft.svg"
               alt="Arrow Left"
               className="h-[18px] w-[18px]"
             />
@@ -162,7 +164,7 @@ export default function HeaderVisa({ ...props }) {
         <div className="fixed inset-0 z-50 flex w-64 shadow-xl flex-col bg-white-0 p-3 transform transition-transform duration-300">
           <div className="flex justify-between items-center">
             <Img
-              src="images/img_header_logo.png"
+              src="/images/img_header_logo.png"
               alt="Header Logo"
               className="h-12 w-48 object-contain"
             />
@@ -174,7 +176,7 @@ export default function HeaderVisa({ ...props }) {
             <li>
               <a onClick={(event) => handleScrollToSection(event, "benefits")}>
                 <Text as="p" className="!text-accent-black">
-                  Benefits
+                  {t("Benefits")}
                 </Text>
               </a>
             </li>
@@ -183,18 +185,18 @@ export default function HeaderVisa({ ...props }) {
                 onClick={(event) => handleScrollToSection(event, "howItWorks")}
               >
                 <Text as="p" className="!text-accent-black">
-                  How it works
+                  {t("How it works")}
                 </Text>
               </a>
             </li>
             <li>
-              <a href="/#/opntoken">
+              <a href={`/${currentLocale}/opntoken`}>
                 <Text as="p" className="!text-accent-black">
-                  Mint token
+                  {t("Mint token")}
                 </Text>
               </a>
             </li>
-            
+
             {menuItems.map((item, index) => (
               <li key={`menu-${index}`}>
                 <a
@@ -222,7 +224,7 @@ export default function HeaderVisa({ ...props }) {
               rightIcon={
                 <div className="flex h-9 w-9 items-center justify-center rounded-[50%] bg-[#ffffff]">
                   <Img
-                    src="images/img_arrowleft.svg"
+                    src="/images/img_arrowleft.svg"
                     alt="Arrow Left"
                     className="h-[18px] w-[18px]"
                   />

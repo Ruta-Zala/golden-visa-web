@@ -15,7 +15,7 @@ export default function FooterVisa({ ...props }) {
             <div className="w-full md:w-1/2 flex justify-center md:justify-start items-center">
               {" "}
               {/* <Img
-                src="images/img_footer_logo.png"
+                src="/images/img_footer_logo.png"
                 alt="Footer Logo"
                 className="h-14 w-56 object-contain"
               /> */}
@@ -44,7 +44,7 @@ export default function FooterVisa({ ...props }) {
                     target="_blank"
                   >
                     <Img
-                      src="images/img_info.svg"
+                      src="/images/img_info.svg"
                       alt="Info Icon"
                       className="h-[18px] w-[18px]"
                     />
@@ -54,14 +54,14 @@ export default function FooterVisa({ ...props }) {
                     target="_blank"
                   >
                     <Img
-                      src="images/img_link.svg"
+                      src="/images/img_link.svg"
                       alt="Link Icon"
                       className="h-[20px]"
                     />
                   </a>
                   <a href="https://x.com/IOPn_io" target="_blank">
                     <Img
-                      src="images/img_airplane.svg"
+                      src="/images/img_airplane.svg"
                       alt="Airplane Icon"
                       className="h-[16px] w-[16px]"
                     />

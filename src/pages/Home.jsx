@@ -7,7 +7,9 @@ import Goldernvisa from "../components/golden-visa-cta/goldernvisa";
 import Roadmap from "../components/roadmap/roadmap";
 import Footer from "../components/Footer/FooterEl";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Helmet>
@@ -15,7 +17,10 @@ const Home = () => {
           name="description"
           content="IOPn pioneers a decentralized Web3 ecosystem, empowering users with digital sovereignty through AI and spatial technologies."
         />
-        <meta name="keywords" content="IOPn, Web3 Ecosystem, Golden Visa, RAKDAO" />
+        <meta
+          name="keywords"
+          content="IOPn, Web3 Ecosystem, Golden Visa, RAKDAO"
+        />
       </Helmet>
       <Herosections />
       <Features />

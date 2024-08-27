@@ -232,7 +232,7 @@ export default function TokenMintSection({ referralAddress }) {
       {/* token mint section */}
       <div className="relative mt-[118px] h-[604px]" id="mintToken">
         <Img
-          src="images/img_background_copy.png"
+          src="/images/img_background_copy.png"
           alt="Background Copy"
           className="absolute bottom-0 right-px top-0 my-auto h-[604px] w-[34%] object-contain opacity-60"
         />
@@ -377,7 +377,7 @@ export default function TokenMintSection({ referralAddress }) {
                     OPN
                     <img
                       className="h-[32px] w-[32px]"
-                      src="images/icon_avatar.png"
+                      src="/images/icon_avatar.png"
                       alt="Ellipse 362"
                       loading="lazy"
                     />
@@ -401,7 +401,7 @@ export default function TokenMintSection({ referralAddress }) {
                   <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px]">
                     <img
                       class="h-[18px] w-[18px]"
-                      src="images/img_arrowleft_blue_800.svg"
+                      src="/images/img_arrowleft_blue_800.svg"
                       alt="Arrow Left"
                       loading="lazy"
                     />
@@ -417,7 +417,7 @@ export default function TokenMintSection({ referralAddress }) {
                     style={{ backgroundColor: "black", padding: "12px" }}
                   >
                     <img
-                      src="images/img_arrowleft_white_0.svg"
+                      src="/images/img_arrowleft_white_0.svg"
                       alt="testImg"
                       loading="lazy"
                     />

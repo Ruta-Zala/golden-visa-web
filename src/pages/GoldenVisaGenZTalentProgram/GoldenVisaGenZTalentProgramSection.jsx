@@ -391,7 +391,7 @@ export default function GoldenVisaGenZTalentProgramSection({
             </div>
             <div className="relative h-[700px] xl:h-[756px] w-full self-center rounded-[20px] bg-light_base">
               <Img
-                src="images/img_icon_star_glossy_glass_style.png"
+                src="/images/img_icon_star_glossy_glass_style.png"
                 alt="Star Image"
                 className="absolute right-0 top-0 m-auto h-[654px] w-[74%] object-contain opacity-50"
               />
@@ -516,7 +516,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                       <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                         <input type="text" name="Token Input" placeholder="OPN 1250" />
                         <div className="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px]">
-                          <img className="h-[25px] w-[25px]" src="images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
+                          <img className="h-[25px] w-[25px]" src="/images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
                           OPN
                         </div>
                       </label>
@@ -532,7 +532,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                           rightIcon={
                             <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[10px]">
                               <Img
-                                src="images/img_arrowleft_blue_800_01.svg"
+                                src="/images/img_arrowleft_blue_800_01.svg"
                                 alt="Arrow Left"
                                 className="h-[18px] w-[18px]"
                               />
@@ -572,7 +572,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                           }}
                         >
                           <img
-                            src="images/img_arrowleft_white_0.svg"
+                            src="/images/img_arrowleft_white_0.svg"
                             alt="testImg"
                             loading="lazy"
                           />
@@ -587,7 +587,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                         rightIcon={
                           <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[10px]">
                             <Img
-                              src="images/img_arrowleft_blue_800_01.svg"
+                              src="/images/img_arrowleft_blue_800_01.svg"
                               alt="Arrow Left"
                               className="h-[18px] w-[18px]"
                             />
@@ -603,7 +603,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                         rightIcon={
                           <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-accent-dark_blue absolute right-[10px]">
                             <Img
-                              src="images/img_arrowleft_white_0.svg"
+                              src="/images/img_arrowleft_white_0.svg"
                               alt="Arrow Left"
                               className="h-[18px] w-[18px]"
                             />
@@ -619,7 +619,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                       <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                         <input type="text" name="Payment Input" placeholder="$ 100" />
                         <div className="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px]">
-                          <img className="h-[25px] w-[25px]" src="images/img_ellipse_362.png" alt="Ellipse 362" loading="lazy" />
+                          <img className="h-[25px] w-[25px]" src="/images/img_ellipse_362.png" alt="Ellipse 362" loading="lazy" />
                           USD
                         </div>
                       </label>
@@ -656,7 +656,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                   <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[50px] pl-[26px] pr-2 text-[24px]">
                     <input type="text" name="Token Input" placeholder="OPN 12.780" value={'OPN 12.780'} />
                     <div class="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px] text-[20px] bg-slate-100" >
-                      <img class="h-[25px] w-[25px]" src="images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
+                      <img class="h-[25px] w-[25px]" src="/images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
                       OPN
                     </div>
                   </label>
@@ -669,7 +669,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                     rightIcon={
                       <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[10px]">
                         <Img
-                          src="images/img_arrowleft_blue_800_01.svg"
+                          src="/images/img_arrowleft_blue_800_01.svg"
                           alt="Arrow Left"
                           className="h-[18px] w-[18px]"
                         />
@@ -744,7 +744,7 @@ export default function GoldenVisaGenZTalentProgramSection({
                   shape="circle"
                   className="mt-1 w-[52px] !rounded-[26px] border border-solid bg-slate-50"
                 >
-                  <Img src="images/img_arrow_left_accent_black.svg" />
+                  <Img src="/images/img_arrow_left_accent_black.svg" />
                 </Button>
               </div>
             </div>

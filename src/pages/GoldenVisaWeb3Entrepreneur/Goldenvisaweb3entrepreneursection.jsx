@@ -5,17 +5,17 @@ import React, { Suspense } from "react";
 
 const benefitsList = [
   {
-    userImage: "images/img_visa.svg",
+    userImage: "/images/img_visa.svg",
     visaDurationLabel: "Visa Duration",
     visaDurationText: "Flexible options: 10 years UAE Golden VISA",
   },
   {
-    userImage: "images/img_residency.svg",
+    userImage: "/images/img_residency.svg",
     visaDurationLabel: "Residency Status",
     visaDurationText: "Stable living: Join an innovative Web3 Community",
   },
   {
-    userImage: "images/img_investment.svg",
+    userImage: "/images/img_investment.svg",
     visaDurationLabel: "Investment Opportunities",
     visaDurationText: "Financial growth: Life-Changing Oppurtunity",
   },
@@ -37,7 +37,7 @@ export default function Goldenvisaweb3entrepreneursection() {
                   as="h1"
                   className="!text-dark-0"
                 >
-                  Why the UAE Golden Visa?
+                  Why the UAE Gloden Visa?
                 </Heading>
               </div>
               <Text

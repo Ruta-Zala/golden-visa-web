@@ -142,7 +142,7 @@ function GenZTalentSection() {
               </h1>
               <p className="opnchain-pb-text-p2 text-lg opacity-80 pt-4 max-w-[350px] md:min-h-[200px]">
                 Join the IOPn ecosystem and power the Web3 Talent Program.
-                Purchase OPN tokens for your chance at a UAE Golden Visa!
+                Purchase OPN tokens for your chance at a UAE Gloden Visa!
               </p>
             </div>
             <button

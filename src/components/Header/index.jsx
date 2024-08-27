@@ -6,27 +6,29 @@ import React, { useEffect, useRef, useState } from "react";
 import { handleScrollToSection } from "../../utils/helper";
 import headerLogo from "../../assets/header-logo.jpeg";
 import arrowDown from "../../assets/img_arrow_down.svg";
-
-const menuItems = [
-  { href: "/#/goldenvisa", label: "UAE Golden Visa" },
-  { href: "/#/OPNChain", label: "OPNChain" },
-  { href: "/#/Talent", label: "Web3 Talent Program" },
-  {
-    href: "/#/Entrepreneur",
-    label: "Web3 Entrepreneur Program",
-  },
-  { href: "/#/OPNVerse", label: "OPNVerse" },
-  {
-    href: "/#/Icognative",
-    label: "iCognative",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Header({ ...props }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropDown, setIsDropDown] = useState(false);
   const dropdownRef = useRef(null);
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
 
+  const menuItems = [
+    { href: `/${currentLocale}/goldenvisa`, label: t("UAE Golden Visa") },
+    { href: `/${currentLocale}/OPNChain`, label: t("OPNChain") },
+    { href: `/${currentLocale}/Talent`, label: t("Web3 Talent Program") },
+    {
+      href: `/${currentLocale}/Entrepreneur`,
+      label: t("Web3 Entrepreneur Program"),
+    },
+    { href: `/${currentLocale}/OPNVerse`, label: t("OPNVerse") },
+    {
+      href: `/${currentLocale}/Icognative`,
+      label: t("iCognative"),
+    },
+  ];
   const toggleDropdown = () => {
     setIsDropDown((prev) => !prev);
   };
@@ -67,30 +69,30 @@ export default function Header({ ...props }) {
         <li>
           <a onClick={(event) => handleScrollToSection(event, "benefits")}>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              Benefits
+              {t("Benefits")}
             </span>
           </a>
         </li>
         <li onClick={(event) => handleScrollToSection(event, "howItWroks")}>
           <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-            Tokenomics
+              {t("Tokenomics")}
             </span>
           </a>
         </li>
         <li onClick={(event) => handleScrollToSection(event, "mintToken")}>
           <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-              Mint Token
+              {t("Mint Token")}
             </span>
           </a>
         </li>
-           <li
+        <li
           onClick={(event) => handleScrollToSection(event, "refferralProgram")}
         >
           <a>
             <span className="text-lg tracking-wide text-[#08122a] cursor-pointer">
-            Referral
+              {t("Referral")}
             </span>
           </a>
         </li>
@@ -144,7 +146,7 @@ export default function Header({ ...props }) {
         rightIcon={
           <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0">
             <Img
-              src="images/img_arrowleft.svg"
+              src="/images/img_arrowleft.svg"
               alt="Arrow Left"
               className="h-[18px] w-[18px]"
             />
@@ -158,7 +160,7 @@ export default function Header({ ...props }) {
         <div className="fixed inset-0 z-50 flex w-64 shadow-xl flex-col bg-white-0 p-3 transform transition-transform duration-300">
           <div className="flex justify-between items-center bg-white-0">
             {/* <Img
-              src="images/img_header_logo.png"
+              src="/images/img_header_logo.png"
               alt="Header Logo"
               className="h-12 w-48 object-contain"
             /> */}
@@ -177,28 +179,28 @@ export default function Header({ ...props }) {
             <li>
               <a onClick={(event) => handleScrollToSection(event, "benefits")}>
                 <Text as="p" className="!text-accent-black">
-                  Benefits
+                  {t("Benefits")}
                 </Text>
               </a>
             </li>
             <li>
               <a>
                 <Text as="p" className="!text-accent-black">
-                  How it works
+                  {t("How it works")}
                 </Text>
               </a>
             </li>
             <li>
               <a>
                 <Text as="p" className="!text-accent-black">
-                  Perks
+                {t("Perks")}
                 </Text>
               </a>
             </li>
             <li>
               <a>
                 <Text as="p" className="!text-accent-black">
-                  Mint Token
+                  {t("Mint Token")}
                 </Text>
               </a>
             </li>
@@ -222,7 +224,7 @@ export default function Header({ ...props }) {
               rightIcon={
                 <div className="flex h-9 w-9 items-center justify-center rounded-[50%] bg-[#ffffff]">
                   <Img
-                    src="images/img_arrowleft.svg"
+                    src="/images/img_arrowleft.svg"
                     alt="Arrow Left"
                     className="h-[18px] w-[18px]"
                   />

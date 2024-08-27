@@ -4,7 +4,11 @@ import arrowDown from "../../assets/img_arrow_down.svg";
 import headerLogo from "../../assets/header-logo.jpeg";
 import { Link } from "react-router-dom";
 import { handleScrollToSection, handleScrollToTop } from "../../utils/helper";
+import { useTranslation } from "react-i18next";
+
 const Herosections = () => {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -106,19 +110,22 @@ const Herosections = () => {
             </div>
             <div className="hidden lg:flex items-center justify-between gap-3 w-[49%]">
               <div className="flex flex-row items-center px-3 xl:px-6 justify-around bg-[#f1f5f9] rounded-full py-3 flex-1">
-                <a href="/#/goldenvisa">
+                <a href={`/${currentLocale}/goldenvisa`}>
                   <span className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                    UAE Golden Visa
+                    {t("UAE Golden Visa")}
                   </span>
                 </a>
-                <a href="/#/OPNChain">
+                <a href={`/${currentLocale}/OPNChain`}>
                   <span className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                    OPNChain
+                    {t("OPNChain")}
                   </span>
                 </a>
-                <a href="/#/opntoken" onClick={handleScrollToTop}>
+                <a
+                  href={`/${currentLocale}/opntoken`}
+                  onClick={handleScrollToTop}
+                >
                   <span className="text-sm xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                    OPN Token
+                    {t("OPN Token")}
                   </span>
                 </a>
                 <span
@@ -145,32 +152,32 @@ const Herosections = () => {
                       >
                         <div className="py-1" role="none">
                           <a
-                            href="/#/Talent"
+                            href={`/${currentLocale}/Talent`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            Web3 Talent Program
+                            {t("Web3 Talent Program")}
                           </a>
                           <a
-                            href="/#/Entrepreneur"
+                            href={`/${currentLocale}/Entrepreneur`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            Web3 Entrepreneur Program
+                            {t("Web3 Entrepreneur Program")}
                           </a>
                           <a
-                            href="/#/OPNVerse"
+                            href={`/${currentLocale}/OPNVerse`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            OPNVerse
+                            {t("OPNVerse")}
                           </a>
                           <a
-                            href="/#/Icognative"
+                            href={`/${currentLocale}/Icognative`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            iCognative
+                            {t("iCognative")}
                           </a>
                         </div>
                       </div>
@@ -178,10 +185,10 @@ const Herosections = () => {
                   )}
                 </span>
               </div>
-              <a href="/#/opntoken">
+              <a href={`/${currentLocale}/opntoken`}>
                 <span>
                   <button className="flex flex-row justify-center items-center ps-4 py-2 pr-2 gap-2 xl:gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
-                    Mint OPN{" "}
+                    {t("Mint OPN")}{" "}
                     <div className="flex flex-row justify-center items-center rotate-[-45deg] p-0 gap-2 w-8 h-8 text-[#2573C0] bg-[#ffffff] rounded-full">
                       →
                     </div>
@@ -247,61 +254,61 @@ const Herosections = () => {
               </div>
               <div className="flex flex-col lg:flex-row lg:ml-auto lg:mr-4">
                 <a
-                  href="/#/goldenvisa"
+                  href={`/${currentLocale}/goldenvisa`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  UAE Golden Visa
+                  {t("UAE Golden Visa")}
                 </a>
                 <a
-                  href="/#/OPNChain"
+                  href={`/${currentLocale}/OPNChain`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  OPNChain
+                  {t("OPNChain")}
                 </a>
                 <a
-                  href="/#/opntoken"
+                  href={`/${currentLocale}/opntoken`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={() => {
                     closeMenu();
                     handleScrollToTop();
                   }}
                 >
-                  OPN Token
+                  {t("OPN Token")}
                 </a>
                 <a
-                  href="/#/Talent"
+                  href={`/${currentLocale}/Talent`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  Web3 Talent Program
+                  {t("Web3 Talent Program")}
                 </a>
                 <a
-                  href="/#/Entrepreneur"
+                  href={`/${currentLocale}/Entrepreneur`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  Web3 Entrepreneur Program
+                  {t("Web3 Entrepreneur Program")}
                 </a>
                 <a
-                  href="/#/OPNVerse"
+                  href={`/${currentLocale}/OPNVerse`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  OPNVerse
+                  {t("OPNVerse")}
                 </a>
                 <a
-                  href="/#/Icognative"
+                  href={`/${currentLocale}/Icognative`}
                   className="block px-4 py-2 lg:px-5 lg:py-3 text-lg text-[#08122a] hover:text-blue-500"
                   onClick={closeMenu}
                 >
-                  iCognative
+                  {t("iCognative")}
                 </a>
               </div>
               <div className="flex justify-center lg:justify-end">
                 <button className="flex items-center px-4 py-2 lg:py-3 gap-2.5 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
-                  Mint OPN
+                  {t("Mint OPN")}
                   <div className="flex justify-center items-center p-0 gap-2 w-8 h-8 text-black-0 bg-[#ffffff] rounded-full">
                     →
                   </div>
@@ -317,19 +324,22 @@ const Herosections = () => {
             <div className="flex flex-col justify-end items-start bg-white-0 rounded-2xl mb-3 md:mb-0 mx-2 md:ms-4">
               <div className="flex flex-col items-start gap-5 p-[24px] md:p-12">
                 <p className="text-xl font-medium text-[#08122a] opacity-40">
-                  An integrated web3 ecosystem
+                  {t("An integrated web3 ecosystem")}
                 </p>
                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-medium">
-                  Decentralized.
+                  {t("Decentralized")}.
                   <br />
                   <span className="bg-clip-text text-3xl md:text-4xl lg:text-6xl font-medium text-transparent bg-gradient-to-b from-[#9ba6c1] via-[#314168] to-[#314168]">
-                    Cognitive.
+                    {t("Cognitive")}.
                   </span>
                   <br />
-                  Spatial.
+                  {t("Spatial")}.
                 </h1>
-                <button className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto" onClick={(event) => handleScrollToSection(event, "roadmap")}>
-                  Roadmap
+                <button
+                  className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto"
+                  onClick={(event) => handleScrollToSection(event, "roadmap")}
+                >
+                  {t("Roadmap")}
                   <div className="flex flex-row justify-center items-center p-0 gap-2.5 w-8 h-8 text-white-0 bg-[#08122a] rounded-full rotate-[-45deg]">
                     →
                   </div>
@@ -341,11 +351,11 @@ const Herosections = () => {
                 <div>
                   {" "}
                   <h1 className="text-2xl font-medium leading-6 text-white-0">
-                    Check out the UAE Golden Visa Portal
+                  {t("Check out the UAE Golden Visa Portal")}
                   </h1>
                 </div>
                 <Link
-                  to="/goldenvisa"
+                  to={`/${currentLocale}/goldenvisa`}
                   onClick={handleScrollToTop}
                   className="flex w-full justify-end items-center cursor-pointer"
                 >
@@ -363,11 +373,11 @@ const Herosections = () => {
           <div>
             {" "}
             <h1 className="text-2xl font-medium leading-6 text-white-0">
-              Check out the UAE Golden Visa Portal
+              Check out the UAE Golden Visa' Portal
             </h1>
           </div>
           <Link
-            to="/goldenvisa"
+            to={`/${currentLocale}/goldenvisa`}
             onClick={handleScrollToTop}
             className="flex w-full justify-end items-center cursor-pointer"
           >

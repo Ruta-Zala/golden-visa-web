@@ -49,7 +49,7 @@ export default function TokenPurchaseSection() {
                 <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-3 shadow-sm text-dark-0 h-[70px] pl-[26px] pr-3 text-[28px]">
                   <input type="text" name="Payment Input" placeholder="$ 100" />
                   <div className="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px]">
-                    <img className="h-[32px] w-[32px]" src="images/img_ellipse_362.png" alt="Ellipse 362" loading="lazy" />
+                    <img className="h-[32px] w-[32px]" src="/images/img_ellipse_362.png" alt="Ellipse 362" loading="lazy" />
                     USD
                   </div>
                 </label>
@@ -59,7 +59,7 @@ export default function TokenPurchaseSection() {
                 <label class="self-stretch max-[550px]:text-[18px] flex items-center justify-center gap-4 cursor-text border-blue-900_1e border border-solid shadow-sm  rounded-[36px] bg-white-0-3 shadow-sm text-dark-0 h-[70px] pl-[26px] pr-3 text-[28px]">
                   <input type="text" name="Token Input" placeholder="OPN 1250" />
                   <div className="flex gap-4 border border-solid bg-white-0 pr-[40px] pl-[20px] py-[5px] rounded-[30px]">
-                    <img className="h-[32px] w-[32px]" src="images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
+                    <img className="h-[32px] w-[32px]" src="/images/img_ellipse_362_26x32.png" alt="Ellipse 362" loading="lazy" />
                     OPN
                   </div>
                 </label>
@@ -74,7 +74,7 @@ export default function TokenPurchaseSection() {
                 <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[5px]">
                   <img
                     class="h-[18px] w-[18px]"
-                    src="images/img_arrowleft_blue_800.svg"
+                    src="/images/img_arrowleft_blue_800.svg"
                     alt="Arrow Left"
                     loading="lazy"
                   />
@@ -89,7 +89,7 @@ export default function TokenPurchaseSection() {
                   style={{ backgroundColor: "black", padding: "12px" }}
                 >
                   <img
-                    src="images/img_arrowleft_white_0.svg"
+                    src="/images/img_arrowleft_white_0.svg"
                     alt="testImg"
                     loading="lazy"
                   />

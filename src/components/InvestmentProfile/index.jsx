@@ -3,7 +3,7 @@ import { Heading } from "../Heading/index";
 import React from "react";
 
 export default function InvestmentProfile({
-  investmentImage = "images/img_investment_sele.svg",
+  investmentImage = "/images/img_investment_sele.svg",
   investmentText = "Investment Potential",
   ...props
 }) {

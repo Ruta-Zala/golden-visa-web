@@ -6,17 +6,17 @@ import React, { Suspense } from "react";
 
 const visaOptionsList = [
   {
-    userImage: "images/passport.svg",
+    userImage: "/images/passport.svg",
     visaDurationLabel: "Visa Duration",
     visaDurationText: "Flexible options: 10 years UAE Golden VISA",
   },
   {
-    userImage: "images/signboard.svg",
+    userImage: "/images/signboard.svg",
     visaDurationLabel: "Residency Status",
     visaDurationText: "Stable living: Join an innovative Web3 Community",
   },
   {
-    userImage: "images/investment_new.svg",
+    userImage: "/images/investment_new.svg",
     visaDurationLabel: "Investment Opportunities",
     visaDurationText: "Financial growth: Life-Changing Oppurtunity",
   },

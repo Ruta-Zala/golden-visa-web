@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { handleScrollToTop } from "../../utils/helper";
 import "./productbig.css";
 const Productbig = () => {
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
   return (
     <div className="main-porductbig max-w-screen-2xl mx-auto px-4 mt-28">
       <div className="opnchain-pb">
@@ -23,7 +26,7 @@ const Productbig = () => {
             </div>
             <a
               className="link-pb cursor-pointer"
-              href="/#/OPNChain"
+              href={`/${currentLocale}/OPNChain`}
               onClick={handleScrollToTop}
             >
               <li className="font-medium">Learn More</li>
@@ -54,7 +57,7 @@ const Productbig = () => {
             </div>
             <a
               className="link-pb cursor-pointer"
-              href="/#/Icognative"
+              href={`/${currentLocale}/Icognative`}
               onClick={handleScrollToTop}
             >
               <li className="li2 font-medium">Learn More</li>
@@ -84,7 +87,7 @@ const Productbig = () => {
             </div>
             <a
               className="link-pb cursor-pointer"
-              href="/#/OPNVerse"
+              href={`/${currentLocale}/OPNVerse`}
               onClick={handleScrollToTop}
             >
               <li className="li2 font-medium">Learn More</li>

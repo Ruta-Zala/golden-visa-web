@@ -2,21 +2,27 @@ import { useState, useRef, useEffect } from "react";
 import arrowDown from "../../assets/img_arrow_down.svg";
 import headerLogo from "../../assets/header-logo.jpeg";
 import { handleScrollToSection } from "../../utils/helper";
-
-const menuItems = [
-  {
-    label: "OPNChain",
-    onClick: (event) => handleScrollToSection(event, "opnChain"),
-  },
-  { href: "/#/iCognative", label: "iCognative" },
-  { href: "/#/OPNVerse", label: "OPNVerse" },
-  { href: "/#/Talent", label: "GenZ Talent Program" },
-  { href: "/#/Entrepreneur", label: "Web3 Entrepreneur Program" },
-  { href: "/#/goldenvisa", label: "UAE Golden Visa" },
-  { href: "/#/opntoken", label: "OPN Token" },
-];
+import { useTranslation } from "react-i18next";
 
 const OPNChainHeroSection = () => {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+  const menuItems = [
+    {
+      label: t("OPNChain"),
+      onClick: (event) => handleScrollToSection(event, "opnChain"),
+    },
+    { href: `/${currentLocale}/iCognative`, label: t("iCognative") },
+    { href: `/${currentLocale}/OPNVerse`, label: t("OPNVerse") },
+    { href: `/${currentLocale}/Talent`, label: t("GenZ Talent Program") },
+    {
+      href: `/${currentLocale}/Entrepreneur`,
+      label: t("Web3 Entrepreneur Program"),
+    },
+    { href: `/${currentLocale}/goldenvisa`, label: t("UAE Golden Visa") },
+    { href: `/${currentLocale}/opntoken`, label: t("OPN Token") },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -82,19 +88,19 @@ const OPNChainHeroSection = () => {
                     OPN Token
                   </span>
                 </a> */}
-                 <a href="#/opntoken">
+                <a href="#/opntoken">
                   <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                  OPN Token
+                    {t("OPN Token")}
                   </span>
                 </a>
                 <a href="#/iCognative">
                   <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                    iCognative
+                    {t("iCognative")}
                   </span>
                 </a>
-                <a href="/#/OPNVerse">
+                <a href={`/${currentLocale}/OPNVerse`}>
                   <span className="text-md xl:text-lg tracking-wide text-[#08122a] cursor-pointer">
-                    OPNVerse
+                    {t("OPNVerse")}
                   </span>
                 </a>
                 <span
@@ -120,26 +126,26 @@ const OPNChainHeroSection = () => {
                         style={{ backgroundColor: "white" }}
                       >
                         <div className="py-1" role="none">
-                        <a
-                            href="/#/goldenvisa"
+                          <a
+                            href={`/${currentLocale}/goldenvisa`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            UAE Golden Visa
+                            {t("UAE Golden Visa")}
                           </a>
                           <a
-                            href="/#/Talent"
+                            href={`/${currentLocale}/Talent`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            Web3 Talent Program
+                            {t("Web3 Talent Program")}
                           </a>
                           <a
-                            href="/#/Entrepreneur"
+                            href={`/${currentLocale}/Entrepreneur`}
                             className="block px-4 py-2 text-md text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
-                            Web3 Entrepreneur Program
+                            {t("Web3 Entrepreneur Program")}
                           </a>
                         </div>
                       </div>
@@ -150,7 +156,7 @@ const OPNChainHeroSection = () => {
               <a>
                 <span>
                   <button className="flex flex-row justify-center items-center ps-4 py-2 pr-2 gap-2 xl:gap-4 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
-                    Join Now{" "}
+                    {t("Join Now")}{" "}
                     <div className="flex flex-row justify-center items-center rotate-[-45deg] p-0 gap-2 w-8 h-8 text-[#2573C0] bg-[#ffffff] rounded-full">
                       →
                     </div>
@@ -231,7 +237,7 @@ const OPNChainHeroSection = () => {
               </div>
               <div className="flex justify-center lg:justify-end">
                 <button className="flex items-center px-4 py-2 lg:py-3 gap-2.5 bg-gradient-to-r from-[#3983cc] to-[#0056b8] rounded-full border-none text-white-0">
-                  Join Now
+                  {t("Join Now")}
                   <div className="flex justify-center items-center p-0 gap-2 w-8 h-8 text-black-0 bg-[#ffffff] rounded-full">
                     →
                   </div>
@@ -247,23 +253,24 @@ const OPNChainHeroSection = () => {
             <div className="flex flex-col justify-end items-start bg-white-0 rounded-2xl mb-3 md:mb-0 mx-2 md:ms-4">
               <div className="flex flex-col items-start gap-5 p-[24px] md:p-12">
                 <p className="text-xl font-medium text-[#08122a] opacity-40">
-                  OPNChain
+                  {t("OPNChain")}
                 </p>
                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-medium">
-                  New,
+                  {t("New")},
                   <br className="sm:hidden" />
                   <span className="pl-0 sm:pl-2 bg-clip-text text-3xl md:text-4xl lg:text-6xl font-medium text-transparent bg-gradient-to-b from-[#9ba6c1] via-[#314168] to-[#314168]">
-                    decentralized
+                    {t("decentralized")}
                   </span>
                   <br />
-                  digital world.
+                  {t("digital world")}.
                 </h1>
                 <span className="text-xl font-medium text-[#08122a] opacity-40 sm:w-[600px] mt-4">
-                  Leveraging the Best of Three Worlds: Fortifying Blockchain
-                  Security with Cosmos SDK, EVM, and Bitcoin
+                  {t(
+                    "Leveraging the Best of Three Worlds: Fortifying Blockchain Security with Cosmos SDK, EVM, and Bitcoin"
+                  )}
                 </span>
                 <button className="box-border font-medium mt-5 flex flex-row justify-center items-center py-2 ps-8 pr-2 gap-4 border border-[#08122a] rounded-full text-[#08122a] cursor-pointer bg-white-0 w-full sm:w-auto">
-                  Join Now
+                {t("Join Now")}
                   <div className="flex flex-row justify-center items-center p-0 gap-2.5 w-8 h-8 text-white-0 bg-[#08122a] rounded-full rotate-[-45deg]">
                     →
                   </div>

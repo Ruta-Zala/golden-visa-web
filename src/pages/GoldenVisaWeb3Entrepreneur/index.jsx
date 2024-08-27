@@ -32,11 +32,11 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
         </title>
         <meta
           name="description"
-          content="Join the Web3 Entrepreneur Program and explore the benefits of the UAE Golden Visa. Mint OPN Tokens for investment opportunities and a chance to win a 10-year visa."
+          content="Join the Web3 Entrepreneur Program and explore the benefits of the UAE Gloden Visa. Mint OPN Tokens for investment opportunities and a chance to win a 10-year visa."
         />
         <meta
           name="description"
-          content="Unlock endless opportunities with a UAE Golden Visa"
+          content="Unlock endless opportunities with a UAE Gloden Visa"
         />
         <meta
           name="keywords"
@@ -87,7 +87,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
                     <div class="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-dark-0">
                       <img
                         class="h-[18px] w-[18px]"
-                        src="images/img_arrowleft_white_0.svg"
+                        src="/images/img_arrowleft_white_0.svg"
                         alt="Arrow Left"
                         loading="lazy"
                       />
@@ -129,7 +129,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
           </div>
           <div className="relative 2xl:h-[420px] xl:h-[250px] h-[200px] lg:my-[200px] my-[100px] 2xl:max-w-[1450px] xl:max-w-[1150px] lg:max-w-[900px] max-w-[700px] w-full mx-auto md:block hidden">
             <Img
-              src="images/img_lines.png"
+              src="/images/img_lines.png"
               alt="Lines Image"
               className="absolute bottom-0 left-0 top-0 w-[calc(100%-100px)]"
             />
@@ -330,7 +330,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
               </div>
             </div>
             <Img
-              src="images/img_img_674x488.png"
+              src="/images/img_img_674x488.png"
               alt="Illustrative Image"
               className="absolute 2xl:top-[-100px] xl:top-[-50px] top-[-30px] left-1/2 -translate-x-1/2 z-50 2xl:max-w-[400px] xl:max-w-[250px] lg:max-w-[200px] max-w-[170px]"
             />
@@ -412,7 +412,7 @@ export default function GoldenVisaWeb3EntrepreneurPage() {
             </div>
           </div>
           <Img
-            src="images/img_img_674x488.png"
+            src="/images/img_img_674x488.png"
             alt="Illustrative Image"
             className="w-full max-h-[300px] object-cover rounded-xl md:hidden"
           />
