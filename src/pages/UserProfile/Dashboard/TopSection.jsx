@@ -4,29 +4,51 @@ import Dashboard2 from "../../../assets/profile/dashboard2.svg";
 import Dashboard3 from "../../../assets/profile/dashboard3.svg";
 import Dashboard4 from "../../../assets/profile/dashboard4.svg";
 import { Text } from "../../../components/Text";
-const referralRewardsList = [
-  {
-    rewardPercentage: "7500 OPN",
-    rewardDescription: "OPN TOKEN",
-    img: Dashboard1,
-  },
-  {
-    rewardPercentage: "2500 USDT",
-    rewardDescription: "TETHER",
-    img: Dashboard2,
-  },
-  {
-    rewardPercentage: "1750 USDC",
-    rewardDescription: "USD COIN",
-    img: Dashboard3,
-  },
-  {
-    rewardPercentage: "3400 DAI",
-    rewardDescription: "MAKER DAO",
-    img: Dashboard4,
-  },
-];
+import { useState, useEffect } from "react";
+import { showcaseTokenBalance } from "../../../utils/helper";
+
 function TopSection() {
+  const [daiBalance, setDaiBalance] = useState(0);
+  const [usdtBalance, setUsdtBalance] = useState(0);
+  const [usdcBalance, setUsdcBalance] = useState(0);
+  const [opnBalance, setOpnBalance] = useState(0);
+
+  const referralRewardsList = [
+    {
+      rewardPercentage: `${opnBalance}`,
+      rewardDescription: "OPN TOKEN",
+      img: Dashboard1,
+    },
+    {
+      rewardPercentage: `${usdtBalance}`,
+      rewardDescription: "TETHER",
+      img: Dashboard2,
+    },
+    {
+      rewardPercentage: `${usdcBalance}`,
+      rewardDescription: "USD COIN",
+      img: Dashboard3,
+    },
+    {
+      rewardPercentage: `${daiBalance}`,
+      rewardDescription: "MAKER DAO",
+      img: Dashboard4,
+    },
+  ];
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const { usdcBalance, usdtBalance, daiBalance, opnBalance } =
+        await showcaseTokenBalance();
+
+      setUsdcBalance(Math.floor((usdcBalance / 1e6) * 100) / 100);
+      setUsdtBalance(Math.floor((usdtBalance / 1e6) * 100) / 100);
+      setDaiBalance(Math.floor((daiBalance / 1e18) * 100) / 100);
+      setOpnBalance(Math.floor((opnBalance / 1e18) * 100) / 100);
+    };
+    fetchBalance();
+  }, []);
+
   return (
     <>
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">

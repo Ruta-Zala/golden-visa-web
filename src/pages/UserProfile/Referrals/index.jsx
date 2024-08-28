@@ -22,6 +22,7 @@ import { useAccount } from "wagmi";
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Input";
 import ReferralHistory from "./ReferralHistory";
+import { ethers } from "ethers";
 
 const referralRewardsList = [
   {
@@ -130,17 +131,16 @@ const walletOptions = [
   {
     label: "Coinbase wallet",
     icon: CoinbaseWallet,
-    iconClasses: 'scale-[0.8]',
+    iconClasses: "scale-[0.8]",
     color: "bg-[#0051FF]",
   },
   {
     label: "Formatic",
     icon: Formatic,
-    iconClasses: 'scale-[0.8]',
+    iconClasses: "scale-[0.8]",
     color: "bg-[#6852FF]",
   },
 ];
-
 
 const socialMediaOptions = [
   {
@@ -162,7 +162,7 @@ const socialMediaOptions = [
     label: "Share",
     icon: Linkedin,
     color: "text-[#0A66C2]",
-    textClasses: 'mt-1'
+    textClasses: "mt-1",
   },
 
   {
@@ -177,7 +177,7 @@ function Referrals() {
 
   const location = useLocation();
   const { isConnected } = useAccount();
-
+  const [loading, setLoading] = useState(false);
   const [referalUrl, setReferalUrl] = useState("");
 
   const handleGenerateReferal = async () => {
@@ -207,6 +207,141 @@ function Referrals() {
         console.error("Failed to copy the link: ", err);
       });
   };
+
+  // const handleStakeGenz = async () => {
+  //   if (nameError == "" || emailError == "" || countError == "") return;
+  //   if (!count || count <= 0 || !requiredAmount) return;
+  //   setLoading(true);
+  //   const contractABI = [
+  //     "function approve(address spender, uint256 amount) public returns (bool)",
+  //     "function buyTokens(uint256 amount, address paymentToken, address _referral) external returns (uint256)",
+  //     {
+  //       inputs: [
+  //         {
+  //           internalType: "address",
+  //           name: "paymentToken",
+  //           type: "address",
+  //         },
+  //         {
+  //           internalType: "uint256",
+  //           name: "_count",
+  //           type: "uint256",
+  //         },
+  //         {
+  //           internalType: "address",
+  //           name: "_referral",
+  //           type: "address",
+  //         },
+  //       ],
+  //       name: "stakeGenz",
+  //       outputs: [],
+  //       stateMutability: "nonpayable",
+  //       type: "function",
+  //     },
+  //   ];
+  //   try {
+  //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //     const signer = provider.getSigner();
+  //     const walletAddress = await signer.getAddress();
+
+  //     // Convert the required amount to Wei based on the selected token's decimals
+  //     const amountInWei = ethers.utils.parseUnits(
+  //       adjustedAmount,
+  //       selectedToken.decimals
+  //     );
+
+  //     // Create a contract instance for the selected token to approve the transaction
+  //     const tokenContract = new ethers.Contract(
+  //       selectedToken.address,
+  //       [
+  //         "function approve(address spender, uint256 amount) public returns (bool)",
+  //         "function allowance(address owner, address spender) public view returns (uint256)",
+  //       ],
+  //       signer
+  //     );
+
+  //     // Check existing allowance
+  //     const currentAllowance = await tokenContract.allowance(
+  //       signer.getAddress(),
+  //       vaultContractAddress
+  //     );
+
+  //     // If the current allowance is not zero, reset it to zero first
+  //     if (!(currentAllowance.isZero() || selectedToken.symbol === "DAI")) {
+  //       const resetApprovalTx = await tokenContract.approve(
+  //         vaultContractAddress,
+  //         0
+  //       );
+  //       await resetApprovalTx.wait();
+  //     }
+
+  //     // Now approve the new amount
+  //     const approvalTx = await tokenContract.approve(
+  //       vaultContractAddress,
+  //       amountInWei
+  //     );
+  //     await approvalTx.wait();
+
+  //     const contract = new ethers.Contract(
+  //       vaultContractAddress,
+  //       vaultContractABI,
+  //       signer
+  //     );
+
+  //     const refAddr = referral || nullAddress;
+
+  //     console.log(refAddr);
+  //     const stakeTx = await contract.stakeGenz(
+  //       selectedToken.address,
+  //       refAddr,
+  //       count
+  //     );
+  //     const receipt = await stakeTx.wait();
+
+  //     // post email & name & walletAddress, txHash on the api
+  //     if (receipt) {
+  //       const url = `${import.meta.env.VITE_BACKEND_BASE_URL}/api/users`;
+
+  //       const userData = {
+  //         name: String(name),
+  //         email: String(email),
+  //         walletAddress: String(walletAddress),
+  //         transactionHash: String(receipt.transactionHash),
+  //         stackingType: String("Participate"),
+  //       };
+  //       try {
+  //         const response = await fetch(url, {
+  //           method: "POST",
+  //           headers: { "Content-Type": "application/json" },
+  //           body: JSON.stringify(userData),
+  //         });
+
+  //         if (response.ok) {
+  //           const data = await response.json();
+  //           console.log("User created successfully:", data);
+  //         } else {
+  //           const errorData = await response.json();
+  //           console.error("Error creating user:", errorData.message);
+  //         }
+  //       } catch (error) {
+  //         setLoading(false);
+  //         console.error("Error:", error);
+  //       }
+  //     }
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.error("Error during staking:", error);
+  //   }
+  // };
+  const isButtonDisabled =
+    !name ||
+    !email ||
+    !count ||
+    nameError != "" ||
+    emailError != "" ||
+    countError != "";
+
   return (
     <>
       <div className="relative w-full bg-[url(./assets/profile/referrals/referral-bg.jpeg)] rounded-[20px] bg-cover bg-no-repeat">
@@ -332,36 +467,63 @@ function Referrals() {
               and manage referral links.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-              {walletOptions?.map((wallet) => {
-                return (
-                  <button
-                    className={`flex items-center justify-center text-white px-4 py-4 rounded-full ${
-                      wallet.color || ""
+              {isConnected ? (
+                <div className="flex flex-col gap-4">
+                  {/* <Button
+                          disabled={isButtonDisabled}
+                          onClick={fetchRequiredAmount}
+                          variant="gradient"
+                          shape="round"
+                          color="blue_700_blue_800_02"
+                          rightIcon={
+                            <div className="flex h-[36px] w-[36px] items-center justify-center rounded-[50%] bg-white-0 absolute right-[10px]">
+                              <Img
+                                src="images/img_arrowleft_blue_800_01.svg"
+                                alt="Arrow Left"
+                                className="h-[18px] w-[18px]"
+                              />
+                            </div>
+                          }
+                          className={`gap-[34px] self-stretch font-medium capitalize relative
+                          ${isButtonDisabled
+                              ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+                              : "bg-blue-600 text-white hover:bg-blue-700"
+                            }
+                          `}
+                        >
+                          Calculate
+                        </Button> */}
+                  <button 
+                    disabled={isButtonDisabled}
+                    class={`font-bold py-3 px-8 rounded-full transition duration-200 ${
+                      isButtonDisabled
+                        ? "bg-green-400 text-gray-200 cursor-not-allowed"
+                        : "bg-blue-600 text-white hover:bg-blue-700"
                     }`}
                   >
-                    <img
-                      src={wallet.icon}
-                      alt={wallet.label}
-                      className={`w-[30px] h-[30px] mr-2 ${wallet.iconClasses || ''}`}
-                    />
-                    <Text
-                      size="visa_body_text_18"
-                      className="text-white-0 lg:!text-[18px]"
-                    >
-                      {wallet.label}
-                    </Text>
-                    {wallet?.isPopular && (
-                      <Text
-                        className={`${
-                          wallet?.chipColor || ""
-                        } text-xs text-white-0 ml-2 px-2 py-1 rounded-full`}
-                      >
-                        Popular
-                      </Text>
-                    )}
+                    {loading ? <Loader /> : "Connected"}
                   </button>
-                );
-              })}
+                </div>
+              ) : (
+                <div className="flex justify-center w-full max-[1440px]:w-full max-[1050px]:w-full items-center gap-2.5 border-blue-900_1e border border-solid  rounded-[36px] p-1">
+                  <h5 class="text-dark-0 font-outfit font-bold capitalize text-xl">
+                    <ConnectWallet />
+                  </h5>
+                  <button
+                    class="w-[36px] flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap font-medium text-sm px-2 py-2 rounded-3xl max-w-64"
+                    style={{
+                      backgroundColor: "black",
+                      padding: "12px",
+                    }}
+                  >
+                    <img
+                      src="images/img_arrowleft_white_0.svg"
+                      alt="testImg"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -479,9 +641,7 @@ function Referrals() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4">
               {socialMediaOptions?.map((media) => {
                 return (
-                  <button
-                    className="flex items-center justify-center text-white px-4 py-4 rounded-full bg-slate-200"
-                  >
+                  <button className="flex items-center justify-center text-white px-4 py-4 rounded-full bg-slate-200">
                     <img
                       src={media.icon}
                       alt={media.label}
@@ -489,7 +649,7 @@ function Referrals() {
                     />
                     <Text
                       size="visa_body_text_18"
-                      className={`lg:!text-[18px] ${media.color} ${media.textClasses || ''}`}
+                      className={`lg:!text-[18px] ${media.color} ${media.textClasses || ""}`}
                     >
                       {media.label}
                     </Text>
@@ -499,7 +659,7 @@ function Referrals() {
             </div>
           </div>
 
-          <ReferralHistory/>
+          <ReferralHistory />
         </div>
       </div>
     </>
