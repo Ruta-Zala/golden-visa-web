@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import Partners from "../partners/partners";
 import arrowDown from "../../assets/img_arrow_down.svg";
 import headerLogo from "../../assets/header-logo.jpeg";
-import { Link } from "react-router-dom";
+import LanguageSwitcher from "../LanguageSwitcher";
 import { handleScrollToSection, handleScrollToTop } from "../../utils/helper";
-import { useTranslation } from "react-i18next";
 
 const Herosections = () => {
   const { t, i18n } = useTranslation();
@@ -320,6 +321,9 @@ const Herosections = () => {
               onClick={closeMenu}
             ></div>
           </nav>
+          <div className='flex justify-end items-start absolute right-0 top-[65px]'>
+            <LanguageSwitcher />
+          </div>
           <div className="w-full flex flex-col md:flex-row justify-between items-center relative">
             <div className="flex flex-col justify-end items-start bg-white-0 rounded-2xl mb-3 md:mb-0 mx-2 md:ms-4">
               <div className="flex flex-col items-start gap-5 p-[24px] md:p-12">

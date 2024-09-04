@@ -6,7 +6,6 @@ import { config } from "./config";
 import { WagmiProvider } from "wagmi";
 import { PriceProvider } from "./context/opnPriceContext";
 import "./i18n";
-import LanguageSwitcher from "./components/LanguageSwitcher";
 
 const queryClient = new QueryClient();
 function App() {
@@ -15,7 +14,6 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <PriceProvider>
           <Router>
-            <LanguageSwitcher />
             <Routes />
           </Router>
         </PriceProvider>
