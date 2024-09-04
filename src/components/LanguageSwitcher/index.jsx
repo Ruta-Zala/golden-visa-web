@@ -11,7 +11,7 @@ function LanguageSwitcher() {
 
   useEffect(() => {
     const locale = i18n.language || 'en';
-    if (["en", "fr"].includes(locale)) {
+    if (["en", "fr", "es","de"].includes(locale)) {
       setLanguage(locale);
       i18n.changeLanguage(locale);
     }
@@ -37,6 +37,14 @@ function LanguageSwitcher() {
       value: "fr",
       label: "French",
     },
+    {
+      value: "es",
+      label: "Spanish"
+    },
+    {
+      value: "de",
+      label: "German"
+    }
   ];
 
   return (
